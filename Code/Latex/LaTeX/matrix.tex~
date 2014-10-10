@@ -1,9 +1,0 @@
-\begin{equation}
-  A = \left[
-    \begin{array}{ccc}
-      \alpha & \beta & \gamma\\
-      a & b & c\\
-      \mathcal a & \mathcal b & \mathcal c
-    \end{array}
-    \right]
-\end{equation}
