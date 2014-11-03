@@ -1,7 +1,7 @@
-Code and Data for exercises/practicals for the 2014-15 Computational Methods in Ecology and Evolution Masters course at Silwood Park, Imperial College London.
+Lectures/Practicals notes, Code, Data and Solutions for the 2014-15 Computational Methods in Ecology and Evolution Masters course at Silwood Park, Imperial College London, with some modules joint with EEC, EA, and NHM Masters.
 
-The Solutions directory will be updated with answers to exercises/precticals one the submission deadline has passed.
+The Solutions directory will be updated with answers to exercises/precticals once the submission deadline has passed.
 
-PLEASE DO NOT MODIFY ANYTHING IN SITU, AS ALL CHANGES YOU MAKE WILL BE LOST WHEN YOU NEXT GIT PULL! Instead copy files to your own directory as an when you need to.
+Fot the CMEEs: PLEASE DO NOT MODIFY ANYTHING IN SITU AFTER CLONING TIS REPOSITORY, AS ALL CHANGES YOU MAKE WILL BE LOST WHEN YOU NEXT GIT PULL! Instead, copy files to your own directory as an when you need to.
 
 Created by Samraat Pawar spawar@imperial.ac.uk, October 2014
