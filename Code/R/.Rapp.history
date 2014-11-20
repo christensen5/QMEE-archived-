@@ -4,3 +4,6 @@ presents <- c(presents_classic,"lines of coding")
 presents
 twelvedays()
 twelvedays(presents)
+test <- list(1,2,3)
+test
+for (i in test) {print(i)}
