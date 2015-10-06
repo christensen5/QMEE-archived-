@@ -1,9 +1,0 @@
-source('~/Documents/Github/cmee2014masterepo/Code/R/12days.R', chdir = TRUE)
-presents <- c(presents,"lines of coding")
-presents <- c(presents_classic,"lines of coding")
-presents
-twelvedays()
-twelvedays(presents)
-test <- list(1,2,3)
-test
-for (i in test) {print(i)}
