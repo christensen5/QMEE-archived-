@@ -1,15 +1,10 @@
 """ This is blah blah"""
-# Use the subprocess.os module to get a list of files and directories 
-# Hint: look in subprocess.os and/or subprocess.os.path for helpful 
-# functions
+
+# Use the subprocess.os module to get a list of files and  
+# Hint: look in subprocess.os and/or subprocess.os.path and/or 
+# subprocess.os.walk for helpful functions
 
 import subprocess
-
-help(subprocess.os.listdir)
-
-# try:
-
-subprocess.os.listdir('../../')
 
 #################################
 #~Get a list of files and 
@@ -17,6 +12,16 @@ subprocess.os.listdir('../../')
 
 # Type your code here:
 
+# Get the user's home directory.
+home = subprocess.os.path.expanduser("~")
+
+# Create a list to store the results.
+FilesDirsStartingWithC = []
+
+# Use a for loop to walk through the home directory.
+for (dir, subdir, files) in subprocess.os.walk(home):
+	
+	
 #################################
 # Get files and directories in your home/ that start with either an 
 # upper or lower case 'C'
