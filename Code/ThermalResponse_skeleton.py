@@ -93,12 +93,12 @@ def main(argv):
 	data = sc.genfromtxt(argv,dtype = None,delimiter = ',',deletechars='"')
 	#input file "./Data/ThermResp_startvals.csv"
 	# Define the Boltzmann constant (units of eV * K^-1).
-	global K
+	global k
 	k = 8.617 * 10 ** (-5)
 
 	#Open the csv file to write the output to.
 	??
-	results = open("./Results/results.csv", 'w')
+	results = open("../Results/results.csv", 'w')
 	results_csv = csv.writer(results, delimiter=",")
 
 	# Here you will run the lmfitting over all unique data series. you 
