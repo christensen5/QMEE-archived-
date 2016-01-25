@@ -1,0 +1,371 @@
+\documentclass[xcolor=x11names,compress]{beamer}
+
+%% General document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\graphicspath{{graphics/}}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage{verbatim}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+
+\usepackage{color,colortbl}
+\usepackage{framed}
+\usepackage{textcomp, setspace} %Needed for customization of ``listings''
+% package
+\usepackage[procnames]{listings} % to display code; don't forget [fragile]
+% option after \begin{frame}
+\input{inputs/rgb}
+\definecolor{shadecolor}{rgb}{1,.9,.3}
+
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+\lstset{
+    backgroundcolor=\color{shadecolor},
+    tabsize=4,
+    rulecolor=,
+    language=python,
+        basicstyle=\ttfamily\setstretch{1},
+        upquote=true,
+        aboveskip={1.5\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+        numbers=left, 
+        numberstyle=\tiny, 
+        stepnumber=2, 
+        numbersep=5pt
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Beamer Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usetheme{Madrid}
+\usecolortheme{crane}
+\useoutertheme[subsection=false,shadow]{miniframes}
+\useinnertheme{default}
+% \usefonttheme{serif}
+\usepackage{palatino}
+
+\setbeamerfont{title like}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\scshape, series = \bfseries}
+\setbeamertemplate{frametitle}[default][center]
+\setbeamertemplate{headline}{} %suppress headline (navigation pane)
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+%   \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in 
+% head/foot}%
+%     \usebeamerfont{author in head/foot}\insertshortauthor
+%   \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.93\paperwidth,ht=2.25ex,dp=1ex,left]{title in 
+head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+  \end{beamercolorbox}}%
+  \begin{beamercolorbox}[wd=.07\paperwidth,ht=2.25ex,dp=1ex,center]{}
+     \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+%       \insertframenumber{}
+  \end{beamercolorbox}
+
+}
+% \setbeamercolor*{lower separation line head}{bg=DeepSkyBlue4} 
+% \setbeamercolor*{normal text}{fg=black,bg=white} 
+% \setbeamercolor*{alerted text}{fg=red} 
+% \setbeamercolor*{example text}{fg=black} 
+% \setbeamercolor*{structure}{fg=black}
+%  
+% \setbeamercolor*{palette tertiary}{fg=black,bg=black!10} 
+% \setbeamercolor*{palette quaternary}{fg=black,bg=black!10} 
+
+\renewcommand{\(}{\begin{columns}}
+\renewcommand{\)}{\end{columns}}
+\newcommand{\<}[1]{\begin{column}{#1}}
+\renewcommand{\>}{\end{column}}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil(#1)%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+
+\title{CMEE Workshop: Research projects}
+\author{Samraat Pawar}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[plain]
+
+\title{Workshop: Choosing, designing and executing a dissertation research project}
+\vspace{12pt}
+\subtitle{MSc/MRes CMEE 2015-16}
+\author{
+    Samraat Pawar\\
+    \vspace{20pt}
+  \centering
+  \includegraphics[height = .3in]{Imperial_Color1.pdf}
+}
+ 
+\titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{What do you want your MSc/MRes Dissertation research to be?}
+
+  \begin{itemize}[<+->] \itemsep8pt
+    \item A new piece of scientific work
+    \item Something that can be published
+    \item Something you find interesting
+    \item Something that will get you the highest marks
+    \item Something that makes you implement new skills
+    \item Something that satisfies your supervisor
+    \item Something that can get you a PhD position
+    \item All of the above!
+ \end{itemize}
+
+\vspace*{6pt}
+
+\pause
+\centering 
+
+{\it Go to \url{govote.at} and enter code shown (you can use your phone)}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The conception and birth of your Dissertation}
+
+\tikzstyle{format} = [draw, thick, fill=yellow!40]
+% \tikzstyle{medium} = [ellipse, draw, thick, fill=red!20, minimum height=2.5em]
+
+\begin{figure}
+\begin{tikzpicture}[node distance=3.3cm, auto, >=latex', thick]
+    % Set bounding box first, or the diagram will change position for each frame.
+    \path[use as bounding box] (.5,0) rectangle (10,0);
+    \path[->]<1-> node[format] (idea) {IDEA};
+    \path[->]<2-> node[format, right of = idea] (design) {DESIGN}
+                  (idea) edge node {work} (design);
+    \path[->]<3-> node[format, right of=design] (implement) {IMPLEMENT}
+                  % node[medium, below of=dvi] (workflow) {"WORKFLOW"}
+                  (design) edge node {work} (implement);
+                        % edge node[swap] {xdvi} (screen);
+    \path[->]<4-> node[format, right of=implement] (thesis) {THESIS}
+                  % node[medium, below of=ps] (print) {printer}
+                  (implement) edge node {work} (thesis);
+                       % edge node[swap] {gs} (screen)
+                       % edge (print);
+    % \path[->]<5-> (pdf) edge (screen)
+                        % edge (print);
+    \path[->, draw]<5-> (idea) -- +(0,.8) -| node[near start] {proposal} (design);
+    \path[->, draw]<6-> (design) -- +(0,.8) -| node[near start] {workflow} (thesis);
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The IDEA phase}
+
+\begin{aquote}{Albert Einstein}
+    Anyone who has never made a mistake has never tried anything new
+\end{aquote}
+
+  \begin{itemize}[<+->] \itemsep8pt
+    \item Split up into three groups and choose one of the assigned heavily cited papers in biology (on bitbucket) -- first come first served!
+    \item {\it What made your assigned paper so popular?}
+    \begin{itemize} \itemsep2pt
+        \item Good timing (was in a popular field)?
+        \item A new idea? 
+        \item A new method?
+        \item General (or specific to an important system)?
+        \item Critical --- convincing test of an existing hypothesis?
+        \item Integrative --- brought together different disciplines/areas?
+        \item The surrounding writing made a good story?
+    \end{itemize}
+ \end{itemize}
+
+\vspace*{3pt}
+
+\pause
+\centering
+
+{\it Go to \url{govote.at} and enter code shown (you can use your phone)} \\
+\pause --- Name you paper please -- you have 140 characters!
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The IDEA phase}
+
+  \begin{itemize}[<+->]\itemsep12pt
+		\item At Silwood you have three main options to choose a research 
+		project (you can exert your creativity in all three!):
+    \vspace{6pt}
+    \begin{enumerate} \setlength{\itemindent}{-1em}\itemsep6pt
+        \small
+        \item Come up with something and approach a potential supervisor
+        \item Go through supervisor interests and propose an idea 
+        \item Choose an advertised project and modify as needed
+    \end{enumerate}
+    \item See Loehle 1990 (on bitbucket) for some thoughts on creativity
+    \item {\it What's your plan?} (Choose one of the three options above)
+ \end{itemize}
+
+\vspace*{16pt}
+
+\pause
+\centering 
+
+{\it Go to \url{govote.at} and enter code shown (you can use your phone)}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The IDEA phase}
+
+  \begin{itemize}[<+->]\itemsep20pt
+    \item What's your view?
+    \item And my view is...
+ \end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The IDEA phase}
+
+  \begin{itemize}\itemsep20pt
+    \item Supervisor interests: \url{http://goo.gl/okOvZS} (but you can look elsewhere!)
+    \item Advertised projects: \url{http://goo.gl/awH7Vf} (but you can look elsewhere!) 
+    \item You must have an internal (Imperial College) supervisor ({\it Why?}) 
+ \end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The DESIGN phase}
+
+  \begin{itemize}[<+->]\itemsep12pt
+    \item Feasibility is important -- the "Medawar zone" \\
+    \url{https://en.wikipedia.org/wiki/Medawar_zone}
+    \item Where does each of the four papers you discussed lie in the Medawar zone?
+    \item Which of the following components would worry you the most in terms of project feasibility?
+    \begin{enumerate} \setlength{\itemindent}{-1em}\itemsep6pt
+        % \small
+        \item Fieldwork
+        \item Laboratory experiments
+        \item Developing and implementing statistical analyses -- fitting to a model
+        \item Developing and analyzing mathematical model
+        \item Writing up
+        \item Something else
+    \end{enumerate}
+ \end{itemize}
+ 
+\vspace*{3pt}
+
+\pause
+\centering 
+
+{\it Go to \url{govote.at} and enter code shown (you can use your phone)}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The DESIGN phase}
+
+  \begin{itemize}[<+->]\itemsep16pt
+    \item Make your project modular
+    \item Have a plan B (and C, if possible) -- what if your primary objective is a dead end? 
+    \item Have distinct hypotheses -- thes can be plan B and C
+    \item Use a Gantt chart (required in your project proposal)
+    \item Get feedback from supervisor 
+ \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The DESIGN phase}
+
+    \centering 
+A Gantt chart example
+    
+    \vspace{10pt}
+ \includegraphics[width=\textwidth]{Timeline.pdf}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The IMPLEMENTATION phase}
+
+  \begin{itemize}[<+->]\itemsep6pt
+    \item Make your code modular
+    \item Keep your dissertation under version control -- organized under {\tt code}, {\tt data}, {\tt results}, {\tt thesis}... 
+    \item Make your analyses reproducible -- you should be able to rerun at touch of a button
+    \item Benchmark (perhaps using synthetic data) to estimate how long simulations/analyses are likely to take
+    \item Unit test! 
+    \item Keep results from all analysis/simulation runs, tag them with a code version number
+    \item Get feedback from supervisor at key junctures
+    \item Change project design iteratively
+    \item Revisit your Gantt chart
+ \end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The IMPLEMENTATION phase}
+
+  \begin{itemize}\itemsep6pt
+    \item Explicit is better than implicit.
+    \item Simple is better than complex.
+    \item Complex is better than complicated.
+    \item Readability counts.
+    \item Special cases aren't special enough to break the rules.
+    \item Although practicality beats purity.
+    \item Errors should never pass silently.
+    \item In the face of ambiguity, refuse the temptation to guess.
+    \item There should be one-- and preferably only one --obvious way to do it.
+    \item If the implementation is hard to explain, it's a bad idea.
+ \end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The IMPLEMENTATION phase}
+
+ \centering
+ \includegraphics[width=.4\textwidth]{good_code.png}\\
+    {\small \url{http://xkcd.com/}}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The THESIS writing phase}
+
+  \begin{itemize}[<+->]\itemsep20pt
+    \item Start early
+    \item Get working on the background and intro early -- will make you think and rethink 
+    \item Writing skills improve more slowly than technical (coding) skill -- but keep improving for longer
+    \item Don't leave everything for the "last month"!
+    \item Get feedback from others -- give presentations!
+ \end{itemize}
+ 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
