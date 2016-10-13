@@ -1,7 +1,7 @@
 import re
 
 """" 
-Playing around with extracting email addresses or their subsets
+Playing around with extracting email addresses or their subsets.
 
 From Wikipedia: 
 The format of email addresses is local-part@domain 
