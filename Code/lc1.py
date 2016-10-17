@@ -12,7 +12,7 @@ birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
 # (2) Now do the same using conventional loops (you can shoose to do this 
 # before 1 !). 
 
-# ANNOTATE WHAT EVERY BLOCK OR IF NECESSARY, LINE IS DOING! 
+# ANNOTATE WHAT EVERY BLOCK OR, IF NECESSARY, LINE IS DOING! 
 
 # ALSO, PLEASE INCLUDE A DOCSTRING AT THE BEGINNING OF THIS FILE THAT 
 # SAYS WHAT THE SCRIPT DOES AND WHO THE AUTHOR IS
