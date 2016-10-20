@@ -36,7 +36,7 @@ variable.name = "Species", value.name = "Count")
 MyWrangledData[, "Cultivation"] <- as.factor(MyWrangledData[, "Cultivation"])
 MyWrangledData[, "Block"] <- as.factor(MyWrangledData[, "Block"])
 MyWrangledData[, "Plot"] <- as.factor(MyWrangledData[, "Plot"])
-MyWrangledData[, "Quadrat"] <- as.factor(MyWrangledData[, "Cultivation"])
+MyWrangledData[, "Quadrat"] <- as.factor(MyWrangledData[, "Quadrat"])
 MyWrangledData[, "Count"] <- as.numeric(MyWrangledData[, "Count"])
 
 str(MyWrangledData)
