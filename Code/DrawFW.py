@@ -30,8 +30,8 @@ def GenRdmAdjList(N = 2, C = 0.5):
 SizRan = ([-10,10]) #use log scale
 
 ## Assign number of species (MaxN) and connectance (C)
-MaxN = 30
-C = 0.75
+MaxN = 100
+C = 0.2
 
 ## Generate adjacency list:
 AdjL = sc.array(GenRdmAdjList(MaxN, C))

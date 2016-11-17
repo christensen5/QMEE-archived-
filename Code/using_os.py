@@ -1,6 +1,8 @@
 """ This is blah blah"""
 
-# Use the subprocess.os module to get a list of files and  
+# Use the subprocess.os module to get a list of files and  directories 
+# in your ubuntu home directory 
+
 # Hint: look in subprocess.os and/or subprocess.os.path and/or 
 # subprocess.os.walk for helpful functions
 
@@ -20,8 +22,7 @@ FilesDirsStartingWithC = []
 
 # Use a for loop to walk through the home directory.
 for (dir, subdir, files) in subprocess.os.walk(home):
-	
-	
+  
 #################################
 # Get files and directories in your home/ that start with either an 
 # upper or lower case 'C'
