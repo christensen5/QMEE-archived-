@@ -1,10 +1,9 @@
 # Plots log(field metabolic rate) against log(body mass) for the Nagy et al 
 # 1999 dataset to a file fmr.pdf.
-# Writes the sorted list of species names to species.csv
+# Writes the list of species names to species.csv
 
 cat("Reading CSV\n")
 
-#~setwd("~/Documents/Teaching/2013_Imperial_BIG+QB/Python/Code") #set working directory
 nagy <- read.csv('../Data/NagyEtAl1999.csv', stringsAsFactors = FALSE)
 
 cat("Creating graph\n")
