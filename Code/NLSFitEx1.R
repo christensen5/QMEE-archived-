@@ -1,7 +1,7 @@
 # Simple NLS Example adapted from http://www.walkingrandomly.com/?p=5254; 
 # Try both nls and nlsLM
 
-# library(minpack.lm)
+library(minpack.lm)
 library(graphics)
 
 rm(list = ls())  # clear objects
@@ -15,12 +15,12 @@ ydata = c(0.699369,0.700462,0.695354,1.03905,1.97389,2.41143,1.91091,0.919576,-0
 plot(xdata,ydata)
 
 # some starting values
-p1 = 1
-p2 = 0.2
+p1_start = 1
+p2_start = 0.2
 
 # do the fit
-NLSfit = nls(ydata ~ p1*cos(p2*xdata) + p2*sin(p1*xdata), start=list(p1=p1,p2=p2))
-# NLSfit = nlsLM(ydata ~ p1*cos(p2*xdata) + p2*sin(p1*xdata), start=list(p1=p1,p2=p2))
+# NLSfit = nls(ydata ~ p1*cos(p2*xdata) + p2*sin(p1*xdata), start=list(p1=p1,p2=p2))
+NLSfit = nlsLM(ydata ~ p1*cos(p2*xdata) + p2*sin(p1*xdata), start=list(p1=p1_start,p2=p2_start))
 
 # summarize
 summary(NLSfit)

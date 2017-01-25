@@ -17,13 +17,16 @@ powMod <- function(x, a, b) {
     
 MyData <- read.csv("../Data/GenomeSize.csv")
 
-Data2Fit <- subset(MyData,Suborder == "Anisoptera")
+Data2Fit <- subset(MyData,Suborder == "Zygoptera")
 
 Data2Fit <- Data2Fit[!is.na(Data2Fit$TotalLength),] # remove NA's
 
 plot(Data2Fit$TotalLength, Data2Fit$BodyWeight) # plot data
 
-PowFit <- nls(BodyWeight ~ powMod(TotalLength, a, b), data = Data2Fit, start = list(a = .1, b = .1))
+a_start <- .1 
+b_start <- .1
+
+PowFit <- nls(BodyWeight ~ powMod(TotalLength, a, b), data = Data2Fit, start = list(a = a_start, b = b_start))
 
 QuaFit <- lm(BodyWeight ~ poly(TotalLength,2), data = Data2Fit)
 
