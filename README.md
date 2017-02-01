@@ -1,5 +1,5 @@
 	
-## Lectures/Practicals notes, Code, Data and Solutions for the Masters-level Computing modules/courses at Silwood Park, Imperial College London
+## Lectures/Practicals notes, Code, Data and Solutions for the Computational Methods in Ecology and Evolution modules/courses at Imperial College London
 
 ### FOR STUDENTS: 
 YOU WILL ONLY HAVE READ PERMISSION TO THIS REPOSITORY. PLEASE DO NOT MODIFY ANYTHING IN SITU AFTER CLONING THIS REPOSITORY, AS ALL CHANGES YOU MAKE WILL BE LOST WHEN YOU NEXT `git pull`! Instead, please copy files to your own directory as and when you need to.
