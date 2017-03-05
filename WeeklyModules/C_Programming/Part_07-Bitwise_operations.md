@@ -230,7 +230,7 @@ We will perform operations on phylogenetic trees later in the module, but we can
 
 Consider a binary tree with three species at the tips: `sp1`, `sp2`, and `sp3`. There are two internal nodes in this tree, `d1`, which is the ancestor of `sp1` and `sp2`, and `d2`, which is the ancestor of `d1` and `sp3`.
 
-![Alt text](https://bytebucket.org/mhasoba/silbiocompmasterepo/raw/cffd4e6549f8ecce6dad57ff63ecc5e3ed55398c/WeeklyModules/C_Programming/images/_3tree.png)
+![Alt text](https://bytebucket.org/mhasoba/silbiocompmasterepo/raw/cffd4e6549f8ecce6dad57ff63ecc5e3ed55398c/WeeklyModules/C_Programming/images/_3tree.png = 300 x 300)
 
 Ancestral states reconstruction occurs in two 'passes' over a phylogenetic tree. An initial pass that traverses from the tips of the tree (where the observed data lives) and which generates a set of preliminary reconstructions that is based solely on 'descendant data'. Then a final pass goes from the root of the tree up towards the tips, updating the nodal values inside the tree with information from collateral descendants. 
 
