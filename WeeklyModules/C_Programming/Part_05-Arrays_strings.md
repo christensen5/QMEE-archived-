@@ -249,11 +249,16 @@ Write a program that concatenates the following two strings:
 
 and then print the result to the buffer
 
-### 5- Finding the minimum
+### 5- Initialising arrays
+Write a program that initialises an array of 10 values of any type you choose.
+What happens when you print all of these values?
+Not all compilers support the initialisation of variables as shown in this document.
+Also, this method doesn't support initialisation of any other variable than 0.
+Write a routine that initialises the array to a variable of your choosing.
+
+### 6- Finding the minimum
 Write a function that finds the minimum value in the set of numbers: 123, 747, 768, 2742, 988, 1121, 109, 999, 727, 1030, 999, 2014, 1402.
 
-### 6- Using arrays and strings together
+### 7- Using arrays and strings together
 Write a program that reverses a string. For example "palindrome" gets transformed to "emordinlap".
 Speaking of palindromes, you can also write your program so that it checks your string is one or not.
-
-
