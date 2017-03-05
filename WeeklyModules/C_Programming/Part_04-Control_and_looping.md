@@ -405,7 +405,7 @@ This is a comparable number of steps, but there are a number of function calls h
 
 # Exercises
 
-## 1- Loop for counting prime numbers
+### 1- Loop for counting prime numbers
 Let's try to write a loop for enumerating each prime numbers between 1 and 100.
 Just as a reminder, a prime number can only be divided by 1 or itself.
 Note that of course there are way than one solution to this problem!
