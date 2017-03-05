@@ -293,12 +293,23 @@ int calculate_factorial(int n)
 
 # Exercises
 
-## Declaring and calling a function
-Last exercise, we wrote our palindrome program. Divide it into two distinct functions: `reverse_string()` and `check_palindrome()` (don't forget to declare the return) and write them in a program (don't forget to declare the functions).
+### 1- Declaring and calling a function
+Last exercise, we wrote our palindrome program. Divide it into two distinct functions: `reverse_string()` and `check_palindrome()` and write them in a program. Don't forget to declare the return and state the functio prototypes.
 
-## Recursion
- * It is pretty trivial to write a loop that counts from 0 to 10. Try to write the same loop without using `for` by using a recursive function.
- * Ever heard about fork bombs or recursive bombs?
+### 2- Returning (potentially) large numbers
+Write a function that returns an integer value raised to the power of another integer value. What return type should you give this function? Write the code such that it will commit this properly.
 
+### 3- Printing arrays
+Write a function that prints an array to screen. What arguments should such a function take? Include a conditional statement in your function so that it prints an error message when important parameter values are missing.
 
+### 4- Returning the minimum
+Write a function that returns the minimum of two input values. Use whatever data types you like.
 
+### 5-  Recursion
+It is pretty trivial to write a loop that counts from 0 to 10. Try to write the same loop without using `for` by using a recursive function.
+
+### 6- [Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number)
+Write a recursive function that will print any given amount of Fibonacci numbers.
+
+### 7- Recursion bugs:
+Ever hear about fork bombs or recursive bombs? Read up on these to find out what they are
