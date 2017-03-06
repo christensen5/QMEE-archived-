@@ -415,40 +415,6 @@ Tip1: to write loops in a language you don't know that well, I find it easier to
 Tip2: you can use a "logical" architecture (we will see proper logical later on) where you can try to divide all numbers between 2 (you can skip 1) and 100 and check if it can be perfectly divided by any number.
 You can use the modulo operator (`%`), if `a % b == 0` and `a == b`, it will mean that `a` is a prime number.  
 
-<!--	
-#include <stdio.h>
-
-	int main()
-	{
-	    int prime = 1; // the numbers to test
-	    int divisor = 2; // the divisor number
-	    int is_prime = 0; // the counter of number of primes
-	    int n_prime = 0; // a conditional integer (if 0 it's not a prime, if 1 it's a prime)
-
-	    while (prime < 100)
-	    {
-	        is_prime = 0; // Set the condition to 0 (not prime)
-
-	        for(divisor = 2; divisor <= prime/2; ++divisor) // check the values between 2 and the prime number
-	        {
-	            if(prime % divisor == 0) // if the prime number can be divided only by itself, it's a prime number
-	            {
-	                is_prime = 1;  // Set the condition to 1 (is prime)
-	                break;
-	            }
-	        }
-
-	        if (is_prime == 0) {
-	            ++n_prime; // increment prime number counter
-	            printf("Prime number %i is %i\n", n_prime, prime);
-	        }
-
-	        ++prime; // increment number counter
-	    }
-
-	    return 0;
-	}
--->
 
 ### 2- Looping.
 Write a loop that only prints the integers that are a multiple of 10 or/and 7 (tip, use the modulo `%` operator!) between 1 and 100.
