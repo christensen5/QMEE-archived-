@@ -312,4 +312,4 @@ It is pretty trivial to write a loop that counts from 0 to 10. Try to write the 
 Write a recursive function that will print any given amount of Fibonacci numbers.
 
 ### 7- Recursion bugs:
-Ever hear about fork bombs or recursive bombs? Read up on these to find out what they are
+Ever hear about fork bombs or recursive bombs? Read up on these to find out what they are. Don't try these at home!
