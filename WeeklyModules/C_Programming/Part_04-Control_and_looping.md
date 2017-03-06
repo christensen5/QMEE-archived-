@@ -405,56 +405,12 @@ This is a comparable number of steps, but there are a number of function calls h
 
 # Exercises
 
-### 1- Loop for counting prime numbers
-Let's try to write a loop for enumerating each prime numbers between 1 and 100.
-Just as a reminder, a prime number can only be divided by 1 or itself.
-Note that of course there are way than one solution to this problem!
-
-Tip1: to write loops in a language you don't know that well, I find it easier to first write it in english and then in computer language. It helps you keeping track of where you want to go.
-
-Tip2: you can use a "logical" architecture (we will see proper logical later on) where you can try to divide all numbers between 2 (you can skip 1) and 100 and check if it can be perfectly divided by any number.
-You can use the modulo operator (`%`), if `a % b == 0` and `a == b`, it will mean that `a` is a prime number.  
-
-	#include <stdio.h>
-
-	int main()
-	{
-	    int prime = 1; // the numbers to test
-	    int divisor = 2; // the divisor number
-	    int is_prime = 0; // the counter of number of primes
-	    int n_prime = 0; // a conditional integer (if 0 it's not a prime, if 1 it's a prime)
-
-	    while (prime < 100)
-	    {
-	        is_prime = 0; // Set the condition to 0 (not prime)
-
-	        for(divisor = 2; divisor <= prime/2; ++divisor) // check the values between 2 and the prime number
-	        {
-	            if(prime % divisor == 0) // if the prime number can be divided only by itself, it's a prime number
-	            {
-	                is_prime = 1;  // Set the condition to 1 (is prime)
-	                break;
-	            }
-	        }
-
-	        if (is_prime == 0) {
-	            ++n_prime; // increment prime number counter
-	            printf("Prime number %i is %i\n", n_prime, prime);
-	        }
-
-	        ++prime; // increment number counter
-	    }
-
-	    return 0;
-	}
-
-
-### 2- Looping.
+### 1- Looping.
 Write a loop that only prints the integers that are a multiple of 10 or/and 7 (tip, use the modulo `%` operator!) between 1 and 100.
 
 Now change this loop so that it runs until it prints out 33 multiples of 10 or/and 7.
 
-### 3- Is it safe?
+### 2- Is it safe?
 What will the following do:
 ```C
 int a = 0;
@@ -464,7 +420,7 @@ while ( a == 0 ) {
 }
 ```
 
-### 4- The `continue` statement
+### 3- The `continue` statement
 Write a program that runs the following code.
 ```C
 for (i = 0; i < 10; ++i) {
@@ -479,3 +435,13 @@ for (i = 0; i < 10; ++i) {
 ```
 
 What happens when you exclude the `continue;` statement?
+
+### 4- Loop for counting prime numbers
+Let's try to write a loop for enumerating each prime numbers between 1 and 100.
+Just as a reminder, a prime number can only be divided by 1 or itself.
+Note that of course there are way than one solution to this problem!
+
+Tip1: to write loops in a language you don't know that well, I find it easier to first write it in english and then in computer language. It helps you keeping track of where you want to go.
+
+Tip2: you can use a "logical" architecture (we will see proper logical later on) where you can try to divide all numbers between 2 (you can skip 1) and 100 and check if it can be perfectly divided by any number.
+You can use the modulo operator (`%`), if `a % b == 0` and `a == b`, it will mean that `a` is a prime number.  
