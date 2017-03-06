@@ -357,19 +357,19 @@ How do you think the results of these extensions will look in binary?
 
 # Exercises
 
-### Bit width of a byte
+### 1- Bit width of a byte
 Write a program that determines the width in bits of a single byte on your system. You can start with the assumption that a `char` variable is one byte.
 
-### Getting the lowest set bit
+### 2- Getting the lowest set bit
 Write an expression to get the lowest set bit in a variable.
 
-### Showing binary
+### 3- Showing binary
 Write a program that prints a variable, in binary, to the console.
 
-### Ancestral states reconstruction
+### 4- Ancestral states reconstruction
 Write a pair of C functions that implement the Fitch algorithm described above.
 
-### Packing DNA into bits
+### 5- Packing DNA into bits
 Write a program that uses a function to convert the following DNA sequence to an array of bitwise data. Then use the program you wrote above to demonstrate that it works.
 
 DNA sequence: CATAAACCCTGGCGC
