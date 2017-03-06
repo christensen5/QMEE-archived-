@@ -355,6 +355,27 @@ else if (base == 'R' || base == 'r') {
 How do you think the results of these extensions will look in binary?
 
 
+### Performing ancestral states calculations with bitwise operations
+
+Consider the algorithms we have described above. Once we have performed the necessary bitwise conversions of our data, we can now write a simple function to perform these estimates of ancestral states. For instance, a simple function to perform the first pass calculation would look as follows:
+
+```C
+char parsimony_firstpass(char left_node_data, char right_node_data)
+{
+	char preslimset;
+	
+	if (left_node_data & right_node_data) {
+		prelimset = left_node_data & right_node_data;
+	}
+	else {
+		prelimset = right_node_data | left_node_data;
+	}
+	
+	return prelimset;
+}
+
+```
+
 # Exercises
 
 ### 1- Bit width of a byte
@@ -366,10 +387,22 @@ Write an expression to get the lowest set bit in a variable.
 ### 3- Showing binary
 Write a program that prints a variable, in binary, to the console.
 
-### 4- Ancestral states reconstruction
-Write a pair of C functions that implement the Fitch algorithm described above.
-
-### 5- Packing DNA into bits
+### 4- Packing DNA into bits
 Write a program that uses a function to convert the following DNA sequence to an array of bitwise data. Then use the program you wrote above to demonstrate that it works.
 
 DNA sequence: CATAAACCCTGGCGC
+
+### 5- Ancestral states reconstruction function
+Based on the first-pass ancestral states calculations we showed above, write a function that performs the second pass calculations.
+
+### 6- Putting it all together
+Write a program that:
+1. Assigns some nucleotide data to `sp1`, `sp2`, and `sp3`
+2. Converts that data to bitwise representation
+3. Calculates the ancestral states for `d1` and `d2`
+
+### 7- CHALLENGE: Convert back to symbolic DNA
+Write a function that reads bit-packed DNA back as an ASCII symbolic character (i.e. 'A', 'C', 'G', 'T')
+
+### 8- Bitfields and bitmasks
+Read up on the concepts of bitfields/bitmasks and how these can be used as powerful methods of speeding up calculations and comparisons.
