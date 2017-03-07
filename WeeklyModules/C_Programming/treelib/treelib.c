@@ -26,7 +26,7 @@ void destroy_node(node_t *oldnode)
 }
 
 
-/* Returns the number of nodes required for a
+/* Returns the number of nodes required for a completely bifurcating tree
  **/
 int calculate_numnodes(int num_tips)
 {
