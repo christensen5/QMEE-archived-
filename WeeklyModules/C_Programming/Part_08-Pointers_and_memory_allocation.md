@@ -600,6 +600,7 @@ Examine the following code examples and describe what happens in each assignment
 char c1 = 'a';
 char *char_ptr = &c1; 
 ```
+
 <!--- answer --->
 
 
