@@ -77,19 +77,19 @@ Once defined (see more about that later), you can call and use your function in 
 		return a + b;
 	}
 
-    void main (void)
+    int main (void)
     {	
     	int a = 1;
     	int b = 1;
     	int result = 0;
 
     	result = add_integers(a, b);
-    	printf("%i + %i = %i\n", a, b, results); // Something really complex
+    	printf("%i + %i = %i\n", a, b, results);
 
         return void;
     }
 ```
-We will see in details each step and subtleties below.
+We will see in detail each step and subtleties below.
 
 ### Function parameters and arguments
 A function definition indicates the parameter types and names. A function may have any number of parameters, including none.
