@@ -593,14 +593,37 @@ Be careful not to overwrite pointers to valid memory, otherwise you could get a 
 
 # Exercises
 
-## Freeing memory via a pointer to a pointer
+### Thinking about pointers
+Examine the following code examples and describe what happens in each assignment.
 
-## Passing pointers to and from functions
+```C
+char c1 = 'a';
+char *char_ptr = &c1; 
+```
+<!-- answer -->
+
+
+```C
+
+```
+
+### Passing a pointer to a function
+Write a program that uses a function to increment a variable through a pointer. The function should take two parameters: the pointer to the variable and the number of times you wish to increment the pointer.
+
+### Pointers and recursion (Potentially high difficulty)
+Recursion and pointers is very useful, but also can be a bit tricky. Rewrite the program in the previous exercise so that the function also calls itself. Remember, that you will need to rewrite the body of your function so that it doesn't recurse infinitely.
+
+
+
+
+### Freeing memory via a pointer to a pointer
+
+### Passing pointers to and from functions
 Review the examples under the section on returning pointers from functions. Notice that the first function incremented the pointer before returning. We can check (using a `printf()` statement or debugger, for instance) that the second function *did* loop through from the beginning again, even though it was passed the same pointer.
 
 Why didn't the second function start over at the beginning if the pointer was incremented within the body of the first function?
 
-## Pointers, strings, and pointers to pointers
+### Pointers, strings, and pointers to pointers
 Discuss with a colleague how the following program works and what it does:
 ```C
 #include <stdio.h>
