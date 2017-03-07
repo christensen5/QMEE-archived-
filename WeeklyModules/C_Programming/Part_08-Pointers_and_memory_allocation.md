@@ -601,12 +601,44 @@ char c1 = 'a';
 char *char_ptr = &c1; 
 ```
 
-<!--- answer --->
+<!--- 
+Declares a variable c1 and initialises with the value 'a'. Declares a pointer to char, char_ptr and assigns the address of c1 
+--->
 
+The code above will work perfectly fine. However, the **following code will not work. Why?**
 
 ```C
-
+char c1 = 'a';
+char *char_ptr;
+*char_ptr = &c1; 
 ```
+
+<!---
+```C
+char c1 = 'a';
+char *char_ptr;
+char_ptr = &c1; // Remove the dereference operator
+```
+--->
+
+Rewrite the above code so that it works correcly
+
+The following code also **will not work**. Why? And how would you fix it?
+
+```C
+char c1 = 'a';
+char *char_ptr = &c1;
+char_ptr = 'b';
+```
+
+<!---
+```C
+char c1 = 'a';
+char *char_ptr = &c1;
+*char_ptr = 'b'; // Add a dereference operator
+```
+--->
+
 
 ### Passing a pointer to a function
 Write a program that uses a function to increment a variable through a pointer. The function should take two parameters: the pointer to the variable and the number of times you wish to increment the pointer.
