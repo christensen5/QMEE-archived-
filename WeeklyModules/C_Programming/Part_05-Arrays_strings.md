@@ -259,6 +259,11 @@ Write a routine that initialises the array to a variable of your choosing.
 ### 6- Finding the minimum
 Write a function that finds the minimum value in the set of numbers: 123, 747, 768, 2742, 988, 1121, 109, 999, 727, 1030, 999, 2014, 1402.
 
+### 7- Arrays as 'matrices'
+Arrays are linear vectors in C, but sometimes you need to use them to represent a matrix of data. You can build the basis of a function that reads an array like a matrix. To learn how to do this, write a program that prints the following array data to the buffer as a rectangular matrix:
+
+11, 22, 33, 44, 55, 66, 77, 88, 99, 21, 31, 41, 51, 61, 71, 81, 91, 14, 15, 16
+
 ### 7- Using arrays and strings together
 Write a program that reverses a string. For example "palindrome" gets transformed to "emordinlap".
 Speaking of palindromes, you can also write your program so that it checks your string is one or not.
