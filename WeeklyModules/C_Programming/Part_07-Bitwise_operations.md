@@ -32,6 +32,8 @@ Thus, if we have an 8-bit `signed int`, then 1 is represented as `00000001` whil
 
 In an 8-bit `unsigned int`, the value `11111111` would correspond to the maximum 8-bit integer, which would be 255. The largest 8-bit `signed int` would be represented as `01111111`, corresponding to a value of 127. On most modern machine, an `int` is usually 32-bits, and on a 64-bit machine a `long int` is 64-bit. 
 
+Check out this useful website for [binary/decimal conversions](http://www.cs.odu.edu/~jbollen/cgi-bin/bin2dec.cgi?bin=1).
+
 In this part of the module, we are going to do lots of setting and clearing of bits at particular locations within a byte. So it is useful to know how we could start with some desired values and work from there. 0 and 1 are pretty useful. In an `int`, we would be able to set all bits by simply initialising it as -1, for instance
 
 ```C
