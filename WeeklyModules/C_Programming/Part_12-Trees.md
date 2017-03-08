@@ -73,6 +73,11 @@ These formats are useful for storage. They are not, however, good for doing calc
 
 ## Trees and nodes in memory
 
+Trees can be created in memory the way linked lists were in a previous section. Thus trees in memory are constructed as a linked set of structures connected by pointers.
+
+
+
+### Defining nodes
 Trees are created in memory using structs and pointers. We can start with the following definition
 
 ```C
@@ -109,3 +114,59 @@ typedef struct node_st {
     int tip;
 } node_t;
 ```
+
+### Defining trees
+
+Trees are based on nodes. Thus, we can assemble a tree from a set of node structures. Thus, at the core of a tree would be a block of node structures:
+
+```C
+node_t *treenodes;
+```
+
+We could then use `malloc` or `calloc` to give us exactly as many nodes as we needed. However, this doesn't give us the ability to create and destroy nodes as we need them. An alternative would be to create a block of pointers to node structures, and allocate the node memory individually. We could, in this instance, create and destroy nodes as we need them.
+
+```C
+node_t **treenodes;
+```
+
+The overall tree structure should include all the parameters we need to safely work with the tree
+
+```C
+typedef struct tree_st {
+	int n_spp;			// The number of tips
+	int n_nodes;		// The number of internal nodes
+	/* Extend this structure by including your new variables here
+	*/
+	node_t **treenodes;	// For the array of nodes
+	node_t *start;		// For the root or start node
+} tree_t;
+```
+
+## Traversing the tree
+
+Once we have designed a tree structure, we can design a function that would traverse a tree and which could be used to apply **preorder** or **postorder** functions to the tree:
+
+```C
+void basic_tree_traversal(node_t* n)
+{
+    if (n->tip) {
+        return;
+    }
+
+    basic_tree_traversal(n->left_desc);
+    basic_tree_traversal(n->right_desc);
+}
+```
+
+We call such a function on the pointer to the root node of the tree. **A traversal of this kind on a completely bifurcating tree is guaranteed to visit every tip and every node exactly once.**
+
+
+# Practical problem
+
+Write a program that reads a Newick-style tree encoding and builds a tree in memory.
+
+1. Design the data types you need to use (we can start with what we have in this file)
+2. Define these
+3. Think about how you will 'read' the Newick tree and how that will translate to a tree in memory. What needs to happen first?
+4. Start with some simple functions. Perhaps something that prints a Newick tree 'clade by clade'. 
+5. Then work up from there.
