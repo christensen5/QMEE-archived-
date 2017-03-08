@@ -6,7 +6,13 @@ Binary trees are an essential part of learning to program in almost any language
 
 ### Newick style
 
+The Newick standard for phylogenetic encoding is probably the oldest and most popular format still in general use. It uses a simple system of brackets, commas, and tip names to encode the tree.
 
+Levels of the hierarchy are determined by parentheses, commas separate branches stemming from a node. The standard dictates that tip names are written out in full. However, some encoding conventions allow you to use numeric signifiers. A terminal semicolon indicates the end of the valid Newick string:
+
+`((A,B),(C,D));`
+
+A Newick tree can be preceded by either a `[&R]` or `[&U]` token that indicates whether or not the tree is to be taken as rooted or unrooted. 
 
 ### PhyloXML
 
