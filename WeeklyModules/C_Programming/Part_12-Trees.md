@@ -75,7 +75,7 @@ These formats are useful for storage. They are not, however, good for doing calc
 
 Trees can be created in memory the way linked lists were in a previous section. Thus trees in memory are constructed as a linked set of structures connected by pointers.
 
-
+![](https://bytebucket.org/mhasoba/silbiocompmasterepo/raw/aa5dcef39a0ef2bab9f48eaf2e54e2d898cea52f/WeeklyModules/C_Programming/images/_ptr_tree.png)
 
 ### Defining nodes
 Trees are created in memory using structs and pointers. We can start with the following definition
