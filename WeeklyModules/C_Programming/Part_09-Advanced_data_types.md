@@ -57,6 +57,7 @@ struct site_data {
 	float lat;
 	float longit;
 	float elev;
+	struct site_data *next_site; // Can have a pointer to a site_data structure
 	int *spp_IDs; // A pointer to ID's of species counts
 	int num_IDs; // The number of elements in this pointer ('array')
 };
@@ -103,16 +104,22 @@ Remembering that the `.` has higher precedence than `*`, we can assign an addres
 ```C
 site_data_ptr = &mysite1;
 
-(*mysite1).lat = 24.118;
+(*site_data_ptr).lat = 24.118;
 ```
 
 This operation is common enough that it has been abbreviated by the `->` operator:
 
 ```C
-mysite->lat;
+site_data_ptr->lat;
 ```
 
-### Pointers to structs containing pointers
+
+### Linked lists
+
+
+
+### Traversing linked lists via pointers and recursion
+
 
 
 ### The `typedef` keyword
