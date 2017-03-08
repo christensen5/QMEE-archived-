@@ -139,7 +139,13 @@ int main (void)
 	n2.next = &n3;
 	n3.number = 33;
 	n3.next = NULL;
+```
 
+The result of execution to this point is the joining of three `entry` structures in a linked list with the terminal element in the list having its `next` pointer set to `NULL`
+
+![](https://bytebucket.org/mhasoba/silbiocompmasterepo/raw/6dafb9592a81e1df9db2c38c74eab2f2bfcda7eb/WeeklyModules/C_Programming/images/_linked_list-01.png)
+
+```
 	printf("n1 number: %i\n", n1.number);
 	printf("n2 number: %i\n", (*n1.next).number );
 	printf("n3 number: %i\n", (*(*n1.next).next).number );
