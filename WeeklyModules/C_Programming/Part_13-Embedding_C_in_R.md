@@ -2,7 +2,7 @@
 
 ## The super basics
 This trivial example comes from [r-bloggers](https://www.r-bloggers.com/three-ways-to-call-cc-from-r/). 
-Basically, you can parse your `C` functions into `R` using pointers:
+Basically, you can parse your C functions into R using pointers:
 
 Copy paste the following C function in a file that you will name `doubler.c`:
 
@@ -14,8 +14,8 @@ void double_me(int* x) {
 }
 ```
 
-As you can see, the function here does not return anything and only intakes pointers, thus modifying the values of the input ``on the fly''.
-You'll then need to compile the code using the `R` inbuilt compiler called SHLIB (SHared LIBrary) from your terminal:
+As you can see, the function here does not return anything and only intakes pointers, thus modifying the values of the input "on the fly".
+You'll then need to compile the code using the R inbuilt compiler called SHLIB (SHared LIBrary) from your terminal:
 
 **shell:**
 
@@ -23,7 +23,7 @@ You'll then need to compile the code using the `R` inbuilt compiler called SHLIB
 R CMD SHLIB doubler.c 
 ```
 
-Now from `R` it you can load the function using `dyn.load` (dynamic loading) and calling it as follows using `.C` function:
+Now from R it you can load the function using `dyn.load` (dynamic loading) and calling it as follows using `.C` function:
 
 **R:**
 
@@ -34,7 +34,7 @@ dyn.load("doubler.so")
 .C("double_me", x = as.integer(1))
 ```
 
-The integer enforcing (`as.integer`) is because `R` consider numbers to be `numeric` values by default (that will be the equivalent to a `double` or `long double` in `C`).
+The integer enforcing (`as.integer`) is because R consider numbers to be `numeric` values by default (that will be the equivalent to a `double` or `long double` in C).
 This outputs a list of the arguments (only one here) with the modified value of x:
 ```
 $x
@@ -42,15 +42,15 @@ $x
 ```
 
 
-This is obviously the best function you ever wrote in `R`: who could have guessed these results!
+This is obviously the best function you ever wrote in R: who could have guessed these results!
 
 ## A more convincing example
-Of course, if it's just for doing these kinds of examples, you could have totally ignored all this `C` course and added values in `R`.
-The actual occasions where you should bother using `C` code in `R` is when you are using any kind of loops! Which by know in the CMEE course you should have noticed is pretty much all the time...
+Of course, if it's just for doing these kinds of examples, you could have totally ignored all this C course and added values in R.
+The actual occasions where you should bother using C code in R is when you are using any kind of loops! Which by know in the CMEE course you should have noticed is pretty much all the time...
 
-Here is something more convincing that many of you will be more familiar: the painfully slow nested loops in `R`:
+Here is something more convincing that many of you will be more familiar: the painfully slow nested loops in R:
 
-### in `R`
+### in R
 Let's write a function in R that counts all the prime numbers between `1` and `n`:
 
 **R:**
@@ -97,9 +97,9 @@ On my machine, this took 1.276 seconds.
 Not that slow you might say but try adding an order of magnitude there, it'll now take 2 and half minutes!
 And add another order of magnitude ($1 \times 10^6$), it will take literally forever: I killed it after 2 hours of running and it was still not done!
 
-### in `C`
+### in C
 
-Now, let's write the exact same example in `C` and check if that improves the time: save the following `C` function as `prime.c`.
+Now, let's write the exact same example in C and check if that improves the time: save the following C function as `prime.c`.
 
 **C:**
 
@@ -147,7 +147,7 @@ Don't forget to compile it:
 R CMD SHLIB prime.c 
 ```
 
-And let's just load and run it in `R`:
+And let's just load and run it in R:
 
 **R:**
 
@@ -361,8 +361,8 @@ As you can see it's a lot of code mumbo-jumbo in C but you should be able to rec
 ## Exercise
 
 In the following example, we only dealt with input/outputs being single integers, but what about more complex ones, like a phylogenetic tree?
-In this exercise we will try to write an `R/C` interface that will allow use to manipulate trees simply in `R` but doing all the background in `C`.
-You will need to have `ape` installed on your computer (`install.packages(ape)` in `R`).
+In this exercise we will try to write an `R/C` interface that will allow use to manipulate trees simply in R but doing all the background in C.
+You will need to have `ape` installed on your computer (`install.packages(ape)` in R).
 Let's go through the first example together:
 
 ### 1 Counting number of tips
@@ -412,7 +412,8 @@ dyn.load("count.tips.so")
       nodes = TRUE)
 ```
 
-<!-- ### 3 Modifying a tree
+
+### 3 Modifying a tree
 And finally, let's go wild and try to write a function that remove tips and outputs
 
  * input: a newick tree (character string)
@@ -481,4 +482,5 @@ count.tree <- function(tree, tips = TRUE, nodes = FALSE) {
 }
 
 ```
- -->
+
+
