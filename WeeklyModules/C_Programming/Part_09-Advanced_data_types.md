@@ -145,11 +145,16 @@ The result of execution to this point is the joining of three `entry` structures
 
 ![](https://bytebucket.org/mhasoba/silbiocompmasterepo/raw/6dafb9592a81e1df9db2c38c74eab2f2bfcda7eb/WeeklyModules/C_Programming/images/_linked_list-01.png)
 
+We can now access the data of any member via indirection:
+
 ```
+	// Accessing data via indirection through two levels of pointers:
 	printf("n1 number: %i\n", n1.number);
 	printf("n2 number: %i\n", (*n1.next).number );
 	printf("n3 number: %i\n", (*(*n1.next).next).number );
 	printf("\n");
+	
+	// The same as above but with nicer syntax
 	printf("n1 number: %i\n", n1.number);
 	printf("n2 number: %i\n", n1.next->number);
 	printf("n3 number: %i\n", n1.next->next->number);
@@ -158,12 +163,45 @@ The result of execution to this point is the joining of three `entry` structures
 }
 ```
 
-
 ### Traversing linked lists via pointers and recursion
 
+We can use recursion to perform what is known in computer science as a **traversal**. This is where a function or method 'visits' structures through indirection. A simple function that would visit each element of the list would look as follows:
+
+```C
+void traverse_list(struct entry *s)
+{
+	// Print the 'number' entry at *s
+	// This is a 'preorder' operation.
+	printf("Number: %i\n", s->number);
+	
+	// Traverse to the next entry
+	if (s->next) {
+		traverse_list(s->next);
+	}
+	
+	// Postorder executions would happen here
+}
+```
+
+This code describes two terms: **preorder** and **postorder**. Preorder refers to instructions executed before the recursive function call. Postorder instructions occur after the return from the recursive call (if the call gets made). We will see pre- and post-order functions abundantly in phylogenetics.
+
 ### Removing an element from a linked list
+Removing an element from a list is simple. To remove the middle element (`n2`) of the linked list above, all we need to do is set the next pointer of `n1` to the address of `n3`.
 
+```C
+n1.next = n1->next->next;
+```
 
+However, we know that `n2` still has a pointer to `n3`. A complete removal would eliminate the reference to `n3` via `n2.next`. So, instead, we could do as follows
+
+```C
+struct entry *temp;
+temp = n1.next->next;
+n1.next->next = NULL;
+n1.next = temp;
+```
+
+How would we remove `n3` instead?
 
 ## The `typedef` keyword
 C allows us to create aliases for datatypes that might serve a particular function. The `typedef` keyword doesn't really allow you to create your own datatypes, but does allow you improve readability of code (though somewhat at the expense of debugging). 
@@ -251,3 +289,12 @@ enum data_type {int_type = 1, float_type, double_type, char_type};
 ```
 
 We now set this to start at 1, rather than 0. When no user value is supplied, `dt` remains set to 0 and the error code is returned.
+
+
+# Exercises
+
+### 1- Making a linked list
+Write a program that makes a linked list of an arbitrary length. Define a simple structure of any kind you like. Then use a recursive algorithm and dynamic memory allocation to generate the list recursively. Write a function to traverse the list and print data from each element.
+
+### 2- Pruning the list
+Write a recursive function that removes the 'n-th' element from the list you created.
