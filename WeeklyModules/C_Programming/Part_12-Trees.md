@@ -149,8 +149,6 @@ The overall tree structure should include all the parameters we need to safely w
 typedef struct tree_st {
 	int n_spp;			// The number of tips
 	int n_nodes;		// The number of internal nodes
-	/* Extend this structure by including your new variables here
-	*/
 	node_t **treenodes;	// For the array of nodes
 	node_t *start;		// For the root or start node
 } tree_t;
