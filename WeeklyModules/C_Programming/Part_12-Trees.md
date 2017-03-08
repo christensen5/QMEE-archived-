@@ -6,11 +6,70 @@ Binary trees are an essential part of learning to program in almost any language
 
 ### Newick style
 
+The Newick standard for phylogenetic encoding is probably the oldest and most popular format still in general use. It uses a simple system of brackets, commas, and tip names to encode the tree.
+
+Levels of the hierarchy are determined by parentheses, commas separate branches stemming from a node. The standard dictates that tip names are written out in full. However, some encoding conventions allow you to use numeric signifiers. A terminal semicolon indicates the end of the valid Newick string:
+
+`((A,B),(C,D));`
+
+A Newick tree can be preceded by either a `[&R]` or `[&U]` token that indicates whether or not the tree is to be taken as rooted or unrooted. 
+
 ### PhyloXML
 
-These text-based formats are good for storage and retrieval of phylogenetic data structures. PhyloXML in particular permits storage of nodal data, such as labels or character state reconstructions.
+This is a new and extremely useful standard for encoding phylogenetic information. XML encodings are hierarchical and thus naturally suited to the storage of phylogenetic information. The standards are [documented here](http://www.phyloxml.org/). An example snippet of phyloXML:
 
-They are not, however, good for doing calculations on directly. For that, we can use data structures in C to create trees using areas of memory.
+```XML
+<phyloxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phyloxml.org" xsi:schemaLocation="http://www.phyloxml.org http://www.phyloxml.org/1.10/phyloxml.xsd">
+    <phylogeny rooted="true">
+        <name>Alcohol dehydrogenases</name>
+        <description>contains examples of commonly used elements</description>
+        <clade>
+            <events>
+                <speciations>1</speciations>
+            </events>
+            <clade>
+                <taxonomy>
+                    <id provider="ncbi">6645</id>
+                    <scientific_name>Octopus vulgaris</scientific_name>
+                </taxonomy>
+                <sequence>
+                    <accession source="UniProtKB">P81431</accession>
+                    <name>Alcohol dehydrogenase class-3</name>
+                </sequence>
+            </clade>
+            <clade>
+                <confidence type="bootstrap">100</confidence>
+                <events>
+                    <speciations>1</speciations>
+                </events>
+                <clade>
+                    <taxonomy>
+                        <id provider="ncbi">1423</id>
+                        <scientific_name>Bacillus subtilis</scientific_name>
+                    </taxonomy>
+                    <sequence>
+                        <accession source="UniProtKB">P71017</accession>
+                        <name>Alcohol dehydrogenase</name>
+                    </sequence>
+                </clade>
+                <clade>
+                    <taxonomy>
+                        <id provider="ncbi">562</id>
+                        <scientific_name>Escherichia coli</scientific_name>
+                    </taxonomy>
+                    <sequence>
+                        <accession source="UniProtKB">Q46856</accession>
+                        <name>Alcohol dehydrogenase</name>
+                    </sequence>
+                </clade>
+            </clade>
+        </clade>
+    </phylogeny>
+</phyloxml>
+```
+From [here](http://www.phyloxml.org/examples_syntax/phyloxml_syntax_example_1.html)
+
+These formats are useful for storage. They are not, however, good for doing calculations on directly. For that, we can use data structures in C to create trees using areas of memory.
 
 ## Trees and nodes in memory
 
