@@ -57,7 +57,6 @@ struct site_data {
 	float lat;
 	float longit;
 	float elev;
-	struct site_data *next_site; // Can have a pointer to a site_data structure
 	int *spp_IDs; // A pointer to ID's of species counts
 	int num_IDs; // The number of elements in this pointer ('array')
 };
@@ -114,15 +113,53 @@ site_data_ptr->lat;
 ```
 
 
-### Linked lists
+## Linked lists: the basis of networks in memory
+Arrays are a handy way to assemble and index primitive data. You can also create arrays of structures just as you would create arrays of any other data type. However, one thing that arrays don't easily allow for is the easy removal of data entries. In fact, arrays don't really allow you to remove entries. Rather, the best you can do is shift elements from "right to left" to overprint the elements you removed. There would still be valid memory beyond the end of your array, but it would be meaningless. Pointers and structures combine nicely to create more sophisticated data structures. As we will see, it is not a big stretch from a linked list to a tree and, from there, to a network of any size, shape, or dimensions you want.
 
+To create a linked list, all we need is a set of structures with pointers to other structures. Ideally, all of these should be structures of the same type and have one or two pointers. As we'll see in the next section, we can easily traverse a linked list with just a sinlge pointer.
+
+
+```C
+#include <stdio.h>
+
+struct entry {
+	int number;
+	struct entry *next;
+};
+
+int main (void)
+{
+	struct entry n1;
+	struct entry n2;
+	struct entry n3;
+
+	n1.number = 11;
+	n1.next = &n2;
+	n2.number = 22;
+	n2.next = &n3;
+	n3.number = 33;
+	n3.next = NULL;
+
+	printf("n1 number: %i\n", n1.number);
+	printf("n2 number: %i\n", (*n1.next).number );
+	printf("n3 number: %i\n", (*(*n1.next).next).number );
+	printf("\n");
+	printf("n1 number: %i\n", n1.number);
+	printf("n2 number: %i\n", n1.next->number);
+	printf("n3 number: %i\n", n1.next->next->number);
+
+	return 0;
+}
+```
 
 
 ### Traversing linked lists via pointers and recursion
 
+### Removing an element from a linked list
 
 
-### The `typedef` keyword
+
+## The `typedef` keyword
 C allows us to create aliases for datatypes that might serve a particular function. The `typedef` keyword doesn't really allow you to create your own datatypes, but does allow you improve readability of code (though somewhat at the expense of debugging). 
 
 For instance, 
