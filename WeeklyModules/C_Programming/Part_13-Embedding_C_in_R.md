@@ -300,28 +300,30 @@ Let's see the example with our previous prime number function (compile that one 
 #include <R.h>
 #include <Rdefines.h>
 
-SEXP count_primes_C(SEXP limit)
+SEXP count_primes_C(SEXP limit_R)
 {
     // standard C data types
-    int prime = 1; // the numbers to test
+    int number = 1; // the numbers to test
     int divisor = 2; // the divisor number
     int is_prime = 0; // if 0 it's not a prime, if 1 it's a prime
+    int n_prime = 0; // Initialising the prime number counting
+    int limit = 0; // The number of integers to check (we'll set up this value later)
 
     // R interface datatypes
-    SEXP n_prime; // the counter of number of primes (declared as SEXP)
-    PROTECT(n_prime = NEW_INTEGER(1)); // Set up n_prime space in the memory
-    *(INTEGER(n_prime)) = 0; // Initialising the counting
+    SEXP n_prime_R; // the counter of number of primes (declared as SEXP - this is the object that we can return to R)
+    PROTECT(n_prime_R = NEW_INTEGER(1)); // Set up n_prime space in the memory
+    *(INTEGER(n_prime_R)) = 0; // Initialising the counting
+    limit = *(INTEGER(limit_R)); // Setting up the limit using the data past from R
 
-
-    while (prime < INTEGER(limit)[0])
+    while (number < limit)
     {
         is_prime = 0; // Set the condition to 0 (not prime)
 
-        for(divisor = 2; divisor <= prime/2; ++divisor) // check the values
+        for(divisor = 2; divisor <= number/2; ++divisor) // check the values
                                                         // between 2 and the
                                                         // prime number
         {
-            if(prime % divisor == 0) // if the prime number can be divided only
+            if(number % divisor == 0) // if the prime number can be divided only
                                      // by itself, it's a prime number
             {
                 is_prime = 1;  // Set the condition to 1 (is prime)
@@ -330,16 +332,18 @@ SEXP count_primes_C(SEXP limit)
         }
 
         if (is_prime == 0) {
-            *(INTEGER(n_prime)) = *(INTEGER(n_prime)) + 1;  // increment prime
-                                                            // number counter
+            n_prime = n_prime + 1;  // increment prime number counter
         }
 
-        ++prime; // increment number counter
+        ++number; // increment number counter
     }
 
+    // Set the n_prime_R SEXP variable to the number of n_prime numbers we've counted (a wrapper for an integer pointer)
+    *(INTEGER(n_prime_R)) = n_prime;
+    
     UNPROTECT(1); // Release the allocated memory
 
-    return n_prime;
+    return n_prime_R;
 }
 ```
 
