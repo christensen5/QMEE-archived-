@@ -214,6 +214,7 @@ SEXP double_me(SEXP x)
 ```
 
 Okay, that looks way more different than the previous version and looks very little as C we have been seen so far.
+Don't worry to much about it now, it'll become clearer in the following more complex example (it's often the case with trivial examples!).
 This is partly because the authors of the `.Call` interface have made extensive use of macros (in capital letters here - a C feature we won't examine in details).
 Basically, all these macro are used to communicate between R and C in the most safe way as possible (no memory leaks, no bad access, no wrong variables attributions, etc...).
 If we dissect the code line by line, it'll make actually sense:
