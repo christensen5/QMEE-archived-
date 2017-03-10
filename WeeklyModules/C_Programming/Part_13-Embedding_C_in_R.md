@@ -268,6 +268,8 @@ return result;
 ```
 
 This simply cancel the effect of the previous `PROTECT` macro (similar to a `free()` function) and then returns the `SEXP` structure `result` to be properly interpreted by R through.
+Some usefull information about all these spectific commands and datatypes can be found on [Hadley Wickham's C interface](http://adv-r.had.co.nz/C-interface.html) webpage.
+Make sure to have a look before spending an afternoon of frustration!
 
 ### In R
 
