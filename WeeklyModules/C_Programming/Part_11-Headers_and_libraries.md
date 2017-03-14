@@ -54,6 +54,23 @@ Note also, that it is common to create preprocessor definitions in all-caps to d
 
 Preprocessor macros allow us to substitute large pieces of code for just a simple short word. These preprocessor macros can even take arguments. Try the following program and see if you can figure out how this #define statment works (and why I needed to wrap everything in braces).
 
+Although not very useful, it's instructive to show how these work with a simple `SUM` definition. For instance:
+```C
+#define SUM(x, y) x + y
+```
+
+In your code, you would use `SUM` like so:
+
+```C
+int a = 2;
+int b = 3;
+int result;
+
+result = SUM(a, b);
+```
+
+Virtually any amount of C code can be replaced by a macro. This isn't recommended as it makes your code much more difficult to debug. However, there are some instances where it is simply safer and better to use these. For instance, in the case of a chunk of code that needs to be re-used in various parts of the program, but for which a sinlge function isn't an option (note: this is rare and can almost always be avoided).
+
 ```C
 #include <stdio.h>
 
@@ -79,10 +96,15 @@ int main (void)
 }
 ```
 
+
+
 # Exercises
 
 ### 1- Safe arrays
 Create a library and header file for 'safe arrays'.
 
-### 2- Advanced exercise: 
+### 2- Writing a simpler preprocessor macro
+The code for our MIN() macro can be simplified using the **conditional operator**, which we did not look at in this module. Look up this operator and see if you can simplify the macro by using it.
+
+### 3- Advanced exercise: 
 Most modern machines only allow up to 64-bit integer widths. However, one may wish to exploit bitwise operations that require larger sets of bits. Support for 128-bit integers is a bit ambiguous, and possibly only available with some compilers. Create a library for doing bitwise operations on bit sets of arbitrary size. How would you design such a library? What features of C would you use?

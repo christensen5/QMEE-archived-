@@ -8,11 +8,25 @@ Binary trees are an essential part of learning to program in almost any language
 
 The Newick standard for phylogenetic encoding is probably the oldest and most popular format still in general use. It uses a simple system of brackets, commas, and tip names to encode the tree.
 
-Levels of the hierarchy are determined by parentheses, commas separate branches stemming from a node. The standard dictates that tip names are written out in full. However, some encoding conventions allow you to use numeric signifiers. A terminal semicolon indicates the end of the valid Newick string:
+Levels of the hierarchy are determined by parentheses, commas separate branches stemming from a node. The standard dictates that tip names are written out in full. However, some encoding conventions allow you to use numeric signifiers. A terminal semicolon indicates the end of the valid Newick string. For instance, the two phylogenetic trees illustrated below
 
+![](https://bytebucket.org/mhasoba/silbiocompmasterepo/raw/b19aad9f0facb8d3305b0065ac9d0ac94d2ca582/WeeklyModules/C_Programming/images/cladogram-01.png)
+
+would have the following Newick encodings:
+
+Left:
 `((A,B),(C,D));`
 
-A Newick tree can be preceded by either a `[&R]` or `[&U]` token that indicates whether or not the tree is to be taken as rooted or unrooted. 
+Right:
+`(A,B,(C,D));`
+
+A Newick tree can be preceded by either a `[&R]` or `[&U]` token that indicates whether or not the tree is to be taken as rooted or unrooted. Thus, more accurately, the trees above would be encoded as follows:
+
+Left:
+`[&R] ((A,B),(C,D));`
+
+Right:
+`[&R] (A,B,(C,D));`
 
 ### PhyloXML
 
@@ -135,8 +149,6 @@ The overall tree structure should include all the parameters we need to safely w
 typedef struct tree_st {
 	int n_spp;			// The number of tips
 	int n_nodes;		// The number of internal nodes
-	/* Extend this structure by including your new variables here
-	*/
 	node_t **treenodes;	// For the array of nodes
 	node_t *start;		// For the root or start node
 } tree_t;
@@ -170,3 +182,5 @@ Write a program that reads a Newick-style tree encoding and builds a tree in mem
 3. Think about how you will 'read' the Newick tree and how that will translate to a tree in memory. What needs to happen first?
 4. Start with some simple functions. Perhaps something that prints a Newick tree 'clade by clade'. 
 5. Then work up from there.
+
+Here's a hint to get you started: could you apply recursion to the Newick string itself in order to read it?
