@@ -1,0 +1,24 @@
+#1
+wc -l ../Data/407228326.fasta ../Data/407228412.fasta ../Data/E.coli.fasta
+#answer = 28, 127, 78104
+
+#2
+cat ../Data/E.coli.fasta | tail -n +2
+# answer is a super long list of A,T,C,G pairs.
+
+#3
+echo -e `expr $(cat ../Data/E.coli.fasta | tail -n +2 | wc -m) - $(cat ../Data/E.coli.fasta | tail -n +2 | wc -l)`
+#3 (alternate method)
+cat ../Data/E.coli.fasta | tail -n +2 | tr -d "\n" | wc -m
+#answer = 4686137
+
+#4
+tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o ATGC | wc -l
+#answer = 21968
+
+#5
+echo -e $(tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o AT | wc -l) / $(tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o GC | wc -l)
+#answer = 312723 / 387532
+
+
+
