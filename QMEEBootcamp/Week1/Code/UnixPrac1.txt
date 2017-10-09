@@ -8,6 +8,7 @@ cat ../Data/E.coli.fasta | tail -n +2
 
 #3
 echo -e `expr $(cat ../Data/E.coli.fasta | tail -n +2 | wc -m) - $(cat ../Data/E.coli.fasta | tail -n +2 | wc -l)`
+
 #3 (alternate method)
 cat ../Data/E.coli.fasta | tail -n +2 | tr -d "\n" | wc -m
 #answer = 4686137
@@ -17,7 +18,7 @@ tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o ATGC | wc -l
 #answer = 21968
 
 #5
-echo -e $(tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o AT | wc -l) / $(tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o GC | wc -l)
+echo -e $(tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o AT | wc -l) / $(tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o GC | wc -l) | bc -l
 #answer = 312723 / 387532
 
 
