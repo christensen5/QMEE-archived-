@@ -3,7 +3,7 @@
 """Some functions exemplifying the use of control statements"""
 #docstrings are considered part of the running code (normal comments are
 #stripped). Hence you can access your docstrings at run time.
-__author__ = 'Samraat Pawar (email here)'
+__author__ = 'Samraat Pawar'
 __version__ = '0.0.1'
 
 # imports
@@ -15,8 +15,8 @@ import sys
 def even_or_odd(x=0): #if not specified, x takes value 0
     """Find whether a number is even or odd."""
     if x % 2 == 0:
-        return "%d is even!" %x
-    return "%d is odd!" %x
+        return "%d is even!" % x
+    return "%d is odd!" % x
 	
 def largest_divisor_five(x=120):
     """ Find which is the largest divisor of x among 2,3,4,5."""
@@ -32,7 +32,7 @@ def largest_divisor_five(x=120):
     else: #When all other conditions are not met...
         return "No divisor found for %d!" % x
         
-    return "The largest dicisor of %d is %d" % (x, largest)
+    return "The largest divisor of %d is %d" % (x, largest)
 
 def is_prime(x=70):
     """Find whether an integer is prime."""
@@ -64,15 +64,5 @@ def main(argv):
     return 0
     
 if (__name__ == "__main__"):
-    status = main(sys.argv)
-    sys.exit(status)
-
-
-
-def main(argv):
-    print 'This is a boilerplate'
-    return 0
-	
-if (__name__ == "__main__"): #makes sure the "main" function is called from commandline
     status = main(sys.argv)
     sys.exit(status)
