@@ -1,3 +1,12 @@
+#!/usr/bin/python
+
+"""This script will exemplify the use of list comprehensions. Three
+    tasks will be carried out, each using both a list comprehension and
+    a loop. The tasks consist of extracting information from the 
+    provided dataset 'birds'. """
+__author__ = 'Alexander Kier Christensen'
+__version__ = '0.0.1'
+
 # Average UK Rainfall (mm) for 1910 by month
 # http://www.metoffice.gov.uk/climate/uk/datasets
 rainfall = (('JAN',111.4),
@@ -27,3 +36,20 @@ rainfall = (('JAN',111.4),
 
 # ALSO, PLEASE INCLUDE A DOCSTRING AT THE BEGINNING OF THIS FILE THAT 
 # SAYS WHAT THE SCRIPT DOES AND WHO THE AUTHOR IS
+
+# ======================================================================================================================
+# LIST COMPREHENSIONS
+#1
+
+#2
+
+#3
+
+# ======================================================================================================================
+# CONVENTIONAL LOOPS
+#1
+loops1 = list()
+for entry in rainfall:
+    if entry[1] > 100:
+        loops1.append(tuple(entry))
+print(loops1)
