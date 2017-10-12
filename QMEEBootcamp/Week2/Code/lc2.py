@@ -40,16 +40,27 @@ rainfall = (('JAN',111.4),
 # ======================================================================================================================
 # LIST COMPREHENSIONS
 #1
+# Populate a list directly with tuples from rainfall whose second element exceeds 100.
+lc1 = list(entry for entry in rainfall if entry[1] > 100)
 
 #2
-
-#3
+# Populate a list directly with months from rainfall whose respective rainfall is less than 50.
+lc2 = list(entry[0] for entry in rainfall if entry[1] < 50)
 
 # ======================================================================================================================
 # CONVENTIONAL LOOPS
 #1
+# Instantiate an empty list, then run a for loop over each line in rainfall to find months with >100mm rain and save
+# each such line in the new list.
 loops1 = list()
 for entry in rainfall:
     if entry[1] > 100:
-        loops1.append(tuple(entry))
-print(loops1)
+        loops1.append(entry)
+
+#2
+# Instantiate an empty list, then run a for loop over each line in rainfall to find months with <50mm rain, and save
+# only the month names in the new list.
+loops2 = list()
+for entry in rainfall:
+    if entry[1] < 50:
+        loops2.append(entry[0])
