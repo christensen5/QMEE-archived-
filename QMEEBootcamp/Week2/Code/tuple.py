@@ -1,3 +1,12 @@
+#!/usr/bin/python
+
+"""This script will take the dataset 'birds', and print information from it to the console."""
+__author__ = 'Alexander Kier Christensen'
+__version__ = '0.0.1'
+
+## Imports
+import sys
+
 birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
           ('Delichon urbica','House martin',19),
           ('Junco phaeonotus','Yellow-eyed junco',19.5),
@@ -10,6 +19,14 @@ birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
 # Hints: use the "print" command! You can use list comprehensions!
 
 # ANNOTATE WHAT EVERY BLOCK OR IF NECESSARY, LINE IS DOING! 
-
-# ALSO, PLEASE INCLUDE A DOCSTRING AT THE BEGINNING OF THIS FILE THAT 
+# ALSO, PLEASE INCLUDE A DOCSTRING AT THE BEGINNING OF THIS FILE THAT
 # SAYS WHAT THE SCRIPT DOES AND WHO THE AUTHOR IS
+
+bird_str = ""
+for entry in birds:
+    bird_str += str(entry)+'\n'
+print bird_str
+
+
+
+
