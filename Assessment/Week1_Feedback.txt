@@ -13,7 +13,7 @@ Your Git repo size this week is about 430.17 MiB on disk
 
 PART 1: Checking project workflow...
 
-Found the following directories in parent directory: Assessment, QMEEBootcamp, .git
+Found the following directories in parent directory: Week1, Assessment, Week2, .git
 
 Found the following files in parent directory: README.txt, .gitignore
 
@@ -37,5 +37,303 @@ My QMEE Repository
 ======================================================================
 Looking for the weekly directories...
 
-Weekly directories missing, cannot continue with assessment!
+Found 2 weekly directories: Week1, Week2
 
+The Week1 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+Assessing WEEK1...
+
+Found the following directories: Code, Data, Sandbox
+
+Found the following files: 
+
+Checking for readme file in weekly directory...
+
+README file missing, 1 pt deducted
+
+Current Marks = 99
+
+Results directory missing!
+
+Found 8 code files: ConcatenateTwoFiles.sh, CountLines.sh, variables.sh, csvtospace.sh, MyExampleScript.sh, UnixPrac1.txt, tabtocsv.sh, boilerplate.sh
+
+======================================================================
+Testing script/code files...
+
+======================================================================
+Inspecting script file ConcatenateTwoFiles.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+cat $1 > $3
+cat $2 >> $3
+echo "Merged file is"
+cat $3
+**********************************************************************
+
+Testing ConcatenateTwoFiles.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+Merged file is
+
+**********************************************************************
+
+Encountered error:
+ConcatenateTwoFiles.sh: line 2: $3: ambiguous redirect
+ConcatenateTwoFiles.sh: line 3: $3: ambiguous redirect
+
+======================================================================
+Inspecting script file CountLines.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+NumLines=`wc -l < $1`
+echo "The file $1 has $NumLines lines"
+echo
+**********************************************************************
+
+Testing CountLines.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+The file  has  lines
+
+
+**********************************************************************
+
+Encountered error:
+CountLines.sh: line 2: $1: ambiguous redirect
+
+======================================================================
+Inspecting script file variables.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+# shows the use of variables
+
+MyVar='some string'
+
+echo 'the current value of the string is' $MyVar
+echo 'Please enter a new string'
+read MyVar
+echo 'the current value of the string is' $MyVar
+
+##Reading multiple values.
+echo 'enter two numbers separated by space(s)'
+read a b
+echo 'you entered' $a 'and' $b '. Their sum is:'
+mysum=`expr $a + $b`
+echo $mysum
+**********************************************************************
+
+Testing variables.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+the current value of the string is some string
+Please enter a new string
+the current value of the string is
+enter two numbers separated by space(s)
+you entered and . Their sum is:
+
+
+**********************************************************************
+
+Encountered error:
+expr: syntax error
+
+======================================================================
+Inspecting script file csvtospace.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+# Author: Alexander Kier Christensen a.christensen17@imperial.ac.uk
+# Script: csvtospace.sh
+# Desc: simple shell script to replace commas with spaces and save output to a different file.
+# Arguments: 1, a comma delimited file
+# Date: Oct 2017
+
+echo "Creating a comma delimited version of $1..."
+
+FileName=$(echo $1 | head -c-5) #get the filename without the '.csv' on the end. 
+
+cat $1 | tr -s "," " " > $FileName.txt
+
+echo -e "Done!"
+**********************************************************************
+
+Testing csvtospace.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+Creating a comma delimited version of ...
+Done!
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00531s
+
+======================================================================
+Inspecting script file MyExampleScript.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+
+
+msg1="Hello"
+msg2=$USER
+echo "$msg1 $msg2"
+
+echo "Hello $USER"
+echo
+**********************************************************************
+
+Testing MyExampleScript.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+Hello mhasoba
+Hello mhasoba
+
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00336s
+
+======================================================================
+Inspecting script file UnixPrac1.txt...
+
+File contents are:
+**********************************************************************
+#1
+wc -l ../Data/407228326.fasta ../Data/407228412.fasta ../Data/E.coli.fasta
+#answer = 28, 127, 78104
+
+#2
+cat ../Data/E.coli.fasta | tail -n +2
+# answer is a super long list of A,T,C,G pairs.
+
+#3
+echo -e `expr $(cat ../Data/E.coli.fasta | tail -n +2 | wc -m) - $(cat ../Data/E.coli.fasta | tail -n +2 | wc -l)`
+
+#3 (alternate method)
+cat ../Data/E.coli.fasta | tail -n +2 | tr -d "\n" | wc -m
+#answer = 4686137
+
+#4
+tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o ATGC | wc -l
+#answer = 21968
+
+#5
+echo -e $(tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o AT | wc -l) / $(tail -n+2 ../Data/E.coli.fasta | tr -d "\n" | grep -o GC | wc -l) | bc -l
+#answer = 312723 / 387532
+
+
+
+**********************************************************************
+
+Testing UnixPrac1.txt...
+
+======================================================================
+Inspecting script file tabtocsv.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+# Author: Alexander Kier Christensen a.christensen17@imperial.ac.uk
+# Script: tabtocsv.sh
+# Desc: simple shell script to replace tabs with commas and save output to csv file.
+# Arguments: 1, a tab delimited file
+# Date: Oct 2017
+
+echo "Creating a comma delimited version of $1..."
+
+FileName=$(echo $1 | head -c-5) #get the filename without the '.txt' on the end. 
+
+cat $1 | tr -s "\t" "," >> $FileName.csv
+
+echo "Done!"
+
+exit
+**********************************************************************
+
+Testing tabtocsv.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+Creating a comma delimited version of ...
+Done!
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00384s
+
+======================================================================
+Inspecting script file boilerplate.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+# Author: Alexander Kier Christensen a.christensen17@imperial.ac.uk
+# Script: boilerplate.sh
+# Desc: simple boilerplate for shell scripts
+# Arguments: none
+# Date: Oct 2017
+
+echo -e "\nThis is a shell script! \n" 
+
+#exit
+**********************************************************************
+
+Testing boilerplate.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+This is a shell script! 
+
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00213s
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 3 errors
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Marks for the Week = 99
+
+NOTE THAT THESE ARE NOT THE FINAL MARKS FOR THE WEEK, BUT AN UPPER BOUND ON THE MARKS!
