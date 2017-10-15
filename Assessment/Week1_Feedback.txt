@@ -1,0 +1,41 @@
+Starting weekly assessment for Alexander, Week1
+
+Current Marks = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 430.17 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: Assessment, QMEEBootcamp, .git
+
+Found the following files in parent directory: README.txt, .gitignore
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+**********************************************************************
+*~ 
+*.tmp
+**********************************************************************
+
+Found README in parent directory, named: README.txt
+
+Printing contents of README.txt:
+**********************************************************************
+My QMEE Repository
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Weekly directories missing, cannot continue with assessment!
+
