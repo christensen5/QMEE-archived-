@@ -44,4 +44,4 @@ p.xlabel('Time')
 p.ylabel('Population')
 p.title('Consumer-Resource population dynamics')
 p.show()
-f1.savefig('prey_and_predators_1.pdf') #Save figure
+f1.savefig('../Results/prey_and_predators_1.pdf') #Save figure

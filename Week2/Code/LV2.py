@@ -36,8 +36,8 @@ z = float(sys.argv[3]) # Consumer mortality rate
 e = float(sys.argv[4]) # Consumer production efficiency
 K = float(sys.argv[5]) # Resource carrying capacity
 
-# Now define time -- integrate from 0 to 15, using 1000 points:
-t = sc.linspace(0, 15,  1000)
+# Now define time -- integrate from 0 to 30, using 1000 points:
+t = sc.linspace(0, 30,  1000)
 
 x0 = 10
 y0 = 5
@@ -54,10 +54,10 @@ p.plot(t, predators  , 'b-', label='Consumer density')
 p.grid()
 # add parameters to plot
 paramstring = "r = " + str(r) + "\na = " + str(a) + "\nz = " + str(z) + "\ne = " + str(e) + "\nK = " + str(K)
-p.annotate(paramstring,(14.1,2.1))
+p.annotate(paramstring,(26,5.1))
 p.legend(loc='best')
 p.xlabel('Time')
 p.ylabel('Population')
 p.title('Consumer-Resource population dynamics')
 p.show()
-f1.savefig('../Results/prey_and_predators_1.pdf')  # Save figure
+f1.savefig('../Results/prey_and_predators_2.pdf')  # Save figure
