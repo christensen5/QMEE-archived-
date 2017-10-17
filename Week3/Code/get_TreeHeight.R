@@ -31,10 +31,10 @@ Input.Dir = paste("../Data/",args[1], sep="")
 Input.File = read.csv(Input.Dir, header = TRUE)
 
 # Run TreeHeight on each entry in the input file, saving the outputs as a column vector.
-Tree.Height = c();
+Tree.Height.m = c();
 for (i in 1:dim(Input.File)[1]) {
-  Tree.Height = rbind(Tree.Height, TreeHeight(Input.File[i,3],Input.File[i,2]))
+  Tree.Height.m = rbind(Tree.Height.m, TreeHeight(Input.File[i,3],Input.File[i,2]))
 }
-Output.Frame = cbind(Input.File, Tree.Height) #Append the vector of tree heights to the input data.
+Output.Frame = cbind(Input.File, Tree.Height.m) #Append the vector of tree heights to the input data.
 Output.Dir = paste("../Results/",substr(args[1],1,nchar(args[1])-4),"_treeheights.csv", sep="") #Generate the output filename
 write.csv(Output.Frame, Output.Dir) #Save the data frame to disk.

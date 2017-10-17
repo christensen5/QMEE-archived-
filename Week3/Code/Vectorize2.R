@@ -1,5 +1,4 @@
 # Runs the stochastic (with gaussian fluctuations) Ricker Eqn .
-
 rm(list=ls())
 
 stochrick<-function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100)
@@ -25,13 +24,14 @@ print(system.time(res1<-stochrick()))
 # to the extent possible, with improved performance: 
   
 stochrickvect <- function(p0 = runif(1000,.5,1.5), r = 1.2, K = 1, sigma = 0.2, numyears = 100) {
-  N <- p0 #store initial populations
-  N <- rbind(N, N*exp(r*(1-(N/K)) + rnorm(1,0,sigma))) #evaluate second year separately to avoid issues with tail() in the for loop
-  for (yr in 3:numyears) {
-    N <- rbind(N, tail(N,1)*exp(r*(1-(tail(N,1)/K)) + rnorm(1,0,sigma)))
+  rands = replicate(length(p0),rnorm(numyears,1,sigma)) #pre-generate random fluctuations for each generation of each population.
+  N <- matrix(NA, numyears, length(p0)) #pre-allocate output matrix N for efficiency.
+  N[1,] <- p0 #store initial populations.
+  # Loop through the years, vectorise-computing the new value for each population.
+  for (yr in 2:numyears) {
+    N[yr,] <- N[yr-1,]*exp(r*(1-(N[yr-1,]/K)) + rands[yr-1,]) #essentially apply the Ricker eqn to the last computed row of N and then store the result as the next row.
   }
   return(N)
 }
-
 print("Vectorized Stochastic Ricker takes:")
 print(system.time(res2<-stochrickvect()))
