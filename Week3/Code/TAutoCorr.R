@@ -14,3 +14,5 @@ for (i in 1:numPerms) {
 }
 
 p.eff = sum(permCors > natCor)/numPerms #effective P-value is the proportion of post-permutation correlation coeffs which are greater than initial correlation coeff
+
+print(paste("The effective P-value is", as.character(p.eff)))
