@@ -26,6 +26,8 @@ def main(argv):
         csvwrite.writerow([i, row[0], row[1], row[2], computeHeight(float(row[2]), float(row[1]))])
         i += 1
 
+    f.close()
+    g.close()
     return 0
 
 if __name__ == "__main__":
