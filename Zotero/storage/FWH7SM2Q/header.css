@@ -1,0 +1,269 @@
+/* Header */
+
+#header {
+  border-bottom: 2px solid #808288;
+  margin: 0px 2%;
+}
+
+#header img {
+  float: left;
+}
+
+/* General Menu */
+
+.headermenu {
+  display: inline;
+  float: right;
+  text-align: center;
+  margin-top: 3px;
+  padding-bottom: 0px;
+}
+
+
+.headermenu li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  padding: 0 23px;
+  font-size: 14px;
+}
+
+.smallmenu a:hover {
+    text-decoration: none;
+}
+
+.right-border {
+
+}
+
+.right-border-black {
+   /*
+   -webkit-box-shadow:
+     inset -2px 0   0 #fff,
+     inset  0   0   0 #fff,
+     inset  0   0   0 #fff;
+  -moz-box-shadow:
+     inset -2px 0   0 #fff,
+     inset  0   0   0 #fff,
+     inset  0   0   0 #fff;
+  box-shadow:
+     inset -2px 0   0 #fff,
+     inset  0   0   0 #fff,
+     inset  0   0   0 #fff;*/
+}
+
+.right-border-grey {
+  -webkit-box-shadow:
+     inset -2px 0   0 #808288,
+     inset  0   0   0 #808288,
+     inset  0   0   0 #808288;
+  -moz-box-shadow:
+     inset -2px 0   0 #808288,
+     inset  0   0   0 #808288,
+     inset  0   0   0 #808288;
+  box-shadow:
+     inset -2px 0   0 #808288,
+     inset  0   0   0 #808288,
+     inset  0   0   0 #808288;
+}
+
+/* Main Menu */
+
+.mainmenu {
+  width: 100%;
+  padding: 0;
+  font-size: 1.4em;
+}
+
+.mainmenu li {
+  padding: 0;
+  width: 25%;
+  max-width: 25%;
+  text-align: center;
+  background: #FFDC53;
+}
+
+.mainmenu li:hover {
+  background: #d6d8dc;
+  color: #000;
+}
+
+.mainmenu a {
+  text-align: center;
+  width: 100%;
+  display: block;
+  color: #292B36;
+  padding: 0.6em 0;
+  font-family: 'Open Sans' ,sans-serif;
+}
+
+.mainmenu a:hover {
+  color: #000;
+  text-decoration: none;
+  /*border-bottom: 0.3em solid #61A830;*/
+}
+
+.mainmenu a.nohover:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Small Menu */
+
+.topmenu {
+    margin-right:70px;
+}
+
+.smallmenu {
+  height: 2em;
+
+}
+
+.topbar .smallmenu {
+     position: relative;
+     margin-top: 12px;
+}
+
+.smallmenu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.smallmenu a:hover, #moremenu a:hover {
+
+  text-decoration: none;
+}
+
+/* More Menu */
+
+#moremenu {
+  display: none;
+  height: 11.5em;
+  border-top: 1px solid #BBB;
+  float: left;
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-shadow:
+     inset -2px 0   0 #808288,
+     inset  0   0   0 #808288,
+     inset  2px 0   0 #808288;
+  -moz-box-shadow:
+     inset -2px 0   0 #808288,
+     inset  0   0   0 #808288,
+     inset  2px 0   0 #808288;
+  box-shadow:
+     inset -2px 0   0 #808288,
+     inset  0   0   0 #808288,
+     inset  2px 0   0 #808288;
+  font-size: 1.2em;
+}
+
+.moremenusection {
+  height: 90%;
+}
+
+#moremenu li {
+  width: 25%;
+  display: inline;
+  float: left;
+  margin: 0.5em 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+#moremenu li ul li {
+	padding: 0;
+	font-weight: normal;
+	width: 100%;
+	padding: 0.2em 0;
+	margin: 0;
+}
+
+#moremenu li a {
+  color: #4d4d50;
+}
+
+/* Account Menu */
+
+#accountmenu {
+	display: none;
+	float: left;
+	position: absolute;
+	margin-top:10px;
+	text-align: center;
+	background: #fff;
+	padding: 1em 2em;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	z-index: 3000;
+}
+
+
+#accountmenu li {
+	display: block;
+	padding: 0.2em 0;
+}
+
+/* Search Box */
+
+#search_box {
+   
+  margin: 0 auto;
+  float:right;
+  margin-top:10px;
+}
+
+#search_box input {
+  border: 0;
+  height: 14px;
+  padding: 0;
+  float: left;
+  height: 30px;
+  font-family: 'Open sans', sans serif;
+  font-size: 16px;
+  background-color: #F8F8F8;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  width:145px;
+  font-size:14px;
+  padding-left:15px;
+  padding-right:40px;
+  margin-right:0px;
+}
+
+#search_box button {
+    
+  height: 30px;
+  width: 33px;
+  border: 0;
+  padding: 0;
+  margin-top: 3px;
+  background: transparent;
+}
+
+#search_box_submit_holder {
+    position:absolute;
+    margin-left:160px;
+}
+
+#search_box input[type="text"]
+{
+
+}
+
+
+
+.logoimage {
+    margin-top:5px;
+    float:left;
+    height: 50px;
+}
+
+.logo {
+    padding-top:5px;
+    margin-left: -2px;
+    height: 25px;
+    width: 196px;
+}

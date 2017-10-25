@@ -1,0 +1,599 @@
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212 available at www.sciencedirect.com
+
+journal homepage: www.elsevier.com/locate/ecolmodel
+An individual-based model for studying the aggregation behavior in phytoplankton
+N. El Saadi a,b,∗, A. Bah b,c
+a The National Institute of Planning and Statistics (INPS), 11 Chemin Doudou Mokhtar, Ben Aknoun, Algiers, Algeria b Geodes-IRD, 32 Avenue Henri Varagnat, F-93143 Bondy Cedex, France c ESP, Department of Computing, University Cheikh Anta Diop, Dakar, Senegal
+
+article info
+Article history: Received 29 March 2005 Received in revised form 31 December 2006 Accepted 4 January 2007 Published on line 20 February 2007
+Keywords: IBM Phytoplankton aggregation Lagrangian model Eulerian model Clark–Evans index
+
+abstract
+In this paper, we use an individual-based model (IBM) in order to study the aggregation of phytoplankton cells. The model describes the movements of cells and also the cells’ division and their death. The movement of a phytoplankton cell is based on an Itoˆ stochastic differential equation with a drift term describing the spatial interactions of the phytoplankton cell with the other cells in the system and a dispersion term representing the cell diffusion. The demographical process is described by the mean of a branching process. We simulate the IBM model and present some particle pictures showing the spatial structure of the phytoplankton cells. We focus on the effects of the different processes involving at the level of the phytoplankton cell (diffusion, spatial interactions, branching) on the spatial distribution of the phytoplankton to help the understanding of the aggregation phenomenon in phytoplankton.
+© 2007 Elsevier B.V. All rights reserved.
+
+1. Introduction
+The vast majority of life in the world’s oceans depends either directly or indirectly on phytoplankton, tiny unicellular or colonial algae.
+More recent work has demonstrated that phytoplankton cells aggregate to form larger particles which constitute the base of the food web and support grazing zooplankton, ﬁsh and through their decay large quantities of marine bacteria. The health of the marine system is closely linked to phytoplankton productivity and the richest ﬁsheries tend to be concentrated in areas which support large aggregates of phytoplankton. Furthermore, the success of larval ﬁsh and their subsequent recruitment into the adult ﬁsh population often depend upon spatial and temporal co-occurrence
+
+of ﬁsh larvae with phytoplankton aggregates. Thus, spatial and temporal patterns of phytoplankton aggregates are very important to ﬁsheries and the goal of many researchers both biologists and mathematicians is to provide a precise explanation of the aggregates formation as well as describing their distribution and locating them in the space and the time.
+Coagulation theory dates back to Smoluchowski (1917) but has more recently been applied to describe aggregation of marine particles (McCave, 1984) and speciﬁcally phytoplankton aggregation (Hill, 1992; Jackson, 1990; Jackson and Lochmann, 1992; Jackson, 1995; Jackson et al., 1997; Kiørboe et al., 1990; Kiørboe et al., 1996; Kiørboe, 1997; Kiørboe et al., 1998; Kiørboe, 2001; Riebesell, 1992; Riebesell and Wolf-Gladrow, 1992). Aggregation by physical coagulation results from the repetitive collision and subsequent attachment of cells to form
+
+∗ Corresponding author at: The National Institute of Planning and Statistics (INPS), 11 Chemin Doudou Mokhtar, Ben Aknoun, Algiers, Algeria. Fax: +213 21 91 21 39.
+E-mail address: enadjia@yahoo.fr (N. El Saadi). 0304-3800/$ – see front matter © 2007 Elsevier B.V. All rights reserved. doi:10.1016/j.ecolmodel.2007.01.003
+
+194
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+larger aggregate. According to coagulation theory, the rate of aggregation depends on the rates at which particles collide and the probability that they then stick. The collisions are produced by physical processes such as ﬂuid shear, Brownian motion and particle settling. Collision rates between particles depend greatly on their sizes, as well as their concentrations, while the probability that colliding particles will stick depends primarily on the physical and chemical properties of their surface (surface stickiness) (McCave, 1984; Drapeau et al., 1994; Dam and Drapeau, 1995; Alldredge and Jackson, 1995). Most of works on phytoplankton dynamics use coagulation theory to describe aggregates formation (Ackleh et al., 1995; Ackleh and Fitzpatrick, 1997; Hill, 1992; Jackson, 1990; Kriest and Evans, 1999, 2000; Riebesell and Wolf-Gladrow, 1992; Riebesell, 1992). Jackson (1990) and Riebesell and Wolf-Gladrow (1992) have created models of how the mechanisms of aggregation (described by coagulation) lead to changes in the size distribution of particles. Kriest and Evans (1999) and Kriest and Evans (2000) included a coagulation model for phytoplankton aggregation (which is an adaptation of the Jackson model, 1990) into a vertically resolved model of ocean biogeochemistry to show the importance of phytoplankton aggregation for the amount and the timing of sedimentation in deeper layers. Ackleh et al. (1995) developed a different model of aggregation in the mesocosm that emphasized physiological processes affecting the phytoplankton as they grew and aggregated. They used it to estimate the changes in phytoplankton stickiness with the time. In more recent works (Ackleh and Fitzpatrick, 1997; Arino and Rudnicki, 2004), size structured aggregation models for algal population were investigated in terms of the growth of aggregates, their coagulation and their fragmentation. In these models, aggregates grow as a result of divisions of phytoplankton cells and coagulation. The cell division process has been invoked through a growth rate and one of the tremendous difﬁculties for these models was in trying to model a growth function of an aggregate since it is composed of many individual cells, each of which might have its own growth rate, in addition to the choice of stickiness levels. All models of phytoplankton aggregate formation by coagulation require inclusion of high particle concentrations, relatively high shear which is assumed to be the main mechanism of particle collision and are very sensitive to stickiness (the probability that particles remain together upon contact). Particle stickiness is generally time-dependent and thus, one should be able to predict aggregation rates given knowledge of timedependent variables mentioned above. Although a ﬁeld study of phytoplankton aggregation (Kiørboe et al., 1994) showed that maximum phytoplankton concentrations and sedimentation rates in a Danish fjord were found to be consistent with the simple coagulation model of Jackson (1990), however this study did not provide a detailed comparison of theoretical predicted changes in the particle concentrations with the observed ones. Furthermore, many other coagulation models of physical aggregation have required the presence of abundant non-phytoplankton background particles or modiﬁcation of particle contact rates in order to be consistent with observations (Jackson, 1990; Hill, 1992; Kiørboe and Hansen, 1993).
+Thus, the factors most critical to predicting phytoplankton aggregation in nature using coagulation theory remain unclear and little is still understood about the formation of aggregates
+
+through coagulation processes, the rates at which coagulation occurs in nature and the parameters most inﬂuential in altering those rates especially the signiﬁcance of phytoplankton cell surface stickiness, a major parameter in coagulation models which is still ambiguous.
+In contrast with the coagulation theory, many studies of marine aggregates at small-scales emphasize biological mechanisms for the phytoplankton aggregate formation. That is, although planktonic organisms can be thought of as particles, the richness of biological responses makes the nature of their interactions more complex than the simple physical ones described by coagulation theory. Smaller, single-celled organisms such as dinoﬂagellates (motile species of phytoplankton) and motile algae have chemosensory abilities (Fitt, 1984, 1985; Hauser et al., 1975; Levandowsky and Hauser, 1978; Levandowsky and Kaneta, 1987; Spero, 1979, 1985; Spero and More´ e, 1981) that would be useless if the oceanic environment was chemically homogeneous. The dinoﬂagellates and more generally motile algae are known to leak organic matter such as amino-acids and sugar (Mague et al., 1980) forming regions around the phytoplankton cells having concentrations higher than average (Bell and Mitchell, 1972). The chemosensory responses could allow dinoﬂagellates or algae that are present in a suitable neighborhood to ﬁnd the leaky cells and to stay near them forming aggregates.
+The ecological and adaptive signiﬁcance of chemosensory behavior to aquatic microorganisms is well documented (see Levandowsky and Hauser, 1978 for review). However, reports of chemosensory behavior among dinoﬂagellates and algae are rare (Fitt, 1984, 1985; Hauser et al., 1975; Levandowsky and Hauser, 1978; Levandowsky and Kaneta, 1987; Spero, 1979, 1985; Spero and More´ e, 1981). There has been no quantitative study of the nature of chemosensory interactions between dinoﬂagellates despite the chemosensory behavior may have importance in their searches for food and chemical defense. Indeed, recent studies of microorganisms have revealed diverse complex social behaviors in dinoﬂagellates, including co-operation in foraging and defense. Dinoﬂagellates are found to exhibit co-operative foraging, comparable in its sophistication to that seen in macroscopic social organisms: for example, Pﬁesteria dinoﬂagellates act as ambush predators, synchronously releasing toxins to kill all ﬁsh over many square kilometers, after which the dinoﬂagellates feed on the carcasses (Crespi, 2001); another form of apparent co-operation in foraging is observed in G. fungiforme dinoﬂagellates which form “dynamic aggregations” of hundreds of dinoﬂagellates that attach to the surface of a prey organism by peduncles and ingest the cytoplasm and or body ﬂuids of the prey (invertebrates and protozoa) (Spero and More´ e, 1981) (Fig. 1). On an other hand, many studies on dinoﬂagellates suggest that there will be a density at which dinoﬂagellates metabolites (for instance an altruist production of toxins dimethyl sulﬁde (DMS)) will inhibit grazing and provide a protective feedback loop. Also, levels of bioluminescence may act similarly in dense populations. So, by aggregating, dinoﬂagellates maximize their chemical defense (Wolfe, 2000).
+Following the approach of small-scale biological mechanisms for aggregates formation, El Saadi (2004) and El Saadi and Arino (2006) developed a Lagrangian model which
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+195
+
+Fig. 1 – Numerous G. fungiforme attached to a prey during feeding (on the left). Ten minutes after, G. fungiforme completely surround the remains of the prey (on the right). Source: Spero and More´ e (1981).
+
+provides an explanation of the aggregation behavior in phytoplankton in terms of attraction mechanisms among cells due to the chemosensory behavior, random branching (cell division and death), in addition to individual random dispersals due to turbulance described by independent Brownian motions. The aim of such modelling was to catch the main features of the individual dynamics at small-scales which are responsible at a larger scale for a more complex behavior that leads to the formation of aggregating patterns. An Eulerian description has been rigorously derived as a continuum limit (El Saadi, 2004; El Saadi and Arino, 2006) by using the approach in Me´ le´ ard and Roelly (1993) based on martingale properties of a sequence of approximating interacting
+
+branching-diffusion processes. The Eulerian model of phytoplankton aggregation in El Saadi (2004) and El Saadi and Arino (2006) was described by the following non-linear stochastic partial differential equation deﬁned in space of vector measures:
+
+dYt = D Yt dt − ∇ · [Yt(Fa × Yt)] dt + dMt,
+
+(1)
+
+where Yt is a measure describing the spatial distribution of phytoplankton cells at time t. The diffusion term in (1) takes into account the spatial spread of the phytoplankton cells with the coefﬁcient of diffusion D, while the advection term describes the interaction mechanisms among cells via
+
+Fig. 2 – Diagram of classes.
+
+196
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+the velocity Fa × Yt. The latter has the form of convolution (Mogilner and Edelstein-Keshet, 1999; Boi et al., 2000; Morale et al., 2004) with Fa the attractive force. Mt is a continuous orthogonal martingale measure with covariance measure Ys(dx) ds (in the sense of Walsh (1986)) where is the rate of branching. We can think of Mt as a white noise (in the sense of Walsh) representing the random spatial aspects coupled to the mechanism of branching: cell division puts always the two new cells at the same position while death occurs anywhere. The accumulation of these small-scale density ﬂuctuations produces palpable non-uniformities on large-scales which are reﬂected in the term Mt.
+The process {Yt, t ≥ 0} is an extension of the Dawson–Watanabe superprocess (Etheridge, 2000; Perkins, 2002). It is a superprocess with spatial interactions. In Adioui et al. (2005), it has been shown that if the branching phenomenon is not present in the phytoplankton story, Yt (for every t > 0) is absolutely continuous with respect to the Lebesgue measure on R, and hence, admits a density f (t, x) which satisﬁes the integro-differential advection–diffusion equation:
+
+∂f (t, x) ∂t
+
+=
+
+D
+
+∂2 ∂x2
+
+f
+
+(t,
+
+x)
+
+−
+
+∂ ∂x
+
+[f
+
+(t,
+
+x)(Fa
+
+× f (t, ·))(x)].
+
+(2)
+
+A mathematical analysis of this equation has been investigated in Adioui et al. (2005) and it has been proved that (2) possesses non-uniform stationary solutions. Biologically, this asymptotic result means that the spatial interactions between phytoplankton cells produce aggregating patterns in water.
+In this paper, we propose to conceive a numerical individual-based model (IBM) version arising from the Lagrangian model of phytoplankton developed in El Saadi (2004) and El Saadi and Arino (2006) and present some simulations results showing the behavior of the interacting branching diffusing cells. Our goal is two-fold: ﬁrst, to visualize the formation of clusters, second, to measure and compare inﬂuences of the different processes involved at the cell level.
+The paper is organized as follows: in Section 2, we describe the Lagrangian aggregation model of phytoplankton built in El Saadi (2004) and El Saadi and Arino (2006) and outline brieﬂy the passage to an Eulerian description. Section 3 is devoted to the simulator description and in Section 4, we present the different simulations to be tested. Section 5 summarizes the simulations results. These ones correspond to the following issues: (1) the particle pictures, (2) the Clark–Evans index; (3) the spatial and temporal distribution of phytoplankton cells, (4) the effect of diffusion, (5) the effect of perception and (6) the effect of the population size. Section 6 offers a discussion of the results and ﬁnally, we conclude in Section 7.
+
+Fig. 3 – “PhytoplanktonIndividual” class.
+
+2.1. Spatial motion
+
+We consider N phytoplankton cells (N a positive integer), each of them having at some time a certain position. Let (XNi (t))1≤i≤N be the family of positions for the N cells at time t.
+The positions of the N cells in the system evolve according
+to the following system of stochastic differential equations:
+
+dXNi (t)
+
+=
+
+Fi(XN1 (t),
+
+.
+
+.
+
+.
+
+,
+
+XNN (t))
+
+dt
+
++
+
+√ 2DdBi(t),
+
+i = 1, . . . , N,
+
+(3)
+
+where (Bi(t), t ≥ 0)1≤i≤N are independent Brownian motions. The dispersion term in (3) expresses the diffusion of phy-
+toplankton cells in water due to the turbulence and D is the diffusion coefﬁcient. The drift term Fi(XN1 (t), . . . , XNN(t)) describes the interaction of the ith cell with other cells in the
+system.
+
+2. Lagrangian aggregation model
+We now present the Lagrangian model of phytoplankton aggregation introduced in this study and built up in El Saadi (2004) and El Saadi and Arino (2006). In contrast with the Eulerian approach which looks at ﬂuxes, a Lagrangian model addresses the level of individual organisms and describes the changes in the state of individuals.
+
+Fig. 4 – Diagram of activities for a phytoplankton cell.
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+197
+
+Fig. 5 – Synchronous simulation.
+
+To describe interactions between phytoplankton cells, we base on the ideas involving non-uniformity of the concentration ﬁelds around cells (Azam and Ammerman, 1984; Keller and Segel, 1971; Lapidus and Levandowsky, 1981) and consider phytoplankton species having chemosensory abilities (dinoﬂagellates, motile algae).
+As mentioned earlier, phytoplankton cells leak organic matter such as sugar and amino-acids. These products form
+
+regions around cells, where chemical concentrations are higher than average. Experiments studies on the chemosensory abilities in dinoﬂagellates and some motile algae (Spero, 1985; Fitt, 1985) show that the latter are attracted to a variety of amino-acids, organic compounds (including ammonium and nitrate) and sugar (dextrose). It has also been observed that high concentrations of these products inhibit the chemosensory behavior in dinoﬂagellates and motile algae (Fitt, 1985).
+
+Fig. 6 – Asynchronous simulation.
+
+198
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+Taking into account these biological features, we consider that extracellular products released by a phytoplankton cell in position x form concentrations near x which are highest in the closest vicinity of x (for instance, on a radius of length r0 (r0 small)) and then decrease progressively. Via their chemosensory abilities, all dinoﬂagellates in positions y such that r0 < x − y < r1 (r1 > r0 and r0 too small in comparison with r1) detect the differences of concentration in water and hence are attracted to the cell in x. Beyond r1, cells are not attracted because they are sensory limited (Berg and Purcell, 1977; Jackson, 1987, 1989). Also, cells in positions y such that x − y ≤ r0 are not attracted to x because of the high concentrations in the closest vicinity of x which suppress the chemosensory behavior in phytoplankton cells. This makes cells never sticked and leads to porous aggregates (demonstration that aggregates are porous with fractal structure can be found in Logan and Wilkinson (1990)).
+So, for any two cells located in x and y respectively, the interaction between them is given by
+
+K(x, y)
+
+=
+
+1 N
+
+Fa
+
+(x
+
+−
+
+y),
+
+where
+
+Fa(z) = −
+
+z z
+
+(− z
+
++ r0)( z
+
+− r1)1[r0,r1]( z ).
+
+(4) (5)
+
+It is clear that Fa(x − y) leads to the attraction of the cell in position x to the one in y. The quantity (− x − y + r0)( x − y − r1)1[r0,r1]( x − y ) gives the magnitude of Fa(x − y) as a function of the distance x − y . It means that the attractive force is 0
+below r0 (the chemosensory behavior is inhibited by high concentration of released products), it increases on the interval
+[r0, (r0 + r1)/2] to attain its maximum at (r0 + r1)/2 and then decays to 0 on the interval ](r0 + r1)/2, r1] (sensory limitation). The direction of Fa(x − y) is given by the unitary director vector −(x − y)/ x − y .
+Fa is an odd function that is Fa(−z) = −Fa(z). Symmetry follows from the fact that individuals are identical, so, if a
+cell in x is attracted to the one in y, then, the cell in y is
+attracted also to that one in x. Fa behaves as a gradient. The drift Fi(XN1 (t), . . . , XNN(t)) is the superposition of all cells’ effects of the system on the ith cell. It is given by
+
+N
+
+Fi(XN1 (t), . . . , XNN(t)) =
+
+K(XNi (t), XNj (t)).
+
+j=1,j=i
+
+(6)
+
+2.3. Passage from the Lagrangian description to the Eulerian model
+
+The passage from the microscopic Lagrangian description to the macroscopic Eulerian one (1) is undertaken by using the empirical distribution:
+
+N(t)
+
+Át =
+
+ıXi (t) ,
+
+i=1
+
+(7)
+
+where ıXi(t) is the Dirac measure at the location Xi(t) of the cell i at time t and N(t) is the total number of cells in the system at time t. At each time t, Át is a random counting measure which models branching and diffusing cells. Under the usual renormalisation (large population and acceleration of the branching mechanism), it is proved (see El Saadi, 2004; El Saadi and Arino, 2006) that the measure above converges to the non-linear superprocess which is a solution of (1).
+
+3. The simulator description
+We now present the IBM arising from the Lagrangian model introduced in the previous section, that is its computer simulation model. IBMs are models in which each computer-generated basic entity has its own life, its own and rational deﬁned behavior. These entities called “individuals”
+
+2.2. Branching
+The cells branch (divide or die). The most common mean of reproduction in phytoplankton is asexual cell division (mitosis). This process splits the organism into two identical copies. So, we assume that each phytoplankton cell can die, divide into two or remain unchanged with equal probabilities. If the cell splits, the two new cells begin their life at the branching point. They move following Eq. (3) until the time themselves branch and so on. A cell division can hold once every day.
+
+Fig. 7 – The interface of the simulator.
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+199
+
+or “objects” correspond to real biological actors with attributes restricted to those relevant to their evolution and interactions in the model. The spatial location, the scalability, the links, the aggregation are represented as well. The aim of this new approach is ﬁrst to identify individuals, their relationships and their evolution over time, and then to observe results from the model at the population level.
+The IBMs models have known an important development in the 1990s stimulated by the availability of powerful personal computers (Bousquet and Lepage, 2004; DeAngelis and Gross, 1992; Grimm, 1999). The article written by Huston et al. (1988) is the most frequently quoted. These authors argue that the development of this approach is due to the need of taking into account the individual because of his genetic uniqueness and second, the fact that each individual is situated and his
+
+interactions are local. We recall that the principle of an IBM consists in following each individual of a collection, assuming they move or some of their characteristics change during a time step, due to a number of inﬂuences such as individual behavior, interactions of individuals with one another, interactions of individuals with a resource distribution, other species or other aspects of the environment (Mogilner et al., 2003).
+3.1. Simulator model
+The simulator proposed in this work is a tool of experiments intended to represent virtually individual aggregating behavior. The model of this simulator is based on the discrete version of the system of stochastic differential equation (3). Time evolves in a discrete way by steps t. The initial condition
+
+Fig. 8 – Particle pictures of model I (in 2D) at different times for three runs (a)–(c) of the same simulation with N = 1000, D = 0.01 and r1 = 0.003. For each run, the graph representing the population size evolution in time is presented (on the right).
+
+200
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+(t = 0) is prepared by placing randomly and independently the N particles. Each time step consists in two stages: (1) branching (random birth or death); (2) spatial motion. At the ﬁrst stage, each particle splits into two or dies or remains unchanged with equal probabilities. If it splits, the new particle is placed on top of the parent and if it dies, it is removed from the system. In stage 2, the ith particle is displaced to a new position:
+
+Xi(t +
+
+N(t)
+
+t)
+
+=
+
+Xi(t)
+
++
+
+1 N(t)
+
+Fa(Xi(t) − Xj(t))
+
+j=1,j=i
+
+t+
+
+√ i 2D t,
+
+(8)
+
+where N(t) is the population size at time t and ( i)1≤i≤N(t) are independent and identically distributed standard Gaussian
+random variables.
+
+3.2. Internal structure
+The simulator conceived is implemented in the ObjectOriented language Smalltalk using the Visual Works Environment. To describe it, we use three kinds of diagrams belonging to the uniﬁed modelling language (UML): diagram of classes, diagram of activities and diagram of sequences.
+The diagram of classes gives a static view of the system by describing types and objects in the system. In an objectoriented system, a class is a collection of data and methods that describe the state and the behavior of an object. Relationships between classes are represented by narrows. The diagram of classes (Fig. 2) gives the architecture of our simulator, it consists of:
+
+Fig. 9 – Particle pictures of model I (in 2D) at different times for three runs (a)–(c) of the same simulation with N = 100, D = 0.01 and r1 = 0.003. For each run, the graph representing the population size evolution in time is presented (on the right).
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+201
+
+(1) a principal class called “phyoplankton Model” which controls the global working of the system,
+(2) a class called “PhytoplanktonIndividual” (Fig. 3), which models the phytoplankton cell in its structure and behavior. To each individual (phytoplankton cell) is associated a position, an image, a coefﬁcient of diffusion and limits of perception (r0, r1),
+(3) a class called “PhytoplanktonView” responsible for the update and the representation of the phytoplankton cells in the space of simulation. The diagram of activities (Fig. 4) is a general ﬂow chart of a phytoplankton cell dynam-
+
+ics. In each step time, an individual performs a branching, computes its new position according to Eq. (8) and moves towards it. The simulation can be synchronous or asynchronous. In the synchronous case, the displacement to a new position is effective only if all individuals in the system have computed their new positions. The diagram of activities gives a graphical representation of the behavior of a method. The passage from an activity to another one is materialized by a transition (narrow). A transition starts up at the end of an activity and induces immediately a new activity (this is done automatically).
+
+Fig. 10 – Particle pictures of model I (in 1D) at different times for one run of a simulation with N = 1000, D = 0.01 and r1 = 0.003. The graphs representing the population size and Clark–Evans index evolutions in the time are presented (on the right).
+
+202
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+The diagram of sequences describes interactions between different objects. Time is represented ﬂowing out from above to down along lifelines of objects. Narrows representing messages transit from an object to another. The name of messages appears on each narrow. If the end of the narrow is full, the message is synchronous (Fig. 5), if not, it is asynchronous (Fig. 6).
+
+parameter (pixel2/s), r0 and r1: limits of the perception zone (pixel), N: number of individuals, t: time step (s)); (ii) the situation window (at the center of the interface) that represents positions of individuals; (iii) the indicator window (on the right) that allows to vizualize by graphics evolution of the population size and the different indicators of aggregation.
+
+3.3. Interface
+The simulator is provided with an interface to perform actionto-visualize the aggregation behavior (Fig. 7). It consists on three components:
+(i) the parameter window (on the left) that allows the user the set up of the global variables (notably, D: diffusion
+
+The simulator permits to undertake simulations in 1D (vertically or horizontally) and in 2D for the two situations: the model including branching mechanisms (model I) and the model without branching (model II) (that is the population size remains ﬁxed). It has also been performed in order to quantify the evolution of some indicators of aggregation (Clark–Evans index, the dispersion index and the surdispersion index) (Goreaud and Couteron, 2003; Clark and Evans,
+
+Fig. 11 – Particle pictures of model I (in 1D) at different times for three runs of a simulation with N = 100, D = 0.01 and r1 = 0.003. The graphs representing the population size evolution in the time are presented (on the right).
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+203
+
+1954) which analyze the spatial structure of the particle pictures shown by the simulator.
+In this paper, we used Clark–Evans index to quantify the manner and the degree to which the distribution of phytoplankton cells departs from that of a random distribution. This index is deﬁned as
+
+CEI
+
+=
+
+r¯A r¯E
+
+,
+
+(9)
+
+where r¯A =
+
+N i=1
+
+ri
+
+/N
+
+is
+
+the
+
+mean
+
+of
+
+distances
+
+to
+
+nearest
+
+neighbor (ri is the distance in any speciﬁed units from indi-
+
+vidual i to its nearest neighbor) and r¯E is the mean distance
+
+to nearest neighbor which would be expected in an inﬁnitely
+
+large random distribution of density . The density is
+
+expressed as the number of individuals per unit of area and
+
+must be calculated in the same unit of measurements as that
+
+used in measuring the ri’s. It can be shown (see Clark and
+
+Fig. 12 – Particle pictures of model II (in 2D) at different times for three runs (a)–(c) of the same simulation with N = 1000, D = 0.01 and r1 = 0.003.
+
+204
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+Evans, 1954) that r¯E = 1 in 1D,
+
+(10)
+
+and
+
+r¯E
+
+=
+
+√1 2
+
+in 2D.
+
+(11)
+
+This measure can therefore be easily computed and readily interpreted in simple terms as a measure of departure from randomness. In a random distribution, CEI = 1; if the spatial structure is regular CEI > 1 and CEI < 1 if it is aggregated. Under conditions of maximum aggregation, CEI = 0 since all of the individuals occupy the same locus and the distance to nearest neighbor is therefore 0.
+Our approach in using this indicator is double goal: on the one hand, we intend to explore the spatial structure of the particle pictures stemmed from both models I and II, and on the other hand, to measure and compare inﬂuences of the different processes in play (random dispersion, chemosensory interactions and branching) on the aggregating patterns.
+
+4. The simulations and scenarios tested
+The numerical simulations proposed here were undertaken with the double goal of visualizing the behavior of the phytoplankton cells in both models I and II on the one hand and on the other hand, measuring and comparing effects of the
+
+Table 1 – Values of the parameters used in the simulations and their corresponding values in reality
+
+Parameters
+
+Simulation
+
+Reality
+
+t 1s
+
+1 day
+
+r0 0.0003 pixels
+
+0.1 ␮m
+
+r1 0.003 pixels
+
+1 ␮m
+
+0.03 pixels
+
+10 ␮m
+
+0.06 pixels
+
+20 ␮m
+
+D
+
+0.1 pixels2/s
+
+0.14 ␮m2/s
+
+0.01 pixels2/s
+
+0.014 ␮m2/s
+
+0.001 pixels2/s
+
+0.0014 ␮m2/s
+
+different processes in play (random dispersion, chemosensory interactions and branching) on the spatial distribution of phytoplankton cells. Therefore, we have considered several experiments corresponding to different values of the diffusion coefﬁcient D and the limit of the range of perception r1. For the parameter D, we chose three different orders of magnitude that cover possible values of phytoplankton diffusion (D = 0.0014 ␮m2/s, 0.014 ␮m2/s, 0.14 ␮m2/s). For r1, we considered different arbitrary possible values that are well suited to the choice of r0 (r1 = 1 ␮m, 10 ␮m, 20 ␮m). We ﬁxed r0 = 0.1 ␮m an arbitrary value chosen very small in comparison to the values of r1 (r0 r1) (Mogilner et al., 2003) and chose a time step t = 1 s. To connect our simulations with reality, we let the time step t correspond to 1 day in reality since t is the time that separates two consecutive divisions (we recall
+
+Fig. 13 – Particle pictures of model II (in 1D) at different times for one run of a simulation with N = 1000, D = 0.01 and r1 = 0.003.
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+205
+
+that for a living phytoplankton cell, a division holds once a day). In view of this, the real values above of the parameters D and r1 have been converted to the scale of the simulation where length is measured in pixels and time measured in seconds with 1 s in the simulation scale corresponding to 1 day at the scale of reality. Table 1 summarizes the different values of the parameters used in the simulations and their corresponding values in reality. Another aspect taken into account is the effect of the population size. We compared two sizes: N = 100 and 1000 illustrating small and large populations respectively. We performed 10 runs of the simulation for each scenario characterized by a single set of values for the parameters (D, r1, N). From preliminary experimental studies, this number of runs has appeared sufﬁcient to damp out randomness embodied in the simulator. We point out that each simulation result presented in the next section is an average of 10 repetitions. The different scenarios were explored in the two cases:
+
+(1) Model I (the interacting branching model). (2) Model II (the interacting model without branching).
+5. Simulations results
+We present the simulations results obtained for initial populations sizes N = 1000 and 100, with random initial distributions. A difference appears between results stemmed from models I and II. Moreover, in case of model II, some differences due to the variation of the parameters D and r1 are observed between the scenarios.
+5.1. Particle pictures
+All the simulations of model I performed in 1D and 2D lead to particle pictures showing clusters formation. Figs. 8 and 9 (in 2D) and Figs. 10 and 11 (in 1D) illustrate the kind of pic-
+
+Fig. 14 – Particle pictures of model II (in 1D) at different times for three runs (a)–(c) of the same simulation with N = 100, D = 0.01 and r1 = 0.003. For each run, the graph representing the Clark–Evans index evolution in time is presented (on the right).
+
+206
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+tures obtained from the simulation of model I in 2D and 1D respectively for the two sizes N = 1000 and 100.
+Figs. 12 and 13 present some particle pictures stemmed from model II with N = 1000 in 2D and 1D, respectively. Aggregation phenomena is less observable than in the case of model I. In 1D, the size N = 1000 corresponds to a very crowded population with respect to our simulation space which is restricted to a vertical line of total length 656 pixels. All space on the vertical line is completely occupied by individuals before the beginning of the simulation and consequently, the spatial evolution of individuals cannot be observable (Fig. 13). Particle pictures for model II obtained from N = 100 show better the
+
+evolution of particles in space than the ones obtained when N = 1000 (see Fig. 14).
+5.2. Spatial and temporal distribution
+Both of models I and II in Figs. 15 and 16 show clusters formation. The aggregation phenomenon is stronger and more visible in case of model I for N = 1000 as well for N = 100. Figures of model II show the weak aggregations with small sizes and larger diameters formed by the mean of attractions between particles.
+
+Fig. 15 – Spatial distribution at different times for a population of size N = 1000: (a) model I; (b) model II. In the axis of positions, 1graduation = 8 pixels.
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+207
+
+Fig. 16 – Spatial distribution at different times for a population of size N = 100: (a) model I; (b) model II. In the axis of positions, 1graduation = 8 pixels.
+
+5.3. Clark–Evans index
+A difference in the evolution of the Clark–Evans index (CEI) between models I and II is shown in Figs. 17–22.
+We can see that for model I, the CEI decreases from an initial value down to 0 in all scenarios. This indicates a transition after some time from an initial spatial distribution to a maximum aggregated distribution. In the case of model II, the CEI also decreases but to values that are globally between 0.25 and 0.6 in all the simulations (for all scenarios). This indicates a less good aggregating behavior.
+
+5.4. Effect of diffusion
+Experiments summarized in Figs. 17–19 show that for model I, CEI decreases faster to 0 when D is the smallest (D = 0.001), but after T = 30 s, the evolution of CEI is not affected by a variation of D and CEI is very proche to 0 for the three different values of D, except for the case N = 100 with D and r1 the largest (D = 0.1 and r1 = 0.06) which shows some instability in the evolution of CEI. In the case of model II, some differences in the evolution of the CEI are observed. These ones are more signiﬁcant when N = 100. The best aggregation is observed for the weak-
+
+208
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+Fig. 17 – The Clark–Evans index evolution when r1 = 0.003.
+
+Fig. 19 – The Clark–Evans index evolution when r1 = 0.06.
+
+Fig. 18 – The Clark–Evans index evolution when r1 = 0.03.
+
+Fig. 20 – The Clark–Evans index evolution when D = 0.01.
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+209
+
+Fig. 21 – The Clark–Evans index evolution when D = 0.1.
+
+est diffusion coefﬁcient (D = 0.001) and instability occurs for the largest value of D (D = 0.1) especially when r1 is also the largest (r1 = 0.06).
+5.5. Effect of the perception zone
+From Figs. 20–22, it is shown that for model I, CEI goes down faster to 0 when r1 is the smallest (r1 = 0.003), but after T = 30 s, the evolution of CEI is not affected by a variation of r1
+
+Fig. 23 – Comparison of the evolution of the Clark–Evans index between populations of size N = 100 and populations of size N = 1000.
+
+and CEI is very proche to 0 for the three different values of r1, except for the case of N = 100 with the largest values for D and r1 (D = 0.1 and r1 = 0.06) which shows some instability in the evolution of CEI. For model II, differences are observed in the CEI evolution. The best aggregation is observed for r1 = 0.03 (average) and some ﬂuctuations of the values of CEI appear for the largest value of r1.
+5.6. Effect of the population size
+
+Fig. 23 illustrates that for both models I and II, the evolution of the Clark–Evans index is not affected by the size of the population, except for the scenario of largest values for D and r1 (D = 0.1 and r1 = 0.06) which shows some differences in the evolution of CEI for model II between the populations of size N = 100 and populations of size N = 1000. It is also observable from Figs. 17–23 that most of instabilities in the evolution of the Clark–Evans occur for populations of size N = 100.
+
+Fig. 22 – The Clark–Evans index evolution when D = 0.001.
+
+6. Discussion
+All the simulations results presented earlier make obvious the aggregating phenomenon in phytoplankton. Indeed, the CEI is
+
+210
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+always less than 1 in both of model I (the interacting model with branching) and model II (the interacting model without branching) and for the two population sizes N = 100 and 1000. This result conﬁrms that our model of phytoplankton (either with branching or without) is really an aggregation model.
+However, a difference is noticed between models I and II. Aggregation is stronger and more visible when branching mechanisms are taken into account. The explanation that can be proposed is purely biological: cell division puts the two new cells at the same position (the branching point) while deaths occur anywhere. This fundamental asymmetry in the locations of birth and death at small-scale develops patches and voids on large-scale which lead to complex aggregating patterns.
+Diffusion and sensory distances have both their role on the aggregating behavior but this role remains negligible relative to the branching effect. This is due to the fact that diffusion in phytoplankton is weak (D < 1 ␮m2/s) on one hand and on the other hand, to the different lengths of the perception radius chosen for r1. Some simulations (which we do not present here) show that greater values of D and r1 (for example, D beyond 20 ␮m2/s and r1 beyond 30 ␮m) lead to particle pictures very different of those presented in this paper. Effects of the diffusion and/or the sensory distance on the aggregation efﬁciency are better observed when branching mechanisms are ignored. In this case, simulations show a transition from random or regular initial distributions to organized structures with formation of weak clusters characterized by their larger radius and lower sizes, in contrast with the clusters occurring when branching process is included. Instability in the spatial structure often occurs for the interacting model without branching and it increases when the population size decreases, that is, more the population is large more the spatial structure is stable.
+
+The main result of this work is that branching has the most important role in the phytoplankton aggregation process. Indeed, simulations results stemmed from our IBM model have shown the formation of weak clusters when only diffusion and interactions are involved in the model, while the clustering mechanism becomes more important and visible when branching is taken into account. So, by this study, we rediscover Young’s result in Young et al. (2001) and Young (2001) claiming that clustering mechanisms can be driven only by reproduction and death (branching), provided the diffusion is not too strong relative to the reproduction rate in populations of independent random-walking organisms, reproducing by binary division and dying at constant rates. Another important issue of this study is that the spatial interactions between phytoplankton cells deﬁned by (4) and (5) produce aggregations. This result agrees with the asymptotic analytic result in an earlier work (Adioui et al., 2005) done on the PDE (2) arising from the Eulerian model (1). Furthermore, many quantitative results on the spatial distribution, sizes and positions of aggregates in space and time could be provided by our IBM model.
+Ghosal et al. (2000) mentioned: “a complexity starts to become comprehensible only if we view it through the lens of a highly simpliﬁed model that captures only the essential and then adds in details as successive reﬁnements when comparison with data warrants it”. Our IBM model represents merely a ﬁrst step in this incremental process and we intend in a future work to extend this model by introducing interactions in the branching mechanism.
+Acknowledgements
+The authors would like to thank the editor and the two anonymous referees for their remarks and relevant suggestions.
+
+7. Conclusion
+
+references
+
+This paper was devoted to an IBM approach for studying the aggregation process in phytoplankton. We have ﬁrst developed a Lagrangian aggregation model for phytoplankton then, we conceived and simulated the IBM discrete version arising. The IBM model describes aggregation formation in phytoplankton in terms of biological mechanisms acting at the level of the phytoplankton cell. These mechanisms are: a random branching (cell division and death), attraction mechanisms between cells due to the chemosensory behavior and individual random dispersions. We focused on the effects of two parameters (the diffusion coefﬁcient and the maximal length under which a phytoplankton cell may detect another one by the mean of chemosensory abilities) on the spatial distribution of phytoplankton. We have analyzed these effects in term of efﬁciency in the aggregation process. The aggregation efﬁciency was measured by mean of a spatial measure: Clark–Evans index. The analysis was made in two situations: with and without the branching process in order to quantify the role of spatial interactions. We have used in the simulations two different population sizes N = 100 and 1000 illustrating small and large populations in order to examine the inﬂuence of the population size on the simulations results.
+
+Ackleh, A.S., Hallam, T.G., Muller-Landau, H.C., 1995. Estimation of sticking and contact efﬁciencies in aggregation of phytoplankton: the 1993 SIGMA tank experiment. Deep-Sea Res. II 42, 185–201.
+Ackleh, A.S., Fitzpatrick, B.G., 1997. Modeling aggregation and growth processes in an algal population model: analysis and computation. J. Math. Biol. 35, 480–502.
+Adioui, M., Arino, O., El Saadi, N., 2005. A nonlocal model of phytoplankton aggregation. Nonlinear Anal.: Real World Appl. 6, 593–607.
+Alldredge, A.L., Jackson, G.A., 1995. Aggregation in marine systems. Deep-Sea Res. II 42 (1), 1–7.
+Arino, O., Rudnicki, R., 2004. Phytoplankton dynamics. C. R. Biol. 327, 961–969.
+Azam, F., Ammerman, J.W., 1984. Cycling of organic matter by bacterioplankton in pelagic marine ecosystems: microenvironmental considerations. In: Proceedings of the Flows of Energy and Material in Marine Ecosystems. NATO Conference Series 4, Mar. Sci. V. 13, Plenum Press, pp. 345–360.
+Bell, W., Mitchell, R., 1972. Chemotactic and growth responses of marine bacteria to algal extracellular products. Biol. Bull. 143, 265–277.
+Berg, H.C., Purcell, E.M., 1977. Physics of chemoreception. Biophys. J. 20, 193–219.
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+211
+
+Boi, S., Capasso, V., Morale, D., 2000. Modeling the aggregative behavior of ants of the species Polyergus rufescens. Nonlinear Anal.: Real World Appl. 1, 163–176.
+Bousquet, F., Lepage, C., 2004. Multi-agent simulations and ecosystem management: a review. Ecol. Model. 176, 313–332.
+Clark, P.J., Evans, F.C., 1954. Distance to nearest neighbor as a measure of spatial relationships in populations. Ecology 35, 445–453.
+Crespi, B.J., 2001. The evolution of social behavior in microorganisms. Trends Ecol. Evol. 16 (4), 178–183.
+Dam, H.G., Drapeau, D.T., 1995. Coagulation efﬁciency, organic-matter glues and the dynamics of particles during a phytoplankton bloom in a mesocosm study. Deep-Sea Res. 42, 111–123.
+DeAngelis, D.L., Gross, L.J., 1992. Individual-Based Models and Approaches in Ecology, Populations Communities and Ecosystems. Routledge, Chapman and Hall, New York.
+Drapeau, D.T., Dam, H.G., Grenier, G., 1994. An improved ﬂocculator design for use in particle aggregation experiments. Limnol. Oceanogr. 39, 723–729.
+El Saadi, N., 2004. Mode´ lisation et e´ tudes mathe´ matique et informatique de populations structure´ es par des variables al e´ atoires. Application a` l’agre´ gation du phytoplancton. The` se de Doctorat. Universite´ de Pau et des pays de l’Adour.
+El Saadi, N., Arino, O., 2006. A stochastic modelling of phytoplankton aggregation. ARIMA 6, 77–91.
+Etheridge, A.M., 2000. An Introduction to Superprocesses. University Lecture Series 20, American Mathematical Society.
+Fitt, W.K., 1984. The role of chemosensory behavior of Symbiodinium microadriatica, intermediate hosts, and host behavior in the infection of coelenterates and molluscs with zooxanthellae. Mar. Biol. 81, 9–17.
+Fitt, W.K., 1985. Chemosensory responses of the symbiotic dinoﬂagellate Symbiodinium microadriatica (Dinophycae). J. Phycol. 21, 62–67.
+Ghosal, S., Rogers, M., Wray, A., 2000. The turbulent life of phytoplankton. In: Proceedings of the Summer Program. Center for Turbulence Research.
+Goreaud, F., Couteron, P., 2003. Les processus ponctuels, un outil pour de´ crire et mode´ liser la structure spatiale d’ensembles de points. Application aux peuplements forestiers. Cours ENGREF.
+Grimm, V., 1999. Ten years of individual-based modelling in ecology: what have we learned and what could be learned in the future. Ecol. Model. 115, 129–148.
+Hauser, D.C., Levandowsky, R.M., Hunter, S.H., Chunosoff, L., Hollwitz, J.S., 1975. Chemosensory responses by the heterotrophid marine dinoﬂagellate Crypthecodinium cohnii. Microb. Ecol. 1, 246–254.
+Hill, P.S., 1992. Reconciling aggregation theory with observed vertical ﬂuxes following phytoplankton blooms. J. Geophys. Res. 97, 2295–2308.
+Huston, M., DeAngelis, D.L., Post, W., 1988. New computer models unify ecological theory. Biosciences 38, 682–691.
+Jackson, G.A., 1987. Simulating chemosensory responses of marine microorganisms. Limnol. Oceanogr. 32 (6), 1253–1266.
+Jackson, G.A., 1989. Simulation of bacterial attraction and adhesion to falling particles in an aquatic environment. Limnol. Oceanogr. 34 (3), 514–530.
+Jackson, G.A., 1990. A model of the formation of marine algal ﬂocs by physical coagulation processes. Deep-Sea Res. 37, 1197–1211.
+Jackson, G.A., Lochmann, S.E., 1992. Effect of coagulation on nutrient and light limitation of an algal bloom. Limnol. Oceanogr. 37, 77–89.
+Jackson, G.A., 1995. Comparing observed changes in particle-size spectra with those predicted using coagulation theory. Deep-Sea Res. I 42, 159–184.
+
+Jackson, G.A., Mafﬁone, R., Costello, D.K., Alldredge, A.L., Logan, B.E., Dam, H.G., 1997. Particle-size spectra between 1 ␮m and 1 cm at Monterey Bay determined using multiple instruments. Deep-Sea Res. I 44 (11), 1739–1767.
+Keller, K.F., Segel, L.A., 1971. Model for chemotaxis. J. Theor. Biol. 30, 225–234.
+Kiørboe, T., Andersen, K.P., Dam, H.G., 1990. Coagulation efﬁciency and aggregate formation in marine phytoplankton. Mar. Biol. 107, 235–245.
+Kiørboe, T., Hansen, J.L.S., 1993. Phytoplankton aggregate formation: observations of patterns and mechanisms of cell sticking and the signiﬁcance of exopolymeric material. J. Plankton Res. 15, 993–1018.
+Kiørboe, T., Lundsgaard, C., Olesen, M., Hansen, J.L.S., 1994. Aggregation and sedimentation processes during a spring phytoplankton bloom: a ﬁeld experiment to test coagulation theory. J. Mar. Res. 52, 297–323.
+Kiørboe, T., Hansen, J.L.S., Alldredge, A.L., Jackson, G.A., Passow, U., Dam, H.G., Drapeau, D.T., Waite, A., Garcia, C.M., 1996. Sedimentation of phytoplankton during a diatom bloom: rates and mechanisms. J. Mar. Res. 54, 1123–1148.
+Kiørboe, T., 1997. Small-scale turbulence, marine snow formation, and planktivorous feeding. Sci. Mar. 61 (Suppl. 1), 141–158.
+Kiørboe, T., Tiselius, P., Michell-Innes, B., Hansen, J.L.S., Visser, A.W., Mari, X., 1998. Intensive aggregate formation with low vertical ﬂux during an upwelling-induced diatom bloom. Limnol. Oceanogr. 43, 104–116.
+Kiørboe, T., 2001. Formation and fate of marine snow: small-scale processes with large-scale implications. Sci. Mar. 655 (Suppl. 2), 57–71.
+Kriest, I., Evans, G.T., 1999. Representing phytoplankton aggregates in biogeochemical models. Deep-Sea Res. I 46, 1841–1859.
+Kriest, I., Evans, G.T., 2000. A vertically resolved model for phytoplankton aggregation. Proc. Indian Acad. Sci. (Earth Planet. Sci.) 109 (4), 453–469.
+Lapidus, R., Levandowsky, M., 1981. Mathematical models of behavioral responses to sensory stimuli by protozoa. In: Levandowsky, M., Hutner, H. (Eds.), Biochemistry and Physiology of Protozoa, 2nd ed., vol. 4. Academic Press, pp. 235–260.
+Levandowsky, M., Hauser, D.C.R., 1978. Chemosensory responses of swimming algae and protozoa. Int. Rev. Cytol. 53, 145–210.
+Levandowsky, M., Kaneta, P., 1987. Behaviour of dinoﬂagellates. In: Taylor, F.J.R. (Ed.), The Biology of Dinoﬂagellates. Blackwell Scientiﬁc Publications, Oxford, pp. 360–397.
+Logan, B.E., Wilkinson, D.B., 1990. Fractal geometry of marine snow and other biological aggregates. Limnol. Oceanogr. 35, 130–136.
+Mague, T.H., Friberg, E., Hughes, D.J., Morris, I., 1980. Extracellular release of carbon by marine phytoplankton: a physiological approach. Limnol. Oceanogr. 25, 262–279.
+McCave, I.N., 1984. Size spectra and aggregation of suspended particles in the deep ocean. Deep-Sea Res. 31, 329–352.
+Me´ le´ ard, S., Roelly, S., 1993. Interacting measure branching processes. Some bounds for the support. Stochast. Stochast. Rep. 44, 103–121.
+Mogilner, A., Edelstein-Keshet, L., 1999. A nonlocal model for a swarm. J. Math. Biol. 38, 534–570.
+Mogilner, A., Edelstein-Keshet, L., Bent, L., Spiros, A., 2003. Mutual interactions, potentials and individual distance in a social aggregation. J. Math. Biol. 47, 353–389.
+Morale, D., Capasso, V., Oelschla¨ ger, K., 2004. An interacting particle system modelling aggregation behavior: from individuals to populations. J. Math. Biol. 50 (1), 49–66.
+Perkins, E., 2002. Dawson Watanabe superprocesses and measure-valued diffusions. Lectures on probability theory
+
+212
+
+e c o l o g i c a l m o d e l l i n g 2 0 4 ( 2 0 0 7 ) 193–212
+
+and statistics (Saint-Flour, 1999), Lecture Notes in Mathematics 1781, Springer, Berlin, pp. 125–324. Riebesell, U., 1992. The formation of large marine snow and its sustained residence in surface waters. Limnol. Oceanogr. 37, 63–76. Riebesell, U., Wolf-Gladrow, D.A., 1992. The relationship between physical aggregation of phytoplankton and particle ﬂux: a numerical model. Deep-Sea Res. I (39), 1085–1102. Smoluchowski, V., 1917. Versuch einer mathematischen theorie der koagulationskinetik kollider losungen. Z. Phys. Chem. 92, 129. Spero, H.J., 1979. A study of the life-cycle. Feeding and chemosensory behavior in the holozoic dinoﬂagellate Gymnodinium fungiforme Anissimova. M.A. Thesis. Texas A&M, 95 pp.
+
+Spero, H.J., More´ e, M., 1981. Phagotrophic feeding and its importance to the life cycle of the holozoic dinoﬂagellate, Gymnodinium fungiforme. J. Phycol. 17, 43–51.
+Spero, H.J., 1985. Chemosensory capabilities in the phagotrophic dinoﬂagellate Gymnodinium fungiforme. J. Phycol. 21, 181–184.
+Walsh, J.B., 1986. An introduction to stochastic partial differential equations. In: Ecole d’e´ te´ de probabilite´ s de Saint Flour 1180. Springer-Verlag.
+Wolfe, G.V., 2000. The chemical defense ecology of marine unicellular plankton: constraints, mechanisms and impacts. Biol. Bull. 198, 225–244.
+Young, W.R., Roberts, A.J., Stuhne, G., 2001. Reproductive pair correlations and the clustering of organisms. Nature 412.
+Young, W.R., 2001. Brownian bugs and superprocesses. In: Proceedings of the 12th’ Aha Huliko’a Hawaiian Winter Workshop-Mixing.
+

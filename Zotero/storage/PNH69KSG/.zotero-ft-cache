@@ -1,0 +1,529 @@
+Adv. Space
+0273-1177(95)00953-l
+
+Rcs. Vol. 18, No. 7, pp. (7)99-(7)115.1996 cqynght @ 1995 COSPAR
+Printedin GreatBritain.All rights mmvcd 0273-l 177/96 $9.50 + 0.00
+
+A LAGRANGIAN MODEL OF PHYTOPLANKTON DYNAMICS IN THE NORTHWEST AFRICAN COASTAL UPWELLING ZONE
+
+A. J. Gabric,* W. Eifler** and W. Schrimpf** *Faculty of Environmental Sciences, GrifJirh University, Nathan,
+Queensland 41 I I, Australia ** Institutefor Remote Sensing Applications, Joint Research Centre, lspra Site, 21020 Ispra, Italy
+
+ABSTRACT
+The growth and cross-shelf advection of phytoplankton in a coastal upwelling zone has been modelled using a time-dependent, two-dimensional Lagrangian-particle approach where the velocity and temperature fields were predicted by a three-dimensional, baroclinic hydrodynamic model. Individual phytoplankton cell parcels are tracked as they move offshore during the development of an upwelling episode. To allow for possible sinking of phytoplankton cells, neutrally buoyant nutrient particles ate treated separately in the model. phytoplankton specific growth is assumed to be limited by a combination of available nutrients, light and temperature.
+The lagrangian method allows the inclusion of the results of recent drogue experiments on the variation of nutrient uptake rate as phytoplankton cells reach the euphotic zone and adjust their physiological status to the high light regime. The model sensitivity to the strength of wind mixing, characteristics of the upwelled source water and initial nutrient and phytoplankton distributions have been investigated. Model predictions suggest nitrate will be depleted seaward from the shelf break and that nutrients will limit phytoplankton growth in offshore waters. Under favourable wind conditions phytoplankton filaments up to 100 km offshore can be formed.
+INTRODUCTION
+Coastal upwelling zones occur along eastern oceanic boundaries where large-scale weather patterns produce consistent longshore wind stress which induces F&man transport of surface waters offshore and the vertical advection of cooler, oceanic waters onto the continental shelf. The upwelled waters are usually a rich source of new plant nutrients (NOg-) to the coastal ecosystem and promote high primary productivity, a large proportion of which is new production as defined by 111.It is this new production, as distinct from regenerated production from food-web recycling, which can lead to the ultimate removal of particulate organic carbon (POC) either as a fish yield, burial in the coastal sediments or by export to the deep ocean. These ocean margin processes are of fundamental importance to the understanding of the global carbon cycle 121albeit as yet poorly analysed. Recent evidence for a climatechange related intensification of upwelling in several different coastal regions 131suggests increased primary production is likely in these areas, although it is not clear whether tbis extra production will be utilised by higher trophic levels or indeed how this will effect cycling of shelf organic carbon.
+Phytoplankton growth in coastal upwelling zones is greatly influenced by the interaction of physical processes and algal cell physiology. The shelf topography, the time scale and intensity of wind fluctuations, vertical turbulence and heating of the surface layer all have important roles in
+(7)99
+
+(7w3 A. J. Gabric CI al.
+determining the spat&temporal characteristics of the phytoplankton distribution. For example, strong vertical mixing leading to a deep mixed layer and high turbidity can limit growth in the Northwest African upwelling region where maximal rates are only achieved during wind relaxation 141.
+
+Seed algal cells originate from below the euphotic zone and it has been recognised from studies at Peru - 15o.S 151,and Point Conception, California 161,that a sequence of physiological changes occur as these cells reach the surface layer and move offshore from the upwelling centre. Newly upwelled phytoplankton have low nitrate uptake rates, but as the cells adapt or ‘shift-up’ their metabolism to the high light intensities in the upper layer, higher nitrate uptake rates arc achieved, and later carbon fixation rates also increase. As the cells move further offshore nutrients are depleted and the nitrate uptake rate decreases - a shift-down phase. The timing of maximal growth rate is important, as depending on whether the upwelling centre is located on the inner, mid or outer shelf, it is possible that high rates are achieved in slope or offshore waters. Lampitt 171has demonstrated the potential for rapid sinking of algal PGC below the thermocline after a surface bloom which would effectively prevent this carbon from being recycled on a time scale of decades.
+
+Zimmerman et al. /8/ have used a zero-dimensional simulation model to evaluate the effects of irradiance and initial nitrate concentration on the timing of nutrient utilisation during upweiling. In a comparison of ambient conditions at upwelling centres at Point Conception, Peru and Northwest Africa these authors concluded that the time to exhaust nutrient supply depends on mixed layer depth (MLD) and initial nitrate concentration and varies between 10 days for Peru to over 20 days for Northwest Africa, where mixed layers are deeper and light limitation impedes the attainment of full physiological shift-up. In the Northwest African zone a typical offshore velocity of 20 ems-l in the upper layer would cause a phytoplankton cell to be advected about 17 km per day, and so possibly transported hundreds of kilometres offshore over a 20 day period.
+
+It has been noted /4/ that the offshore-onshore mass balance during upwelling at Cape Blanc is approximately two-dimensional, suggesting that a three-dimensional model is not necessary. Here we present a twodimensional Lagrangian-particle model of the physiological adaptation and growth of phytoplankton in an upwelling system. Our aim is to investigate the relative impact on phytoplankton growth of the various physical, e.g. wind strength and mixed layer depth, and biological controlling factors such as nitrate concentration, on a time scale of twenty days. The Lagrangian nature of the model allows the inclusion of recent empirical data on physiological shiftup of algal cells which could not be incorporated in a standard Eulerian framework.
+
+Gabric et al. 191estimated export of shelf production in the vicinity of Cape Blanc [21”N] by analysing satellite imagery of the Northwest African upwelling zone during three distinct upwelling episodes. In each case, the zone of high biomass extended far offshore and comparison of shelf and oceanic pigment concentrations suggested that phytoplankton growth was occurring in the deep ocean 300-400 km from the shelf break, where nutrients would normally be limiting. The Lagrangian model has been applied to the Cape Blanc upwelling region of Northwest Africa with the aim of interpreting the satellite ocean colour data given by Gabric et ul. /9/ and investigating the conditions under which offshore phytoplankton filaments can be formed.
+
+METHODS
+
+Model Structure
+
+The standard Eulerian approach to the problem /lo/ involves the formulation of phytoplankton and nutrient dynamics in terms of coupled partial differential equations, generally written as,
+
+amt + ~ami + (w+w~) am2 - KZa2PlW
+
+= sp
+
+(1)
+
+Lsgrangiaonpt
+
+Model
+
+waNI& - Kz @N/&z = SN
+
+(7)lOl
+(2)
+
+with P(x,z,t) the phytoplankton concentration (pg chi Q l-r), N(x,z,t) the nitrate concentration
+
+@g-at N i-l), u(x,z,t) and w(x,z,t) the cross-&elf and vertical components of the velocity field and the
+
+parameter ws is the algal ceil sinking velocity. Kz is the vcttical turbulent diffusion coefficient
+
+(m%1) and horizontal diiusion has been neglected. Sp(x,z,t) and SN(x,z,t) are non-linear source
+
+terms that describe the phytoplankton and nutrient dynamics, respectively. In the context of an
+
+upwelling zone the coordinate system can be chosen such that x denotes the cross-shelf direction
+
+(positive offshore) and z the vertical dimension (positive downwards). In the formulation above
+
+long&ore variability has been neglected. integration of (1) and (2) requires specification of initia!
+
+~~~~~s for P and N at time t=O, and astir
+
+of boundary conditions at the sea surface, bed
+
+and offshore open boundary, If herbivorous Stanton
+
+are to be treated dynamica~Iy another
+
+similar equation is needed.
+
+In order to investigate the extent of phytopiankton growth offshore of the continental shelf, the model geometry extends 120 km in the offshore direction, about twice the shelf width at Cape Blanc. As we am interested primarily in the photic zone, the vertical dimension of the computational domain is limited to 1OOmdepth.
+
+North-east trade winds predominate in the Cape Blanc region with steady, longshore winds with speeds of S-10 ms-1 and periods of 7-10 days, separated by shorter &x&on periods. The wind stress vector z (nm-2) at the sea-surface was derived using the conventional quadratic expression,
+
+where U is the wind-field vector (normally recorded at 10 m), pa is the density of air (1.25 kg m-3) and cd the drag coefficient (0.0014).
+
+A separate threedimensional, baroclinic hydrodynamic model I1 I/ has been used to compute the horizontal and vertical components of the velocity field, u(x,z,t) and w(x,z,t), the turbulent kinetic energy and the temperature field that result from the specification of typical wind stress forcings. The initial temperatum distribution was derived from data given by 112f, while the initial salinity distribution was obtained using an empirical relationship with temperature, assuming the water was a mixture of North Atlantic CentraI Water (NACW) and South Atlantic Centrai Water (SA~W~ 113f. Velocities, turbulent kinetic energy and sea-surface anomaIy were all set to zero initially. Surface heating was calculated using the radiation model of Brock /14/. In order to avoid a daily net heat flux across the sea surface, the surface boundary condition in the temperature field calculation has been specified as a constant outgoing heat flux equal to the daily average short wave heating.
+
+After an initial numerical ‘spin up’ period, the hydrodynamic model was run for 20 days and the
+
+predicted distributions stored and later used in the biological model simulations. The biological and
+
+hydrodynamic models are not coupled in our approach. We have assumed that phytopiankton
+
+growth will not significantly affect the thermal structure of the ocean in the upwelling zone. The
+
+possible impact of algal shading on the thermal physics of the mixed layer has been discussed by
+
+Simonot d al, 1151. Mixed layer &pth and the strength of vertical mixing due to turbulence,
+
+Kz(x,z,t), have bean derived from the hy~~c
+
+model prediction of turbulent kinetic energy.
+
+Bather than attempting to integrate equations (1) and (2) in an EuIerian framework, we have adopted a Lagrangian-particle approach (described below) whereby the mass of phytopiankton and nutrient in each (x,z) grid ceil is divided amongst a finite number of P and N particles which interact and are advected by the flow field at each time step.
+
+cl)~02
+
+A. 1.Oabric et al.
+
+Rather than starting the simulation with zero values for N and P on the shelf, the values commonly found in upwelled water have been used /16/. The initial N concentration is specified to be constant everywhere on the shelf at a value of 7.4 ug-at N L-‘, and the initial P concentration has been set at 0.0 pg chl a L’ above the mixed layer depth and 0.36 pg chl a L-’ below the mixed layer (all P particles are in a shifted-down state initially ). New N and P particles enter the domain along a vertical boundary at the upper slope (x = 45 km ) extending from the sea-bed to the top of the onshore flow, typically 20-30 m. Boundary concentrations are set equal to the initial concentrations given above.
+
+The source terms Sp and SN specify the growth rate of phytoplankton and depletion rate of nutrient, respectively. Several factors may effect the specific growth rate p (light, temperature and nutrient limitation), and there are losses L due to respiration and zooplankton grazing. Thus,
+
+sp = SN =
+
+u(l- L)P -y p(1 -EL)P
+
+(3) (4)
+
+with y the currency conversion factor between nitrogen and chlorophyll a. The parameter E is the efficiency by which nutrients are regenerated in the food chain.
+
+Assuming that both availability of light and the ambient temperature can effect the specific nutrient uptake rate at any given time - the multiplicative model 1171, we may write,
+
+P = VN RL RT
+
+(5)
+
+where VN (h-l) is the nitrogen-specific nutrient uptake rate, and RL and RT are the dimensionless light and temperature limitation coefficients, respectively.
+
+Following Dugdale et al. 1181,we parameterise the change in phytoplankton nitrate uptake as,
+
+VN (0)
+
+= VNtzo)
+
++ (dVN Idt) z
+
+(6)
+
+where VN(zo) is the initial low value of uptake at some time z. which is when phytoplankton cells first reach the surface layer at the upwelling centre and VN (z) is the uptake rate after an elapsed time ‘G= t - zo , during which the cells have been in the high light surface layer. It has been shown 18 that the acceleration term, dVN Idt , is related to the nitrate concentration at the upwelling centre (x. , ~0) where the cells first reach the surface layer by,
+
+dVN Idt
+
+= a N(xo,zot ) + 8
+
+(7)
+
+where a and#3areempirically derived constants.
+
+Clearly in this prescription VN (t,r) is a Lagrangian and not an Eulerian variable, since it cannot be
+related to a point in (x,z,t ) space, but is rather a property of the individual phytoplankton cells, whose value depends on their residence time z in the well-lit surface layer. After reaching a peak, the uptake rate will eventually decrease due to nutrient limitation which, using the Michaelis-Menten formulation, can be written as,
+
+VN tz) =[ VN tt) Ntx,z,t1)I IKs + Ntx,z.Ol
+
+(8)
+
+with Ks @g-at N l-1) the half-saturation constant.
+
+The light limitation of specific uptake rate is modelled using the exponential formulation which
+
+Lagrangian Phytoplankton Model
+takes photoinhibition into account /19/,
+
+mo3
+
+RI_ =
+
+EI(x,z,t)/+t I exp (1 - I(x,z,t)/Iopt )
+
+(9)
+
+with I(x,z,t) the ambient light intensity (wm-2), and the parameter Iopt is the optimal light intensity that maximises gross photosynthesis. The ambient light intensity at depth z is given by the BeerLambert law as,
+
+I(x,z,t) =
+
+I0(t) exd-keW
+
+z)
+
+(10)
+
+with Io(t) the surface irradiance ignoring any cross-shelf variation, and ke(x,t) the average extinction coefficient for downwelling irradiance. Phytoplankton self-shading effects am incorporated through an empirical formula 1201, which relates the average extinction coefficient to the depth-averaged phytoplankton concentration P(x,t) in pg chl L’,
+
+k?(x,t) =
+
+0.04 + 0.0088 P(x,t) + 0.054 [P(x,t)]2’3
+
+(11)
+
+For the short prediction time scale of upwelling episodes, seasonal changes are ignored, and the diurnal variation in surface irradiance IO(t), is modelled using the prescription given by Brock /14/.
+In the Cape Blanc region, field measurements 1211 suggest that the mean extinction coefficient (averaged over the euphotic layer) varies from about 0.5 m-l inshore to 0.2 m-l at the shelf break.
+
+There is a clear effect of temperature on the specific growth rate of phytoplankton and an empirical relationship has been derived 1221,
+
+1.0) =
+
+p. exp(0.063 T)
+
+(13)
+
+where p. is 0.035 (doublings h-l) and T the temperature in degrees Celsius. The nondimensional temperature limitation coefficient RT can be derived from (13) by noting that the maximum
+temperature observed during upwelling on the shelf off Cape Blanc is about 2l”C, 1231, thus (13) may be normalised by the maximum growth rate, umax = 0.13, to give,
+
+For a tempe~~~re of 17“C, which is commonly observed on the shelf during upwelling 1241, RT is approximately 0.8.
+The Lanrannian-Particle Method
+In order to incorporate the nutrient uptake behaviour described in (6,7) we have adopted a Lagmngian-particle approach broadly similar in conception to that of Woods and Onken 1251.To allow for negative buoyancy of algal cells we employ both phytoplankton and nutrient computational particles. The concentration fields P(x,z,t) and N(x,z,t) may be retrieved at any time step by summing over the mass of all the P and N particles in each grid cell.
+The number of particles in a grid cell will affect the accuracy of the concentration estimate. Ozmidov /26/ has shown that this accuracy is proportional to n /z/n, where n is the number of particles. We have chosen an initial particle density of 100 particles per cell as a compromise between accuracy and computational efficiency. The computational domain has been divided into 40 cells in the horizontal and 20 cells in the vertical which implies the maximum number of particles in the domain is 160000.
+The phytoplankton particles may be thought of as representing a water parcel containing a group of
+
+O)lf)4
+
+A. J. Gabricet al.
+
+algal ceils with similar developmental histories. It is then possible to follow the physiological adaptation of a group of similarly positioned ceils as they are vertically advected into the euphotic zone and drift seaward across the shelf. The growth of a phytopiankton particle is thus related to both the environmental conditions at the location of the particle and its individual travel history.
+
+The computational phytopiankton particles each have three properties. Thus the jth phytopiankton particle, Pj , is described by, (i) cross-shelf and vertical position (Xj , Zj), (ii) mass Mj , and (iii) an age or residence time in the euphotic zone, Tj . The computational nutrient particles, Nj , each have
+two properties, position and mass.
+
+Advection by the velocity field is modeiied by updating the position of P and N particles at each time step At. Thus, at the nth time step,
+
+(Xj p (Zj )n
+
+= (Xjp-1
+
++ u(Xj , Zj ) At
+
+= (Zj )n -1 + [w(Xj, Zj ) + ws + w’]At
+
+(1% (lo)
+
+where u(Xj , Zj) is the cross-shelf velocity and w(Xj , Zj) is the vertical velocity at the position of the P or N particle derived by interpolation from the predicted velocity field at grid points neighbouring (Xj , Zj). To account for the effects of turbulent mixing a random vertical displacement w’At is added to the vertical advection. The turbulent velocity w’ is calculated from the turbulent kinetic energy Ek(Xj,Zj) at the particle’s location as predicted by the hydrodynamic model , by
+
+w’ =
+
+d(2Ek i 3)
+
+(17)
+
+The sign of w’ is determined by a random number generator. In order to ensure that turbulent mixing remains a subgrid scale effect, the advective time step must satisfy,
+
+At z~ Azlw’m
+
+(18)
+
+where w’m is the maximum turbulent velocity, and A z is the vertical grid size. For a vertical grid size of Sm and typical maximum turbulent velocity of 5 cm/s the advective time step is 100 seconds.
+
+By contrast, the biological processes are much slower and the mass of phytopiankton and nutrient computational particles need only be updated every hour (the biological timestep, Atb ). For
+accuracy the flux of new particles into the domain along the open boundary is also updated every hour. The number of new particles entering the computational domain in any time step is computed from the mass flux at that depth. The mass of each new N or P particle is calculated by dividing the total boundary ceil mass by 100 and adjusting for the round-off error introduced by having an integral number of particles.
+
+Growth and nutrient depletion are modeiied by updating the mass of P and N computational particles at each time step Atb. Thus, at the nth biological time step, the mass of the N and P
+computational particles am,
+
+P Mjn = N: Mjn =
+
+Mjn-1 Mjn-1
+
++ Mjn-lu(l - L)Atb _ Mjn-1 Y ~(1 - E L)Atb
+
+(19) (20)
+
+Model Parameter Estimation
+
+The parameter values assumed for the model are given in Table 1. Where possible, values appropriate for the Northwest African upwelling zone have been used. Parameters such as the half-saturation constant Ks are not readily measurable in upwelling areas and the value used here is typical of those
+quoted in the literature 1271.
+
+Lagranpian Phytoplmkton Model
+
+(7)105
+
+The uptake acceleration constants a and g were derived from experiments using water sampled at Point Conception, California and the initial nitrate uptake rate VN(zo), wa8 given a value typical of
+minimum values at upwelling centres /6/. While it is well known that C:Chi ratios can vary over a large range, the currency conversion factor y (N:Chl) ha8 been derived by arssuming a C:N ratio of 6 and C:Chl of 50 /8/. The value of Topt , the optimal light intensity that maximises gross photosynthesis, is
+that given by Howe /28/ for the Cape Blanc region.
+
+TABLE 1. Model Parameters
+
+Parameter
+
+Value
+
+Units
+
+Definition
+
+a
+B &
+Y lopt R8 L VN(ro) ws
+
+4 x 10-S 4 x 10-5
+
+h-2 ug-at N-l h-2
+
+0.5
+
+8.3 ug N (w ChB-’
+
+125.0
+
+w m-2
+
+1.0 pg-at N L-’
+
+0.1
+
+5 x IO-’
+
+h-1
+
+0.0 - 1.0 X 1O-4 m 8-l
+
+uptake acceleration constant II
+nutrient regeneration efficiency N : Chl a ratio optimal light intensity nitrate half-saturation constant respiration/grazing loss shifted-down uptake rate algal sinking velocity
+
+RESULTS AND DISCUSSION
+
+The model ha8 been used to simulate phytoplankton growth and offshore advection over a 20 day period for various wind forcing scenarios. Phytoplankton growth in the surface layer will be dependent on the strength of wind forcing which determines the MLD and hence the average light and nutrient environment. A large MLD can impede the attainment of maximum productivity a8 the euphotic zone depth Ze is typically 22 m in the Cape Blanc region /21/, while the MLD can be over
+5Om for strong mixing.
+
+Another important effect for the biological response, is the complex vertical circulation predicted by the hydrodynamic model, which suggests a two-celled pattern as schematically depicted in Figure 2. Upwelling is predicted up to mid-shelf with downwelling. albeit slightly weaker, in the outer shelf and upper slope. The existence of a density front and downwelling at the shelf edge ha8 been noted in a number of field studies at Cape Blanc , e.g. 1291and 1301.Clearly this circulation pattern allows for the possibility of some recirculation of N and P particles.
+
+Fig. 1. Schematic of two-celled cross-shelf circulation pattern
+
+c7)1@j
+
+A. J.GabticetaL
+
+Wind speed also determines the mean velocity in the surface layer and the overall depth of the offshore flowing layer. Hence the total biomass exported from the shelf and the offshore length scale of the resulting phytoplankton distribution will also be wind speed dependent. Importantly for nutrient uptake, the shifting up process depends on residence time in the surface layer and the location of maximal uptake will thus vary with the strength of offshore advection.
+
+Three steady wind stress cases were simulated: 0.05, 0.10 and 0.15 nm-2 corresponding approximately to wind speeds of 5. 7.5 and 10 ms-l , respectively. We have also considered an intermittent wind case where the stress varies from a maximum 0.15 nm-* for 4 days then decreases
+) 0.01 nm-* for 4 days and repeats on a IO day cycle as shown in Figure 2.
+
+0.15
+G < s 0.10 B e &I
+z 0.05
+
+0.00
+
+II
+24
+
+I I 1I 1
+6 8 10 12 14 16 18 20
+
+Time (day)
+
+Fig. 2 Intermittent wind stress forcing
+Case I : Steadv Wind : z = 0.15 nmq2
+The MLD varies diurnally due to the change in solar radiation, with convection due to surface cooling during the night significantly deepening the layer. The MLD ranges from a daytime minimum of about 40 m to a nocturnal maximum of 65m.
+The simulated N and P distributions are shown in Figure 3a and 3b at two day intervals. The initial condition of zero P in the mixed layer causes a time lag in N consumption which does not become severely depleted until P fill the entire surface layer at t = %h. At t = I44 h a patch of nutrient depleted water has been advected to the offshore region (x > 45 km). This uptake is clearly occurring on the shelf as P have not yet been advected offshore at t = I44 h. Thereafter, P begin to move offshore and presumably the combination of in situ and previous shelf uptake combine to deplete N up to a depth of 4&n in offshore waters. The phytoplankton extend to a distance of about 100 km offshore at t = 480 h. Highest surface layer concentrations ( P q 0.5 pg Chl a L-‘) occur in the vicinity of the shelf break with concentrations still about 0.2 pg Chl a L’ offshore.
+e-2 2:s
+The reduced wind speed results in a daytime minimum MLD of 25m and nocturnal maximum of 60m. The strength of vertical mixing is also reduced compared to Case 1 so that any baroclinic motions near the shelf edge are relatively more effective than in Case 1.
+
+Fig. 3(a) Redicted nitrate @g-at N L-t) distributions for 0.15 nme2 wind fonzing.
+
+(7)108
+
+A. J. Gabric el al.
+
+Fig. 3(b) Predicted phytoplankton (pg Chl L-l) time evolution for 0.15 nm-* wind forcing.
+
+LegmngiePnhytoplenkm Model
+
+CIWJ
+
+The N and P distributiona are shown in Figure 4a and 44~ It is interesting that surface N depletion is
+
+again noticeable at t = 144 h, however the low nitrate water extends onto the shelf. With the
+
+decreased ofTshore advection in this cB%c,P @c&s will have Ionger residence times in the surface
+
+layer at the same relative offshore position, and thus attain m&maI
+
+rates (shift up) closer
+
+inshore than in Case 1. While nutrient uptake is higher on the shelf, the chlonophyii values attained in
+
+the surface layer on the shelf are similar to those in Case 1. The P distribution extends 75 km
+
+offshore at t = 480h.
+
+Case 3: Steady Wind: t * 0.05 nm-2
+
+In this case upwelling is marginal with vertical adveetive velocities low and confined to the inshore region of the shelf. The reduced wind speed results in a daytime minimum MLD of about 1Om and nocturnal maximum of 35m. Vertical mixing strength is about 25% of that in Case 1 and, combined with the very shallow mixed layer, vertical entrainment of phytopIankton into the surface layer is suppressed. Model predictions suggest the P ~s~~ti~ is still confined to the shelf at t = 480 h with the result that nitrate is depleted above 40 m depth.
+
+Case 4: Intermittent Wind
+
+In order to investigate a more realistic wind scenario, intermittency was introduced by applying a wind stress of 0.15 nm-2 for 4 days followed by a decrease over one day to a relaxation value of 0.01 nrn”2 which continued for 4 days . The entire cycle was then repeated. During the cycle the daytime MLD varies between 4Om during high wind to less than 5m during relaxation.
+
+N and P distributions are shown in Figures k and !5b. It is interesting to compare the N distribution
+
+with that of the constant wind stress of 0.15 run-2 shown in Figure 3a. At t = 240h nitrate depletion
+
+on the shelf is much higher in the instant case with low unities
+
+from midshe~ seaward in
+
+the upper 30m of the water column as the upweifing of new nutrients ceases during wind relaxation.
+
+A similar situation holds at t = 48Oh at the end of the next relaxation period. If this type of
+
+intermittency is repeated the nitrate concentration on the shelf will be periodically depleted and
+
+replenished. The P distribution is confined to the shelf at t = 240h and higher concentrations up to
+
+0.8 pg Chl a L-* are reached, probably due to the reduced vertical mixing during wind relaxation.
+
+The offshore extent of the P dis~~tion is around 65 km after 20 days.
+
+Case 5 : Hinh Nitrate Steadv Wind : t L 0.15 nm-2
+
+In this simulation the initial and boundary nitrate concentration was doubled to investigate the effects on uptake rate and phytopi~kton growth. With a higher ambient N concentration the acceleration term given by (7) will be higher (by a factor 1.8) and maximal uptake rate should be achieved earlier. The model suggests that P concentrations are slightly higher (10%) but generally the distribution is quite similar to Case 1. The N distribution seems to be depleted more at short simulation times (e.g. t = %h) with values seaward of the 50 km point lower than in Case 1 suggesting higher uptake rates have indeed been achieved.
+
+CONCLUSIONS
+
+The particle model presented here provides a framework for incorporating the physiological hypothesis of shift-up which has recently been suggested by several field investigations in upwelling areas. The Lagrangian nature of this field data cannot easily be incorporated in a standard Euierian modeliing approach.
+
+A. J. Gabric et al.
+
+..“^ I----.‘
+
+“+____-_-_^_A._“_--^-_
+
+I. 6:: 4e WI 20 0
+
+‘3m rho* eakmu (h-n)
+
+Fig. 4(a) Predicted nitrate @g-at N L-1) time evolution for 0.10 nm-* wind forcing
+
+Lagrangian Phytoplankton Model
+Fig. 4(b) Predicted phytoplankton (pg Chi L-l) time evolution for 0.10 nm-* wind forcing,
+
+A. J. tiabric ef al.
+
+c!
+Ii t
+
+I - _ ^. _._-“--__
+tlo Q
+
+40
+
+Ctnn #mu $aemm (ke.)
+
+” ^^..-_._”.”
+M
+
+_ “”i _
+c
+
+Fig. S(a) Predicted nitrate (pg-at N L-t) time evolution for intermittent wind forcing.
+
+Lagrangim Phytoplmkton Model
+
+(7)113
+
+Fig. 5(b) Predicted phytoplankton (pg Chl L-l) time evolution for intermittent wind forcing.
+
+ml 14
+
+A. I. Fabric etal.
+
+Model predictions suggest algal cells will take up almost all the available nitrate in surface waters seaward of the shelf break with nutrient limitation of growth rate then likely. Importantly however, the phytoplankton plume can still extend up to 100 km offshore after 20 days of constant strong winds, although the more realistic intermittent wind scenario suggests an offshore extent of about 70 km. The model predicts surface nitrate depletion seaward of 30 km in the intermittent case, suggesting that nutrient limitation could exist on the outer shelf. Turbidity due to bottom resuspension of inorganic matter has been neglected here but could reduce growth rate and nitrate uptake on the Northwest African shelf, resulting in a delayed shift-up and an offshore displacement of the phytoplankton plume. The offshore filaments which have been registered by the CZCS, 191, could be the result of a superposition in time and space of the algal plumes produced by the almost continuous upwelling along the Mauritanian shelf. Mesoscale mixing processes and large scale surface circulation patterns will also affect the morphology of offshore filaments.
+
+REFERENCES
+
+1. R.C. Dugdale and J.J. Goering, Uptake of new and regenerated forms of nitrogen in primary productivity, Limnol. Oceanogr., 12, 196-206, (1%7).
+2. J.J. Walsh, How much shelf production reaches the deep sea, in, Productivity of the ocean: present and past, edited by WH Berger, VS Smetacek and G Wefer, Wiley, 1989, pp175191.
+
+3. A. Bakun , Global climate change and intensification of coastal upwelling, Science, 247, 198-201, (1990).
+
+4. A. Huyer, A comparison of upwelling events in two locations : Oregon and Northwest Africa, J. Mar. Rex, 34(4), 53 l-547, (I 976).
+
+5. J.J. MacIsaac, R.C. Dugdale , R.T. Barber, D. Blasco and T.T. Packard, Primary production cycle in an upwelling center. Deep Sea Rex, 32, 5, 503-529, (1985).
+
+6. F.P. Wilkerson and R.C. Dugdale , The use of shipboard barrels and drifters to study the effects of coastal upwelling on phytoplankton dynamics, Limnol. Oceanogr., 32(2), 368-382, (1987).
+
+7. R.S. Lampitt, Evidence for the seasonal deposition of detritus to the deep-sea floor and its subsequent resuspension, Deep-Sea Res., 32(8), 8854397, (1985).
+
+8. R.C. Zimmerman, J.N. Kremer and R.C. Dugdale, Acceleration of nutrient uptake by phytoplankton in a coastal upwelling ecosystem: A modelhng analysis. Limnol. Oceanogr., 32(2), 359-367, (1987).
+
+9. A.J. Gabric, L.Garcia, L.Van Camp, L. Nykjaer, W. Eifler, and W. Schrimpf, Offshore export of
+shelf production in the Cape Blanc (Mauritania) giant filament as derived from coastal zone color scanner imagery, J. Geophys. Res., 98, C3, 46974712, (1993).
+
+10. J.S. Wroblewski, A model of phytoplankton plume formation during variable Oregon upwelling, 1. Mar. Res., 35, 357-394, (1977).
+
+11. W. Eifler and W. Schrimpf, ISPRAMIX, a hydrodynamic program for computing regional sea circulation patterns and transfer processes, CEC Technical Rewrt EUR 14856EN, (1992).
+
+12. H.J. Minas, L.A. Codispoti and R.C. Dugdale, Nutrients and primary production in the upwelling region off Northwest Africa, Rapp. P-v. Reun. Cons. int. Explor. Mer., 180, 148-183, (1982).
+
+Lagmngian PhytoplanktonModel
+
+(7)115
+
+13. M. Mamiquez and F. Fraga, The distribution of water masses in the upwelling region off Northwest Africa in November, Rapp. P-v. Rem. Cons. int. Explor. Mer., 180, pp. 3947, (1982).
+
+14. T-D, Brock, Calculating solar radiation for ecological studies, Ecol. M~de~f~~g, 14, l-19, (1981).
+
+15. J-Y. Simonot, E. Dollinger and H. Le Treut, ~e~ynamic-biological~pti~l oceanic mixed layer, J. ~e~p~~~. Res., 93 , C7,8193-82f.X?, (1988).
+
+coupling in the
+
+16. G. Hempel ted.), The Canary Curtznt : Studies of an upwelling system, Raltp. P-v. Rem. Cons. ink Expim. Mer., t80, 45!5pp, (1982).
+
+17. T. Platt, K.L. Denman and A.D. Jassby, Modeling the productivity of phytoplankton, in: The Sea, Vo1.6, ed. E.D.Goldberg, New York, Wiley, 1977, pp807-856.
+
+18. R.C. Dugdale, F.P. Wilker~n and A. Morel, Realization of new portion in coastal upwelling areas: A means to compare relative performance, Limnof, Oceanogr,, 35(4), 822829, (1990).
+
+19. .l.H. Steele, ~vi~rnen~ (1962).
+
+control of photosynthesis in the sea., pilaf. Oceamgr., 7, 137-150,
+
+20. G.A. Riley, Tr~s~~cy~hlo~phyll
+
+relations, Limnol. Uceangr., 20, 150-152, (1975).
+
+21. R.C. Dugdale, A. Morel, A. Bricaud and F.P. Wilkerson, Modeling new production in upwelting
+centers: A case study of modeling new production from remotely sensed temperature and color, J. Geophys. Res., 94, C12, 18119-18132, (1989).
+
+22. R.W. Eppley, Temperature and phytopl~kton growth in the sea. Fish. Bull., 70, 1063-1085, (1972).
+
+23. E. Mittelstaedt, The ocean boundary along the northwest African coast: Circulation and oceanographic properties at the sea surface, Prog. ~ea~~g., 26, 307-355, (1991).
+
+24. L. Van Camp, L Nykjaer, E Mittelstaedt and P Schlittenhardt, Upwelling and boundary
+ci~uiation off No~hwest Africa as depicted by infrared and visible satellite observations, Prog. Oceanug., 26,357-402, (1991).
+
+25. J.D. Woods and R. Onken, Diurnal variation and primary production in the ocean - preliminary results of a Lagrangian ensemble model. J. Pkmkr. Res., 4, 7357-56, (1982).
+
+27. 3.J. MacIsaac and R.C.Dugdale, The kinetics of nitrate and ammonia uptake by Saturn ~ula~ons of marine ~yt~lankt~, Deep-Sea Res., 16,45-57, (1969).
+28. S. Howe, A simulation study of biological responses to env~ronmen~l changes associated with coastal upwelling off Northwest Africa, Rapp. P V. Rem. Cons. Int. Expbr. Mer., 180, 135147, ( 1982).
+29. E. Hagen, Mesoscale upwelling variations off the West African coast, in: Coastal Upwelling, Coastal &marine Ski. Ser., Vol. I, ed. F.A. Richards, AGU, W~hingto~, D.C., 1981, pp. 72-78.
+30. E. Mittelstaedt and I. Hamann, The coastal circulation off Mau~~nia. L&&z. Hydmgr. Z., 34, 81-l 18, (1981).
+

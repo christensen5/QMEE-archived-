@@ -1,0 +1,112 @@
+.dgridtable {
+    border-top: 4px solid #1079AD;
+    border-collapse: collapse;
+    border-left: 1px solid #d6d8dc;
+    width: 920px;
+}
+
+.dgridtable p {
+  padding: 0;
+  margin:10px 15px;
+}
+
+.dgridtable thead p {
+  padding: 0;
+  margin:10px 0;
+}
+
+.dgridtable thead {
+  background: #D6D8DC;
+  border-bottom: 1px solid #d6d8dc;
+}
+
+.dgridtable td, .dgridtable th {
+    border-right: 1px solid #d6d8dc;
+    border-bottom: 1px solid #d6d8dc;
+    padding: 5px 5px 5px 10px;
+    text-align:center;
+}
+.dgridtable td {
+    font-size: 0.85em;
+}
+.dgridtable th p {
+    margin:0;
+    padding:0;
+    font-size: 0.85em;
+}
+.dgridtable td p {
+    font-size: 1em;
+    margin:0;
+    padding:0;
+}
+
+.dgridtable tfoot {
+  border-top: 2px solid #58595e;
+}
+
+.dgridtable tfoot td {
+  border-bottom: 0px;
+}
+
+#permitapps .dgridtable p {
+    margin:0px;
+    font-size:13px;
+}
+
+.hidedetail {
+    font-size:13px;
+}
+
+.showdetail {
+    font-size:13px;
+}
+
+.emp-table {
+    padding: 0px;
+    margin: 0px;
+    border-collapse: collapse;
+    width: 80%;
+    color: #292B36;
+}
+
+.emp-table td {
+    padding: 5px;
+    margin: 0px;
+    border: 1px solid #292B36;
+    vertical-align: top;
+}
+
+#emp-4 {
+    max-height: 670px;
+    overflow: auto;
+}
+.emp-list {
+    width: 100%;
+    list-style: none outside none;
+    padding: 4px;
+    margin: 0px;
+}
+
+td.emp-selected {
+    width: 50%;
+}
+.emp-selected {
+    background-color: #bfd6ef;
+}
+.emp-all {
+    border: 0px none !important;
+    cursor: pointer;
+}
+
+
+.dgriddetailshide {
+    display: none;
+}
+
+form .dgridtable {
+  width: auto;
+}
+
+#permitapps .dgridtable br {
+	display: inline !important;
+}

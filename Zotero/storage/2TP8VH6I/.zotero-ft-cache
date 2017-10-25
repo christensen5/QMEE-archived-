@@ -1,0 +1,857 @@
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22 available at www.sciencedirect.com
+
+journal homepage: www.elsevier.com/locate/ecolmodel
+Phytoplankton co-existence: Results from an individual-based simulation model
+E. Nogueira a,∗, J.D. Woods a, C. Harris b, A.J. Field b, S. Talbot a
+a T.H. Huxley School of the Environment, Earth Science and Engineering, Imperial College of Science, Technology and Medicine, Prince Consort Rd., SW7 2BP London, UK b Department of Computing, Imperial College of Science, Technology and Medicine, Prince Consort Rd., SW7 2AZ London, UK
+
+article info
+Article history: Received 5 October 2004 Received in revised form 28 March 2006 Accepted 5 April 2006 Published on line 23 June 2006
+Keywords: Individual-based model Lagrangian–Ensemble method Allometric relationships Competition for light Competition for nutrients Spatio-temporal niche segregation Co-existence Annual competitive advantage (ACA)
+
+abstract
+We have investigated phytoplankton competition in a 1D, coupled physical-biological, individual-based model, designed to simulate a size-structured phytoplankton community, whose members belong to the same functional group but differ in size (20, 40 and 60 ␮m ESD), and compete for two resources (light and nutrient-nitrogen) in the frame of a food-chain plankton ecosystem, forced by astronomical and climatological conditions of a subtropical site. Allometric relationships established ranked performance: small-sized individuals have higher mass-speciﬁc metabolic rates (photosynthesis, nutrient uptake and respiration) and sink more slowly than do individuals in the larger size-classes. No a priori form of niche diversiﬁcation was considered. The simulation reproduced the seasonal pattern of the environmental variables and phytoplankton biomass, displayed seasonality in relative demography and sustained multi-year co-existence. Phytoplankton biomass rose during the spring bloom until nutrient depletion, decreasing afterwards due to zooplankton grazing. In the light-controlled phase of the spring bloom, the dominance ranking in the mixed layer was consistent with the allometric ranking of energetics; small, middle and largesized phytoplankton accounted for 77.2%, 22.4% and 0.4% of total biomass (ca. 5 gC m−2). Vernal subduction into the seasonal thermocline shaped a summer nutricline at ca. 30 m depth, below which reproduction generated a deep chlorophyll maximum. During summer, zooplankton diel vertical migration, foraging and excretion, and microbial remineralisation of detritus produced a feeble and declining source of ammonium in the oligotrophic layer. Differential subduction into the seasonal thermocline and nutrient stress promoted the dominance of small phytoplankton in this layer. By the end of summer, the survivors of the three size-classes lay at different depths, which provides a mechanism to relax competition: small cells survived in the mixed layer, the middle-sized in the seasonal thermocline, and the largest in both the seasonal and permanent thermoclines. Large phytoplankton survived longer in the eutrophic but poorly lit environment due to their lower mass-speciﬁc respiration. Oligotrophy lasted until the mixed layer reached the nutricline in autumn. Those cells in the seasonal and permanent thermoclines were entrained into the mixed layer as it deepened, seeding the growing season next year. The numbers of plankton in the three seed populations depended critically on their reproduction during summer. In winter, growth was accelerated by the re-establishment of the diurnal thermocline. From year-to-year, the
+
+∗ Corresponding author at: Centro Oceanogra´ ﬁco de Gijo´ n, Instituto Espan˜ ol de Oceanograf´ıa (IEO), Avda. Pr´ıncipe de Asturias, 70 bis, E-33212 Gijo´ n, Spain. Tel.: +34 985 308672; fax: +34 985 326277.
+E-mail address: enrique.nogueira@gi.ieo.es (E. Nogueira).
+0304-3800/$ – see front matter © 2006 Elsevier B.V. All rights reserved. doi:10.1016/j.ecolmodel.2006.04.013
+
+2 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+relative demographic success (the annual competitive advantage, ACA) of the competing populations depends critically of their relative energetics and the biomasses in the seed populations. Taken together, these two factors yielded negligible ranking among the sizeclasses, and thus co-existence was achieved over three simulated years despite substantial seasonal variation in competitive advantage.
+© 2006 Elsevier B.V. All rights reserved.
+
+1. Introduction
+The study of the mechanisms that control and maintain species diversity in natural ecosystems is one of the key areas of research in modern ecology (Flo¨ der and Sommer, 1999). Species diversity should be added to species composition, disturbance, nutrient supply and climate as a major controller of population and ecosystem dynamics and structure (Tilman, 1999). There is an apparent conﬂict between the competition theory (Hardin, 1960), which predicts that the number of co-existing species cannot exceed the number of limiting resources (competitive exclusion principle), and the high species diversity observed in natural ecosystems (e.g. Harris, 1986). In the pelagic, where only few resources are potentially limiting, this phenomenon is known as the “Hutchinson’s paradox of the plankton” (Hutchinson, 1961). The wealth of community theories developed to address this paradox follow two different lines of thought (Wilson, 1990). Equilibrium theories assume the existence of stable equilibria in natural systems, and the control and maintenance of species diversity is explained by mechanisms such as niche differentiation, which often takes the form of resource partitioning (Tilman, 1977) or selective grazing (Amstrong, 1994). Non-equilibrium theories reject the steady-state assumption and focus instead in transient dynamics and stochastic descriptions, and propose that environmental changes prevent competitive exclusion to occur by relaxing or reversing competitive hierarchies before competition fully developed (Hutchinson, 1961; Reynolds, 1993; Sommer et al., 1993; Nogueira et al., 2000; Nogueira and Figueiras, 2005).
+Simulation models provide a valuable tool to investigate the mechanisms that control and maintain species diversity. Until recently, most of them kept the formulation based on a three-stage food-chain (Riley et al., 1949): limiting nutrient–phytoplankton–zooplankton (NPZ model). The objective of realism forces model formulations towards increasing complexity, in terms of the number of state variables and processes included, and higher resolution, taking into account interactions that occur over a wide range of spatio-temporal scales (e.g. models listed by Totterdell, 1993; Jørgensen et al., 1995; Evans and Garc¸ on, 1997). The increment of the number of functional groups (i.e. model components that share the same process functions) is commonly based on trophic and/or taxonomic considerations. Biodiversity in such models is related to the processes that promote and maintain the co-existence of different functional groups (e.g. Evans, 1988; Fasham et al., 1990; Fennel and Neumann, 2004). It is desirable to increase complexity further to take into account the variability of the parameters of the process functions within the functional-group level. Although the consequences of aggregation are poorly investigated (Ebenho¨ h,
+
+1994), it is recognised that lumping multiple species having disparate process rates into a single functional group could result in a poor parameterisation. This increases the distortion in modelling transfers among ecosystem components (Evans and Fasham, 1993) and hinders the analysis of important ecosystem features such as competition. In an extreme case, it is possible to develop a dynamic simulation model from a speciﬁc data set (e.g. Andersen et al., 1987), but as the number of species could be considerable, the model becomes complex to handle and the estimation of the parameters very difﬁcult. An alternative approach is to deﬁne the structure of the model based on general properties of the ecosystem (Platt et al., 1981), which has the advantage of constraining the number of parameters to be estimated. The most generalised applicable property of the plankton ecosystem is size, which inﬂuences the rates of metabolic processes, the interactions among planktonic (and other) organisms and the structure and function of the ecosystem (Peters, 1983; Dickie et al., 1987; Cushing, 1989; Chisholm, 1992; Kiørboe, 1995; Legendre and Rassoulzadegan, 1996). Size-based models (e.g. Moloney and Field, 1991; Moloney et al., 1991; Gin et al., 1998; Baird et al., 2004) make use of allometric relationships to estimate the parameters of the biological process functions for each of the size-classes of organism that integrate each functional group.
+The maintenance of biodiversity in plankton ecosystem models is difﬁcult to achieve, even when the competing species belong to different functional groups. It generally requires the prescription of some form of niche diversiﬁcation, such as resource partitioning (Dippner, 1998; Huisman and Weissing, 1999), selective grazing (Moloney and Field, 1991; Amstrong, 1994), different behaviour (Broekhuizen, 1999) or the introduction of trade-off conditions (Evans, 1988) among the competing plankton. A general assumption in these models is that the competing species must be sufﬁciently ecologically distinct in order to co-exist (Chesson, 1991). Co-existence is more difﬁcult to achieve when the competing species belong to the same functional group and a competitive hierarchy exists among them (Ebenho¨ h, 1994).
+Despite the multiplicity of formulations and spatiotemporal scales considered in plankton simulation models (e.g. Jørgensen et al., 1995), they can be classiﬁed in three types according to the way they aggregate the plankton (Woods, 2005): (1) box, (2) ﬁeld and (3) individual-based models. The ﬁrst two treat the components of the plankton ecosystem as continuum ﬁelds, integrating in an Eulerian frame the set of differential equations that describe the physical, chemical and biological processes. The application of the Euleriancontinuum method has a relatively easy computer implementation, and therefore has usually been the method adopted (e.g. models listed in Totterdell, 1993; Jørgensen et al., 1995;
+
+Table 1 – Model parameters for the phytoplankton process functions
+
+Processes and parameters
+
+Symbol
+
+Units
+
+Allometric relationship (Reference)
+
+Parameters values
+
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+Cell properties Equivalent spherical diameter Volume Mass
+Nutrient (DIN) uptake Maximum uptake rate Half-saturation constant
+Photosynthesis Light absorption Photoadaptation time
+Respiration Respiration rate Half-saturation for respiration Reference temperature
+Reproduction (values per cell) Internal nitrogen pool: maximum Internal nitrogen pool: reproduction Internal energy pool: maximum Internal energy pool: reproduction
+Sinking Sinking speed
+
+ESDPi VPi MPi
+Vmax Pi kNPi
+kF ta
+kRPi kR Tr
+Nmax Pi NrPi Emax Pi ErPi
+sPi
+
+␮m ␮m3 pgC
+mmol h−1 mmol m−3
+Dimensionless h
+J h−1 cells m−2 ◦C
+mmol mmol J J
+m h−1
+
+Vpi = 4/3 (ESD/2)3 MPi = 0.38VP0i.76 (1) Vmax Pi = 3.6MP−i0.25 (2) kNPi = 2.0MP0i.38 (3)
+kRPi = 1.7MP−i0.25 (2)
+Nmax Pi = 1.38 × 10−12VPi (4) NrPi = 0.53Nmax Pi (5) Emax Pi = 3816Nmax Pi (6) ErPi = 0.53Emax Pi (5) sPi = 0.029MP0i.42 (2)
+
+20 4189
+210
+1.0 × 10−10 1.09
+0.6 5
+1.9 × 10−7 8 × 102 10
+5.8 × 10−9 3.1 × 10−9 2.2 × 10−5 1.2 × 10−5
+1.1 × 10−2
+
+40 33510
+1018
+3.4 × 10−10 1.99
+0.6 5
+6.1 × 10−7 8 × 102 10
+4.6 × 10−8 2.5 × 10−8 1.8 × 10−4 9.5 × 10−5
+2.2 × 10−2
+
+60 113097
+2559
+6.8 × 10−10 2.81
+0.6 5
+1.2 × 10−6 8 × 102 10
+1.6 × 10−7 8.3 × 10−8 6.0 × 10−4 3.2 × 10−4
+3.3 × 10−2
+
+The sources for the allometric relationships used to estimate the size-dependent parameters are: (1) Strathmann (1967); (2) Moloney and Field (1991); (3) Moloney and Field (1989); (4) Straile (1997); (5) Woods and Barkmann (1993a); (6) Tett and Droop (1988).
+
+3
+
+4 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+Fennel and Neumann, 2004). However, the assumption that plankton organisms can be treated as ﬂuid (continuous) variables is not always valid (Siegel, 1998), and the simulation of some ecosystem processes is at risk when the variability and time history at the individual level is externalised (Lomnicki, 1999; Broekhuizen et al., 2003).
+The individual-based approach describes each plankton population in terms of individual organisms. This approach was ﬁrst applied to the plankton ecosystem by Woods and Onken (1982) to simulate the response of phytoplankton to diurnal variation of mixed layer depth. Since then, the Lagrangian–Ensemble (LE) method, which treats the plankton (e.g. phytoplankton, zooplankton or detritus) as a cloud of discrete, Lagrangian-particles, and integrates the process functions of each of them along its own individual trajectory on an Eulerian-prescribed changing environment (e.g. water column temperature, light, nutrient and turbulent regime), has been applied to simulate different aspects of the plankton ecosystem (e.g. Woods and Barkmann, 1993a,b, 1994; Barkmann and Woods, 1996; Carlotti and Wolf, 1998; Miller et al., 1998; Liu and Woods, 2004; Woods, 2005; Woods et al., 2005). A similar ‘hybrid’ approach has been followed by other authors (e.g. Yamazaki and Kamykowski, 1991; Kamykowski et al., 1994; Janowitz and Kamykowski, 1999; Nagai et al., 2003; Grieco et al., 2005).
+The relative advantages of Eulerian and Lagrangian integration are discussed in Woods (2005). The present investigation could not be performed with an Eulerian model since the interpretation of the results depends critically on analysing the trajectories of individual plankters and on the existence of a stable attractor with no inter-annual variability of the kind that can arise artiﬁcially in Eulerian simulations (Popova et al., 1997; Woods et al., 2005).
+We have applied the LE method to analyse the temporal and vertical changes of a size-structured phytoplankton community (20, 40 and 60 ␮m equivalent spherical diameter, ESD), whose members belong to the same functional group and compete for photosynthetic active radiation (PAR) and dissolved inorganic nitrogen (DIN) in the frame of a NPiZD (nitrogen, i size-classes of phytoplankton, herbivorous zooplankton and detritus) food-chain plankton ecosystem, under conditions of astronomical and climatological forcing encounter off Azores (41◦N, 27◦W), on a zero net heat budget location (i.e. stationary seasonal cycle). The model uses published allometric equations to estimate the metabolic rate parameters (photosynthesis, nitrogen uptake, respiration and internal cell pools of energy and nitrogen) and sinking speeds of the different phytoplankton size-fractions (Table 1). The allometric approach introduces competitive hierarchies among the sizefractions. We investigated the mechanisms that promote coexistence from the analysis of the emergent properties of the virtual plankton ecosystem (VPE) generated by the simulation model.
+2. The model
+The current version of the NPiZD model is a one-dimensional (1 m2 cross-section area, z = 500 m, z = 1 m) coupled physicalbiological model that simulates a food-chain plankton ecosys-
+
+tem with three size-classes of phytoplankton (20, 40 and 60 ␮m ESD) of the same functional group. The planktonic compartments (i.e. phytoplankton size-structured community, Pi, herbivorous zooplankton, Z, and detritus D, faecal pellets and dead organisms) are treated as particles and simulated through an individual-based approach. The generic forms of the process functions are similar to those in the Woods and Barkmann (WB) model (Woods and Barkmann, 1993a,b, 1994; Woods, 2005) (Appendix A). Fig. 1 represents the model structure and summarises the transfer ﬂow processes.
+2.1. Model structure and processes
+2.1.1. Physico-chemical water column environment A modiﬁed bulk mixed layer model (Kraus and Turner, 1967) reproduces the water column physical environment (Woods and Barkmann, 1986), simulating the turbocline depth (h, m), underwater PAR (IPAR, W m−2) and temperature (T, ◦C) that result from the physical processes of heating by absorption of solar radiation, convective adjustment, convective penetration and wind stress penetration. Solar radiation is speciﬁed by 25 spectral bands (2 UV, 13 PAR and 10 IR) (Woods, 1980), and its downward ﬂux is affected, within the PAR spectral range, by phytoplankton absorption (Morel, 1988).
+Nitrate plus ammonium (=DIN, mmol m−3) prescribe the chemical environment. The model is initialised with nitrate. Ammonium, initially zero, is generated in the course of the simulation by zooplankton excretion and remineralisation of detritus. The model does not include the process of nitriﬁcation (conversion of ammonium to nitrate). Phytoplankton cells have no preferential uptake of ammonium over nitrate (Dortch, 1990).
+2.1.2. Plankton ecosystem DIN and IPAR are the controlling resources for the phytoplankton community (Pi). Phytoplankton reproduction and natural mortality by energy exhaustion depend on the size-dependent internal cell pools of energy and nitrogen, determined, respectively, by the size-dependent processes of nitrogen uptake and energetic metabolism (photosynthesis–respiration). The values of the size-dependent parameters were calculated from published allometric equations (Table 1). The allometric approach imposes competitive hierarchies among the sizeclasses. The smaller size-classes compete more efﬁciently in a wide range of environmental conditions, having for the same combination of the controlling resources (DIN and IPAR), higher maximum reproduction rate ( max) than the representatives of the larger ones have (Fig. 2). Conversely, due to its higher mass-speciﬁc respiration rate, small cells loose more internal energy than larger cells do under conditions of light-limitation and photoinhibition, being therefore worse competitors in the environmental window deﬁned by extremely low or ﬂuctuating light regimes (Fig. 3).
+A single model compartment represents herbivorous zooplankton (Z) that graze on the Pi community independently of size, i.e. no grazing preferences which might promote coexistence (Evans and Fasham, 1993). Detritus (D) comprises dead plankton and faecal pellets. These three components of the plankton ecosystem (Pi, Z, D) are treated as discrete parti-
+
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+5
+
+Fig. 1 – Generic structure of the NPiZD model showing the model compartments and the transfer ﬂow processes among them. MLD, mixed layer depth; PAR, photosynthetically active radiation; DIN, dissolved inorganic nitrogen; Pi, phytoplankton size-class i; Z, herbivorous zooplankton; D, detritus; ZC, carnivorous zooplankton; B, bacteria. Transfer ﬂow processes are: 1, mixed layer dynamics; 2, downward irradiance; 3, bio-optical feedback; 4, entrainment-detrainment and
+mixing of DIN; 5, photosynthesis; 6, light absorption (self-shading); 7, nutrient uptake; 8, corporate nutrient depletion; 9,
+grazing; 10, detritus (death Pi and Z, and faecal pellets); 11, carnivorous predation; 12, excretion of ammonium (by Z and ZC); 13, bacterial action on D; 14, remineralisation of D; 15, incorporation of ammonium to the DIN pool.
+
+cles and their process functions (Appendix A) are integrated by Lagrangian integration. Steady, homogeneous concentrations of bacteria (B) and carnivorous zooplankton (ZC) are the closure terms, simulating implicitly bacterial remineralisation of D and carnivorous predation on Z.
+2.1.3. Phytoplankton competitive hierarchies The net reproduction rate (dnPi /dt, considering all population gain and loss terms) is the critical variable to understand competition (Reynolds, 1993, 1997). The net reproduction rate of a phytoplankton particle (≡sub-population in the LE method) is the result of the gains due to reproduction and the losses due to natural mortality and zooplankton grazing. Since there is no a priori form of niche diversiﬁcation, the differences in dnPi /dt among size-classes are the result of the size-dependent efﬁciency to achieve the size-dependent internal pools of nitrogen and energy required for reproduction. Fig. 2 shows the daily-integrated maximum reproduction rate ( max) as a function of DIN and IPAR, for the three size-classes and for different values of the dynamically varying light-adaptation parameter (Im, Eq. (A.4) in Appendix A). The environmental variable that controls max is the one that requires more time to be accumulated inside the cell until the threshold value for reproduction is eventually achieved (Section 1.3 in Appendix A); max = MIN ( [Ep], [Np]), where [Ep] is the reproduction rate associated with the energetics of the cell (photosynthesis–respiration) on a nutrient-replete environment, while [Np] is the reproduction rate associated with the process of DIN uptake at saturating light.
+
+Figs. 2 and 3 highlight the competitive hierarchies imposed
+by the allometric approach. Small phytoplankton reproduces
+at higher rates than middle and large cells for a wide range
+of environmental conditions (Fig. 2). However, the competi-
+tive advantage of small phytoplankton is weaker when light
+is the controlling resource. Under the control of IPAR, the ratio of reproduction rates between consecutive size-classes for a given value of IPAR is about 2 (e.g. for Im = 25 W m−2, DIN > 4 mmol m−3 and IPAR = 100 W m−2; max are ca. 0.90, 0.45 and 0.25 d−1 for size-classes 20, 40 and 60 ␮m, respec-
+tively). When DIN is the controlling resource, this ratio is around 3 (e.g. for Im = 25 W m−2, 10 W m−2 < IPAR < 80 W m−2 and DIN = 3 mmol m−3, max are 1.20, 0.40 and 0.15 d−1 for sizeclasses 20, 40 and 60 ␮m). The areas outside the max = 0 ‘Cshaped’ contour line indicate for which values of ambient IPAR, respiration overcome photosynthesis in a daily basis, and the
+cell is expending the accumulated internal energy pool. Above
+the upper arm of the max = 0 ‘C-shaped’ contour line, the lost of internal energy is due to photoinhibition, while in the small
+area below the lower arm of the max = 0, the supremacy of respiration is due to a deﬁcient ambient PAR (IPAR < 3 W m−2). The competitive hierarchy among the size-classes reverse under
+extremely high (relative to photoadaptation) or low light envi-
+ronments (Fig. 3). This is a consequence of the lower metabolic
+rates of larger cells, which result in lower energetic losses due
+to photoinhibition and longer life expectancy under light lim-
+itation (i.e. below the compensation depth, zC, where losses to respiration overcome losses to photosynthesis in a daily
+basis).
+
+6 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+Fig. 2 – Competitive hierarchy among the phytoplankton size classes (20, 40 and 60 ␮m ESD, columns) for different values of the light adaptation parameter (Im 10, 25 and 50 W/m2, rows). The isolines represent the maximum reproduction rates ( max, day−1) for combinations of the controlling resources DIN and IPAR. The controlling resource is DIN where the isolines
+run perpendicular to the DIN-axis, and IPAR where the isolines run perpendicular to the IPAR-axis. Note the different range of
+the IPAR scale for different values of the light adaptation (Im) parameter.
+
+2.2. Model integration
+The model equations are integrated by the LE method (Woods and Onken, 1982; Woods and Barkmann, 1993a,b, 1994; Woods, 2005). As integration proceeds, it switches every time step between Eulerian and Lagrangian modes (Fig. 1). The turbocline depth (h) and the environmental ﬁelds (IPAR, T and DIN), are simulated by Eulerian integration for every time step ( t = 0.5 h) and layer of the water column ( z = 1 m). There is no turbulence in the diurnal and seasonal thermoclines, and
+
+turbulence in the mixing layer (i.e. above the turbocline) is sufﬁcient to homogenize seawater properties vertically in each time step. Thus, there is no need to integrate differential equations for these variables, which implies that there is no risk of numerical instability in computing the vertical proﬁles of seawater properties.
+The components of the plankton ecosystem Pi, Z and D are treated as particles (Lagrangian mode). The interactions among these components (e.g. grazing) and the inﬂuence they exert on the environment (biofeedback, e.g. light attenuation)
+
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+7
+
+Fig. 3 – Energy balance for the phytoplankton size-classes (20, 40 and 60 ␮m ESD) under low underwater irradiance. (a) Daily, mass speciﬁc, energy balance (E–R) (J d−1)(pgC)−1 (for Im 10 and 5 W m−2 and a 12-h photoperiod). (b) Detail of graph (a); note the higher mass-speciﬁc respiration rate of small phytoplankton. (c) Time to empty/ﬁll the maximum energy pool of the cell for the different size-classes (Emax, Table 1) (for Im = 3 W m−2 and a 12-h photoperiod).
+are simulated through continuum ﬁelds (Eulerian mode) from the ensemble statistics of the population of individuals. The vertical proﬁles of biological properties are derived from summing the plankton sub-populations in each 1 m thick layer of the mesh.
+2.3. Demography
+The population of plankton is represented by a set of dynamic sub-populations, each of which is associated with one particle. Each particle moves independently in response to the motion of the water (turbulence) and its own motion relative to the
+
+water (sinking or swimming). The sub-population associated with a particle changes its biological state (in the case of phytoplankton: energy and nutrient pools, number of cells per particle and state of photoadaptation) in response to the biological equations of the model (Appendix A) applied to the particle’s ambient environment. For each phytoplankton size-class, the number of cells per square metre in each 1-m-thick layer is computed every time step by summing the sub-populations associated with the particles of that size-class that happen to be in that layer during that time step. The total amount of cells per square metre for each size-class is computing by summing over all layers. The summation takes into account of migrating zooplankton, which vertical displacement is simply the swimming velocity multiplied by the time step.
+2.4. Particle management and computation
+The computational cost of the LE method depends on the number of particles. Since it is unaffordable to simulate the trajectory followed by each individual plankter, each particle represents a sub-population of individuals (i.e. ‘super-individuals’ in individual-base modelling terminology, Scheffer et al., 1995) that experienced the same ambient environment and therefore share the same adaptive state. The numbers of particles is chosen to achieve a satisfactory signal–noise ratio in computing demography and biofeedback processes. Preliminary investigations (Woods, 2005) showed that a satisfactory signal–noise ratio could be achieved with at least 20 phytoplankton particles per layer and 600 zooplankton particles per generation.
+The NPiZD model is based on the parallel C++ code (AlBattran et al., 1998) built upon the WB model (Woods and Barkmann, 1994). The implementation uses the message passing interface (MPI) programming model on a multiple processor computer Fujitsu AP3000. The simulations of the NPiZD model are parallelised using vertical partitioning, which ensures that the communication between processors involved in the simulations is kept constant for increasing problem size.
+2.4.1. Phytoplankton particles In the present investigation, the model is initialised with 16,000 phytoplankton particles in each size-class (Pi) distributed uniformly in the top 200 m (80 particles per layer). The number of phytoplankton cells (nPi ) in each particle (≡subpopulation) changes because of the processes of reproduction, mortality and grazing. The adaptive state variables are the internal pools of nitrogen and energy (NPi and EPi , mmol and J, respectively) and state of photoadaptation (Im, W m−2).
+The vertical displacement of phytoplankton particles depends of their position in relation to the turbocline depth (h), which separates turbulent and laminar ﬂow (Woods and Onken, 1982). A pseudo-random generator number (RGN) simulates the motion within the mixed layer due to turbulent ﬂow. The vertical displacement in the mixing layer is computed as a jump to a new depth, chosen randomly between the surface and h. The displacement due to sinking (phytoplankton) or swimming (zooplankton) is computed within the time step after the displacement due to turbulence (i.e. RGN), and is simply the velocity by time step. The turbocline is not a material surface, and particles pass freely to it as the result
+
+8 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+of their sinking/swimming. In the diurnal and seasonal thermoclines, where the ﬂow is assumed laminar, phytoplankton particles fall steadily at a size-dependent sinking rate (SPi , m h−1) (Table 1). Every time step, the model checks that a representative amount of particles (20 m−3) remains in the mixed layer, and creates more if necessary by splitting the existing ones. No particle splitting takes place below the mixed layer.
+2.4.2. Herbivorous zooplankton particles Initially, 600 zooplankton particles are distributed uniformly in the top 200 m. The initial bodyweights of the zooplankton upon each particle are assigned randomly from a uniform distribution between 10 and 20 ␮gC. The numbers of zooplankton individuals carried by each zooplankton particle (nZ) is modiﬁed by reproduction, carnivorous predation and starvation. The movement of Z particles depends on the position of the particle in relation to the turbocline depth, light (target isolume) during the day and satiation index at night (Section 2.3 in the Appendix A).
+2.4.3. Detritus particles The detritus particles displaced randomly in the mixed layer and sink at a steady rate, no size-dependently, when they are below the turbocline. This approach ensures accurate computation of biochemical feedback by remineralisation. If the number of detritus particles within a depth is more than 10, the excess are removed from the simulation layer and the biomass removed is divided equally among the remaining detritus particles. Besides, detritus particles are combined when they are in the seasonal thermocline. These management rules reduces both memory requirements and execution time.
+2.5. Initial and boundary conditions
+The model is forced by the monthly climatology of Bunker—components of the surface heat ﬂux, wind speed and cloudiness (Isemer and Hasse, 1987), and solar elevation. The monthly climatological data are interpolated to half-hour time steps and describe the meteorological boundary conditions at a ﬁxed location in the north-east Atlantic (41◦N, 27◦W), in the border between the Northeast Atlantic Subtropical Gyral Province (NAST, 25–40◦N) and the Northeast Atlantic Drift Province (NADR, 40–60◦N) (Longhurst, 1998). At this location, since the annual surface heat ﬂux is almost zero (solar heating balances annual cooling) (Isemer and Hasse, 1987), atmospheric forcing generates a quasi-regular annual cycle in the physical environment (Woods et al., 2005).
+The model is initialised at 06:00 a.m. on 1st March (model day, m.d. 60), when the diurnal and seasonal thermoclines reach their maximum values and the biological processes implemented in the model proceed at minimum rates due to light limitation of primary production. The climatology from Levitus (1998) [http://ingrid.ldgo.columbia.edu/SOURCES/ .LEVITUS94] provides the initial values for salinity, temperature and nitrate.
+In the standard simulation, the model is initialising with the same biomass allocated in each size-class (e.g. ﬂat biomass per size-class spectrum): 0.013 gC m−2 (integrated for the ﬁrst 200 m of the water column), equivalent to 0.8 ␮gC per particle,
+
+and approximately 4000, 800 and 300 cells per particle for sizeclasses 20, 40 and 60 ␮m ESD, respectively.
+3. Results
+3.1. Ecological features and processes in the seasonal cycle
+The analysis of the seasonal variation focused on the quasistationary seasonal cycle of the third year of a 3-year simulation (Figs. 4–6). The present investigation did not beneﬁt from the iterative tuning of initial and boundary conditions needed to achieve a precisely stationary seasonal cycle (Woods et al., 2005), and therefore the 3-year simulation exhibits slight interannual variability in the physico-chemical water column environment (Fig. 4a) and biological variables (Fig. 4b and c). Nonetheless, the basic structure of the annual cycle repeated each year.
+The ecological features and processes described below affect in distinct ways the demographic histories of the competing phytoplankton size-classes. Each has being previously identiﬁed as an emergent property of a model similar to ours but with only one phytoplankton size-class (of 20 ␮m ESD) and different parameterisation of the size-dependent process functions (Woods and Barkmann, 1993a; Woods, 2005). The responses of phytoplankton to the seasonally varying water column environment (Fig. 5), deﬁned in terms of ﬂow regime (turbulent or laminar) and resources availability (DIN and IPAR) are summarised in Table 2 and Fig. 6a.
+3.1.1. Turbulent mixing, subduction and entrainment The turbocline marks the boundary between the surface mixing layer and the underlying thermocline (Woods and Barkmann, 1986). The turbocline depth h(t) exhibits diurnal and annual cycles. Fig. 4d shows the annual cycle of daily maximum and minimum values [hmax(d), hmin(d)] of h(t). The diurnal thermocline lies between these limits [hmin(d) < z < hmax(d)]. The daily maximum deﬁnes the mixed layer depth [MLD ≡ H(d) = hmax(d)]. The seasonal thermocline lies between the annual minimum and maximum depths of the mixed layer [Hmin(y) < z < Hmax(y)].
+The MLD decreases sharply during the spring, subducting water progressively into the seasonal thermocline. The initial properties of the water in the seasonal thermocline (temperature, nutrient concentration and plankton abundance) are determined by subduction, i.e. by the properties of water in the mixed layer on the subduction date. The MLD in the simulation (Table 3, Fig. 4a and d) shallows abruptly from its maximum annual value (permanent thermocline) in the last week of March (Hmax(y) = 230 m, m.d. 80) to a depth of 50 m 2 weeks later (m.d. 95). It ascent continues at a much lower rate until mid July (m.d. 195), when it reaches the minimum value (Hmin(y) = 10 m). This date marks the end of the subduction phase. After a period of stability during mid-summer, the MLD becomes deeper from September onwards (m.d. 246), progressively re-entraining water from the seasonal thermocline during autumn and winter. The entrained water is mixed with the water already in the mixed layer, modifying its property values.
+
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+9
+
+Fig. 4 – A 3-year simulation of: (a) daily maximum and minimum mixed layer depth, hmax(d) and hmin(d) (m), and mixed layer temperature (MLT, ◦C) (noon values); (b) concentration of DIN in the mixed layer ([DIN]ML, mmol m−3), and 200 m integrated total phytoplankton (BPT) and zooplankton biomass (BZ) (gC m−2); and (c) size-fractionated (20, 40 and 60 ESD) phytoplankton biomass (BPi) (gC m−2). Seasonal cycles (third year of the simulation) of: (d) hmax(d) and hmin(d), [DIN]ML and
+BPT and BZ; and (e) BPi (the legends of the curves in a, b and c are such as those in d and e).
+
+3.1.2. Diurnal stabilisation Turbulence is extremely sensitive to radiation (Woods, 1980). Soon after sunrise solar heating quenches convection and turbulence in the upper ocean. The turbocline at the base of the surface mixed layer rises sharply, leaving a statically stable diurnal thermocline in which the vertical diffusivity is ecologically negligible. A substantial fraction of mixed layer water is subducted into the diurnal thermocline as the turbocline rises.
+
+This subducted water remains at the same depth until it is reentrained into the mixed layer next night (Fig. 4a and d). Phytoplankton in the subducted water passes the hours of daylight at almost constant depth (sinking at few cm h−1, Table 1). Therefore, their ambient environment is almost steady apart from the astronomical variation of solar irradiance (Woods and Onken, 1982), and consequently the reproduction rate increases. The energy accumulated by phytoplankton under
+
+10 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+Fig. 5 – Seasonal cycles of water column environment. (a) Photosynthetically active radiation (IPAR, W m−2) (values at noon); (b) temperature (◦C) (values at noon); (c) dissolved inorganic nitrogen (DIN, mmol m−3) (values at 06:00 a.m.); (d) ammonium (mmol m−3) (values at 06:00 a.m.). The seasonal MLD is shown in all the plots (continuous line). The dashed line in plots (c) and (d) represents the nutricline depth (z for [DIN] = 0.5 mmol m−3).
+
+these stable conditions exceeds what they would gain in a model without deﬁnition of the diurnal variation of turbocline depth (Barkmann and Woods, 1996).
+In the simulation, the diurnal thermocline starts to form in the last week of December (Fig. 3a). The daily minimum turbocline depth hmin(d) rises from the end of December (m.d. 362) at approximately −0.5 m d−1 until 30th April (m.d. 120) (Table 3). The difference between the daily maximum and minimum turbocline depth, which occur at 06:00 a.m. and 1 h after noon, respectively (Woods and Onken, 1982), is maximum (about 180 m) in March (m.d. 60–80, Fig. 3a). The difference is reduced progressively until November (m.d. 305), when the diurnal rise of the mixing layer stops completely (between m.d. 305 and 362).
+3.1.3. Light-controlled growth During autumn and winter (Table 2, labels 9 and 1 in Fig. 6a), entrainment from the seasonal thermocline increases the concentration of DIN in the mixed layer faster that it is consumed (Figs. 4b and d and 5c and d), so phytoplankton growth is light-controlled. The increase of total phytoplankton biomass (Fig. 6a) occurs well before the onset of the spring bloom, as the daily minimum depth of the mixing layer hmin(d) became shallower after the winter solstice (Woods and Barkmann, 1994). Towards the end of January (m.d. 30) (1 in Fig. 6a), the ascent of the diurnal thermocline to ca. 50 m (Woods and Barkmann, 1993a) traps phytoplankton particles above the mixing layer according to the Sverdrup’s mechanism (1953), and biomass increases since losses due
+
+to natural mortality are balanced by reproduction. One of the beneﬁts of using an individual-based approach is that it takes into account the ﬂickering ambient irradiance experienced by phytoplankton as they are mixed up and down in the mixing layer (Barkmann and Woods, 1996) or the steady light regime they experienced in the diurnal thermocline (Woods and Onken, 1982).
+3.1.4. The spring bloom and self-shading The depths of isolumes vary seasonally in response to astronomical forcing and seawater turbidity, which is controlled by phytoplankton concentration (Morel, 1988). Phytoplankton biomass rises to an annual maximum in spring (Fig. 4b and d; 2 in Fig. 6a). The onset of the spring bloom occurs on April (m.d. 90). The maximum 200 m integrated total (i.e. Pi) phytoplankton biomass (ca. 5 gC m−2) is attained 1 week later. The bloom persists (>4 gC m−2) for a period of 3 weeks. The corresponding increase in turbidity causes isolumes to rise sharply (Fig. 5a). This effect is notable in the model (m.d. 90–135). The light regime during this period varies at noon from 1 W m−2 at the base of the mixed layer to 275 W m−2 at the surface. This is accompanied by corresponding rises in compensation depth (zC), below which phytoplankton loss energy because daily respiration exceeds photosynthesis, and the target depth for zooplankton diel vertical migration (DVM) (Appendix A).
+3.1.5. Oligotrophy and the nutricline Strong primary production during the spring bloom rapidly consumes mixed layer DIN (Figs. 4b and d and 5c and d). On
+
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+11
+
+Fig. 6 – Seasonal cycles of total and size-fractionated phytoplankton biomass (values at 06:00 a.m.). The contour lines are the log of the biomass (pgC m−3). (a) Total phytoplankton biomass, (b) 20 (c) 40 and (d) 60 ␮m ESD size-fractions. The numbers in italics in (a) refer to the different ambient environments experienced by phytoplankton (Fig. 4), which are characterised in terms of the ﬂow regime (turbulent or laminar) and state of the resources (DIN and IPAR) in Table 2. The dashed line corresponds to the position of the nutricline (Fig. 5c).
+
+21st April (m.d. 110), DIN concentration in the mixed layer become negligible and phytoplankton reproduction ceases. That marks the annual peak in phytoplankton biomass and the start of the oligotrophic phase (4 and 5 in Fig. 6a). The sharp temporal decline of mixed layer DIN is translated by subduction of phytoplankton into a sharp nutricline in the seasonal thermocline (Fig. 5c; 6 in Fig. 6a). The initial depth of the nutricline equals that of the mixed layer at the onset of oligotrophic phase. Its position varies during the summer as the result of nutrient consumption in the deep chlorophyll maximum (DCM) and fertilisation by zooplankton and bacteria. Oligotrophy in the well-lit upper water column lasts until the deepening mixed layer reaches the nutricline (around 28th November, m.d. 330), starting the process of nutrient reentrainment from the seasonal thermocline (8 in Fig. 6a).
+3.1.6. Detrainment Phytoplankton in the model sinks through the water at a constant, size-dependent speed sPi (Table 1). Those in the mixed layer have a daily probability of detrainment given by P(t) = [sPi − dH(t)/dt]/H(t). For instance in mid-summer (from 14th July to 29th August), when the mixed layer depth is fairly constant (Fig. 4d, Table 3), dH(t)/dt ≈ 0, and H(t) ≈ 10 m, a phytoplankton particle with sinking speed of 1 m d−1 will have about 10% per day chance of sinking into the seasonal thermocline (5 in Fig. 6a). After 45 days at that emigration rate, the mixed layer population will decline to 0.87% [i.e. 100 × (0.90)45]
+
+of its initial concentration. For the sinking speeds of the three size-classes in our model (Table 1), the emigration losses for that period are approximately 71%, 81% and 97 % of the initial mixed layer population.
+3.1.7. Deep chlorophyll maximum (DCM) Phytoplankton sinking through the seasonal thermocline passes initially trough the oligotrophic zone (5 in Fig. 6a), where they experience a high irradiance (Fig. 5a) but a very low DIN concentration (Fig. 5c and d). Their reproduction rate is therefore nutrient-controlled. The allometric relationships for the nutrient uptake parameters imply a higher uptake rate for the small phytoplankton (Table 1). Those subducted during summer take about 50 days to sink from the base of the mixed layer to the nutricline. During that time they take up sufﬁcient nitrogen to reproduce once or twice on average before reaching the nutricline (Fig. 2). That rate is nevertheless insufﬁcient to offset losses due to grazing, so their concentration decreases during summer (Fig. 6a and b).
+The situation changes dramatically when phytoplankton populations sink trough the nutricline and encounter a higher DIN concentration (6 in Fig. 6a). In this situation, nitrogen uptake proceeds faster and reproduction becomes lightcontrolled. However, phytoplankton reproduction can still proceed at relatively high rates at the light levels in the nutricline and below it (Figs. 2 and 3), making grazing insufﬁcient to prevent a rise in the standing stock of phytoplankton. The
+
+12 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+Table 2 – Phytoplankton response to the seasonal variation of the physico-chemical water column environment
+
+Season Code, Fig. 6a label (#)
+
+Process
+
+Physico-chemical water column environment
+
+Phytoplankton response
+
+PAR DIN Flow regime
+
+Winter
+
+1
+
+Spring
+Spring Summer
+
+2
+3 4
+
+Summer
+Summer Summer
+Autumn
+
+5
+6 7
+8
+
+Pre-bloom
+
+−+T
+
+Spring bloom
+
+−/lim +/lim T
+
+Subduction
+
+lim +
+
+T→L
+
+Summer oligotrophy +
+
+lim T
+
+Below MLD and above nutricline
+Nutricline Below nutricline
+Re-entrainment
+
+− lim L
+
+− −/+ L
+
+lim +
+
+L
+
+− + L→T
+
+Winter
+
+9
+
+Winter conditions
+
+lim +
+
+T
+
+Growth slightly counteract losses due to energy starvation in all size-classes due to the establishment of the diurnal thermocline. Fluctuating light environment Co-existence, with dominance ranking according to the competitive hierarchy in light harvesting. Light became limiting due to self-shading Differential sinking. Development of a deep chlorophyll maximum (DCM) Competitive exclusion in the oligotrophic mixed layer: the best-ﬁtted size-class (smaller cells) takes over the other competitors in a homogeneous, nutrient depleted environment Competitive exclusion above the nutricline (zDIN = 0.5 mmol m−3 in Fig. 6): DCM dominated by the best competitor (smaller size-fraction) ‘In situ’ growth nearby the nutricline Different size-classes lie in different layers; possible mechanism to avoid competition among sizeclasses Different size-classes re-entrain at different depths: longer life expectancy of large cells below the compensation depth zC give them a competitive advantage under extremely low-light. This processes signiﬁcantly contributes to the ACA of larger cells Losses due to energy starvation override growth in all size-classes
+
+The photosynthetic active radiation (PAR) and dissolved inorganic nitrogen (DIN) ﬁelds are summarised as sub-optimal (−), optimal (+) or limiting (lim); the ﬂow regime experienced by a particle can be turbulent (T) or laminar (L).
+
+processes of irreversible subduction below the seasonal mixed layer and ‘in situ’ growth nearby the nutricline give rise to this deep chlorophyll maximum (DCM). It is especially conspicuous around mid June (m.d. 165) associated with the subduction of the peak of the spring bloom, and appears as a secondary maximum in the water column integrated biomass (ca. 1.5 gC m−2, Fig. 4d). The DCM is bounded below at the depth where the
+
+Table 3 – Daily rates of change of the MLD for different periods within which the upward (dH/dt < 0, i.e. subduction) or downward (dH/dt > 0, i.e. entrainment) progress of the MLD is fairly constant
+
+Date
+
+m.d.
+
+dH/dt = (Ht+1 − Ht)/ t (m d−1)
+
+1st March–21st March 22st March–5th April 6th April–30th April 1st July–14th July 15th July–3rd September 4rd September–28th November 29th November–16th February 17th February–1st March
+
+60–80 81–95 96–120 121–195 196–245 246–330 331–45 46–60
+
+−3.50 −6.38 −1.14 −0.22
+0.05 0.31 0.96 7.88
+
+m.d., model day.
+
+reduced ambient irradiance (Fig. 5a) becomes insufﬁcient to support reproduction at a rate that exceeds grazing.
+3.1.8. Survival in the thermocline and entrainment Those phytoplankton populations that survive being eaten, sink deeper into the thermocline and soon reach the compensation depth zC. The compensation depth is affected by the photoperiod, which varies seasonally, the physiological traits of the cells, such as state of photoadaptation (Woods and Barkmann, 1993a,b), the size-dependent energetic balance, and the total phytoplankton biomass, which modiﬁes the IPAR ﬁeld trough self-shading. Woods and Barkmann (1993a) described the seasonal cycle of zC using the WB model. They notice that zC is locked to the MLD when 100 < H < 40 m (zC = H ± 5 m) and that it rises above H(hmin < zC < hmax) during the spring bloom due to self-shading. A phytoplankton subpopulation that crosses zC starts to consume their internal energy pool until it becomes depleted, and the sub-population dies by energy starvation. In our model, larger cells have a longer life expectancy under extremely low light conditions (Fig. 3c), and therefore sink deeper into the seasonal thermocline. For instance, during summer oligotrophy, the subpopulations of the smallest size-class that descend below the nutricline to a depth of 50 m will die from natural mortality in a few days. This lower bound is clearly seen in Fig. 6b. On the
+
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+13
+
+other hand, larger cells can survive for longer in extremely low IPAR (Fig. 3c). The phytoplankton in the two larger size-classes (Fig. 6c and d) pass through the nutricline and sustain signiﬁcant biomass in plumes of live cells sinking deep into the thermocline (7 in Fig. 6a). The contribution made by heavier phytoplankton to biomass in the DCM is therefore modiﬁed by their higher sinking speed, reduced reproduction rate for the same ambient environment and higher survival time below the seasonal thermocline, under extremely low underwater irradiance (IPAR < 1 W m2; Fig. 3b and c). Coupled with the process of entrainment, the competitive advantage of large cells under extremely low light favours the development of the seed populations that will boost the next year’s growing season. It contributes to the ranking of the annual competitive advantage (ACA, explained below) of larger cells and to long-term (multi-year) co-existence of the competing size-classes.
+3.1.9. Veriﬁcation of the seasonal pattern The seasonal variation of the MLD and mixed layer temperature (MLT, Figs. 4a and 5b) presents the general climatological pattern of the Northeast Atlantic. The model reproduces reasonably well the seasonality at the study site, considering that the forcing data (Bunker climatology) are independent and correspond to different periods than the climatological MLD (Longhurst, 1998) and MLT (Levitus, 1998) data used for veriﬁcation.
+The site we focused on belongs to the western winds domain, in the limit between the North Atlantic Subtropical Province (NAST) and the North Atlantic Drift Province (NADR) (Longhurst, 1998). The model reproduces the characteristic pattern of phytoplankton biomass in this area, with a spring peak and a subsidiary peak in autumn (Platt and Sathyendranath, 1988), and the development of deep chlorophyll maximum (DCM) from late spring to summer (Mourin˜ o et al., 2004; Lorenzo et al., 2004). The model values of integrated phytoplankton biomass at the time of the spring bloom are higher than the climatological values. They differ by a factor of 10 compared to the climatological values for the NAST Province or by a factor of 2 compared to those for the NADR Province. The timing and persistence of the spring bloom, expressed as integrated biomass, are similar to those of the climatology for the NAST Province. The background phytoplankton biomass is similar to that observed in the area (Liu and Woods, 2004). Large phytoplankton (ESD > 20 ␮m), in particular large diatoms, account for a signiﬁcant contribution to total phytoplankton biomass during the spring bloom in this subtropical realm (Head et al., 2002).
+3.2. Demographic histories
+3.2.1. Small phytoplankton For the 20 ␮m phytoplankton (Figs. 4e and 6b), the establishment of the diurnal thermocline (Fig. 4d) triggers a rise in reproduction rate that exceeds losses. Thereafter, coupled with the rise of the seasonal thermocline from 21st March (m.d. 80) the population rises geometrically until the nutrients run out 1 month later (m.d. 111). The compensation depth rises with the MLD until about 9th May (m.d. 129) when the isolumes descend as grazing reduces turbidity. Thereafter it sits just below the nutricline, controlled by enhanced turbid-
+
+ity in the DCM (Fig. 5a). So 20 ␮m phytoplankton subducted into the thermocline before that date soon die (3 in Fig. 6a and Table 3), while those subducted from that date until the mixed layer reaches its annual minimum depth 2 months later, survive energy starvation to sink slowly through the oligotrophic thermocline (5 in Fig. 6a and Table 3). The ‘plume’ of relatively high concentration subducted from the spring bloom (Fig. 6b) dominates the total population ( Pi) for much of the summer, but none of it is entrained, so it does not contribute to the annual competitive advantage (ACA, explained below).
+During the oligotrophic regime, the population of 20 ␮m phytoplankton declines much less rapidly than that of the larger size-classes (Fig. 4e). The mean slope of the biomasscontour in the thermocline (Fig. 6b) indicates the modest sinking speed (∼27 cm d−1, Table 1). From September (m.d. 245), the mixed layer sinks faster than that (Table 2). Detrainment from the mixed layer occurs when dH/dt < 27 cm d−1. For instances, between m.d. 195 and 245, when H ≈ 15 m and dH/dt ≈ 5 cm d−1, the rate of detrainment will be of only 1.5% per day, so about half of the phytoplankton in the mixed layer abandon it during those 2 months.
+The population of small phytoplankton increases brieﬂy when the deepening mixed layer passes through the nutricline (m.d. 332), entraining nitrogen which is rapidly consumed, leading to a slight biomass increase (autumn bloom) which is grazed down in a few days (Fig. 4e). There is then a substantial decline in population from m.d. 340 (Fig. 4e). This is due to the temporary disappearance of diurnal stratiﬁcation (Fig. 4d), which has hitherto enhanced the reproduction rate by holding many phytoplankton at constant depths in the diurnal thermocline during daylight (Woods and Onken, 1982), and the increasing trend of the mixed layer depth to compensation depth ratio, which increases natural mortality. During this period, from mid-November to the end of December, the population biomass declines by about three orders of magnitude (Fig. 4e). This decline stops in January when the return of the diurnal thermocline increases reproduction again. The new growing season starts around the 20th January with ca. 0.2 mgC m−2 (Fig. 4e) (or ca. 106 cells m−2). This annual minimum is almost steady over the 3-year simulation (Fig. 4c).
+3.2.2. Middle and large phytoplankton The start of the growing season for the 40 ␮m phytoplankton occurs in mid-December, when the integrated biomass is ca. 0.06 mgC m−2 (Fig. 4e) (or ca. 6 × 104 cells m−2). The population then rises as living phytoplankton are entrained from the seasonal thermocline (Fig. 6c). The process of entrainment is critical for middle and large phytoplankton to boost the next growing season. For middle-sized phytoplankton it occurs progressively, in a characteristic fashion that arises from: (1) the sinking speed (53 cm d−1), which is just right to ensure that the legacy of the spring bloom subducted into the thermocline during the oligotrophic phase arrives in winter to boost the mixed layer population; and (2) the deepening of the compensation depth during summer and autumn, so that the compensation depth is not passed by the deepening mixed layer until February, by which time reproduction boosted by immigration exceeds natural mortality. This factor is reinforced because this size-class performs better than the 20 ␮m size-fraction under extremely low or ﬂuctuating light (Fig. 3b and c). During
+
+14 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+the light-controlled growth phase, which ends around the 21st April (m.d. 111), the population rise to 109 cells m−2 (3% of the number of 20 ␮m cells m−2). The biomass of this size-class at the peak of the spring bloom is about 1.2 gC m−2 (22% of the carbon in the 20 ␮m phytoplankton size-fraction).
+A Lagrangian assessment of the demographic balance of a sub-population of plankton leaving the mixed layer on any day is revealed by the rate at which its trajectory crosses the contours of constant biomass (Fig. 6c). Consider, for instances, a sub-population that leaves the mixed layer on the 1st July (m.d. 182) when carbon concentration for the 40 ␮m ESD sizeclass was about 10 ␮gC m−3. The particle takes about 40 days to sink from the base of the mixed layer (H(160) ≈ 15 m) to the nutricline (zDIN ≈ 35 m). The trajectory followed by sinking phytoplankton and the biomass contour coincide closely during the descent to the nutricline, showing that the demographic change is small. But, at the nutricline, the slope of the biomass contour decreases, and the trajectory passes through rapidly increasing biomass. It is also noticeable the 5 m descent of the nutricline between July and mid August (m.d. 180–225). These features indicate that reproduction in the DCM exceeds losses due to grazing. The middle-sized phytoplankton concentration at the DCM is a factor of 10 higher than the concentration in the mixed layer. This difference rises to a 1000-factor around mid August (m.d. 225). On the 1st September (m.d. 244), the concentration declines, showing that losses due to grazing and, increasingly, to energy starvation exceed reproduction. By the beginning of October (m.d. 278) the concentration has fallen below 1 ␮gC m−3. No successors of this size-class phytoplankton that sink out from the mixed layer on the 1st July survive beyond the 5th October. None is alive to be re-entrained into the mixed layer. In fact, none that is detrained earlier than the 15th July (m.d. 196) survive to become re-entrained. This critical date depends on the phytoplankton size, because of the sinking speed (Table 1), the internal energy balance under low IPAR (Fig. 3), and on environmental changes due to all three populations. The autumn re-entrainment boost to the mixed layer population comes from phytoplankton populations that were suffering the stress of mid-summer oligotrophy in the mixed layer. Most of the 40 ␮m phytoplankton subducted before the onset of oligotrophy die within a few days, so the massive primary production during the spring bloom contributes no living phytoplankton to the next growing season (Fig. 6c).
+The contribution that re-entrainment makes to the winter population of 40 ␮m phytoplankton in the mixed layer depends on the concentration in the mixed layer from the critical date, on mid-July (m.d. 196), onwards. It is therefore important to understand the demographic balance governing the 1000-fold decline in the mixed layer from the termination of the spring bloom around mid-May (m.d. 135) to mid-July. A simple calculation shows that losses due to detrainment from the mixed layer cannot explain alone the decline (ca. 80% assuming a MLD of 20 m); while natural mortality is zero and reproduction is limited by zooplankton fertilisation, which is a small fraction of the grazing rate (Eq. (A.10) in Appendix A). Therefore, the massive decline in mixed layer population can only be due to grazing, offset slightly by regenerated production. So the number of 40 ␮m ESD phytoplankton re-entrained into the mixed layer in winter is controlled by (1) natural
+
+mortality, which kills all those subducted from the spring bloom, and (2) grazing, which depletes the number surviving in the mixed layer until mid-July, after which they can be re-entrained. The fraction surviving in the seasonal thermocline to be re-entrained is substantial because this size-class reproduces in the DCM (Fig. 2) and has a relatively high life expectancy below the seasonal thermocline (Fig. 3b and c). The decline in turbidity, which deepens the compensation depth, and in zooplankton numbers during this period favour the survival of the seed population for the next growing season.
+The largest size-class (60 ␮m ESD) shows many features identiﬁed for the 40 ␮m ESD phytoplankton (Fig. 6d). The faster sinking speed (78 cm d−1) and higher life expectancy below the seasonal thermocline means that re-entrainment occurs later (and at increased depth). The critical date is now the 26th of September (m.d. 269): 60 ␮m ESD phytoplankton that sink out the mixed layer before then cannot be re-entrained. The rise in biomass seen in late February (Fig. 5d) is due to increased reproduction in the diurnal thermocline.
+4. Discussion
+4.1. Annual competitive advantage
+The demographic histories show why the competitive advantage in reproduction rate enjoyed by the smallest phytoplankton in a wide range of environmental conditions does not automatically lead to competitive exclusion of the larger sizeclasses. In part, it is offset by the faster sinking speed of the larger phytoplankton, which migrate down through the summer nutricline where they reproduce faster than the poorly fertilised small phytoplankton in the oligotrophic regime above, and because the relatively longer life expectancy of larger cells below zC. The critical factor for long-term survival of each population is how many cells remain to seed the next year’s growing season. What matters for multiyear, stable co-existence among the competing size-class is not the competitive advantage at one time of the year, but the net competitive advantage over a whole year. We termed this the annual competitive advantage (ACA). The biomass of the seed populations in the model equals the minimum values of the different size-classes before the onset of the growing season, around January. The seasonal depth-integrated minimum population abundance in the third year of the 3-year simulation (an emergent property of the model) is about 7.7 × 105, 5.4 × 104 and 2.6 × 104 cells m−2 (or 91%, 6% and 3% of the minimum total phytoplankton biomass, 0.28 mgC m−2) in small, middle and large-sized phytoplankton.
+The ACA is a function of the whole ecosystem. This includes the biological properties of individual plankton organisms (e.g. reproduction rate, life expectancy), the environment changes through the year that are driven by external forcing, the nitrogen load in the euphotic zone, and the bio-optical (self-shading) and biochemical (corporate nutrient depletion and zooplankton and bacteria fertilisation) feedbacks.
+Simulations with the single-phytoplankton, food-chain model (Woods et al., 2005) have shown that the annual cycle in the ecosystem is sensitive to the ambient climate (nutri-
+
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+15
+
+ent content and solar and atmospheric boundary conditions) which are functions only of geographical location when the global climate is stationary. Even under those conditions, only sites where the annual heat budget is close to zero, i.e. solar heating balances cooling to the atmosphere, provide a stationary annual cycle of physical environment. Our numerical experiments were performed at such a site, near the Azores [41◦N, 27◦W]. Our quantitative results for the ACA are therefore site-speciﬁc, but the analysis of emergent processes has general validity. Regional variation will be the subject of future work. We now consider the legacy for the ACA from each season.
+4.1.1. Spring bloom On an annual perspective, all primary production is nutrientlimited. The spring bloom is fertilised by nutrients entrained in the euphotic zone from the seasonal thermocline during the cooling season. It ends when that stock of nutrients has been consumed, stopping ‘new’ production in the mixed layer. The standing stock of phytoplankton has its annual maximum on that day (around the 21st April in our simulation). Nutrient exhaustion is affected by the combined consumption of all three size-classes (corporate nutrient depletion). Furthermore, as grazing losses are the same for each population, the total increase in each population from the start of the growing season to the onset of oligotrophy depends on their reproductive efﬁciency and the nutrient load in the mixed layer. Given the parameter values in the biological equations (Table 1) and the initial concentration of DIN, the nitrogen pool of each plankter, regardless of size, ﬁlls before its energy pool, so the reproduction rates of all size-classes are light-controlled, and therefore our virtual ecosystem exhibits light-controlled competition during the phase of new production. The fraction of the nitrogen stock consumed by each of the competing size-fractions depends on their initial number at the start of the growing season and on their relative efﬁciency in harvesting light. Co-existence of the different sizeclasses occurs during the spring bloom. The highly variable PAR environment experienced by the particles combined with their differences in adaptive state, in particular photoadaptation, produce variability of the (instantaneous) growth rate within a size-class that ranges over several orders of magnitude (Woods and Barkmann, 1993a). This range is wider than the range of maximum reproduction rate among the sizeclasses. Therefore, temporal variability and spatial heterogeneity of the controlling resource (PAR ﬁeld), adaptive state of the cells (photoadaptation) and chance (turbulent motion in the mixed layer) are the factors that relax competition and prevent competitive exclusion to occur during the spring bloom.
+The contribution of new production to ACA depends on how many of those cells living on the 21st April survive in lineages until the 1st March next year. The vast majority of them are eaten or die of energy starvation under light limitation. There are two mechanisms for survival: (1) staying in the mixed layer, and (2) sinking through the thermocline to be re-entrained during the cooling season. The small phytoplankton survives the summer remarkably well in the mixed layer. Thanks to their small sinking speed and competitive advantage in nutrient uptake under oligotrophic con-
+
+ditions, they grab the lion’s share of ammonia injected by zooplankton excretion and microbial action on faecal pellets (no plankton die out while in the mixed layer in summer). The legacy at the end of the oligotrophic phase (the 28th November) is about one-tenth of the number m−2 on the 21st April. The small phytoplankton (and their descendants) that emigrate from the mixed layer (by subduction or sinking) all die before re-entrained into the mixed layer (Fig. 6b).
+The middle- and large phytoplankton populations survive less in the mixed layer, where the number m−2 declines by a factor of 103 during the oligotrophic phase. However, due to their lower respiratory losses they are potentially better competitors (depending upon their state of photoadaptation) under extreme light environments (Fig. 3), such as those in the seasonal thermocline below zC or under the highly ﬂuctuating regimes associated with deep convection. The balance between competitive hierarchies inﬂuences the ACA rankings of the competing populations.
+4.1.2. Summer thermocline The two larger-sized populations gain a signiﬁcant contribution to their ACA ranking by re-entrainment. But we have seen that the lineages that are candidates for re-entrainment must survive in the mixed layer until the critical dates (the 1st July, m.d. 182 and the 26th September, m.d. 269 for the 40 and 60 ␮m ESD). All the others leave no living descendants alive on the 1st March next year, and therefore make no contribution to the ACA.
+Those middle and large-sized phytoplankton that pass the critical date in the mixed layer and then are subducted into the thermocline can exploit the high DIN concentration below the nutricline at a depth of 40 m, after a few weeks sinking through the oligotrophic zone. Reproduction that occurs below the nutricline consumes a mixture of DIN from two sources: (1) winter entrainment and (2) microbial and zooplankton fertilisation (Fig. 5c and d). So this growth in the DCM is a hybrid of new and regenerated production. Observations suggest that it may represent a substantial fraction of the annual primary production near the Azores (Strass and Woods, 1991). It occurs at relatively low irradiance and high DIN concentration, so the phytoplankton nutrient pools ﬁll before the energy pools (i.e. light-controlled growth). Furthermore, the nutrient resource does not become depleted after the critical dates, because the microbial fertilisation rate exceeds consumption. So the two larger size-classes do not ‘compete’ for nitrogen in the sense of grabbing different fractions of a controlling resource. However, the number of cell divisions that they can achieve between sinking through the nutricline and subsequently being re-entrained into the mixed layer is limited by the rate of decline of ambient irradiance as phytoplankton sink deeper. The populations of larger phytoplankton sink faster into the dark, where they stop reproducing and eventually die from energy starvation. The depth at which that happens depends on the values of their biological parameters for light uptake, respiration and the adaptive state of the particle sub-population. The lineages which are candidates for re-entrainment increase their numbers m−2 after sinking through the nutricline. So reproduction in the DCM and better survival below the compensation depth due to lower
+
+16 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+mass-speciﬁc respiration losses give the larger phytoplankton a comparative advantage during this period, with a legacy that contributes to their ACA.
+4.1.3. Decline in the cooling season Overwintering is a major problem in models of phytoplankton annual cycles and long-term dynamics, especially in higher latitudes and where there is deep winter convection (Totterdell et al., 1993). A general practise is to set thresholds below which the population density may not fall (Taylor et al., 1991), but these thresholds are not well constrained by the few available data on winter populations, which anyway are difﬁcult to measure.
+In our model, we reduced natural mortality during winter by reducing respiration rate with temperature and with population density (Eq. (A.5) in Appendix A). The densitydependent term (kR) in the respiration equation is a parameterisation of the incidence of diseases, which is densitydependent according to standard epidemiological models (Woods, 2005). It increases life expectancy during winter (Woods and Barkmann, 1993a), since reductions in metabolism and respiratory activity have been proposed as factors enabling microalgae to survive periods of severe light limitation (Langdon, 1993; Peters and Thomas, 1996), as those encountered in our model during the cooling season (i.e. low surface irradiance and deep convection → low compensation depth to mixed layer depth ratio). The mechanisms by which real phytoplankton survive during this period are poorly understood. Other mechanisms are the formation of resting spores and reseeding from coastal populations (Reynolds, 1997). The implementation of these mechanisms in the model set out serious problems because of the lack of knowledge about the environmental triggers (e.g. light intensity and/or photoperiod, temperature) that promote the physiological responses (resting stages and/or lowered respiration) and the dynamics of re-seeding. It is uncertain how these mechanisms inﬂuence the magnitude of the population that boosts the growing season.
+Woods (2005) has shown that the WB model is insensitive to the density dependent term kR. The same is applicable for this term in relation to the ACA ranking. In the present simulation kR was set at 8 × 105 cells m−2, and therefore respiration rates are reduced to 51%, 93% and 97% for small, middle and large phytoplankton during the period of lower biomass. For the larger-sized classes, this is practically equivalent to set lower bounds for population abundance of similar magnitude of those threshold values applied by other authors (e.g. Taylor et al., 1991; Woods and Barkmann, 1993a).
+4.1.4. Long-term stability Despite competition for shared resources, the phytoplankton populations are remarkably stable over 3 years (Fig. 4c). The inherent stability of the ecosystem is emphasised by the fact that the initial conditions comprised equal biomass allocated in the three size-classes, which turned out to be signiﬁcantly different from the winter biomass in each subsequent year. The ecosystem quickly adjusts to winter abundances that are in better balance with the ambient seasonal cycle in the environment. The virtual ecosystem analysed in this paper shows no sign of extinction over the 3 years, which makes
+
+it sufﬁciently stable to discuss the ACA of the three populations. To sum up, smaller phytoplankton enjoy faster growth in the light-limited growth phase during the spring bloom and during the oligotrophic phase above the nutricline, but that is offset at other seasons by the larger-sized phytoplankton reaching faster the nutricline and reproducing there, in the DCM, and later surviving longer in the seasonal thermocline. Ultimately, what matters is how far those produce a demographic legacy that can be exploited in the next growing season.
+4.1.5. Sensitivity to ambient climate The ACA is concerned with the changes in abundance that occurs over 1 year. If it is sustained for many years, then competitive exclusion will drive the less ﬁtted phytoplankton to extinction. It is clear from our analysis of the demographic histories of the three size-classes that their ACA depends critically on the seasonal cycle in the environment, and in particular in the daily maximum and minimum depths of the mixed layer. These are sensitive properties of the ambient climate, so we expect that it may also affect the ranking of ACA. Our results may therefore be considered to be just one instance of what may be a complex set.
+5. Conclusions
+The synoptic balance of competitive advantage, which in the model depends of the demographic inﬂuences of the allometric differences in sinking speed, reproductive efﬁciency and mass-speciﬁc respiration, changes from season to season. In spring, the three size-classes co-exist in the mixed layer under light-controlled conditions (e.g. short photoperiod and moderate incoming solar radiation, self-shading and turbulent regime in a rising mixed layer). The dominance ranking agrees with the competitive hierarchy established by the allometric approach, and small cells reproduce on average at higher rates due to a more efﬁcient nutrient and light harvesting. However, the interactions between temporal variability and spatial heterogeneity of the controlling resource (underwater PAR), adaptive state and physiological size-based constraints of the particles (sub-populations) and chance (i.e. their random motion in the mixed layer) generate situations where this competitive hierarchy relaxes (i.e. sub-optimal light) or even reverses (i.e. extremely low or high light relative to photoadaptation). Thus, environment–particle interactions, which the model simulates explicitly and at high resolution, decrease competition among the size-classes during this period.
+The critical factor for long-term co-existence is the magnitude of the seed population that will boost the onset of the growing season. What matters is not the competitive advantage at one time of the year but the net competitive advantage over the whole year (ACA). This annual competitive advantage depends on the mechanisms that operate to relax or reverse competitive hierarchies trough the interaction between the individuals and the patchy and temporally varying environment. In the model, the ACA ranking is determined during the oligotrophic phase, and depends on the ability of the cells to reproduce in the nutrient-limited environment above the
+
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+17
+
+nutricline and to survive below the compensation depth. During this phase of the growing season, the smallest phytoplankton reproduce faster in the oligotrophic regime, while middle and large-sized phytoplankton do so below the nutricline and have longer life expectancy below the compensation depth. As the result, the ACA has a much shorter span than the competitive advantage pertaining on any day of the year. The principle of competitive exclusion still applies, but it takes many years to drive the weaker populations to extinction in an ecosystem with stationary ambient climate. In practice, ambient climate does not remain stationary. The ACA ranking is sensitive to such variations in ambient climate that promote the temporary relaxation or reversion of competitive hierarchies, and can change on time scales shorter than the time required to drive the population to extinction. This helps to explain why the plankton ecosystem contains many more species than the number of independent resources.
+
+Acknowledgements
+We wish to thank thanks our colleagues L. Partridge, R. Wiley, Liu Cheng-Chien, A. Perilli and A. Magiori for useful comments and discussions. E. Nogueira acknowledges the receipt of the Marie Curie post-doctoral research training grant from the European Union (Contract Number MAS3-CT97-5049). The research programme led by J.D. Woods is supported by NERC and the Southampton Oceanographic Centre.
+
+Appendix A. Biological process functions
+
+A.1. Phytoplankton
+The state variables for phytoplankton are depth (z, m), state of photoadaptation (Im, W m−2) and the nutrient and energy internal pools (NPi and EPi , mmol and J, respectively) that control cell replication and natural mortality.
+
+A.1.1. Nutrient uptake
+The nutrient internal pool (NPi ) increases due to nutrient uptake, which is represented by the Michaelis-Menten equa-
+tion (Dudgale, 1967):
+
+dNPi dt
+
+=
+
+Vmax
+
+Pi
+
+N(z) N(z) + kNPi
+
+(A.1)
+
+where N(z) (mmol m−3) is the ambient nitrogen concentration at depth z; Vmax Pi (mmol h−1) the maximum uptake rate; and kNPi (mmol m−3) is the half saturation constant. The nutrient quota is capped and allometrically based (Table 1). Small organisms have faster mass-speciﬁc uptake rates (higher Vmax Pi ) than large organisms (Moloney and Field, 1989). The half-saturation constant represents the ability to take up nutrients at low ambient nutrient concentrations; small cells are more efﬁcient (smaller kNPi ) than large cells (Eppley et al., 1969). The model does not consider the interaction between the assimilation of ammonium and nitrate (Dortch, 1990).
+
+A.1.2. Energetics: photosynthesis and respiration
+The rate of change of the internal energy pool (EPi , J h−1) results from the gain by photosynthesis (Eabs Pi ) and the loss by respiration (RPi ). The energy quota is capped and allometrically based (Table 1):
+
+dEPi dt
+
+= Eabs Pi − RPi
+
+(A.2)
+
+The photosynthetic process could be described by means of different empirical formulations (P–E curve) (Sakshaug et al., 1997). The model uses Steele’s (1962) equation (Woods and Onken, 1982), that takes into account the effects of photoadaptation and photoinhibition:
+
+Eabs Pi = 3600kFAI(z) e−I(z)/Im
+
+(A.3)
+
+where Eabs Pi represents the energy absorbed by photosynthesis (J h−1); the factor 3600 s h−1 converts from W to J h−1; kF the light absorption parameter (=0.6, dimensionless); A = r2 is the
+cross-section area (m2), where r is the cell radius (=ESD/2); I(z)
+the ambient irradiance at depth z (W m−2); and Im is the light adaptation parameter (W m−2):
+
+dIm dt
+
+=
+
+I(z) − Im ta
+
+(A.4)
+
+where ta represents the phytoplankton light-adaptation time (=5 h); the initial value of Im was set at 10 W m−2.
+The absorption cross-section area in Eq. (A.3) deﬁnes the
+intrinsic size-dependency of the photosynthetic process, with
+smaller cells having higher efﬁciency due to a higher surface
+to volume ratio (Nielsen and Sand-Jensen, 1990). The loss of energy due to respiration (RPi , J h−1) is param-
+eterised considering the energy expenses of the cell (the res-
+piration parameter, kPi ), taken into account the positive linear effect of temperature on respiration, W(T). A density depen-
+dent term, which reduces the respiration rate as a function
+of population density according to a rectangular hyperbola
+(Woods and Barkmann, 1993a) is introduced to parameterise
+the incidence of diseases (Woods, 2005) and to ensures that
+enough population stock survives during winter to resume
+growth in the next growing season:
+
+RPi
+
+=
+
+kPi
+
+BPi BPi +
+
+kR
+
+W
+
+(T)
+
+(A.5)
+
+where kPi is the respiration parameter (J h−1); BPi is the total abundance of size-class i in the whole water column (cells m−2); kR is the half-saturation constant for respiration in the density dependent term (=8 × 105 cells m−2); and W(T)
+accounts for the (linear) effect of temperature on respiration:
+
+W(T)
+
+=
+
+0.7
+
+T(z) Tr
+
++
+
+0.3
+
+(A.6)
+
+where T(z) is the ambient temperature (◦C), and Tr is the reference temperature (=10 ◦C).
+Respiration is a size-dependent process (Moloney and Field, 1989), with smaller cells having higher mass-speciﬁc respiration rate than larger cells. It was parameterised scaling the
+
+18 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+respiration parameter, kPi (Eq. (A.5)) according to the allometric relationship proposed by Moloney and Field (1991) (Table 1).
+
+A.1.3. Nutrient and energy internal cell pools: reproduction
+and natural mortality
+The internal nutrient and energy pools, NPi (mmol) and EPi (J), respectively, control reproduction and natural mortality.
+The initial and maximum (Nmax Pi , Emax Pi ) pools of nutrient and energy are size-dependent. Nmax Pi was estimated from the volume of the cell (Straile, 1997) (Table 1). The initial
+nutrient was set at 53% of the maximum value. Emax Pi was estimated from Nmax Pi according to the stoichiometric factor 3816 J mmol−1(N) (Tett and Droop, 1988). The initial energy
+pool was set at 8% of the maximum value.
+Cell division occurs when the size-speciﬁc nitrogen and
+energy pools (NPi , EPi ) exceed their respective threshold values for reproduction (NrPi , ErPi ). Then, the number of cells within the particle (nPi ) doubled, and half the energy and nitrogen pools are transferred to the new cells. Both NrPi and ErPi are 53% of their respective maximum values:
+
+nPi = nPi [1 − NrPi ı(NPi )][1 − ErPi ı(EPi )]
+
+(A.7a)
+
+ı(a) = limF(a, b)
+b→0
+
+(A.7b)
+
+F(a, b) = 1 for 0 < a < b, else F(a, b) = 0 b
+
+(A.7c)
+
+where a = NPi , b = NrPi ; NPi (new) = 0.5(NPi (old) − NrPi ) and EP (new) = 0.5(EP (old) − ErPi ).
+Natural mortality depends of the internal energy pool (EPi ). The cells carried by a particle are declared to be dead when
+EPi = 0; they are subsequently treated as detritus particles.
+
+A.1.4. Grazing
+The amount of phytoplankton cells per size-class (nPi ) reduced by grazing in each 1 m depth layer interval is
+
+dnPi dt
+
+= −nPi
+
+IgPi Pi(z)
+
+(A.8)
+
+where IgPi represents the rate of phytoplankton cells of sizeclass i loss due to grazing (cells s−1) and Pi(z) is the number of cells of size-class i per depth interval. Size-dependent selective
+grazing was not considered in the present investigation.
+
+A.1.5. Sinking Phytoplankton cells sinks steadily at a constant sizedependent rate (Table 1).
+
+A.1.6. Turbulence The ﬂow is turbulent in the mixing layer and laminar in the diurnal and seasonal thermoclines. The turbocline separates the two regimes. The depth of the turbocline (h) varies diurnally and seasonally in response to external forcing and biooptical feedback. When a particle lies in the mixing layer its depth is changed randomly each time step to a new depth in the range 0 < z < h. This is the only use of a random number generator (RNG) in our model. Such random displacement by turbulence leads individual particles to follow different trajec-
+
+tories, and therefore experience different histories of ambient environment.
+
+A.2. Herbivorous zooplankton
+
+The state variables for zooplankton are depth (z, m), satiation index (S, dimensionless), weight (G, ␮gC) and age (A, h). Growth and reproduction depend on the phytoplankton biomass ingested. ZH performs diel vertical migration (DVM), which is controlled by visible light and food supply (Section 2.3).
+
+A.2.1. Ingestion Ingestion is parameterised according to the following equations:
+
+W(T, G) Ig = |z2 − z1|
+
+z2 z1
+
+FP∗i (z)
+
+P∗i (z) P∗i (z) +
+
+kI
+
+dz
+
+(A.9a)
+
+|z2 − z1| = |Vm| dt
+
+(A.9b)
+
+Vm = VmaxW(T, G)
+
+(A.9c)
+
+P∗i (z) = Pi(z) − Pmin, 0 < Ig < Ig max
+
+(A.9d)
+
+W(T, G) = 0.3 × 0.7 T Tr
+
+G 0.7 Gmax
+
+(A.9e)
+
+where Ig represent the ingestion rate (cells s−1); the dimensionless parameter W(T,G) accounts for the effects of temperature (T, ◦C) and body weight (G, ␮gC); z1 and z2 represent, respectively, the depths (m) immediately before and
+after the zooplankton particle undergone vertical migration
+during the current time step; F is the zooplankton ﬁltration rate (=1.0 × 10−9 m3 s−1); P∗i (z) is the phytoplankton concentration of size-class i at depth z (cells m−3), in relation with the
+minimum total phytoplankton concentration at which zooplankton grazing begins Pmin (=105 cells m−3); kI is the halfsaturation constant for ingestion rate (=4.0 × 106 cells m−3); Vm (m h−1) is the vertical migration (related with the maximum vertical migration speed), Vmax (=45 m h−1), which takes into account the effects of temperature and body weight (see Section 2.3); Ig max (cells s−1) is the maximum ingestion rate (=0.84–0.64S(t), where S(t) is the satiation index,
+Eq. (A.13c)). Each time step a copepod egests a faecal pellet
+that contains 2/3 of the carbon (plus nitrogen at the stan-
+dard Redﬁeld C:N ratio 106:16) ingested in that time step
+(see Eq. (A.10)).
+
+A.2.2. Growth Zooplankton put on weight when the energy accounted by ingestion exceeds the energy loss by respiration. The change of weight is expressed according to
+
+dG dt
+
+=
+
+3600ka
+
+Igci − 3600Rska
+
+Igci − RbG0m.7ax[W(T, G) + kb]
+
+ii
+
+(A.10)
+
+where G represents weight (␮gC); ka is the assimilation efﬁciency (dimensionless = 1.0); ci is the carbon content per phy-
+
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+19
+
+toplankton cell of size-class i. The second and third righthand side terms of equation represent the metabolic respiration rates; Rs is a dimensionless constant (=0.3) related the effect of assimilation on respiration; Rb is the basal respiration constant (=0.3 × 10−3 h−1); kb is a dimensionless constant (=0.1) representing background respiration; W(T,G) is the function representing the dependency of basal respiration with temperature (T) and body weight (G) (Eq. (A.9e)). The body weight G lies in the range Gmin ≤ G ≤ Gmax, where Gmin is the body weight at birth (=0.2 ␮gC) and Gmax is the body weight at maturity (=100 ␮gC). If the assimilated carbon is less than respiration, the number of copepods in the subpopulation is reduced to make up the carbon deﬁcit. When the sum of the respiration terms exceed the actual weight, the Z particle is declared dead and it is treated as a detritus particle which sinks at a steady rate.
+
+A.2.3. Diel vertical migration (DVM) and foraging The zooplankton swim vertically in response to two goals: the minimisation of losses due to visual predation by carnivorous predators, and the maximisation of food uptake. The model treats these two goals by separate control routines: (1) diel vertical migration (DVM), and (2) foraging.
+During the day, zooplankton swim down to reduce their ambient irradiance, which controls the rate at which they suffer losses due to visual predation. The vertical migration velocity is
+
+Vm = kvVmaxW(T, G)
+
+(A.11)
+
+where Vmax is the maximum vertical velocity; W(T,G) is a function representing the dependency of Vm with temperature (T) and body weight (G) (Eq. (A.9e)); kv is a dimensionless term that modiﬁes Vmax and gives the direction of vertical motion.
+Z particles move differently depending upon their posi-
+tion relative to the turbocline (≡thermocline) depth. Below the
+thermocline, during daytime Z particles pursue a target isolume Ir (2 − S) (where Ir = 1 W m−2 is the target isolume and S is the satiation index):
+
+I(z) > Ir(2 − S) : kv > 0 ⇒ Vm > 0 (downward motion) (A.12a)
+
+I(z) < Ir(2 − S) : kv < 0 ⇒ Vm < 0 (upward motion)
+
+(A.12b)
+
+At night, the zooplankton behaviour is regulated by predator avoidance by DVM and foraging. The foraging rule is based on reversing direction when the zooplankter has passed trough a maximum in its food concentration (i.e. phytoplankton concentration). The condition for reversing direction is that the sign of the rate of change of satiation index (dS/dt) changes
+
+dS dt
+
+≥
+
+0
+
+:
+
+kv
+
+<
+
+0
+
+⇒
+
+Vm
+
+<
+
+0 (upward motion)
+
+dS dt
+
+<
+
+0
+
+:
+
+kv
+
+>
+
+0
+
+⇒
+
+Vm
+
+>
+
+0 (downward
+
+motion)
+
+(A.13a) (A.13b)
+
+dS 1 dt = tm
+
+Ig − S Ig max
+
+(A.13c)
+
+where tm is the relaxation time (=4 h). Above the thermocline, the Z particles are randomly dis-
+tributed within the mixed layer. During daytime, the vertical displacement due to swimming (Vm t) is added to the random component.
+
+A.2.4. Reproduction Reproduction occurs 20 days after zooplankton reaches its maximum weight Gmax. After the eggs are hatched, the number of adults decreases over the next 20 days. All biomass accumulated during the 20 days of gestation prior to hatching goes to eggs. All biomass goes to corpses after death (the corpses are counted as part of the detritus). The transition from juvenile to adult takes place when the Gmax is exceeded
+
+nj
+
+=
+
+kc na
+
+G
+
+− Gmax Gmin
+
+,
+
+Gj = Gmin,
+
+Ga = Gmax
+
+(A.14)
+
+where nj and na are the number of juveniles and adults, respec-
+tively; kc the reproduction efﬁciency, i.e. the proportion of larvae that survive the ﬁrst half-hour time step (=0.1) (the remaining biomass is instantaneously converted into ammonia); Gj and Ga are the weights of juveniles and adults, respectively.
+
+A.2.5. Natural mortality Apart for the mortality due to starvation, when respiration losses exceed ingestion (Eq. (A.10)), zooplankton adults die after reproduction
+
+ına ıt
+
+=
+
+na −tw +
+
+t tr
+
+dt
+
+for
+
+dt ≤ tw − 1h
+
+(A.15)
+
+where tw (=20 days) is the time elapsed since eggs are hatched.
+
+A.3. Closure terms
+
+The processes of bacterial remineralisation of detritus and carnivorous predation of zooplankton are parameterised as closure terms.
+
+A.3.1. Bacterial remineralisation of detritus In the model, detritus particles represent dead phytoplankton and zooplankton, and faecal pellets. Below the thermocline, detritus particles sink at a steady rate of 0.042 m h−1. The biomass of the detritus particles decays following a simple ‘radioactive decay’ law
+
+−
+
+ıD ıt
+
+=
+
+aD
+
+(A.16)
+
+where D is the biomass of the detritus material and a is the decay term (=0.01 d−1). The detritus biomass that is reminer-
+alised is converted to ammonium. Other sources of ammo-
+nium in the model are carnivorous grazing, mortality after reproduction 0.9na·(G − Gmax) and the basal zooplankton respiration rate (Eq. (A.10)).
+
+20 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+A.3.2. Carnivorous grazing The effect of visual predation on the herbivorous zooplankton population is parameterised according to
+
+dnz dt
+
+= −nzkprIwG0.7
+
+nz nz + kp
+
+(A.17)
+
+where the prey visibility is described by its ambient irradiance Iw, and its cross-section area, G0.7; nz the number of herbivorous zooplankton contained in a Z particle; kpr (=0.001 h−1) is the predation efﬁciency and kp (200 herbivorous zooplankton per m3) is the half-saturation corresponding abundance removed by predation, and which is immediately recycled to ammonium.
+references
+
+Al-Battran, S., Field, A.J., Wiley, R.L., Woods, J.D., 1998. Parallel simulation of plankton ecology. In: Proceedings of the IASTED International Conference Modelling and Simulation, IASTED, Philadelphia.
+Amstrong, R.A., 1994. Grazing limitation and nutrient limitation in marine ecosystems: steady state solutions of an ecosystem model with multiple food chains. Limnol. Oceanogr. 39, 597–608.
+Andersen, V., Nival, P., Harris, R., 1987. Modelling a plankton ecosystem in an enclosed water column. J. Mar. Biol. Ass. (UK) 67, 407–430.
+Baird, M.E., Oke, P.R., Suthers, I.M., Middleton, J.H., 2004. A plankton population model with biomechanical descriptions of biological processes in an idealised 2D ocean basin. J. Mar. Syst. 50 (3/4), 199–222.
+Barkmann, W., Woods, J.D., 1996. Using a Langrangian model to calibrate primary production determined form in vitro incubation measurements. J. Plankton Res. 18, 767–788.
+Broekhuizen, N., 1999. Simulating motile algae using a mixed Eulerian–Lagrangian approach: does motility promote dinoﬂagellate persistence or co-existence with diatoms? J. Plankton Res. 21 (7), 1191–1216.
+Broekhuizen, N., Oldman, J., Zeldis, J., 2003. Sub-grid-scale differences between individuals inﬂuence simulated phytoplankton production and biomass in a shelf sea system. Mar. Ecol. Prog. Ser. 252, 61–76.
+Carlotti, F., Wolf, U., 1998. A Lagrangian Ensemble model of Calanus ﬁnmarchicus coupled with a 1-D ecosystem model. Fish. Oceanogr. 7, 191–204.
+Chesson, O.L., 1991. A need for niches? TREE 6, 26–28. Chisholm, S.W., 1992. Phytoplankton size. In: Falkowski, P.G.,
+Woodhead, A.D. (Eds.), Primary Productivity and Biogeochemical Cycles in the Sea. Plenum Press, NY, pp. 213–237. Cushing, D.H., 1989. A difference in structure between ecosystem in strongly stratiﬁed waters and in those that are only weakly stratiﬁed. J. Plankton Res. 11, 1–13. Dickie, L.M., Kerr, S.R., Boudreau, P.R., 1987. Size-dependent process underlying regularities in ecosystem structure. Ecol. Monogr. 57, 233–250. Dippner, J.W., 1998. Competition between different groups of phytoplankton for nutrients in the southern North Sea. J. Mar. Syst. 14, 181–198. Dortch, Q., 1990. The interaction between nitrate and ammonium uptake in phytoplankton. Mar. Ecol. Prog. Ser. 61, 183–201. Dudgale, R.C., 1967. Nutrient limitation in the sea: dynamics, identiﬁcation and signiﬁcance. Limnol. Oceanogr. 12, 685–695.
+
+Ebenho¨ h, W., 1994. Competition and co-existence: modelling approaches. Ecol. Modell. 75/76, 83–89.
+Eppley, R.W., Rogers, J.N., McCarthy, J.J., 1969. Half-saturation constants for uptake of nitrate and ammonium by marine phytoplankton. Limnol. Oceanogr. 14, 912–920.
+Evans, G.T., 1988. A framework for discussing seasonal succession and co-existence of phytoplankton species. Limnol. Oceanogr. 33 (5), 1027–1036.
+Evans, G.T., Fasham, M.J.R., 1993. Themes in modelling ocean biogeochemical processes. In: Evans, G.T., Fasham, M.J.R. (Eds.), Towards a Model of Biogeochemical Processes. NATO ASI series. Springer-Verlag, Berlin, pp. 1–19.
+Evans, G.T., Garc¸ on, V.C. (Eds.), 1997. One-dimensional models of water column biogeochemistry. JGOFS Report 23/97, 85 pp. JGOFS Bergen, Norway.
+Fasham, M.J.R., Ducklow, H.W., McKelvie, S.M., 1990. A nitrogen-based model of plankton dynamics in the oceanic mixed layer. J. Mar. Res. 48, 591–639.
+Fennel, W., Neumann, T., 2004. Introduction to the modelling of marine ecosystems. Elsevier Oceanogr. Ser. 72, 297.
+Flo¨ der, S., Sommer, U., 1999. Diversity in planktonic communities: an experimental test of the intermediate disturbance hypothesis. Limnol. Oceanogr. 44 (4), 1114–1119.
+Gin, K.Y.H., Guo, J., Cheong, H.-F., 1998. A size-based ecosystem model for pelagic waters. Ecol. Modell. 112, 53–72.
+Grieco, L., Tremblay, L.B., Zambianchi, E., 2005. A hybrid approach to transport processes in the Gulf of Naples: an application to phytoplankton and zooplankton population dynamics. Continental Shelf Res. 25 (5/6), 711–728.
+Hardin, G., 1960. The competitive exclusion principle. Science 131, 1292–1297.
+Harris, G.P., 1986. Phytoplankton Ecology: Structure, Function and Fluctuation. Chapman and Hall, USA, 384 pp.
+Head, R.N., Medina, G., Huskin, I., Anado´ n, R., Harris, R.P., 2002. Phytoplankton and mesozooplankton distribution and composition during transects of the Azores Subtropical Front. Deep-Sea Res., Part II 49 (19), 4023–4034.
+Huisman, J., Weissing, F.J., 1999. Biodiversity of plankton by species oscillations and chaos. Nature 402, 407–410.
+Hutchinson, G.E., 1961. The paradox of the plankton. Am. Nat. 95, 137–146.
+Isemer, H.J., Hasse, L., 1987. The Bunker Climate Atlas of the North Atlantic. Springer-Verlag, Berlin.
+Janowitz, G.S., Kamykowski, D., 1999. An expanded Eulerian model of phytoplankton environmental response. Ecol. Modell. 118, 237–247.
+Jørgensen, S.E., Halling-Sørensen, B., Nielsen, S.N., 1995. Handbook of Environmental and Ecological Modelling. CRC Press LLC, 672 pp.
+Kamykowski, D., Yamazaki, H., Janowitz, G.S., 1994. A Lagrangian model of phytoplankton photosynthetic response in the upper mixed-layer. J. Plankton Res. 16 (8), 1059–1069.
+Kiørboe, T., 1995. Turbulence, phytoplankton cell size, and the structure of pelagic food webs. Adv. Mar. Biol. 29, 172.
+Kraus, E.B., Turner, J.S., 1967. A one dimensional model of the seasonal thermocline. II. The general theory and its consequences. Tellus 19, 98–105.
+Langdon, C., 1993. The signiﬁcance of respiration in production measurements based on oxygen. ICES Mar. Sci. Symp. 197, 69–78.
+Legendre, L., Rassoulzadegan, F., 1996. Food-web mediated export of biogenic carbon in oceans: hydrodynamic control. Mar. Ecol. Prog. Ser. 145, 179–193.
+Levitus, S., 1998. World Ocean Atlas. Government Printing Ofﬁce, NOAA, Washington, DC.
+Liu, C.-C., Woods, J.D., 2004. Prediction of ocean colour: Monte Carlo simulation applied to a virtual ecosystem based on the Lagrangian Ensemble method. Int. J. Remote Sensing 25 (5), 921–936.
+
+e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+21
+
+Longhurst, A., 1998. Ecological Geography of the Sea. Academic Press, 398 pp.
+Lomnicki, A., 1999. Individual-based models and the individual-based approach to population ecology. Ecol. Modell. 115 (2/3), 191–198.
+Lorenzo, L.M., Figueiras, F.G., Tilstone, G.H., Arbones, B., Miro´ n, L., 2004. Photosynthesis and light regime in the Azores Front region during summer: are light-saturated computations of primary production sufﬁcient? Deep-Sea Res., Part I 51 (9), 1229–1244.
+Miller, C., Lynch, D.R., Carlotti, F., Gentleman, W., Lewis, C.V.W., 1998. Coupling of an individual-based population dynamic model of Calanus ﬁnmarchicus to a circulation model for the Georges Bank region. Fish. Oceanogr. 7, 219–234.
+Moloney, C.L., Field, J.G., 1989. General allometric equations for rates of nutrient uptake, ingestion, and respiration in plankton organisms. Limnol. Oceanogr. 34 (7), 1290–1299.
+Moloney, C.L., Field, J.G., 1991. The size-based dynamics of plankton food webs. I. A simulation model of carbon and nitrogen ﬂows. J. Plankton Res. 13, 1003–1038.
+Moloney, C.L., Field, J.G., Lucas, M.I., 1991. The size-based dynamics of plankton food webs. II. Simulations of three contrasting southern Benguela food webs. J. Plankton Res. 13 (5), 1039–1092.
+Morel, A., 1988. Optical modelling of the upper ocean in relation to its biogenous matter content (case I water). J. Geophys. Res. 93 (C9), 10749–10768.
+Mourin˜ o, B., Ferna´ ndez, E., Alves, M., 2004. Thermohaline estructure, ageostrophic vertical velocity ﬁelds and phytoplankton distribution and production in the northeast Atlantic subtropical front. J. Geophys. Res. 109 (C4) (art. No.-C04020).
+Nagai, T., Yamazaki, H., Kamykowski, D., 2003. A Lagrangian photoresponse model coupled with a 2nd-order turbulence closure. Mar. Ecol. Prog. Ser. 265, 17–30.
+Nielsen, S.L., Sand-Jensen, K., 1990. Allometric scaling of maximal photosynthetic growth rate to surface/volume ratio. Limnol. Oceanogr. 35 (1), 177–181.
+Nogueira, E., Ibanez, F., Figueiras, F.G., 2000. Effect of meteorological and hydrographic disturbances on the microplankton community structure of the R´ıa de Vigo (NW Spain). Mar. Ecol. Prog. Ser. 203, 23–45.
+Nogueira, E., Figueiras, F.G., 2005. The microplankton succession in the R´ıa de Vigo revisited: species assemblages and the role of weather-induced, hydrodynamic variability. J. Mar. Syst. 54, 1398–2155.
+Peters, E., Thomas, D.N., 1996. Prolonged darkness and diatom mortality. I. Marine Antarctic species. J. Exp. Mar. Biol. Ecol. 207, 25–41.
+Peters, R.H., 1983. The Ecological Implications of Body Size. Cambridge University Press, Cambridge, 329 pp.
+Platt, T., Mann, K.H., Ulanowicz, R.E., 1981. Mathematical Models in Biological Oceanography. The Unesco Press, Paris, 217 pp.
+Platt, T., Sathyendranath, S., 1988. Oceanic primary production: estimation by remote sensing at local and regional scales. Science 241 (4873), 1613–1620.
+Popova, E.E., Fasham, M.J.R., Osipov, A.V., Ryabchenko, V.A., 1997. Chaotic behaviour of an ocean ecosystem model under seasonal external forcing. J. Plankton Res. 19 (10), 1495– 1515.
+Reynolds, C.S., 1993. Scales of disturbances and their roles in plankton ecology. Hydrobiologia 249, 151–157.
+Reynolds, C.S., 1997. Vegetation Processes in the Pelagic: A Model for Ecosystem Theory. Excellence in Ecology. Ecology Institute, Germany, 371 pp.
+Riley, G.A., Stommel, H., Bumpus, D.F., 1949. Quantitative ecology of the plankton of the western North Atlantic. Bull. Bingham. Oceanogr. Collect. 12, 1–169.
+
+Sakshaug, K., Bricaus, A., Dandonneau, Y., Falkowski, P.G., Kiefer, D.A., Legendre, L., Morel, A., Parslow, J., Takahashi, M., 1997. Parameters of photosynthesis: deﬁnitions, theory and interpretation of results. J. Plankton Res. 19 (11), 1637–1670.
+Scheffer, M., Baveco, J.M., DeAngelis, D.L., Rose, K.A., van Ness, E.H., 1995. Super-individuals: a simple solution for modelling large populations on an individual basis. Ecol. Modell. 80, 161–170.
+Siegel, D.A., 1998. Resource competition in a discrete environment: why are plankton distributions paradoxical? Limnol. Oceanogr. 43 (6), 1133–1146.
+Sommer, U., Padisa´ k, J., Reynolds, C.S., Juha´ sz-Nagy, P., 1993. Hutchinson’s heritage: the diversity-disturbance relationship in phytoplankton. Hydrobiologia 249, 1–7.
+Steel, J.H., 1962. Environmental control of photosynthesis in the sea. Limnol. Oceanogr. 7, 137–150.
+Straile, D., 1997. Gross growth efﬁciencies of protozoan and metazoan zooplankton and their dependence on food-concentration, predator–prey weight ratio, and taxonomic group. Limnol. Oceanogr. 42, 1375–1385.
+Strass, V.H., Woods, J.D., 1991. New production in the summer revealed by the meridional slope of the deep chlorophyll maximum. Deep-Sea Res. 38 (1), 35–56.
+Strathmann, R.R., 1967. Estimating the organic carbon content of phytoplankton from cell volume or plasma volume. Limnol. Oceanogr. 12, 411–418.
+Sverdrup, H.U., 1953. On conditions of vernal blooming of phytoplankton. J. Cons. Exp. Mer. 18, 287–295.
+Taylor, A.H., Watson, A.J., Ainsworth, M., Robertson, J.E., Turner, D.R., 1991. A modelling investigation of the role of phytoplankton in the balance of carbon at the surface of the North Atlantic. Global Biogeochem. Cycles 5 (2), 151–171.
+Tett, P., Droop, M.R., 1988. Cell quota models and planktonic primary production. In: Wimpenny, W.T. (Ed.), CRC Handbook of Laboratory Model Systems for Microbiological Ecosystems. CRC Press, Inc., Florida, p. 277.
+Tilman, D., 1977. Resource competition between planktonic algae: and experimental and theoretical approach. Ecology 58, 338–348.
+Tilman, D., 1999. The ecological consequences of changes in biodiversity: a search for general principles. Ecology 80 (5), 1455–1474.
+Totterdell, I.J., 1993. An annotated bibliography of marine biological model. In: Evans, G.T., Fasham, M.J.R. (Eds.), Towards a Model of Biogeochemical Processes. NATO ASI series. Springer-Verlag, Berlin, pp. 317–339.
+Totterdell, I.J., Amstrong, R.A., Drange, H., Parslow, J.S., Powell, T.M., Taylor, A.H., 1993. Trophic resolution. In: Evans, G.T., Fasham, M.J.R. (Eds.), Towards a Model of Biogeochemical Processes. NATO ASI series. Springer-Verlag, Berlin, pp. 71–92.
+Wilson, J.B., 1990. Mechanisms of species co-existence: twelve explanations for Hutchinson’s ‘paradox of the plankton’: evidence from New Zealand plant communities. N.Z. J. Ecol. 13, 17–42.
+Woods, J.D., 1980. Diurnal and seasonal variation of convection in the wind-mixed layer of the ocean. Q. J. R. Meteorol. Soc. 106, 379–394.
+Woods, J.D., 2005. The Lagrangian Ensemble metamodel for simulating plankton ecosystems. Prog. Oceanogr. 67 (1–2), 84–159.
+Woods, J.D., Barkmann, W., 1986. The inﬂuence of solar heating on the upper ocean. I. The mixed layer. Q. J. R. Meteorol. Soc. 112, 1–27.
+Woods, J.D., Barkmann, W., 1993a. Diatom demography in winter. Fish. Oceanogr. 2, 202–222.
+Woods, J.D., Barkmann, W., 1993b. The plankton multiplier—positive feedback in the greenhouse. J. Plankton Res. 15 (9), 1053–1074.
+
+22 e c o l o g i c a l m o d e l l i n g 1 9 8 ( 2 0 0 6 ) 1–22
+
+Woods, J.D., Barkmann, W., 1994. Simulating plankton ecosystems by the Langrangian Ensemble method. Phil. Trans. R. Soc. Lond. B 343, 27–31.
+Woods, J.D., Onken, R., 1982. Diurnal variation and primary production in the ocean—preliminary results of a Langrangian ensemble model. J. Plankton Res. 4 (3), 735–756.
+
+Woods, J.D., Perilli, A., Brakmann, W., 2005. Stability and predictability of a virtual plankton ecosystem created with an individual-based model. Prog. Oceanogr. 67 (1–2), 43–83.
+Yamazaki, H., Kamykowski, D., 1991. The vertical trajectories of motile phytoplankton in a wind-mixed water column. Deep-Sea Res., Part A 38 (2), 219–241.
+

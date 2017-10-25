@@ -1,0 +1,630 @@
+<html style="height: 100%;" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths wf-opensans-n4-active wf-active"><!--<![endif]--><head>
+        		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Westminster City Council Parking Portal</title>
+		                        		<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" src="1949b194ac_002"></script><script src="nr-1059.js"></script><script type="text/javascript" async="" src="dc.js"></script><script type="text/javascript" async="" src="element.js"></script><script src="webfont.js" type="text/javascript" async=""></script><script type="text/javascript" src="1949b194ac"></script><script src="nr-1059.js"></script><script type="text/javascript" async="" src="dc.js"></script><script type="text/javascript" async="" src="element.js"></script><script src="webfont.js" type="text/javascript" async=""></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<!--		<meta name="viewport" content="width=device-width, initial-scale=1"/>-->
+		<!--View removed for testing to see how different sites handle the full site-->
+		<meta name="geo.country" content="gb">
+		<meta name="Description" content="RingGo Cashless Parking Solutions">
+                <script type="text/javascript">
+          WebFontConfig = {
+            google: { families: [ 'Open+Sans::latin' ] }
+          };
+          (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                    '://ajax.googleapis.com/ajax/libs/webfont/1.5.6/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+          })();
+        </script>
+        <link type="image/vnd.microsoft.icon" href="https://parkright.westminster.gov.uk/images/westminster/cresticon.png" rel="shortcut icon">
+		<link rel="stylesheet" type="text/css" href="datagrid_002.css">
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<link rel="stylesheet" type="text/css" href="global_002.css">
+		<link rel="stylesheet" type="text/css" href="header.css">
+		<link rel="stylesheet" type="text/css" href="footer.css">
+		<link rel="stylesheet" type="text/css" href="form.css">
+        <link rel="stylesheet" type="text/css" href="smallform.css">
+		<link rel="stylesheet" type="text/css" href="pagetemplet.css">
+		<link rel="stylesheet" type="text/css" href="notifications.css">
+        <link rel="stylesheet" type="text/css" href="new-global.css">
+		<!--<link rel="stylesheet" type="text/css" href="/css/ringgo/datepicker.css"/>-->
+		<noscript>
+			&lt;link rel="stylesheet" type="text/css" href="/westminster/shared/css/nojs.1461838460.css"&gt;
+		</noscript>
+        
+        <script type="text/javascript" src="modernizr-latest.js"></script><link type="text/css" rel="stylesheet" charset="UTF-8" href="translateelement.css"><script type="text/javascript" charset="UTF-8" src="main_002.js"></script><script type="text/javascript" charset="UTF-8" src="element_main.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="main_003.js"></script>
+<script type="text/javascript" src="datepicker.js"></script>
+<style type="text/css"></style>
+
+<link rel="stylesheet" type="text/css" href="global.css">
+<link rel="stylesheet" type="text/css" href="public.css">
+<link rel="stylesheet" type="text/css" href="forms.css">
+<link rel="stylesheet" type="text/css" href="datagrid.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.css">
+<link rel="stylesheet" type="text/css" href="jquery.css">
+    		<link rel="stylesheet" href="css.css"><script type="text/javascript">
+    		$(document).ready( function(){
+    			$('form').submit(function(){
+    				$(':submit', this).click(function() {
+    					return false;
+    				});
+    			});
+    		});
+    		</script>
+    <!--[if lte IE 8]>
+      	<style type="text/css">
+    		fieldset#newMembers .element input[type="radio"], fieldset#newMembers .element input[type="radio"]+label, fieldset#currentMembers .element input[type="radio"], fieldset#currentMembers .element input[type="radio"]+label {
+    			display: inline;
+    			float: left;
+    		}
+    	</style>
+    <![endif]-->
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('input[type=text]').keypress(function (e) {
+                                if (e.which == 13) {
+                                    if($('#field-cli2').val()) {
+                                        $('input[value=Register]').click();
+                                    } else {
+                                        $('input[value=Login]').click();
+                                    }
+                                    return false;
+                                }
+                            });
+                        });
+                    </script>        <!--[if IE 8]>
+            <link rel="stylesheet" type="text/css" href="/westminster/shared/css/ie.1461838460.css" />
+            <script type="text/javascript" src="/westminster/shared/js/ie.1441964155.js"></script>
+        <![endif]-->
+        <!--[if !IE]><!--><style>.tablelessform select {font-family:"Open sans", sans-serif}</style><!--<![endif]-->
+
+        <script type="text/javascript">
+            $(function(){
+              $(".datepicker").datepicker({ altformat: 'dd-mm-yy',
+                              changeMonth: true, changeYear: true, 
+                              yearRange: '-8:+1',
+                              buttonImage: '/images/datepicker/calendar.gif', 
+                              buttonImageOnly: true,
+                              showButtonPanel: true,
+                              showOn: 'both',
+                              dateFormat: 'dd M yy',
+                                                      maxDate: '+1y'});
+            });
+			
+			
+			function getAction(){
+				var newAction = 'https://www.westminster.gov.uk/search/site/';
+				var data = document.getElementById('query').value;
+				window.location.href = newAction + data;
+			}
+
+			function stopForm(){
+				return false;
+			}
+                        
+                function closeNavMenus(){                    
+                    if($('#navbarpermitsmenu').hasClass('openMenu')){
+                        $('#navbarpermitsmenu').hide();
+                        $('#navbarpermitsmenu').removeClass('openMenu');
+                        $('#navbarpermitslink').parent().removeClass('navbarlirollover');
+                    }
+                    
+                    if($('#navbarmoremenu').hasClass('openMenu')){
+                        $('#navbarmoremenu').hide();
+                        $('#navbarmoremenu').removeClass('openMenu');
+                        $('#navbarmorelink').parent().removeClass('navbarlirollover');
+                    }
+                }
+                function openNavMenu($menu, $link){
+                    closeNavMenus();
+                    $menu.show();
+                    $menu.addClass('openMenu');
+                    $link.parent().addClass('navbarlirollover');
+                }
+                
+                /**
+                 * Show/hide the file upload box below each proof upload field when necessary
+                 * 
+                 * @param Object $elem JQuery element
+                 * @param string fileId name of the particular proof / file ID we are dealing with
+                 * @returns void
+                 **/
+                function setFileUploadVal($elem, fileId) {
+                    // Get rid of C:\fakepath in filename displayed
+                    $('#text-' + fileId).html($elem.val().replace(/^.*\\/, ""));
+                    // Initially remove the remove button (to be conditionally re-added later - prevents multiple remove buttons)
+                    $('#remove-' + fileId).remove();
+                    // If the field has a file to be uploaded, show the file info box, hide the 'choose file' button and make the type dropdown full length
+                    if ($elem.val().length > 0) {
+                        $('#text-' + fileId).closest('.uploaded-file-info').show();
+                        $('#text-' + fileId).closest('.elemErrorWrap').children('select').removeClass('input-medium');
+                        $('#text-' + fileId).closest('.elemErrorWrap').children('.fileuploadlabel').hide();
+                        $('#text-' + fileId).after('<li><a class="pseudo-submit remove-proof" href="#" id="remove-' + fileId + '">Remove</a></li>');
+                        $('#date-' + fileId).html('Added: 25 Oct 2017 12:25 ');
+                    // No file selected, clear and hide file upload info, show choose button
+                    } else {
+                        $('#date-' + fileId).html('');
+                        $('#text-' + fileId).closest('.elemErrorWrap').children('select').addClass('input-medium');
+                        $('#text-' + fileId).closest('.elemErrorWrap').children('.fileuploadlabel').show();
+                        $('#text-' + fileId).closest('.uploaded-file-info').hide();
+                    }
+                }
+
+                $(document).ready(function () {	
+                    $('body').click(function(){
+                        closeNavMenus();
+                    });
+                    
+                    $('#navbarpermitslink').click(function(){
+                        openNavMenu($('#navbarpermitsmenu'), $('#navbarpermitslink'));
+                        return false;
+                    });
+                    
+                    $('#navbarmorelink').click(function(){
+                        openNavMenu($('#navbarmoremenu'), $('#navbarmorelink'));
+                        return false;
+                    });
+
+                    $('#search_box input').click(function () {
+                        closeNavMenus();
+                    });
+                    $('input[type=file]').each(function() {
+                        var name = $(this).attr('name');
+                        var fileId = $(this).attr('id');
+                        var section = $(this).attr('class');
+                        if(fileId == undefined && name != undefined) {
+                            $(this).attr('id', name);
+                            fileId = name;
+                        }
+                        // Styled choose file button
+                        $('<label class="fileuploadlabel" for="' + fileId + '">Choose file</label>').insertBefore(this);
+                        
+                        // Uploaded file info
+                        $('<div class="uploaded-file-info info_'+ section +'"><ul class="inline-list"><li id="text-' + fileId +
+                            '"></li></ul>' +
+                            '<div class="date-added" id="date-' + fileId + '"></div></div>').insertBefore(this).hide();
+                        
+                        // Hide the actual input type file
+                        $(this).hide();
+
+                        // Update the fake elements that represent the input type file
+                        $(this).on('change', function() {
+                            setFileUploadVal($(this), fileId);
+                        });
+
+                        $(document).on('click', '#remove-' + fileId, function() {
+                            $('input#' + fileId).val('');
+                            // Not sure why the on change event doesn't pick this up otherwise, possibly the return false... Either way, got to call this again on click...
+                            setFileUploadVal($('input#' + fileId), fileId);
+                            return false;
+                        });
+                    });
+                    
+                        
+                });
+
+        </script><link rel="stylesheet" href="css.css">
+	<script type="text/javascript" src="TBURT.html"></script><link type="text/css" rel="stylesheet" charset="UTF-8" href="translateelement.css"><script type="text/javascript" charset="UTF-8" src="main_002.js"></script><script type="text/javascript" charset="UTF-8" src="element_main.js"></script><script type="text/javascript" charset="UTF-8" src="element_main.js"></script><script type="text/javascript" src="TBURT_002.html"></script><link type="text/css" rel="stylesheet" charset="UTF-8" href="translateelement.css"><script type="text/javascript" charset="UTF-8" src="main_002.js"></script><script type="text/javascript" charset="UTF-8" src="element_main.js"></script></head>
+    	<body class="wcc-new cookie-container-show wcc-login-page" style="position: relative; min-height: 100%; top: 0px;">
+        <style>
+            body #cookie-header-container {
+                background-color: #323232 !important;
+                left: 0;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                text-align: center;
+                top: 0;
+                width: 100%;
+                z-index: 999;
+            }
+            body #cookie-header-container,
+            body #cookie-header-position {
+                box-sizing: border-box;
+                display: block;
+                font-size: 14px;
+                height: 0;
+                line-height: 18px;
+                transition: all ease 0.3s 0s;
+            }
+            body.cookie-container-show #cookie-header-container,
+            body.cookie-container-show #cookie-header-position {
+                height: 55px;
+                padding: 15px 15px;
+                transition: none;
+            }
+            body #cookie-header-container a {
+                color: #FFF;
+                text-decoration: underline;
+            }
+            body #cookie-header-container > div,
+            body #cookie-header-container > p {
+                display: inline-block;
+                font-size: 14px;
+                line-height: 18px;
+                margin: 0;
+                padding: 0;
+            }
+            body #cookie-header-container > div {
+                margin: 0 0 0 10px;
+                max-height: 24px;
+                position: relative;
+                top: -1px;
+            }
+            body #cookie-header-container > p {
+                color: #FFF;
+            }
+            body #cookie-header-container button {
+                background-color: #FFF !important;
+                border: none;
+                border-radius: 2px;
+                color: #323232 !important;
+                cursor: pointer;
+                font-family: Verdana;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 14px;
+                max-height: 24px;
+                margin: 0;
+                min-width: 0;
+                padding: 5px 15px;
+                text-transform: capitalize;
+                top: 0;
+                left: 0;
+            }
+            body #cookie-header-container button:hover {
+                background-color: #E6E6E6 !important;
+            }
+            /* Mobile Styles */
+            body.mobile.cookie-container-show #cookie-header-container,
+            body.mobile.cookie-container-show #cookie-header-position {
+                height: 90px;
+                padding: 5px 8px;
+            }
+            body.mobile.cookie-container-show #cookie-header-container {
+                background-color: #EBEBEB !important;
+                display: table;
+            }
+            body.mobile #cookie-header-container a {
+                color: #000;
+            }
+            body.mobile #cookie-header-container button {
+                background-color: #323232 !important;
+                color: #FFF !important;
+            }
+            body.mobile #cookie-header-container div {
+                display: table-cell;
+                margin: 0;
+                vertical-align: middle;
+            }
+            body.mobile #cookie-header-container p {
+                color: #111;
+                display: table-cell;
+                padding-right: 8px;
+                text-align: left;
+                vertical-align: middle;
+            }
+        </style>
+        <div id="cookie-header-container">
+            <p>Cookies help us deliver our services. By using our services, you agree to our use of cookies. <a href="https://parkright.westminster.gov.uk/privacy" target="_blank">Read our cookie policy</a></p>
+            <div id="accept-container">
+                <button id="cookie-dismiss">Accept</button>
+            </div>
+        </div>
+        <div id="cookie-header-position">
+        </div>
+        <script>
+            $(document).ready(function () {
+                if(document.cookie.indexOf("cookies-allowed") < 0) {
+                    $('body').addClass('cookie-container-show');
+                }
+
+                $('#cookie-dismiss').click(function() {
+                    var expiry = new Date();
+                    expiry.setTime(expiry.getTime() + (1000 * 86400 * 365)); // 1000 = milliseconds * 86400 = 1 day * 365 = 1 year
+                    document.cookie = "cookies-allowed=true; expires=" + expiry.toUTCString();
+                    $('body').removeClass('cookie-container-show');
+                });
+            });
+            var operator     = 42152;
+            var isWhiteLabel = 0;
+        </script>		<div class="hidden">
+			<a href="#skiplink" accesskey="S" class="hidden">Skip to content</a>
+			<a href="https://parkright.westminster.gov.uk/newenquiry?type=11" accesskey="7" class="hidden">Report a problem or complaint with a car park</a>
+		</div>
+	    <div class="topbar">
+		<div class="row">
+
+
+		    <div class="logoimage">
+		    <a accesskey="1" class="nohover" href="http://www.westminster.gov.uk/parking"><img class="logo" src="westminster_logo.png" alt="WCC"></a>
+		</div>
+                       
+                <form method="post" action="https://www.westminster.gov.uk/search/site/" id="search_box" onsubmit="return stopForm();">
+						<label for="query" class="invisible">Search</label>
+						<input id="query" name="query" placeholder="Search..." type="text">
+                                                <div id="search_box_submit_holder"> 
+                                                    <button type="submit" value="Search" onclick="getAction();"><img class="searchiconheader" src="searchglassgrey.png" alt="WCC" width="15" height="15"></button>
+                                                </div>    
+                        </form>
+                        </div>
+
+                                <div class="headermenu wccheadermenu topmenu " style="">
+					<ul class="headermenu smallmenu">
+													<li><a href="https://parkright.westminster.gov.uk/login" id="toggleAccountMenu">Log in<span class="smallicon">▼</span></a>
+								<ul id="accountmenu">
+								    									<li><a href="https://parkright.westminster.gov.uk/login">Personal</a></li>
+									<li><a href="https://corporate-parkright.westminster.gov.uk/corplogin">Corporate</a></li>
+								</ul>
+							</li>
+                                                        <li class="right-border-black"><a href="https://parkright.westminster.gov.uk/register">Register</a></li>
+						                                                <li class="right-border-black"><a accesskey="6" href="https://parkright.westminster.gov.uk/help">Help</a></li>
+                                                <li class="right-border-black"><a href="https://www.westminster.gov.uk/contact">Contact</a></li>
+					</ul>
+					<div class="clear"></div>
+                                        
+				</div>
+
+
+
+	    </div>
+
+
+
+<!--		<div id="header">
+
+			<div class="clear"></div>
+			<ul class="menu mainmenu">
+				   <li class="right-border"><a accesskey="b" href="/bookparking">Park</a></li>
+				<li class="right-border"><a href="/permits">Permits</a></li>
+				<li class="right-border"><a href="/statements">Receipts</a></li>
+				<li><a href="#" id="toggleMore">More<span class="smallicon">&#9660;</span></a></li>
+			</ul>
+			<div class="clear"></div>
+			<ul id="moremenu">
+				<li class="right-border-grey moremenusection">RingGo
+					<ul>
+
+
+						<li><a accesskey="2" href="/news">News</a></li>
+													<li><a href="/login">Login / Register</a></li>
+											</ul>
+				</li>
+				<li class="right-border-grey moremenusection">Ways to Pay
+					<ul>
+						<li><a href="#invalid">Mobile Apps</a></li>
+						<li><a href="/howitworks">Telephone</a></li>
+						<li><a href="/texttopark">Text to Park</a></li>
+						<li><a href="/bookparking">Web</a></li>
+					</ul>
+				</li>
+				<li class="right-border-grey moremenusection">Services
+					<ul>
+						<li><a href="/residency">RingGo Residency</a></li>
+
+					</ul>
+				</li>
+				<li class="moremenusection">Tools
+					<ul>
+						<li><a href="/parkingpricecalculator">Parking Calculator</a></li>
+						<li><a href="/parkinglocator">Parking Locator</a></li>
+						<li><a accesskey="4" href="/whereitworks">Where it Works</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="clear"></div>
+		</div>-->
+                <div id="navbar">
+                                        
+                    <ul class="navbarul">
+                        <li class="navbarli"><a class="navbara" href="https://parkright.westminster.gov.uk/bookparking"><span>PAY TO PARK</span></a></li>
+                        <li class="navbarli"><a class="navbara" href="https://parkright.westminster.gov.uk/whereitworks/42152"><span>WHERE TO PARK</span></a></li>
+                        <li class="navbarli"><a class="navbara" href="https://www.westminster.gov.uk/suspensions-dispensations-and-skips"><span>SUSPENSIONS &amp; DISPENSATIONS</span></a></li>
+                        <li class="navbarli currentitem"><a id="navbarpermitslink" class="navbara"><span>PERMITS</span></a>
+                            <div id="navbarpermitsmenu" class="navbarmenu">
+                                <div id="navbarpermitsmenuleft">
+                                    <span class="navbarmenutitle"><a href="https://parkright.westminster.gov.uk/permitapplications">My permits</a></span>
+                                                                            <ul class="navbarmenuul">
+                                            <li class="navbarmenuli"><a href="https://parkright.westminster.gov.uk/permits" class="strong">Log In to see your permits.</a></li>
+                                        </ul>
+                                                                    </div>
+                                <div id="navbarpermitsmenuright">
+                                    <span class="navbarmenutitle">Apply for a permit</span>
+                                        <ul class="navbarmenuul">
+                                                                                        <li class="navbarmenuli"><a href="https://parkright.westminster.gov.uk/permitapplications/info/42152/H">» Resident Permit</a></li>
+                                            <li class="navbarmenuli"><a href="https://parkright.westminster.gov.uk/disabledpermits">» Disabled Permit</a></li>
+                                            <li class="navbarmenuli"><a href="https://parkright.westminster.gov.uk/permitapplications/info/42152/TR">» Trade Permit</a></li>
+                                        </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="navbarli"><a class="navbara" href="https://payments-parkright.westminster.gov.uk/?rd=1"><span>PAY A<br class="show">PARKING TICKET</span></a></li>
+                        <li class="navbarli"><a class="navbara" href="https://parkright.westminster.gov.uk/statements"><span>STATEMENTS</span></a></li>
+                        <li class="navbarli"><a id="navbarmorelink" class="navbara"><span>MORE</span></a>
+                            <div id="navbarmoremenu" class="navbarmenu">
+                                <ul class="navbarmenuul">
+                                    <li class="navbarmenuli"><a href="https://corporate-parkright.westminster.gov.uk/corplogin">» Corporate</a></li>
+                                    <li class="navbarmenuli"><a href="https://appeals-parkright.westminster.gov.uk/WestminsterOCMLiveV2/">» Appeal a PCN</a></li>
+                                    <li class="navbarmenuli"><a href="https://parkright.westminster.gov.uk/help">» Help</a></li>
+                                    <li class="navbarmenuli"><a href="https://parkright.westminster.gov.uk/help/enquiries">» Enquiries</a></li>
+                                    <li class="navbarmenuli"><a href="https://parkright.westminster.gov.uk/report-it">» Report a parking issue</a></li>
+                                    <li class="navbarmenuli"><a href="https://parkright.westminster.gov.uk/trafficandtransport">» Traffic and public transport</a></li>
+                                    <li class="navbarmenuli"><a href="https://parkright.westminster.gov.uk/on-street-receipts">» Receipts for on-street payment terminals</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+		<div class="breadcrumbs">
+			<a href="https://www.westminster.gov.uk/parking">Home</a> &gt;
+		<a href="https://parkright.westminster.gov.uk/home">Parking</a> &gt; <strong><a href="https://parkright.westminster.gov.uk/login">Log in</a></strong>		</div>
+			
+		<div id="content">
+		<ul id="templet-container">
+<li class="side-column column left-side-column">
+
+
+</li>
+<li class="x3box column leftgreyborder">
+	<div class="box-content">
+	<script type="text/javascript"><!--$(document).ready( function(){ $('#jsenabled').val('1');})//--></script><div class="page-head-wrap"><div class="page-head"><a class="go-up icon-arrow-left"><img class="backicon" src="backarrow.png" alt="RingGo" width="20" height="20"></a><div class="page-head-wrap"><div class="page-head"><a class="go-up icon-arrow-left"><img class="backicon" src="backarrow.png" alt="RingGo" width="20" height="20"></a><h1>Log in</h1></div></div></div></div><p>If you are already a member please log in with your details or register with us now.</p>
+<form action="?id=3799fc9b3536013627f63c46a2bb8edbf3e30a9c&amp;psf=1" method="post" id="Login" class="Login tablelessform" onsubmit="checkSubmitType()" _lpchecked="1">
+	<div style="display: none;">
+<input id="rq_uri" name="rq_uri" value="/permitapplications/add/42152/H" autocomplete="off" type="hidden">
+<input id="lab_id" name="lab_id" value="3799fc9b3536013627f63c46a2bb8edbf3e30a9c" autocomplete="off" type="hidden">
+<input id="jsenabled" name="jsenabled" value="0" autocomplete="off" type="hidden">
+	</div>
+
+	<fieldset id="currentMembers" autocomplete="off">
+		<legend>Used us before?</legend>
+		<ol>
+<li class="accountTypeLogin-wrapper"><div class="element clearfix"><div class="elemErrorWrap"><input class="personalRadio" name="accountTypeLogin[type]" value="1" id="qf_ae3e06" checked="checked" type="radio"><label for="qf_ae3e06" class="personalLogin">Personal</label><input class="corporateRadio" name="accountTypeLogin[type]" value="2" id="qf_dae6aa" type="radio"><label for="qf_dae6aa"><a class="corpLink" style="padding-left: 0;" href="https://corporate-parkright.westminster.gov.uk/corplogin">Corporate</a>&nbsp;</label></div></div></li>
+
+			<li class="cli-wrapper"><label for="field-cli" id="label-cli" class="element">Email or phone:</label><div class="element div-cli"><div class="elemErrorWrap"><input id="field-cli" name="cli" autocomplete="off" placeholder="e.g. jbloggs@gmail.com" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" type="text"><div class="position-validity"><img class="invalid" src="ico-cross-red.svg"></div></div></div></li>
+			<li class="pin-wrapper"><label for="field-pin" id="label-pin" class="element">Password, PIN:</label><div class="element div-pin"><div class="elemErrorWrap"><input id="field-pin" name="pin" autocomplete="off" placeholder="Password" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" type="password"></div></div></li>
+<li class="submits-wrapper"><div class="element clearfix"><div class="elemErrorWrap" style="text-align: left; vertical-align: text-top;"><input class="labbutton labsingle labnext labdefault" name="labyrinth_Login_next" value="Log in" onclick="submittedButton=1;" type="submit"></div></div></li>
+
+			<li class="static1-wrapper static"><div class="element div-static1"><div class="elemErrorWrap"><span class="wcc-forgot-text"><a href="https://parkright.westminster.gov.uk/resetpassword">Forgotten password or PIN?</a></span></div></div></li>
+		</ol>
+	</fieldset>
+	<fieldset id="newMembers" autocomplete="off">
+		<legend>New? Register now</legend>
+		<ol>
+<li class="accountType-wrapper"><div class="element clearfix"><div class="elemErrorWrap"><input class="parkingRadio" name="accountType[type]" value="1" id="qf_386796" checked="checked" type="radio"><label for="qf_386796" class="parkingRegister">Parking</label><input class="permitRadio" name="accountType[type]" value="2" id="qf_853b20" type="radio"><label for="qf_853b20">Permits</label><a class="corpLink" href="https://corporate-parkright.westminster.gov.uk/">Corporate</a></div></div></li>
+
+			<li class="cli2-wrapper"><label for="field-cli2" id="label-cli2" class="element">Please enter your telephone number</label><div class="element div-cli2"><div class="elemErrorWrap"><input id="field-cli2" name="cli2" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" type="text"></div></div></li>
+<li class="submits-wrapper"><div class="element clearfix"><div class="elemErrorWrap" style="text-align: left; vertical-align: text-top;"><input class="labbutton labsingle labnext labdefault" name="labyrinth_Login_next" value="Continue" onclick="submittedButton=2;" type="submit"></div></div></li>
+
+		</ol>
+	</fieldset>
+</form>			    </div> <!-- /box-content -->
+			</li>
+		    </ul>
+            <div class="clear"></div>
+            <div id="webchatbutton"></div>
+		</div><!-- End Content -->
+		<div class="clear"></div>
+		    <div class="main-footer">
+                <div class="precontent"></div>
+			    <div class="footercontent">
+				<div class="row">
+				    <h2>Explore Westminster</h2>
+					<ul class="explorelinks">
+					    <li><a href="https://www.westminster.gov.uk/contact" target="_blank">Contact us</a></li>
+					    <li style="margin-left: 25px;"><a href="https://www.westminster.gov.uk/council-tax" target="_blank">Council tax</a></li>
+					    <li style="margin-left: 25px;"><a href="https://www.westminster.gov.uk/licensing" target="_blank">Licensing</a></li>
+					    <li style="margin-left: 25px;"><a href="https://www.westminster.gov.uk/planning" target="_blank">Planning</a></li>
+					    <li><a href="https://www.westminster.gov.uk/births-deaths-marriages-and-citizenship" target="_blank">Births, deaths and marriages</a></li>
+					    <li style="margin-left: 25px;"><a href="https://www.westminster.gov.uk/libraries" target="_blank">Libraries</a></li>
+					    <li style="margin-left: 25px;"><a href="https://www.westminster.gov.uk/parking" target="_blank">Parking</a></li>
+					    <li style="margin-left: 25px;"><a href="https://www.westminster.gov.uk/household-recycling-rubbish-and-waste" target="_blank">Recycling, rubbish and waste</a></li>
+					</ul>
+				</div>
+			    </div>
+			<div class="postcontent">
+			    <div class="row">
+				<div class="footer-column">
+				    <ul class="f-links cf">
+					<li style="margin-left: 0px;"><a accesskey="0" href="https://parkright.westminster.gov.uk/accessibility">Accessibility</a></li>
+					<li style="margin-left: 25px;"><a href="https://parkright.westminster.gov.uk/help">Help</a></li>
+<!--					<li style="margin-left: 10px;"><a href="http://m.myringgo.com/permitapplications/add/42152/H">Mobile Site</a></li>-->
+					<li style="margin-left: 20px;"><a href="https://parkright.westminster.gov.uk/privacy">Privacy</a></li>
+					<li style="margin-left: 10px;"><a href="https://parkright.westminster.gov.uk/security">Security</a></li>
+					<li style="margin-left: 7px;"><a accesskey="8" href="https://parkright.westminster.gov.uk/onlineterms">Terms &amp; Conditions</a></li>
+				    </ul>
+				</div>
+			    </div>	    
+			</div>
+			
+			<div class="lastbar">
+			    <div class="row">
+				<div class="copyright"><p>© 2017 RingGo. All rights reserved</p></div>
+				    <div>
+					<div class="poweredby"><p>Powered by</p></div>
+					<a class="nohover" target="_blank" href="https://operators.myringgo.com/" accesskey="1">
+					    <img class="footerlogo" alt="RingGo" src="RingGo-logo.png" width="90" height="37">
+					</a>
+				    </div>	
+			    </div>
+			</div>
+		    </div>
+		
+		<!-- JavaScript -->
+		
+		<script type="text/javascript" src="main.js"></script>
+
+		
+				<script type="text/javascript" src="menutoggle.js"></script>
+<script type="text/javascript" src="jquery_002.js"></script>
+<script type="text/javascript" src="form.js"></script>
+<script type="text/javascript" src="loginregister.js"></script>                <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 
+'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 
+'google_translate_element');
+            }
+
+            (function() {
+                var gt = document.createElement('script'); gt.type = 
+'text/javascript'; gt.async = true;
+                gt.src = 
+'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+
+                var s = document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(gt, s);
+            })();
+		</script>                     
+        <script language="javascript">
+            if(location.protocol=="https:")
+            {
+            var dplat = "https://westminstercore.logo-net.co.uk/Delivery/TBURT.php";
+            }
+            else
+            {
+            var dplat = "http://westminstercore.logo-net.co.uk/Delivery/TBURT.php";
+             }
+            var strPURL = parent.document.URL;
+            strPURL = strPURL.replace(/&/g, "^");
+            strPURL = strPURL.toLowerCase();
+            strPURL = strPURL.replace(/</g, "-1");
+            strPURL = strPURL.replace(/>/g, "-2");
+            strPURL = strPURL.replace(/%3c/g, "-1");
+            strPURL = strPURL.replace(/%3e/g, "-2");
+            var T = new Date();
+            var cMS = T.getTime();
+            var src = dplat + '?SDTID=205&PURL=' + strPURL + '&CMS='+cMS;
+            var headID = document.getElementsByTagName("head")[0];
+            /*console.log('headID'+headID);*/
+            var newScript = document.createElement('script');
+            /*console.log('newScript'+newScript);*/
+            newScript.type = 'text/javascript';
+            newScript.src = src;
+            headID.appendChild(newScript);
+        </script>
+                <!-- Google Analytics -->
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-4996990-19']);
+          _gaq.push(['_setDomainName', 'parkright.westminster.gov.uk']);
+          _gaq.push(['_setAllowLinker', true]);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+                    <div id="proofdialog"></div>
+        <div id="proofdialoglarge"></div>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1949b194ac","applicationID":"71177026","transactionName":"NAdaYBNQV0tYUkZZDQ1NbUYIHltXVkVBRBACEhZECUE=","queueTime":0,"applicationTime":148,"atts":"GEBZFltKREU=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+<div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="translate_24dp.png" alt="Google Translate" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><div class="page-head-wrap"><div class="page-head"><a class="go-up icon-arrow-left"><img class="backicon" src="backarrow.png" alt="RingGo" width="20" height="20"></a><h1 class="title gray">Original text</h1></div></div></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible"></div><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="translate_24dp.png" alt="Google Translate" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible"></div><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>

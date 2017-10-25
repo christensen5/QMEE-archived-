@@ -1,0 +1,16 @@
+/**
+ *  DATAGRID
+ *
+ *  Styling applied to all the datagrids across all the skins
+ */
+
+
+.dgridtable {
+    margin: 0 0 1em 0;
+}
+
+
+.dgridtable .dgridtablePersonalPayment img {
+    padding: 5px 0;
+}
+

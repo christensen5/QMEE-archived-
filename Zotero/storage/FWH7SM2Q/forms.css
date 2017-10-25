@@ -1,0 +1,51 @@
+/**
+ *  FORMS
+ *
+ *  Styling applied to all the forms across all the skins
+ */
+
+
+.tablelessform label,
+.tablelessform .element .inlineStatic {
+    word-break: break-word;
+}
+
+#content .lab_progress_bar:after,
+#main .lab_progress_bar:after {
+    clear: none;
+}
+
+/* used for required * on required fields*/
+span.required{
+    color: red;
+}
+
+ul.vehicle-columns {
+    width: 100%;
+}
+
+ul.vehicle-columns li {
+    float:left;
+    display: inline-block;
+    clear: none;
+    padding: 2px 10px 2px 0px;
+}
+
+ul.vehicle-columns li span {
+    display: block;
+    margin: 0 10px 0 0;
+}
+
+div#main table.dgridtable td.dgridbody.enquiry-grid-table * {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+form input#datepicker,
+form input.hasDatepicker {
+	min-width: 130px;
+}

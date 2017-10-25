@@ -1,0 +1,1828 @@
+
+For full functionality of ResearchGate it is necessary to enable JavaScript. Here are the instructions how to enable JavaScript in your web browser .
+See all ›
+21 Citations
+See all ›
+30 References
+See all ›
+3 Figures
+Download citation
+Share
+
+    Facebook
+    Twitter
+    Google+
+    LinkedIn
+    Reddit
+
+Download full-text PDF
+A Lagrangian photoresponse model coupled with 2nd-order turbulence closure
+Article  ·  December 2003   with   63 Reads
+DOI: 10.3354/meps265017
+Cite this publication
+
+    Takeyoshi Nagai at Tokyo University of Marine Science and Technology
+    Takeyoshi Nagai
+        23.38
+        Tokyo University of Marine Science and Technology
+    Hideya Yamazaki at Kyoto Prefectural University of Medicine
+    Hideya Yamazaki
+        44.5
+        Kyoto Prefectural University of Medicine
+    Daniel Kamykowski at North Carolina State University
+    Daniel Kamykowski
+        36.19
+        North Carolina State University
+
+Abstract
+Vertical mixing can transport nutrients from deep layer to euphotic zone. Therefore, it plays a very important role for biological productivity. Also, it can transport phytoplankton vertically and varies light exposure history of individual phytoplankton. When phytoplankton_fs response to the ambient light intensity is slow compare to the time scale of vertical mixing, production averaged in space can be varied caused by vertical mixing. In the past, such effects of vertical mixing on the photoresponse of phytoplankton have been considered with constant eddy diffusivity. However, vertical mixing is not independent of time, and variable vertical mixing in time should be examined for the Lagrangian photoresponse. In present study, a 2nd-order turbulence closure approach was coupled with a Lagrangian phytoplankton model, in order to examine the effect of time-dependent vertical eddy diffusion on the photoresponse of phytoplankton in a wind-driven upper mixing layer. In general, stronger wind mixing in a lower-transparency water column contributes to greater phytoplankton production. According to our study, vertical mixing is insignificant for photoinhibition in relatively clear open ocean water, while it can be more important in relatively turbid coastal water. A simple Ekman layer model provided surprisingly similar production to that observed with the 2nd-order closure scheme when the starting distribution of the phytoplankton cells was normalized. Two factors involved in the process are the change in the background stratification and the time dependence of the diffusivity coefficient. The influences of these 2 factors cancel each other to reduce the apparent difference between the total production estimated by the Ekman model compared to that estimated by the 2nd-order closure scheme.
+Discover the world's research
+
+    13+ million members
+    100+ million publications
+    700k+ research projects
+
+Join for free
+Figures
+Full-text (PDF)
+Available from: Daniel Kamykowski , Jul 03, 2014
+Download full-text PDF
+MARINE ECOLOGY PROGRESS SERIES
+Mar Ecol Prog Ser
+V ol. 265: 17 – 30, 2003 Published December 31
+INTRODUCTION
+Although photosynthesis is a function of irradiance,
+photosynthetic production varies with time even
+though phytoplankton are gr own under constant light
+intensity (Prezelin & Ley 1980). Thus, a simple and sta-
+tionary pr oduction, P , against irradiance, I , appr oxima-
+tion is not realistic. Mar ra (1978a) observed even mor e
+complex patterns in the time dependence of the photo-
+synthetic capacity of Lauderia borealis gr own under
+varying light conditions. Based on these experimental
+r esults, Denman & Mar ra (1986) developed a photore-
+sponse model (DM model) that repr oduces the essen-
+tial features in Mar ra’ s (1978a) data. V ertical mixing in
+the upper ocean layer transports phytoplankton caus-
+ing a variety of light intensity conditions for each cell.
+Mixing in the upper ocean plays an important r ole
+for the phytoplankton production (Lewis et al. 1984). In
+general, when vertical mixing is weak, so that the
+timescale of the vertical transpor t is much longer than
+the photoresponse timescale, phytoplankton have time
+to respond to the sur rounding light intensity and each
+depth attains a locally derived P – I relationship com-
+pared to other depths. On the other hand, when ver ti-
+cal mixing is stronger, a phytoplankton cell does not
+have sufficient time to adjust to the ambient light con-
+dition. In the latter case, a variety of photoacclimation
+characteristics may simultaneously exist at a given
+depth depending on the light exposure histor y and
+r esponse times of the individual cells at that depth at a
+given time (Dusenberr y et al. 2000). Also, the total pro-
+duction rate in the upper ocean can be differ ent from
+that without mixing (Dusenberr y 2000). In fact, Marra
+(1978b) found that averaged production of Lauderia
+borealis increased due to ver tical mixing. Another
+important physiological aspect is that a cer tain period
+of time under the light is requir ed to realize the full
+photosynthetic potential in turbid water columns (Gei-
+© Inter-Research 2003 · www .int-res.com
+*Corr esponding author . Email: hide@s.kaiyodai.ac.jp
+A Lagrangian photor esponse model coupled with
+2nd-or der turbulence closur e
+T akeyoshi Nagai
+1
+, Hidekatsu Y amazaki
+1,
+*
+, Daniel Kamykowski
+2
+1
+Department of Ocean Sciences, Tokyo University of Marine Science and T echnology , Konan 4-5-7 Minato-ku,
+T okyo108-8477, Japan
+2
+Department of Marine, Ear th and Atmospheric Sciences, North Car olina State University , 1125 Jordan Hall, Raleigh,
+North Car olina 27695-8208, USA
+ABSTRACT : A 2nd-or der turbulence closure appr oach was coupled with a Lagrangian phytoplank-
+ton model, in order to examine the ef fect of time-dependent vertical eddy dif fusion on the photo-
+r esponse of phytoplankton in a wind-driven upper mixing layer. In general, stronger wind mixing in
+a lower-transparency water column contributes to greater phytoplankton pr oduction. According to
+our study , ver tical mixing is insignificant for photoinhibition in relatively clear open ocean water,
+while it can be more impor tant in relatively turbid coastal water. A simple Ekman layer model pro-
+vided surprisingly similar production to that obser ved with the 2nd-order closur e scheme when the
+starting distribution of the phytoplankton cells was nor malized. T wo factors involved in the pr ocess
+are the change in the backgr ound stratification and the time dependence of the diffusivity coef ficient.
+The influences of these 2 factors cancel each other to reduce the appar ent differ ence between the
+total production estimated by the Ekman model compar ed to that estimated by the 2nd-order closur e
+scheme.
+KEY WORDS: Lagrangian phytoplankton simulation · Random walk model · 2nd-order turbulence
+closure · Photoinhibition
+Resale or republication not permitted without written consent of the publisher
+Mar Ecol Prog Ser 265: 17 – 30, 2003
+der et al. 1996). These time responses to ir radiance are
+major topics in Lagrangian phytoplankton studies.
+To faithfully mimic how phytoplankton cells are
+transported and ar e experiencing varying light condi-
+tions, random walk models, i.e. Lagrangian models,
+have been developed (Falkowski & Wirick 1981,
+W oods & Onken 1982, Lande & Lewis 1989, Y amazaki
+& Kamykowski 1991, Franks & Marra 1994, Kamy-
+kowski et al. 1994). Alternate Lagrangian appr oaches
+were pr ovided by Barkmann & Woods (1997) and
+Broekhuizen (1999). Pr evious Lagrangian studies have
+focused on the biological aspect of irradiance ef fects,
+while less emphasis has been placed on the physical
+structur e and dynamics. In contrast, Chen & Annan
+(2000) demonstrated that the timing of the spring
+bloom, the maintenance of the midwater chlorophyll a
+(chl a ) maximum and the gross primar y production
+vary when dif ferent turbulence closur e schemes are
+applied. Similar physical comparisons are needed at
+shorter timescales r elated to phytoplankton photore-
+sponse rates.
+Solar radiation provides heat and causes changes in
+water column buoyancy . During nighttime, the sur face
+cooling causes convective mixing; during the day , solar
+radiation attenuates the intensity of the convection and
+induces a restratified water column (Brainer d & Gregg
+1993). When vertical mixing destr oys a stable stratifi-
+cation, vertical over turn does not r equire much kinetic
+energy. A typical diurnal cycle of the upper layer
+shows an alternating patter n of destratification and
+r estratification. Never theless, the diurnal changes of
+stratification and mixing were not r outinely incorpo-
+rated into Lagrangian simulations (Y amazaki & Kamy-
+kowski 1991, Franks & Marra 1994). Far mer & McNeil
+(1999) conducted a Lagrangian phytoplankton simula-
+tion using the DM model. They used neutrally buoyant
+float data obtained from a field experiment in which
+floats circulated thr ough the full extent of the diurnally
+varying upper mixed layer, in order to r eproduce the
+vertical excursion of a phytoplankton cell. Although
+the photoresponse in their r esult was noticeable, the
+production was not compar ed quantitatively to a non-
+mixing case.
+Janowitz & Kamykowski (1991) considered the diur-
+nal convective aspect using an Eulerian approach.
+They repor ted an excellent agreement between field
+data repr esenting the thermal stratification cycle, pho-
+toinhibition and primary pr oductivity in Lake Titicaca
+and their predicted tr ends for these factors in a simu-
+lated water column over a diel cycle. A similar attempt
+should be made for Lagrangian studies to investigate
+the effects of diur nal mixing on the production.
+In the present study, we coupled the Lagrangian
+photoresponse model of Kamykowski et al. (1994) with
+a 2nd-order turbulence closur e model (Mellor &
+Y amada 1982), in or der to take the diurnal variation of
+mixing into consideration in a Lagrangian context. We
+also compared the pr evious model results based on the
+Ekman layer model (YK scheme; Y amazaki & Kamy-
+kowski 1991) with the new simulation results. The
+objectives of our studies are to clarify the ef fects of
+wind mixing and diel photoresponse on the daily pr o-
+duction in a realistic wind-mixed water column and to
+r eveal the dif ference between the pr evious YK results
+and the new simulations based on a closure scheme.
+MA TERIALS AND METHODS
+T wo dif ferent formulations for estimating the eddy
+diffusivity due to turbulence ar e used in this study . We
+employed a Mellor – Y amada level 2.5 quasi-equilib-
+rium 2nd-order turbulence closur e model (Mellor &
+Y amada 1984) that is applied to linearized shallow
+water equations. The stratification is expressed in
+terms of temperatur e. This new Mellor – Y amada model
+(MY scheme) is compared with the pr evious Ekman
+layer model of Y amazaki & Kamykowski (1991). The
+latter model does not consider the buoyancy change
+due to mixing and, for a given wind condition, the eddy
+diffusivity does not change with time.
+MY scheme. The governing equations ar e linearized
+shallow-water equations and the thermal dif fusivity
+equation:
+(1)
+(2)
+(3)
+where U is east – west horizontal velocity component
+(positive eastward), V is north – south horizontal
+velocity component (positive northwar d), T is temper-
+ature and ƒ is the Coriolis parameter. W e assume hor-
+izontal homogeneity for all variables. The tempera-
+ture pr ofile changes due to vertical turbulent
+diffusion. Solar radiation pr ovides heat into the water
+column, and constant nighttime cooling is assumed in
+this model. The density change δρ is a function of
+temperature only:
+(4)
+where δ T is the temperature dif ference fr om a refer-
+ence point and α is the coefficient of ther mal expan-
+sion. V er tical turbulent diffusion of momentum and
+heat are parameterized in ter ms of eddy diffusivity
+δρ α δ =− ⋅ T
+∂
+∂
+=
+∂
+∂
+∂
+∂
+
+
+
+
+T
+tz
+K
+T
+z
+z
+∂
+∂
++ƒ =
+∂
+∂
+∂
+∂
+
+
+
+
+V
+t
+U
+z
+K
+V
+z
+ν
+∂
+∂
+−ƒ =
+∂
+∂
+∂
+∂
+
+
+
+
+U
+t
+V
+z
+K
+U
+z
+ν
+18
+Nagai et al.: A Lagrangian model for the photoresponse of phytoplankton
+using K
+ν
+for momentum and K
+z
+for heat. The eddy dif-
+fusivity of momentum and heat are pr ovided by the
+Mellor-Y amada level 2.5 quasi-equilibrium turbulence
+closure scheme (Galperin et al. 1988, Deleersnijder &
+Luyten 1994). Details of closures wer e discussed in
+Mellor & Y amada (1984).
+Momentum flux at the surface of the model domain
+is described as:
+(5)
+where ρ
+w
+is the density of water and τ
+w
+is wind stress at
+the surface. The velocity vector, V
+→
+, has U and V com-
+ponents. We used a bulk formulation for τ
+w
+estimated
+from the 10 m height wind speed, U
+10
+:
+(6)
+where ρ
+a
+is the density of air and C
+f
+is a frictional coef-
+ficient.
+Solar radiation, I ( z ), is formulated fr om Kraus (1972)
+using 2 exponential functions to treat an infrar ed ray
+(long wavelength light: > 780 nm), which rapidly
+decays in the upper few meters, and a visible ray (short
+wavelength light: 400 nm < wavelength < 700 nm),
+which penetrates deeper into the water column
+(7)
+where I
+max
+sin( t π  12) is solar radiation at the surface, λ
+1
+and λ
+2
+are e-folding distances for infrar ed ray and visi-
+ble ray , r espectively . When I ( z ) is negative, the value is
+set to 0. The visible ray band is also refer red to as
+photosynthetically active radiation (P AR) used in sup-
+port of phytoplankton primar y productivity. The day
+length is 12 h in this model as in Eq. (7). We neglect all
+boundary fluxes except at the sur face.
+YK scheme. The law of the wall is used to express the
+diffusivity coef ficient (Y amazaki & Kamykowski 1991).
+In this model, Lagrangian dispersion is expressed in
+terms of the following dif fusion coefficient K
+z
+:
+K
+z
+= 2.7 ε
+1
+⁄
+2
+ν
+1
+⁄
+2
+N
+–1
+(8)
+where ε is the dissipation rate from the law of the wall,
+ν is the kinematic viscosity and N is the buoyancy fre-
+quency . The dissipation rate decr eases with depth up
+to the Ekman layer depth ( h
+E
+):
+(9)
+where κ is the von Karman constant, and u
+*
+is the
+shear velocity . T urbulence mixes par ticles between the
+surface and the bottom of the Ekman layer. No turbu-
+lent mixing is considered below the Ekman layer. In
+the YK scheme, the background stratification is set to a
+constant: 0.001.
+Random walk model. An individual particle is
+advanced from position Z
+n
+at time step n by δ Z for each
+step:
+Z
+n +1
+= Z
+n
++ δ Z (10)
+The random walk step size δ Z is a function of the ver-
+tical diffusivity. When the diffusivity does not change
+in space, the probability density function for the step
+size also does not have to change in space. However,
+when the diffusivity changes in space, it is necessar y to
+add a corr ection term, in or der to avoid unrealistic
+advective phenomena (Hunter et al. 1993, Visser
+1997). We used the correction scheme pr oposed by
+V isser (1997) because this scheme avoids an unrealis-
+tic accumulation of particles even when the dif fusivity
+changes abruptly (Appendix 1).
+(11)
+where N is a standar d Gaussian probability density
+function and K ’
+z
+is the first derivative of the diffusivity.
+The first term on the right-hand side of Eq. (11) is a tur-
+bulent advection term, which transpor ts particles fr om
+a low to a high-diffusivity r egion, in order to avoid
+unphysical aggregation of par ticles.
+The MY scheme generates discrete K
+z
+values at
+simulated grid points; hence, a cubic spline interpola-
+tion is used to estimate the K
+z
+value and the derivative
+at a non-grid point. When the diffusivity is close to 0,
+the corr ection scheme does not work properly and
+creates unphysical aggr egation. T o avoid this pr ob-
+lem, we applied a background dif fusivity of 10
+–6
+m
+2
+s
+–1
+(Y amazaki & Nagai 2004; a brief summar y is given
+in Appendix 1).
+Photoresponse model. The DM model is used in this
+study where only exter nal light exposure contr ols cel-
+lular light response. The photosynthesis versus ir radi-
+ance curve is expr essed as a simple function of light
+intensity:
+(12)
+where P
+d
+and P
+l
+are the instantaneous photosynthetic
+production rates (pg-at O
+2
+h
+–1
+cell
+–1
+) for fully uninhib-
+ited and inhibited cells, respectively. P
+dm
+and P
+lm
+are
+the maximum production rates (pg-at O
+2
+h
+–1
+cell
+–1
+) in
+each condition; E
+d
+and E
+l
+are the points of light satura-
+tion for photosynthesis. The linear response model
+with inhibition parameter 0 ≤ Y ≤ 1 is expr essed as fol-
+lows:
+(13)
+The inhibition parameter Y depends on the cumula-
+tive light history of phytoplankton cell accor ding to:
+PP Y P P =+ −
+()
+dl d
+PP
+PP
+IE
+IE
+dd m
+ll m
+e
+e
+d
+l
+=−
+()
+=−
+()
+−
+−
+1
+1
+h
+u
+E
+*
+=
+ƒ
+κ
+τρ
+wf
+=
+a
+CU
+10
+2
+K
+V
+z
+ν
+τ
+ρ
+∂
+∂
+=
+→
+→
+w
+w
+19
+Iz I t R
+z
+R
+z
+()
+=⋅
+
+
+
+
+
+
+
+
+
+
+⋅⋅ −
+
+
+
+
++− −
+
+
+
+
+
+
+
+
+
+
+max
+sin exp ( ) exp
+π
+λλ 12
+1
+12
+δδ δ δ ZK Z t N K Z K Z t t
+zn z n zn
+=
+()
+⋅+ ⋅ +
+()
+⋅ ’’ 2
+1
+2
+()
+Mar Ecol Prog Ser 265: 17 – 30, 2003
+(14)
+where γ is a r esponse time-scale. In this study , we
+used γ = 1 h as in Janowitz & Kamykowski (1991). The
+local fully ‘inhibited’ value 0 ≤ X ≤ 1 at arbitrar y irra-
+diance is given by:
+(15)
+where I
+PA R
+is the intensity of PAR and E
+b
+is a threshold
+value of inhibition. In this study , we take E
+b
+= 200 µE
+m
+–2
+s
+–1
+(Denman & Marra 1986, Far mer & McNeil
+1999).
+Simulations. A computing domain for the MY
+scheme is between the surface and 500 m depth, but
+we use only the upper 100 m data to avoid the bot-
+tom boundary ef fects. Since the deepest Ekman layer
+is 54 m for the 10 m s
+–1
+wind case, the YK scheme
+considers the upper 100 m. The bottom of the Ekman
+layer is treated as a r eflective boundary condition as
+in Franks & Marra (1994). For both schemes, the ini-
+tial condition of stratification is set to N = 0.001 s
+–1
+,
+as in Y amazaki & Kamykowski (1991). To faithfully
+compare the MY scheme with the YK scheme, we
+take initial conditions of both q
+2
+and q
+2
+l as a function
+of the dissipation rate based on the law of the wall.
+The Ozmidov scale, l
+O
+= ( ε N
+3
+)
+1/2
+, is substituted for the
+master length, namely:
+q
+2
+( z )
+t=0
+= ( ε · l
+O
+)
+2
+⁄
+3
+(16)
+q
+2
+l ( z )
+t =0
+= ( ε
+2
+· l
+O
+5
+)
+1
+⁄
+3
+(17)
+The initial condition of the mean velocities are given,
+in order to follow the Ekman spiral:
+(18)
+where and K = 0.01 · u
+2
+*
+k/ ƒ .
+Each Lagrangian simulation was repeated 30 times
+with 1000 cells for every case for wind speeds of 0, 5
+and 10 m s
+–1
+and 3 optical types of water: T ypes I, III
+and 9 as shown in Table 1. W e assume that the number
+of cells in the computational domain is independent
+from the optical pr operty of water. Parameters used in
+the simulations are listed in Table 2. T wo types of ini-
+tial conditions were used:
+(1) The particles wer e seeded uniformly between the
+surface and 100 m depth, and the simulation star ted at
+sunrise (or sunset). This initial condition is equivalent
+to Franks & Marra (1994). We refer to this condition as
+the uniform sour ce (US).
+ζ= ƒ zK 2
+Uz
+Vz
+y
+y
+()
+=
+⋅ƒ
++
+
+
+
+
+
+
+
+
+
+
+()
+=
+⋅
+ƒ
++
+
+
+
+
+
+
+
+
+
+
+e
+e
+ζ
+ζ
+κ
+τ
+ρ
+ζ
+π
+κ
+τ
+ρ
+ζ
+π
+0
+0
+0
+0
+4
+4
+cos
+sin
+X
+IE
+E
+=−
+−
+−
+()
+()
+1
+2
+e
+PAR b
+b
+δ
+δγ
+Y
+t
+XY =−
+()
+1
+20
+T able 1. (a) Simulated cases and (b) simulated oceanic water types whose parameters appeared in Eq. (7). We used both the YK
+and MY schemes for all cases
+(a)
+Run number 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+Initial cell US US US US US US US US PS PS PS US US US US US
+distribution
+Starting time 6 6 6 6 6 18 18 18 18 18 18 66666
+(time of day)
+W ind speed (m s
+–1
+)0 5 1 0 5 1 0 051 0 051 0 051 0 51 0
+Duration (days) 1 1 1 1 1 1 1 1 1 1 1 10 10 10 10 10
+Solar heating Y es Y es Y es No No Y es Y es Y es Y es Yes Y es Yes Yes Y es No No
+(b)
+Jerlov oceanic water T ype I T ype III T ype 9 (Coastal water)
+λ
+1
+(m ) 0.35 1.40 1.50
+λ
+2
+(m ) 23.00 7.90 3.30
+R 0.58 0.78 0.80
+T able 2. Parameter values used in the simulations
+ƒ Coriolis parameter 10
+–4
+rad s
+–1
+ν Kinematic viscosity 10
+–6
+m
+2
+s
+–1
+κ von Karmann constant 0.4
+C
+ƒ
+Frictional coefficient 10
+–3
+Maximum production rate
+P
+dm
+Uninhibited 50 pg-at O
+2
+cell
+–1
+h
+–1
+P
+lm
+Fully inhibited 3 pg-at O
+2
+cell
+–1
+h
+–1
+E
+d
+P
+dm
+/initial slope 750 µE m
+–2
+s
+–1
+E
+l
+P
+lm
+/initial slope 750 µE m
+–2
+s
+–1
+E
+b
+Inhibition threshold 200 µE m
+–2
+s
+–1
+γ Photoresponse time 1 hour
+Nagai et al.: A Lagrangian model for the photoresponse of phytoplankton
+(2) One thousand particles wer e released fr om the
+surface at sunset. This condition is the same as in
+Y amazaki & Kamykowski (1991). We refer to this con-
+dition as the point source (PS).
+RESUL TS
+We focus our attention on the US condition except for
+a few PS cases run, in or der to compare the cur rent
+simulation with our previous work (Yamazaki &
+Kamykowski 1991, Kamykowski et al. 1994, Kamy-
+kowski & Y amazaki 1997). The PS r esults are intr o-
+duced in the ‘Discussion’.
+Eddy diffusivity
+The time variation of eddy diffusivity obtained fr om
+the MY scheme is shown in Fig. 1. All cases show a
+similar pattern in which the eddy dif fusivity is reduced
+during daytime due to increased buoyancy. As the
+solar radiation decreases in the after noon, the eddy
+diffusivity incr eases with time due to convection asso-
+ciated with cooling until sunrise in the next morning.
+The transparency of water, λ , affects the stability of the
+water column. With low transparency (Table 1),
+weaker mixing intensity is expected, and the mixing
+layer depth cannot grow due to elevated buoyancy
+(Fig. 1). This tendency is obvious in Fig. 1 as the high
+eddy diffusivity r egion is reduced when λ
+2
+is low . The
+contours for K
+z
+deepen from Types 9 to I water and are
+deeper under higher wind speeds (Fig. 1).
+The important point is that ther e are 2 major aspects
+due to buoyancy , contr olling the eddy diffusivity calcu-
+lated by the MY scheme. One is the strengthening of
+the stratification by solar heating that can reduce the
+eddy diffusivity. The other is weakening of the strati-
+fication due to cooling during nighttime that can
+enhance diffusivity. These 2 processes have opposite
+effects on mixing intensity.
+A comparison of the eddy diffusivity based on the
+MY and YK schemes is shown in Fig. 2. Since YK eddy
+diffusivity is constant with time, we computed an aver-
+21
+Fig. 1. Simulated eddy diffusivities based on the MY scheme for the following conditions: (a) wind velocity (her eafter WV) = 5.0 m s
+–1
+,
+oceanic water T ype I (her eafter T ype I, see Table 1); (b) WV = 10.0 m s
+–1
+, T ype I; (c) WV = 5.0 m s
+–1
+, T ype III; (d) WV = 10.0 m s
+–1
+, T ype
+III; (e) WV = 5.0 m s
+–1
+, T ype 9; (f) WV = 10.0 m s
+–1
+, T ype 9. A dashed line in each frame shows the thr eshold ir radiance (200 µE m
+–2
+s
+–1
+)
+depth for photoinhibition. The horizontal lines indicate Ekman depths ( h
+E
+)
+Mar Ecol Prog Ser 265: 17 – 30, 2003
+age MY eddy diffusivity pr ofile to compare with YK
+values. MY eddy diffusivity is averaged between 09:00
+and 15:00 h because photosynthesis is most active
+between these times. At the surface, MY eddy dif fusiv-
+ity is 0 by definition and is always smaller than the YK
+scheme values (Fig. 2). A comparison of depth aver-
+aged eddy diffusivities (see the bars in Fig. 2 and
+T able 3) over the region where PAR > 200.0 µE m
+–2
+s
+–1
+(which is shallower than the broken line in Fig. 1) indi-
+cates that MY eddy diffusivity for the 10 m s
+–1
+wind
+case is 5.7, 2.6 and 1.2 times larger than that for the YK
+scheme for T ypes I, III and 9 water, respectively . When
+the wind speed is 5.0 m s
+–1
+, the differ ence in the depth
+averaged eddy diffusivity between the 2 schemes is
+insignificant.
+The YK scheme is based on ε from the law of the
+wall. T o check whether the MY ε follows the law of the
+wall, ε profiles fr om the MY run ar e averaged from the
+beginning to the end of simulation and plotted with the
+law of the wall ε pr ofile. Fig. 3 shows that ε derived
+from the MY r un and the law of the wall ε ar e in good
+22
+Fig. 2. A comparison of eddy diffu-
+sivity profiles for the MY and YK
+schemes. (a) Wind velocity (WV) =
+5.0 m s
+–1
+, (b) WV = 10.0 m s
+–1
+. Eddy
+diffusivity pr ofile shown for the MY
+scheme is an average value be-
+tween 09:00 and 15:00 h. Solid
+lines ( –– ) indicate the YK eddy dif-
+fusivity for N = 10
+–3
+s
+–1
+; dashed
+lines ( --- ) repr esent T ype I case
+(Table 1); chain-dot lines ( -
+-
+-
+-
+) are
+T ype III; dotted lines ( ···· ) ar e T ype
+9. The vertical bars indicate an in-
+tegrated eddy diffusivity over the
+r egion wher e I > 200 µE m
+–2
+s
+–1
+.
+Black bars corr espond to the YK
+scheme and white bars are for the
+MY scheme
+T able 3. Comparison of eddy diffusivity ( K
+z MY
+/ K
+z YK
+) between
+MY and YK. Averaged eddy diffusivities from the MY above a
+threshold depth ar e normalized by the cor responding YK
+eddy diffusivities
+W ind T ype I T ype III T ype 9
+velocity λ
+2
+= 23.0 (m) λ
+2
+= 7.9 (m) λ
+2
+= 3.3 (m)
+5.0 (m s
+–1
+) 1.059 1.008 0.882
+10.0 (m s
+–1
+) 5.660 2.580 1.200
+Fig. 3. Averaged ε profiles thr oughout the simulation for the
+MY scheme and the law of the wall ε for each wind condition.
+(a) wind velocity (WV) = 5.0 m s
+–1
+, (b) WV = 10.0 m s
+–1
+. Line
+with (
+n ) is T ype I, ( h ) is Type III, ( ✱ ) is T ype 9 and the dashed
+line is the law of the wall
+Nagai et al.: A Lagrangian model for the photoresponse of phytoplankton
+agreement, except in the deeper layer wher e the
+MY dissipation rate, ε , is about 1 order lower than
+the Ekman layer values. This is due to a decreased
+level of turbulence in the thermocline. The r esult
+indicates that the modeled dissipation rate in the
+MY scheme in a mixed layer is consistent with the
+law of the wall.
+Photoresponse
+Photoinhibition in the present numerical experi-
+ment takes place only when the penetrating PAR ex-
+ceeds threshold ir radiance, i.e. 200 µE m
+–2
+s
+–1
+(bro-
+ken line in Fig. 1). Increased ver tical excursion of
+phytoplankton in the mixing layer reduces photoin-
+hibition. T o establish a r eference point for the effects
+of mixing, we first examined how the inhibition
+arises without turbulent mixing (Fig. 4). This pro-
+vides a possible minimum production or maximum
+inhibition without any recover y of production asso-
+ciated with turbulent vertical mixing. Hence, we ran
+the refer ence simulations with background diffusion
+that is at a molecular diffusivity of 10
+–6
+m
+2
+s
+–1
+.
+23
+Fig. 4. Cumulative inhibition for Pa-
+rameter Y (a,b,c) and instantaneous
+production (d,e,f) for non-mixing
+state averaged over at every 0.05
+depth λ
+2
+–1
+and 100 s for T ypes I, III
+and 9, respectively
+Fig. 5. Anomaly of instantaneous production based on
+the YK scheme for the following conditions: (a) wind ve-
+locity (WV) = 5.0 m s
+–1
+, T ype I, (b) WV = 10.0 m s
+–1
+, T ype
+I, (c) WV = 5.0 m s
+–1
+, T ype III, (d) WV = 10.0 m s
+–1
+, T ype
+III, (e) WV = 5.0 m s
+–1
+, T ype 9, (f) WV = 10.0 m s
+–1
+, T ype 9.
+Anomaly of production was calculated by subtracting the
+production under no mixing fr om the production under
+each mixing case. Positive anomaly means an increase
+inproduction fr om no mixing case and vice versa
+Mar Ecol Prog Ser 265: 17 – 30, 2003
+For the cases without turbulent mixing,
+the inhibition parameter, Y , was averaged
+over 100 s, and a 0.05 (depth λ
+2
+–1
+) optical
+depth bin is used to show the values in
+Fig. 4. At an arbitrary depth, Y incr eases
+to a maximum value 1 h after noon due to
+the delay in response time (Fig. 4a,b,c).
+The amount of PAR absorbed in the water
+column increases with λ
+2
+; also R in Eq. (7)
+decreases with λ
+2
+(Table 1), so that
+stronger inhibition is expected in mor e
+transparent water. The instantaneous pro-
+duction is maximal at a subsurface that
+deepens during the morning and
+becomes shallow in the afternoon (Fig.
+4d,e,f).
+The effect of mixing can be investigated
+by the calculation of a production anomaly
+from the non-mixing case. A positive
+anomaly value repr esents an increased
+production due to mixing. As a general
+trend, a positive anomaly appears in upper r egions
+of the mixed layer, while a negative anomaly occurs
+in the lower portion of the mixed layer (Figs. 5 & 6).
+Negative anomalies were also obser ved by
+Janowitz & Kamykowski (1991) toward sunset in
+their Eulerian mixed-layer model. The negative
+anomaly occurs just below the positive one, since
+vertical mixing conveys uninhibited cells upwar ds
+and inhibited cells downwards. When Type I water
+is examined, the MY anomaly is considerably differ-
+ent from the YK anomaly (Figs. 5 & 6). The positive
+anomaly for MY that appeared in the mor ning is
+much larger than the YK values. The subsur face
+negative values for MY are also lar ger than the YK
+values. The negative anomaly for YK that appeared
+at a constant depth corr esponds to the base of the
+Ekman layer . The reflective boundar y condition im-
+posed on this model causes this rather artificial
+anomaly peak.
+Note that a nearly 0 anomaly appears in the
+upper layer around noon in both schemes, despite
+the fact that mixing is continuously stirring individ-
+ual cells (Figs. 5 & 6). Fully inhibited value profiles
+are plotted with optical depth (depth λ
+2
+–1
+) for each
+water type every 2 h (Fig. 7). Note that with T ype I
+water , inhibition is almost constant with depth in
+the upper layer especially at 12:00 h (Fig. 7a).
+Therefor e, Y is not changing as a result of ver tical
+displacement in this region. In other wor ds, the
+mixing through a layer in which X is constant does
+not eliminate inhibition. This X pr ofile’ s shape is
+very critical for the variance, the anomaly and also
+24
+Fig. 7. Profiles of local fully inhibited Value X in the photoresponse
+model every 2 h fr om 08:00 to 16:00 h for T ypes I, III and 9, r espectively
+Fig. 6. Anomaly of instantaneous production based on the MY
+scheme. Refer to Fig. 5. for details
+Nagai et al.: A Lagrangian model for the photoresponse of phytoplankton
+production. Since MY pr ovides a time-
+dependent diffusivity, whereas YK uses
+a constant diffusivity, a different pat-
+tern in the anomalies is expected. In
+fact, the anomaly features obtained
+from a Type I water case, show a signif-
+icant discrepancy between the 2
+schemes. For the MY scheme, rela-
+tively high positive and negative
+anomalies appear in the morning,
+while the anomaly is much reduced in
+the afternoon (Fig. 6). Thus, the anom-
+aly is an asymmetric pattern. On the
+other hand, the YK scheme shows
+almost symmetric anomaly patterns for
+5 and 10 m s
+–1
+(Fig. 5a,b). For the other
+levels of transparency, the anomaly
+features obtained fr om MY and YK are
+similar . Since the euphotic zone is
+rather shallow , the eddy dif fusivity for
+MY stays within a limited range and
+does not vary significantly fr om the
+morning to the after noon (Fig. 1). As a
+r esult, the anomaly appears nearly
+symmetric, and resembles the YK
+anomaly (Figs. 5 & 6).
+Daily total production
+The total production pr ovided by 1000 cells, P , is
+accumulated during the entire simulation for each sim-
+ulation case. The accumulated total production, ∑ P , is
+normalized by the accumulated total pr oduction for
+non-mixing case, ∑ P
+Non-mixing
+. We examine the ratio of
+∑ P and ∑ P
+Non-mixing
+:
+P
+R
+= ∑ P / ∑ P
+Non-mixing
+(19)
+P
+R
+increases with wind speed for both the MY and
+YK schemes. In total, 30 realizations wer e made to
+compile statistics for each case. The values of P
+R
+are
+shown in Fig. 8 and Table 4. The increase in P
+R
+is a
+function of λ
+2
+. The lower values of λ
+2
+corr espond to the
+higher P
+R
+values. The result is similar to Lewis et al.
+(1984) and Franks & Marra (1994). The P
+R
+ratio for T ype
+I case does not exceed 1.03 even when the wind speed
+is 10 m s
+–1
+. With T ype 9 coastal water, P
+R
+r eaches mor e
+than 1.05. These tendencies obtained from MY and YK
+are surprisingly close, despite the fact that MY is time-
+dependent and YK is stationary. The standard devia-
+tion of P
+R
+, σ, decreases with λ
+2
+(bar plots in Fig. 8),
+because only a small part of the pseudo-cells can con-
+tribute to the elimination of inhibition by vertical mix-
+ing when λ
+2
+is small. A t -test is perfor med to examine a
+null hypothesis that the 2 schemes provide identical
+r esults. At a 5 % significance level, all cases, except
+T ypes III and 9 for 10 m s
+–1
+wind speed, are statistically
+identical. The MY production anomaly for Type I water
+and 5 m s
+–1
+wind speed is differ ent from the YK r esult
+(Figs. 5 & 6), but the total production is identical. The 3
+other identical cases show a similar anomaly pattern
+(Figs. 5 & 6), and the actual production is also close
+(Fig. 8).
+25
+Fig. 8. The production ratio P
+R
+for (a) the MY and (b) the YK scheme. P
+R
+is
+shown for 2 wind levels and 3 levels of λ
+2
+. T ype I ( n ), Type III ( h ) and T ype 9 (
+•
+)
+are used for each wind condition. Br oken lines indicate no solar heating cases.
+Bars repr esent SD of 30 realizations for each condition. White bars ar e T ype 9,
+stripe is T ype III and black is Type I
+T able 4. The ratio, P
+R
+, of total daily production to no mixing
+case for each water type and wind condition. The run
+numbers are shown in Table 1. na = not available
+Run number T ype I T ype III T ype 9
+W ater type
+2 for MY 1.00 1.01 1.06
+2 for YK 1.00 1.01 1.05
+3 for MY 1.02 1.06 1.07
+3 for YK 1.01 1.03 1.07
+4 for MY no heating 1.01 1.07 1.12
+5 for MY no heating 1.10 1.12 1.13
+7 for MY na na 1.04
+8 for MY na na 1.15
+10 for MY na na 0.63
+10 for YK na na 0.53
+11 for MY na na 0.20
+11 for YK na na 0.35
+Mar Ecol Prog Ser 265: 17 – 30, 2003
+DISCUSSION
+We employed 2 differ ent schemes to compute the
+eddy diffusivity in the mixing layer. One is the simplest
+stationary scheme (YK) and the other is a computation-
+ally elaborated time-dependent scheme (MY). An
+unexpected result is that the 2 schemes pr ovide rea-
+sonably similar estimates of accumulated total photo-
+synthetic production over 24 h. We investigate the rea-
+sons and consider the implications.
+Dependence on the initial conditions
+The initial condition, US, used in this study is identi-
+cal to that in Franks & Marra (1994), and dif fers from
+the PS of Y amazaki & Kamykowski (1991). To investi-
+gate the sensitivity of the initial condition, we exam-
+ined a few cases for which the largest change fr om the
+r efer ence state (non-mixing case) is expected, namely
+the T ype 9 coastal water case. T wo differ ent scenarios
+are tested: (1) star ting from sunset with a unifor m dis-
+tribution of cells; and (2) starting fr om sunset with a
+point source at the sur face. The eddy diffusivity fr om
+the YK scheme is constant with time; therefor e, with
+the US initial condition, the starting time does not
+affect the r esults. Hence, we do not have to recompute
+for cases with differ ent starting times.
+W ith the initial condition (1), P
+R
+ratios from the MY
+scheme are 1.04 and 1.15, and P
+R
+ratios from the YK
+scheme are 1.05 and 1.07 for each wind case. When the
+wind is 5 m s
+–1
+, the 2 schemes generate P
+R
+ratios simi-
+lar to the original results. However, when the wind is
+10 m s
+–1
+, the P
+R
+ratio for the MY scheme shows a larger
+value than the original calculation, and the increase in
+daily production in the MY simulation (15 %) is a factor
+of 2 larger than the YK r esult (7.0 %, Table 4). The
+larger P
+R
+ratio is caused by the morning par t of the sim-
+ulation. Nighttime convection ceases after sunrise, but
+a residual fr om the previous night still r emains for a
+while. This condition is differ ent from the initial condi-
+tion starting fr om sunrise. Apparently, the difference is
+not so significant when wind speeds are modest. How-
+ever, the results indicate that nighttime convective
+mixing with strong wind persists until the next mor n-
+ing and could change the photosynthesis during the
+morning. This significant ef fect of residual convective
+mixing for photoresponse is consistent with Far mer &
+McNeil (1999).
+The results fr om the PS simulation show that the
+mixing induces a decrease in the total daily pr oduction
+compared with non-mixing condition. The P
+R
+ratios for
+the MY scheme are 0.63 and 0.20, and the P
+R
+ratios for
+YK are 0.50 and 0.35 for each wind condition of 5 and
+10 m s
+–1
+, respectively. The reason for this decrease in
+the P
+R
+ratios is that a large number of cells ar e trans-
+ported towar d a deeper region, wher eas all particles
+stay at the surface for the non-mixing condition. Since
+P AR rapidly decays with depth, the downward vertical
+transport induces a decr ease in the total production.
+The P
+R
+ratio for YK is slightly smaller than that of MY
+when wind velocity is 5 m s
+–1
+, but the relationship
+r everses when the wind velocity is 10 m s
+–1
+. The num-
+ber of cells in the euphotic zone plays the major role in
+the outcome of the P
+R
+ratio. For instance, when the
+wind condition is 5 m s
+–1
+, the number of the cells in the
+1% sur face P AR strata for the YK scheme is 864 at
+noon, while the number for the MY scheme is 917. On
+the other hand, when the wind is 10 m s
+–1
+, the number
+of cells for MY at noon is 389, and the corr esponding
+number for YK is 660. This differ ence in the trans-
+portation of cells can be explained by the eddy dif fu-
+sivity values for each case. Obviously , the lar ger trans-
+port arises fr om larger eddy dif fusivity (Fig. 2). The
+r esult fr om PS simulation also reveals that r ecovery of
+production fr om inhibition can be easily masked by
+variation of a cell’ s r epresentative depth given by its
+centroid. Thus, the r esult of production varies consid-
+erably , depending on the phytoplankton ver tical distri-
+bution.
+The computations with several differ ent initial con-
+ditions reveal that our r esults depend on the initial
+conditions; the small differ ence in daily production
+(Fig. 8) was due to a compensation of strengthening
+and weakening stratification. When we employed a
+differ ent initial condition, we recognized the impor-
+tance of the residual nighttime convective mixing that
+affected the pr oduction in the next morning. We also
+learned that the initial distribution of par ticles consid-
+erably changes the total daily production.
+Why are the total daily pr oductions so similar?
+This investigation suggests that 2 factors influence
+total production: (1) buoyancy and (2) the depth range
+for full inhibition. As we mentioned, there ar e 2 cases
+(5 and 10 m s
+–1
+cases for T ype I) in which the MY and
+YK schemes yield differ ent results (Figs. 5 & 6). A
+strong wind weakens stratification quickly, thus the
+buoyancy change causes a change in turbulence
+intensity . For the Type I case at 10 m s
+–1
+during an
+early part of mor ning, the solar radiation is not strong
+enough to provide suf ficient buoyancy in the surface
+layer, thus the eddy diffusivity in the surface layer
+increases quickly, and cells experience large vertical
+excursions. This stratification change does not take
+place in the YK scheme. However, during mid-day ,
+the solar radiation becomes strong enough to sup-
+press the turbulence intensity due to r estratification.
+26
+Nagai et al.: A Lagrangian model for the photoresponse of phytoplankton
+Also, the fully inhibited domain expands to
+greater depths. This combination r educes the
+discrepancy between the MY and YK schemes.
+T owar d the end of daylight hours, winds are
+strong enough to deepen the mixing layer and
+weaken the stratification. The elevated eddy
+diffusivity causes an extended range of ver tical
+excursion for cells. Hence, 2 peaks in the dis-
+crepancy appear ed in the T ype I case (Fig. 9).
+W ith T ype III water and 10 m s
+–1
+wind, the
+buoyancy effects ar e not very dif ferent fr om the
+T ype I case. In fact, the eddy dif fusivity pattern is
+similar in time and space (Fig. 1). However, the
+fully inhibited domain does not occur even near
+the surface, thus the discr epancy is ruled by the
+buoyancy effect cr eating a single peak in Fig. 9.
+To elucidate the impact of buoyancy, we con-
+ducted additional simulations without the re-
+stratification process, i.e. no heat is pr ovided to
+the water column. For each MY case, we ran 10
+r ealizations with 1000 unifor mly distributed
+cells. Dotted lines in Fig. 8 show the no restratifi-
+cation cases. The increases in total pr oduction
+caused by vertical mixing wer e almost doubled
+from the original cases. Because no r estratification
+takes place, the eddy diffusivity incr eases until a
+steady state condition for kinetic energy balance is
+r eached (Fig. 10). Clearly, without a restratification
+process, the MY and YK schemes would dif fer in total
+production (br oken lines in Fig. 8). In other words, the
+total production based on the MY scheme is close to
+that of YK due to a reduced pr oduction resulting fr om
+the restratification pr ocess that compensates for an
+earlier opposite deviation causes by deep mixing.
+10 d simulation
+We extended the single-day simulations to 10 d for
+both the restratification and the non-r estratification
+cases. T o focus on the total pr oduction
+within the euphotic zone, we computed
+an average production among those
+cells located above the 1 % surface ir ra-
+diance depth range. Fig. 11 repr esents
+time-integrated production per cell for
+each case. Because the PAR increases
+as λ
+2
+decreases (Table 1, Eq. 7), the pro-
+duction per cell for the T ype I case is the
+highest among all cases. According to
+an empirical relationship between the
+light attenuation coefficient and pig-
+ment concentration (Morel 1988), our λ
+2
+cases, i.e. 23.0 m for T ype I, 7.9 m for
+T ype III, and 3.3 m for Type 9, are
+equivalent to about 0.1, 1.0 and 10.0 µg l
+–1
+of chl a con-
+centration, respectively. Although the T ype 9 case is
+the least productive, the number of cells for this case is
+100 times larger than the Type I case if the chl a per
+cell is assumed constant.
+At the end of the 10 d simulation, the discrepancy
+between the MY and YK schemes is still less than 5 %
+(Fig. 11a). The mixing in a water column occurs peri-
+odically and is not differ ent between days over 10 d.
+The only differ ence from the 1 d simulation is the
+strength of the eddy dif fusivity in the morning fr om the
+second day . As we mentioned befor e, the results fr om
+simulations that are star ted from sunset show that P
+R
+ratios are identical to the original computation star ted
+at sunrise when wind is moderate, while somewhat
+larger pr oduction was generated with strong wind.
+27
+Fig. 9. Time series of (a) the instantaneous production for the MY
+(thick lines) and YK (thin lines) schemes and (b) the differ ence be-
+tween the MY and YK schemes when wind velocity is 10 m s
+–1
+are
+shown for T ype I (chain-dot line), Type III (dashed line) and T ype 9
+(solid line)
+Fig. 10. Eddy diffusivities (m
+2
+s
+–1
+) for wind speed (a) 5.0 and (b) 10.0 m s
+–1
+without
+solar heating
+Mar Ecol Prog Ser 265: 17 – 30, 2003
+However, even after 10 d, the discrepancy is still small.
+On the other hand, the results fr om the no restratifica-
+tion case show the large dif ferences between the MY
+and YK runs. This emphasizes that the small dif fer-
+ences are maintained by the stabilizing ef fect of solar
+radiation (Fig. 11b).
+Is mixing important for the total pr oduction?
+At the end of the 1 d simulation for the 10 m s
+–1
+wind
+speed condition, the total production simulated fr om
+the MY scheme is elevated from a non-mixing condi-
+tion by as much as 7.4 % with T ype 9 water. With T ype
+I water, the same condition provides a 2.4 % increase.
+Are these dif ferences significant? The numbers ar e not
+very lar ge, but these values should be compared with
+the maximum increase expected fr om fully adapted
+cases. When cells are uninhibited by the ambient light,
+the local production follows the dark-adapted PI cur ve
+of the present photor esponse model that gives a maxi-
+mum production. The maximum incr ease is 18, 24 and
+80 % for T ypes 9, III and I, r espectively . Hence, wind
+mixing is not effective for high λ
+2
+values compared
+with these maximum increases. Thus, photor esponse
+due to wind mixing is an insignificant factor for the
+open-water case. On the other hand, when coastal wa-
+ter condition is considered, the photor esponse is an im-
+portant factor.
+This conclusion is essentially the same
+argument as that pr ovided by Franks &
+Marra (1994), although their P
+R
+, which
+was 1.30 for T ype 9 water and 10 m s
+–1
+wind, was much larger than our r esult
+(1.07). While we used both the MY and YK
+schemes, Franks & Marra (1994) used only
+the YK scheme. We demonstrated that as
+far as the total production is concer ned
+both physical schemes resulted in nearly
+the same amount of production under the
+selected initial conditions. Ther e are 2 ma-
+jor differ ences between their model and
+ours. First, the Franks – Marra model does
+not allow an individual pseudo-cell to re-
+cover from inhibition when it is in a dark
+deep layer, and their response time-scale
+is not a constant (~1.5 h at the maximum),
+while our time-scale is a constant (1 h).
+Second, their use of the random walk
+scheme may induce apparent advection of
+cells, as we discussed in Appendix 1 (Fig.
+A2). We suspect that some cells are artifi-
+cially advected toward a deep section and
+this may provide the dif ference fr om our
+r esults.
+Acknowledgements. We thank K. L. Denman at the Canadian
+Centre for Climate Modelling and Analysis, University of Vic-
+toria, and L. Seuront at the Station Marine de Wimereux, Uni-
+versite des Science et T echnologies de Lille, for pr oviding
+many helpful comments on this paper.
+LITERA TURE CITED
+Barkmann W , Woods JD (1997) On using a Lagrangian model
+to calibrate primary pr oduction determined fr om in vitro
+incubation measurements. J Plankton Res 18:747 – 788
+Broekhuizen N (1999) Simulating motile algae using a mixed
+Eulerian-Lagrangian approach: does motility pr omote
+dinoflagellate persistence or co-existence with diatoms?
+J Plankton Res 21:1191 – 1216
+Brainerd KE, Gr egg MC (1993) Diurnal r estratification and
+turbulence in the oceanic surface mixed layer. 1. Observa-
+tions. J Geophys Res 98:22645 – 22656
+Chen F , Annan JD (2000) The influence of dif ferent turbu-
+lence schemes on modelling primary pr oduction in a 1D
+coupled physical-biological model. J Mar Syst 26:259 – 288
+Deleersnijder E, Luyten P (1994) On the practical advantages
+of the quasi-equilibrium version of the Mellor and Y amada
+level 2.5 turbulence closure applied to marine modeling.
+Appl Math Model 18:281 – 287
+Denman KL, Marra J (1986) Modeling the time dependent
+photoadaptation to fluctuating light. In: Nihoul JCJ (ed)
+Marine interface ecohydr odynamics. Elsevier , Amster-
+dam, p 341 – 359
+Dusenberr y JA (2000) Steady-state single cell model simula-
+tions of photoacclimation in a vertically mixed layer: impli-
+cations for biological tracer studies and primary pr oductiv-
+ity . J Mar Syst 24:201 – 220
+28
+Fig. 11. (a) Accumulated production per cell for 10 d, which is pr ovided from
+the > 1 % PAR region, for wind velocity = 10.0 m s
+–1
+. Thick lines are the MY r e-
+sults; thin lines are the YK r esults; dotted lines repr esent no mixing cases re-
+sults for each optical water proper ties. (b) The analogous result to (a) without
+solar heating for T ype I ( n ), Type III ( h ) and T ype 9 ( ✱ )
+Nagai et al.: A Lagrangian model for the photoresponse of phytoplankton
+Dusenberr y JA, Olson RJ, Chisholm SW (2000) Field observa-
+tions of oceanic mixed layer dynamics and picophyto-
+plankton photoacclimation. J Mar Syst 24:221 – 232
+Falkowski PG, Wirick CD (1981) A simulation model of the
+effects of ver tical mixing on primary pr oductivity . Mar Biol
+65:69 – 75
+Farmer D, McNeil C (1999) Photoadaptation in a convective
+layer. Deep-Sea Res II 46:2433 – 2446
+Franks PJ, Marra J (1994) A simple new for mulation for phyto-
+plankton photoresponse and an application in a wind-
+driven mixed-layer model. Mar Ecol Prog Ser 111:143 – 153
+Galperin B, Kantha LH, Hassid S, Rosati A (1988) A quasi-
+equilibrium turbulent energy model for geophysical flows.
+J Atmos Sci 45:55 – 62
+Geider RJ, MacIntyre HL, Kana TM (1996) A dynymic model
+of photoadaption in phytoplankton. Limnol Oceanogr
+41:1 – 15
+Hollaway G (1993) On modeling vertical trajectories of phyto-
+plankton in a mixed layer. Deep-Sea Res II 41:957– 959
+Hunter JR, Craig PD, Phillips HE (1993) On the use of random
+walk models with spatially variable diffusivity. J Comput
+Phys 106:366 – 376
+Janowitz GS, Kamykowski D (1991) An Eulerian model of
+phytoplankton photosynthetic response in the upper
+mixed layer. J Plankton Res 13:983 – 1002
+Kamykowski D, Y amazaki H (1997) A study of metabolism-
+influenced orientation in the diel vertical migration of
+marine dinoflagellates. Limnol Oceanogr 42:1189 – 1202
+Kamykowski D, Y amazaki H, Janowitz GS (1994) A La-
+grangian model of phytoplankton photosynthetic response
+in the upper mixed layer J Plankton Res 16:1059 – 1069
+Kraus EB (1972) Atmosphere – ocean interaction, Clarendon
+Press, Oxfor d
+Lande R, Lewis MR (1989) Models of photoadaptation and
+photosynthesis by algal cells in a turbulent mixed layer.
+Mar Ecol Prog Ser 15:141 – 149
+Lewis MR, Horne EPW, Cullen JJ, Oakey NS, Platt T (1984)
+T urbulent motions may contr ol phytoplankton photosyn-
+thesis in the upper ocean. Nature 311:49 – 50
+Marra J (1978a) Ef fect of short-ter m variations in light inten-
+sity on photosynthesis of marine phytoplankter: a labora-
+tory simulation study. Mar Biol 46:191 – 202
+Marra J (1978b) Phytoplankton photosynthetic r esponse to
+vertical movement in a mixed layer. Mar Biol 46:203 – 208
+Mellor GL, Y amada T (1982) Development of a turbulent clo-
+sure model for geophysical fluid pr oblems. Geophys
+Space Phys 20:851 – 875
+Morel A (1988) Optical modeling of the upper ocean in r ela-
+tion to its biogenous matter content (case I water). J Geo-
+phys Res 93:10749 – 10768
+Prezelin BB, Ley AC (1980) Photosynthesis and chlor ophyll a
+fluorescence r hythms of marine phytoplankton. Mar Biol
+55:295 – 307
+V isser A (1997) Using random walk models to simulate the
+vertical distribution of par ticles in a turbulent water col-
+umn. Mar Ecol Prog Ser 158:275 – 281
+W oods JR, Onken R (1982) Diurnal variation and primary pr o-
+duction in the ocean: preliminar y results of a Lagrangian
+ensemble model. J Plankton Res 4:735 – 756
+Y amazaki H, Kamykowski D (1991) The vertical trajectories
+of motile phytoplankton in a wind-mixed water column.
+Deep-Sea Res 38:219 – 241
+Y amazaki H, Nagai T (2004) How to random walk right in eddy
+viscosity models. In: Baumert H, Simpson J, Sunder mann J
+(eds) Marine turbulence: theories, observations and models.
+Cambridge University Press, Cambridge (in pr ess)
+29
+Appendix 1. Random walk with a variable diffusivity
+When random walk with a variable diffusivity is con-
+sidered, the simulation causes an unphysical aggr ega-
+tion (Hollaway 1993) that requir es a correction
+scheme. When the background dif fusivity is a fixed
+function, a few authors have suggested corr ection
+schemes (Hunter et al. 1993, Visser 1997). No scheme
+has been suggested for a case where the dif fusivity
+changes in space as well as in time, such as the case
+for the Mello – Yamada model. Here, we summarize a
+proposed scheme. A detailed discussion can be found
+in Y amazaki & Nagai (2004).
+Both Hunter et al. (1993) and Visser (1997) suggested
+the following corr ection scheme:
+(A1)
+V ariables in Eq. (A1) are the same as in Eq. (11). To test
+an extreme case, we assume a 2-layer system; the sur-
+face layer is at 20°C and the subsurface layer is at 10°C.
+At the interface, the eddy dif fusivity abruptly decreases
+to 0, so the diffusivity changes almost discontinuously.
+The winds are kept at 10 m s
+–1
+for 24 h, while the
+Mello – Yamada model computes the evolution of the
+mixed layer . The non-motile cells are located uniformly
+(US) throughout the water column. No solar radiation is
+applied to the simulation. The average eddy diffusivity
+profile is given in Fig. A1d. The uncor rected case
+ZZ K Z t N KZ K Z t t
+nn z n zn z n +
+=+ ′
+()
+×+ × + ′
+()
+×
+1
+1
+2
+2 δδ δ ()
+Fig. A1. Particle concentrations fr om the MY scheme for several random
+walks with (a) no corr ection, (b) the correction scheme in Eq. (A1), and (c)
+the corr ection scheme (Eq. A1) with an additional background diffusivity:
+10
+–6
+m
+2
+s
+–1
+. The average profile of the eddy dif fusivity obtained from the MY
+scheme is shown in (d)
+(Appendix continued on next page)
+Mar Ecol Prog Ser 265: 17 – 30, 2003 30
+Appendix 1 (continued)
+Editorial responsibility: Otto Kinne (Editor),
+Oldendorf/Luhe, Ger many
+Submitted: November 26, 2002; Accepted: September 2, 2003
+Proofs r eceived from author(s): December 16, 2003
+showed a significant aggregation of cells at the interface
+(Fig. A1a). The corr ection scheme reduced the aggr e-
+gation, but still a noticeable aggregation appear ed at the
+interface (Fig. A1b). Thus, when the dif fusivity drops to
+0, the corr ection scheme is not effective. We add a back-
+ground dif fusivity to avoid the aggregation pr oblem
+caused by the null diffusivity. The molecular viscosity
+scale is sufficient to avoid the aggr egation (Fig. A1c).
+The same technique was applied to the YK scheme
+for non-motile cells released fr om a point source at
+the surface. The initial conditions wer e the same as in
+Y amazaki & Kamykowski (1991). The winds were
+kept constant at 10 m s
+–1
+. The peak in cell abundance
+moved away from the sur face when no corr ection
+was applied. At the end of the simulation (24 h later),
+the centroid appear ed at 15 m depth with corr ection,
+while the centroid r eached about 18 m depth without
+corr ection caused by the unphysical advection effect
+(Fig. A2). The 3 m differ ence in the centroid position
+may be important, but the swimming ability of motile
+cells may exceed the differ ence. It should be noted
+that a lower number of cells are found in the upper
+few meters without the corr ection than with the cor-
+r ection. This dif ference in the upper few meters may
+become crucial, depending upon the tar get organism.
+Fig. A2. Particle distribution for the YK scheme at 6, 12 and 24 h. The solid
+lines show the no corr ection cases and the dashed lines represent the cor-
+r ection cases. The horizontal lines indicate the centr oid of the distribution.
+The profiles ar e shifted to show the evolution of the concentration profile
+
+    Citations Citations 21
+    References References 30
+
+        The effect of historical (vs. contemporary) environmental factors has also been explored in the context of light adaption of phytoplankton and found to affect primary productivity in some cases (e.g., turbid coastal waters) [23, 24] . Phytoplankton models that include transport from hydrodynamic models have the effect of currents built in [15, 25].
+    The Role of Ocean Currents in the Temperature Selection of Plankton: Insights from an Individual-Based Model
+    [Show abstract] [Hide abstract] ABSTRACT: Biogeography studies that correlate the observed distribution of organisms to environmental variables are typically based on local conditions. However, in cases with substantial translocation, like planktonic organisms carried by ocean currents, selection may happen upstream and local environmental factors may not be representative of those that shaped the local population. Here we use an individual-based model of microbes in the global surface ocean to explore this effect for temperature. We simulate up to 25 million individual cells belonging to up to 50 species with different temperature optima. Microbes are moved around the globe based on a hydrodynamic model, and grow and die based on local temperature. We quantify the role of currents using the “advective temperature differential” metric, which is the optimum temperature of the most abundant species from the model with advection minus that from the model without advection. This differential depends on the location and can be up to 4°C. Poleward-flowing currents, like the Gulf Stream, generally experience cooling and the differential is positive. We apply our results to three global datasets. For observations of optimum growth temperature of phytoplankton, accounting for the effect of currents leads to a slightly better agreement with observations, but there is large variability and the improvement is not statistically significant. For observed Prochlorococcus ecotype ratios and metagenome nucleotide divergence, accounting for advection improves the correlation significantly, especially in areas with relatively strong poleward or equatorward currents.
+    Full-text · Article · Dec 2016
+    Ferdi L. Hellweger Ferdi L. Hellweger Erik van Sebille Erik van Sebille Benjamin Carter Calfee Benjamin Carter Calfee + 1 more author ... Jeremy W. Chandler Jeremy W. Chandler
+    Read full-text
+        However, new observations (Townsend et al., 1992; Backhaus et al., 2003; Behrenfeld, 2010) and modelling studies (e.g. Huisman et al., 1999; Nagai et al., 2003; Ross et al., 2011; Mahadevan et al., 2012) identify flaws in Sverdrup's critical depth model based on the development of a spring bloom before the onset of stratification. One of the processes potentially influencing winter light conditions and thus winter production is the occurrence of deep convection (Backhaus et al., 2003).
+    Interactive effects of temperature and light during deep convection: A case study on growth and condition of the diatom Thalassiosira weissflogii
+    [Show abstract] [Hide abstract] ABSTRACT: Aim of this study was to expose phytoplankton to growth conditions simulating deep winter convection in the North Atlantic and thereby to assess changes in physiology enabling their survival. Growth rate, biochemical composition, and photosynthetic activity of the diatom Thalassiosira weissflogii were determined under two different light scenarios over a temperature range of 5–15°C to simulate conditions experienced by cells during winter deep convection. These metrics were examined under a low light scenario (20 µmol m−2 s−1, 12/12 h light/dark), and compared with a scenario of short light pulses of a higher light intensity (120 µmol m−2 s−1, 2/22 h light/dark). Both experimental light conditions offered the same daily light dose. No growth was observed at temperatures below 8°C. Above 8°C, growth rates were significantly higher under low light conditions compared with those of short pulsed light exposures, indicating a higher efficiency of light utilization. This could be related to (i) a higher content of Chl a per cell in the low light trial and/or (ii) a more efficient transfer of light energy into growth as indicated by constantly low carbohydrate levels. In contrast, pulsed intense light led to an accumulation of carbohydrates, which were catabolized during the longer dark period for maintaining metabolism. Light curves measured via Chl a fluorescence indicated low light assimilation for the algae exposed to short pulsed light. We postulate that our trial with short light pluses did not provide sufficient light to reach full light saturation. In general, photosynthesis was more strongly affected by temperature under pulsed light than under low light conditions. Our results indicate that model estimates of primary production in relation to deep convection, which are based on average low light conditions, not considering vertical transportation of algae will lead to an overestimation of in situ primary production.
+    Full-text · Article · Dec 2014
+    Bettina Walter Bettina Walter J Peters J Peters Justus E E van Beusekom Justus E E van Beusekom + 1 more author ... M A St M A St
+    Read full-text
+        These act on time scales of a few days on a length scale set by the cross frontal distance, and include large intermittent nutrient fluxes driven by the ageostrophic vertical circulation as well as strong mixing events associated with wave generation and instabilities at the front (Nagai et al., 2012). These may fuel primary production by increasing upwards transport of nutrients, or entrain phytoplankton cells more quickly than they can photo-acclimate ( Nagai et al, 2003 ; Falkowski and Raven, 2007) which could have a negative effect on primary production. Opportunistic phytoplankton groups (e.g.
+    Fine scale phytoplankton community structure across the Kuroshio Front
+    [Show abstract] [Hide abstract] ABSTRACT: Concurrent physical, chemical and biological observations across the Kuroshio Front collected in October 2009 provide a detailed view of the relationship between the physical environment and the phytoplankton community. Depth profiles were taken at stations ∼9 km apart along five 70 km transects. With a combination of flow cytometry, microscopy and high-pressure liquid chromatography pigment analysis, we characterized the phytoplankton community structure across the front. The observed phytoplankton community fell into two distinct assemblages, largely separated by the front, but which also reflected patterns in the distribution of Kuroshio and Oyashio water masses shaped by mesoscale lateral mixing. Phytoplankton biomass was elevated where there was a positive vertical flux of nitrate towards the surface, and the frontal circulation drove a lateral transport of nutrients southwards into the subtropical gyre. The observations showed that the phytoplankton respond to forcing on several scales: the phytoplankton community across the front was shaped by a combination of the large scale biogeography of the region, mesoscale mixing of populations and finer scale modification of the light and nutrient environment.
+    Full-text · Article · Mar 2014
+    Sophie Clayton Sophie Clayton Takeyoshi Nagai Takeyoshi Nagai Michael J. Follows Michael J. Follows
+    Read full-text
+        The model validation and detailed information about the set-up is given in Schippmann et al. (2013). The General Individuals Tracking Model (GITM, Nagai et al., 2003; van der Molen et al., 2007), a Lagrangian particle-tracking tool is used to simulate transport and behaviour of microorganisms . It assumes that the organisms are floating passively with currents and allows the tracing of single particles.
+    Coastal bathing water quality and climate change – A new information and simulation system for new challenges
+    [Show abstract] [Hide abstract] ABSTRACT: Human pathogenic micro-organisms in coastal waters receive increasing attention. Climate change with its multiple effects on micro-organisms is one major reason. Changing survival rates, sources and new invasive species are a challenge for bathing water quality management. We present a new online bathing water information system. It includes an alerting system, software to supports communication between authorities, local municipalities and the public as well as simulation tools, based on a 3D-flow and particle tracking model. In scenario simulations with focus on enterococci and Escherichia coli bacteria we show the potential impact of climate change on bathing water quality and the potential relevance as a decision support system in the large, shallow Szczecin lagoon. Szczecin lagoon in the Baltic at the German/Polish border is a pollution hot-spot and frequent bathing prohibitions hamper tourism development. Because of climate change, the risk of river floods is supposed to increase in future. Higher discharge causes an increased transport velocity in the river flow. At the same time, run-off from city surfaces and agricultural land along the river can cause increased E. coli concentrations in all surface waters. As a consequence E. coli and especially Enterococci are transported far into the lagoon and high concentrations can cause bathing water quality problems even on distant beaches. Especially heavy lasting rain in the river basin together with local rain events are a serious threat for bathing water quality in the lagoon and will very likely require a closing of beaches for swimming. Similar to other coastal waters, a wide range of other potentially human pathogenic micro-organisms might create a threat for the lagoon in future.
+    Article · Feb 2014
+    Gerald Schernewski Gerald Schernewski Bianca Schippmann Bianca Schippmann Tomasz Walczykiewicz Tomasz Walczykiewicz
+    Read
+        These values change the total production but do not affect the photoinhibition behaviors that are modified by E b and Y T . We have assigned the same value to E b as Nagai et al. (2003) , namely 200 (mmol m À 2 s À 1 ). This value is rather low, with the intention of emphasizing the sensitivity to photoinhibition.
+    A Lagrangian model for phototaxis-induced thin layer formation
+    [Show abstract] [Hide abstract] ABSTRACT: We have developed a Lagrangian model to investigate a potential mechanism based on phototaxis behavior of phytoplankton cells for the formation of thin layers. We assume that all cells follow a time-regulated diurnal vertical migration during which they experience photo-acclimation based on the Denman and Marra (1986) model. When a cell experiences stress due to strong light that exceeds a threshold level, the cell swims downward, away from the light. We applied the Lagrangian model to a one dimensional second order turbulence closure model that generates a realistic surface mixing condition for a given set of physical parameters, such as wind and optical water type. For the chosen swimming velocities and prescribed behavior, we found that, in coastal water type and Jerlov III type, thin layer formation takes place up to 5 m s−1 winds, while 10 m s−1 winds cause sufficiently strong mixing to prevent the formation of thin layer. We have also investigated the effects of changing the irradiance threshold for the onset of the photoinhibition, the initial density profile and random walk swimming. In conclusion, thin layer formation due to photoinhibition may be possible for a low value of photoinhibition threshold that may occur either due to upwelling or strong light exposure.
+    Article · Dec 2012
+    Hidekatsu Yamazaki Hidekatsu Yamazaki Christopher Locke Christopher Locke Umlauf Umlauf + 1 more author ... Hans Burchard Hans Burchard
+    Read
+        Particularly in coastal areas or estuaries, where strong turbulent mixing in combination with high light attenuation coefficients may subject the cells to large and rapid changes in light intensity (e.g. Lizon et al. 1998, Sharples et al. 2001, Moore et al. 2006, Ross & Sharples 2007), or during deep mixing events in the open ocean in winter and spring (e.g.Fig. 1 in Ross et al. 2008, Woods & Onken 1982 , Nagai et al. 2003 ), the associated error can become quite large. Alternative approaches have been devised which aim to alleviate this problem by simulating the large-scale vertical displacements due to turbulence by moving the incubation bottles up and down through the water column or using on-deck incubators that expose the samples to variations in light intensity (Marra 1978, Köhler 1997, Köhler et al. 2001, Gocke & Lenz 2004).
+    Modelling the effect of vertical mixing on bottle incubations for determining in situ phytoplankton dynamics. II. Primary production
+    [Show abstract] [Hide abstract] ABSTRACT: Reliable estimates of in situ phytoplankton growth rates are central to understanding the dynamics of aquatic ecosystems. A common approach for estimating in situ growth rates is to incubate natural phytoplankton assemblages in clear bottles at fixed depths or irradiance levels and measure the change in chlorophyll a (Chl) over the incubation period (typically 24 h). Using a modelling approach, we investigate the accuracy of these Chl-based methods focussing on 2 aspects: (1) in a freely mixing surface layer, the cells are typically not in balanced growth, and with photoacclimation, changes in Chl may yield different growth rates than changes in carbon; and (2) the in vitro methods neglect any vertical movement due to turbulence and its effect on the cells' light history. The growth rates thus strongly depend on the incubation depth and are not necessarily representative of the depth-integrated in situ growth rate in the freely mixing surface layer. We employ an individual based turbulence and photosynthesis model, which also accounts for photoacclimation and photo inhibition, to show that the in vitro Chl-based growth rate can differ both from its carbon-based in vitro equivalent and from the in situ value by up to 100%, depending on turbulence intensity, optical depth of the mixing layer, and incubation depth within the layer. We make recommendations for choosing the best depth for single-depth incubations. Furthermore we demonstrate that, if incubation bottles are being oscillated up and down through the water column, these systematic errors can be significantly reduced. In the present study, we focus on Chl-based methods only, while productivity measurements using carbon-based techniques (e.g. C-14) are discussed in Ross et al. (2011; Mar Ecol Prog Ser 435:33-45).
+    Full-text · Article · Aug 2011
+    Oliver N Ross Oliver N Ross Elisa Berdalet Elisa Berdalet ML Artigas ML Artigas + 1 more author ... Richard J. Geider Richard J. Geider
+    Read full-text
+
+Show more
+Recommendations
+Discover more publications, questions and projects in Phytoplankton
+Project
+kyoto prefectural university of medicine
+
+    Kotani Tomoya Kotani Tomoya
+    Hideya Yamazaki Hideya Yamazaki
+    Takuya Nishimura Takuya Nishimura
+    [...]
+    Kazuki Iwama
+
+View project
+Project
+LATMIX
+
+    Amit Tandon Amit Tandon
+    Amala Mahadevan Amala Mahadevan
+    Takeyoshi Nagai Takeyoshi Nagai
+
+View project
+Article
+Differential responses to UVR by bacterioplankton and phytoplankton from the surface and the base of...
+January 2003 · Freshwater Biology · Impact Factor: 2.74
+
+SUMMARY 1. We tested the influence of ultraviolet radiation (UVR) and shallow stratification on phytoplankton and bacterioplankton from the surface and the base of the mixed layer in two boreal lakes in north-western Ontario, Canada.2. We measured phytoplankton biomass and production, bacterioplankton production and plankton respiration after transplantation under three solar radiation... [Show full abstract]
+Read more
+Article
+Photosynthetic response to temperature of marine phytoplankton along a latitudinal gradient (16°N to...
+November 1985 · Deep Sea Research Part A Oceanographic Research Papers
+
+Photosynthesis-temperature relationships for natural phytoplankton assemblages were established by measuring the uptake of H14CO3 in freshly collected seawater samples incubated for 2 h across a shipboard laboratory temperature gradient. The minimum, optimum and maximum temperatures for photosynthesis, as well as the extent of photosynthetic change per unit temperature change in the suboptimal... [Show full abstract]
+Read more
+Article
+How Do Sinking Phytoplankton Species Manage to Persist?
+March 2002
+
+Phytoplankton require light for photosynthesis. Yet, most phytoplankton species are heavier than water and therefore sink. How can these sinking species persist? Somehow, the answer should lie in the turbulent motion that redisperses sinking phytoplankton over the vertical water column. Here, we show, using a reaction‐advection‐diffusion equation of light‐limited phytoplankton, that there is a... [Show full abstract]
+Read more
+Article
+A preliminary biophysical model of relationships between temperature and plant nutrients in the uppe...
+July 1987 · Deep Sea Research
+
+A biophysical model was constructed to examine the relationship between temperature increases and plant nutrient decreases (represented by nitrate) in an upper ocean mixed layer and in underlying 2 m thick strata throughout the remainder of the euphotic zone. The formulation combines the dual effect of solar radiation on the water column heat budget and on nitrate uptake based on... [Show full abstract]
+Read more
+Discover more
+Data provided are for informational purposes only. Although carefully collected, accuracy cannot be guaranteed. Publisher conditions are provided by RoMEO. Differing provisions from the publisher's actual policy or licence agreement may be applicable.
+This publication is from a journal that may support self archiving.
+Learn more
+© 2008- 2017 ResearchGate GmbH. All rights reserved. About us  ·  Help Center  ·  Careers  ·  Developers  ·  News  ·  Contact us  ·  Privacy  ·  Terms  ·  Copyright  |  Advertising  ·  Recruiting
+
+We use cookies to give you the best possible experience on ResearchGate. Read our cookies policy to learn more.
+OK
+or
+Discover by subject area
+Join for free
+Log in
+People who read this publication also read:
+Article : Differential responses to UVR by bacterioplankton and phytoplankton from the surface and the base of...
+Jan 2003 · Freshwater Biology Read now
+Article : Photosynthetic response to temperature of marine phytoplankton along a latitudinal gradient (16°N to...
+Nov 1985 · Deep Sea Research Part A O... Read now
+Article : How Do Sinking Phytoplankton Species Manage to Persist?
+Mar 2002 Read now
+Article : A preliminary biophysical model of relationships between temperature and plant nutrients in the uppe...
+Jul 1987 · Deep Sea Research Read now

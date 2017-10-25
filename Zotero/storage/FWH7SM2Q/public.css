@@ -1,0 +1,8 @@
+#maincontent #pl_search {
+    margin: 0;
+    padding: 0;
+}
+#maincontent #pl_search li {
+    list-style-type: none;
+    background: none;
+}

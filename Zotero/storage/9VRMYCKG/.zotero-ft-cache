@@ -1,0 +1,342 @@
+Drift in ocean currents impacts intergenerational microbial exposure to temperature
+
+Martina A. Doblina,1 and Erik van Sebilleb,c
+
+aPlant Functional Biology and Climate Change Cluster, Faculty of Science, University of Technology Sydney, Sydney, NSW 2007, Australia; bGrantham Institute and Department of Physics, Imperial College London, London SW7 2AZ, United Kingdom; and cAustralian Research Council Centre of Excellence for Climate System Science, Climate Change Research Centre, University of New South Wales, Sydney, NSW 2052, Australia
+
+Edited by David M. Karl, University of Hawaii, Honolulu, HI, and approved March 28, 2016 (received for review October 29, 2015)
+
+Microbes are the foundation of marine ecosystems [Falkowski PG, Fenchel T, Delong EF (2008) Science 320(5879):1034–1039]. Until now, the analytical framework for understanding the implications of ocean warming on microbes has not considered thermal exposure during transport in dynamic seascapes, implying that our current view of change for these critical organisms may be inaccurate. Here we show that upper-ocean microbes experience along-trajectory temperature variability up to 10 °C greater than seasonal fluctuations estimated in a static frame, and that this variability depends strongly on location. These findings demonstrate that drift in ocean currents can increase the thermal exposure of microbes and suggests that microbial populations with broad thermal tolerance will survive transport to distant regions of the ocean and invade new habitats. Our findings also suggest that advection has the capacity to influence microbial community assemblies, such that regions with strong currents and large thermal fluctuations select for communities with greatest plasticity and evolvability, and communities with narrow thermal performance are found where ocean currents are weak or along-trajectory temperature variation is low. Given that fluctuating environments select for individual plasticity in microbial lineages, and that physiological plasticity of ancestors can predict the magnitude of evolutionary responses of subsequent generations to environmental change [Schaum CE, Collins S (2014) Proc Biol Soc 281(1793):20141486], our findings suggest that microbial populations in the sub-Antarctic (∼40°S), North Pacific, and North Atlantic will have the most capacity to adapt to contemporary ocean warming.
+| | | |microbial ecology plankton advection evolution plasticity
+Photosynthetic marine microbes, otherwise known as phytoplankton, underpin all of the production-based ocean ecosystem services, and impact on human health and well-being through their regulation of climate (1), formation of harmful algal blooms (2), and support of biodiversity at multiple dimensions and trophic levels (3). Heterotrophic microbes, including bacteria, Archaea, and eukaryotes, are also critical for ocean functioning, being the dominant remineralizers of organic matter and key players in the Earth’s biogeochemical cycles (1, 4). Depending on the CO2 emissions scenario, the surface ocean is predicted to warm 2–4 °C on average by 2100 (5). Because microbes demonstrate a steep decline in growth at temperatures exceeding their optimum (6–10), such warming has the potential to affect the distribution and diversity of marine microbes through exceedance of thermal limits and changes in fitness, with cascading impacts to ecosystem services (11, 12).
+However, by virtue of their large population sizes, relatively rapid reproduction, and high diversity, microbes have considerable potential to mitigate negative consequences of past and present ocean change through phenotypic plasticity (acclimation) and adaptive evolution (genetic change). Until now, our understanding of how microbial communities will be reorganized under contemporary ocean change has developed from empirical studies involving examination of the current geographic distribution of microbial taxa and their relationships with temperature and
+
+other environmental parameters (8, 10, 13), laboratory investigations that measure performance of microbial ecotypes (thought to be representative of populations) under different conditions (6, 7, 9, 14), and modeling studies that use microbial traits describing resource (e.g., nutrients, light) utilization to estimate fitness and predict future distributions of microbes under projected ocean change (15–17). The limitation of these studies is that microbial traits are assumed to be constant during model runs, so the microbes themselves are not responding to changes in their environment (18). However, there is increasing evidence that photosynthetic microbes are altering their realized niches in response to contemporary changes in ocean temperature and irradiance (19), and that the geographic origin of microbial ecotypes influences their plasticity (capacity for physiological acclimation) (9, 20)—as well as adaptation (21)—at the population level (potentially via increased rate of mitotic mutations) (22), with some ecotypes tolerant of a broad range of temperature and others more thermally specialized (7). Microbes generally experience the ocean as a viscous medium (23), and their motion is therefore predominantly determined by drift with ocean currents (noting that some taxa are motile or regulate their buoyancy) (24). As a result, their habitat temperatures are highly dynamic and cannot be described assuming a fixed location. This means there currently is no clear global estimate of the thermal history of marine microbes, making it difficult to understand their realized thermal niche and relate this to their performance under controlled (typically stable) experimental conditions, let alone predict the impact of a 2–4 °C projected rise in mean ocean temperature.
+Significance
+Our current understanding of how marine biota are adapted to magnitudes, trends, and temporal patterns of variability in seasurface temperature has arisen from examining long-term records at key ocean locations. However, floating plankton have a different perception of their habitat because they drift in ocean currents. Here we show that upper ocean microbes can be advected up to 3,500 km in latitude in 500 d, and that their operational temperatures exceed the in situ Eulerian temperature range by up to 10 °C, even in locations with strong seasonality. This result revises the present view of thermal exposure in the upper ocean, and provides a new framework for investigating climate change impacts on planktonic organisms.
+Author contributions: M.A.D. designed research; M.A.D. and E.v.S. performed research; E.v.S. analyzed data; and M.A.D. and E.v.S. wrote the paper.
+The authors declare no conflict of interest.
+This article is a PNAS Direct Submission.
+Freely available online through the PNAS open access option.
+Data deposition: The data reported in this manuscript are available at an online data repository, dx.doi.org/doi:10.6084/m9.figshare.3178534.
+1To whom correspondence should be addressed. Email: Martina.Doblin@uts.edu.au.
+This article contains supporting information online at www.pnas.org/lookup/suppl/doi:10. 1073/pnas.1521093113/-/DCSupplemental.
+
+5700–5705 | PNAS | May 17, 2016 | vol. 113 | no. 20
+
+www.pnas.org/cgi/doi/10.1073/pnas.1521093113
+
+Thus, to advance our understanding of marine microbial acclimation and adaptation, and to determine which microbes can keep pace with rates of contemporary ocean change, a spatially explicit understanding of temperature exposure from the perspective of the moving organism is critical (25). This requires examining the temperature experienced by marine microbes in a Lagrangian (drift) framework.
+Results
+We used a global 3D circulation model OFES (Ocean model for the Earth Simulator) with a 1/10o horizontal resolution to characterize the intergenerational temperature exposure of upper ocean microbes. This model has previously been used to study neutral evolution of bacteria (26) and drift of foraminifera (27). Virtual microbes were released across the global ocean on a 2° × 2° grid at a depth of 10 m every month for the years 1981– 2007, for a total of 2.9 million particles (360 particles per grid cell). Their position in the ocean was tracked (backward in time) for 500 d before their arrival at their destination grid, and their thermal histories were averaged for analysis, using the wellestablished and open-source Connectivity Modeling System (28). This software has been extensively validated [e.g., in “physical oceanography mode” the amount of water carried by particles through the Indonesian Throughflow very closely resembles the Eulerian flux through the straits (29)] and is widely used in both physical oceanography and marine ecology and biology studies (30–32). We compared the magnitude of virtual particle velocities, based on the trajectories at each grid cell, with observed drifters in the ocean (33). Comparing our trajectories and that of actual drifters, we find good agreement, both in the magnitude of speeds as well as their locations (i.e., low velocities in the middle of the gyres as well as high velocities in the western boundary currents) (Fig. S1). A random selection of trajectories is illustrated in Fig. S2.
+Our rationale for backtracking to 500 d is that the adaptation capacity of microbes to future ocean conditions has been examined in vitro for up to 500 generations (21) and the average reproductive rate (i.e., timescale of one generation) of a unicellular alga is in the order of one vegetative cell division per day at 20 °C (34). For comparison, we also undertook the analysis for 50, 150, and 250 d. In each analysis, the thermal history of a microbial population is therefore between 50 and 500 d, with only one cell of each generation needing to survive and reproduce. There are two implications of advection: (i) that during its path, a microbial genotype that undergoes a temperature shift beyond its upper or lower thermal limit may be adversely impacted because of a shortfall in physiological plasticity or inability to produce phenotypes across multiple environments (i.e., is a thermal specialist); and (ii) that a microbe retrieved from the ocean is adapted not for the local environmental circumstance, but rather to the circumstances experienced during its upstream trajectory (while noting that microbes in some regions of the global ocean undergo mainly zonal rather than meridional transport, and therefore experience more limited thermal fluctuations). Here, we will show what impact this may have on the thermal life strategy of ocean microbes.
+Our results demonstrate that virtual microbes are advected up to 3,500 km in latitude in 500 d, with particles that arrive in the extensions of the western boundary currents in the subtropics having moved the greatest distances (Fig. 1A; see Fig. S3 for other measures of drift distance). As expected, the longer the time frame, the greater the range of temperature experienced (Fig. S4). However, our analysis also reveals that in some regions (e.g., eastern Pacific, eastern Indian, Benguela, and Canary Upwellings) the thermal exposure is higher in a Lagrangian compared with Eulerian frame, at all time scales analyzed (Fig. S4). This advection means that the distribution of different microbial genotypes (and phenotypes within species) spans a large
+
+range, and that the temperature experienced by drifting microbes can be significantly different from simple location-specific predictions, with microbes arriving in the extensions of the western boundary currents exposed to an average temperature up to 6 °C warmer than the local in situ temperature (Fig. 1B). In contrast, microbes on the northern flank of the Antarctic Circumpolar Current have an average temperature exposure of up to 6 °C colder than the local in situ temperature. Both these offsets can be explained by advection in ocean currents. Western boundary currents transport tropical microbes poleward, so that their mean temperature exposure is higher than the local latitudinally predicted in situ temperature. In contrast, the Ekman transport in the Antarctic Circumpolar Current pushes polar microbes toward the equator, and consequently their mean temperature exposure is lower than the local in situ temperature.
+Given that the rates and modes of acclimation or adaptation for biota are determined not by average environmental conditions, but by the extent of environmental variability (35, 36) (along with longevity, life-history, and other traits), our Lagrangian analysis also reveals that the temperature fluctuation for microbes along a 500-d trajectory (Fig. 2B) can be significantly different from the in situ Eulerian temperature range (i.e., compared with if they didn’t move) (Fig. 2A), suggesting that the realized thermal niche (as well as geographic range) of microbial ecotypes may be broader than currently estimated. Fig. 2C shows that the temperature fluctuations experienced by 500-d advected microbes significantly exceed the annual range of temperature almost everywhere, even in locations with strong seasonality (e.g., North Atlantic Ocean). Thermal variability is up to 10 °C higher for microbes in an ∼10° latitudinal band from 40°S to 50°S in the Southern Ocean and the North Atlantic, and up to 4 °C in the tropics and on the eastern sides of the subtropical gyres. Analyses over shorter time frames reveal greater patchiness, with smaller differences in thermal exposure between fixed and moving particles (Fig. S4). Nonetheless, the intergenerational exposure of microbes over 500 d indicates that thermal histories of microbes exceed seasonal ranges by 10 °C in some locations, a result that revises our present view of thermal exposure in the surface ocean, and suggests that for the majority of ocean locations, projected changes in thermal regimes are within the range of temperatures already experienced by drifting microbes. We therefore anticipate this result will shift current thinking about risks of ocean warming and that consideration of drift trajectories will advance understanding of direct temperature effects on microbes and other plankton. Because all enzymatic rates are affected by temperature, thermal tolerance of advected organisms is not lineage-specific, and likely involves genome-wide changes, with growth in a new thermal regime requiring maintenance of critical cellular processes. Furthermore, for microbes, temperature adaptation is distinct from adaptation to other environmental variables, whereby a horizontally transferred gene or operon could allow acquisition of new resources (10).
+Combining the distance traveled with the fluctuation in temperature along microbial trajectories, we then build a global view of microbial habitats in the surface ocean. Fig. 3 shows that microbes arriving in the low latitudes are advected long distances (>1,240 km of latitude in 500 d, the global median) but experience relatively low thermal variation (<6.5 °C, the global median of temperature range). Similarly, microbes south of the Antarctic Circumpolar Current in the Southern Ocean experience low thermal variation but travel relatively short distances, as they mostly get recirculated in the Ross and Weddell gyres. However, in most of the mid latitudes, temperature variability is relatively high (>6.5 °C), with microbes having the potential to travel more than 1,240 km in 500 d. Evidently, microbes experience both heating and cooling along their trajectories (Fig. S5) at variable rates, depending on their location (Fig. S6). Across the 2.9 million trajectories in our study, the most rapid heating and
+
+MICROBIOLOGY
+
+ENVIRONMENTAL SCIENCES
+
+Doblin and van Sebille
+
+PNAS | May 17, 2016 | vol. 113 | no. 20 | 5701
+
+A
+60N
+
+Latitudinal range travelled [km]
+
+3000
+
+Latitude [degrees]
+
+30N 0
+
+2500 2000 1500
+
+30S 1000
+
+60S
+B
+60N
+
+45E
+
+90E
+
+135E
+
+180E
+
+135W
+
+Longitude [degrees]
+
+Lagrangian minus Eulerian mean temperature [oC]
+
+90W
+
+45W
+
+500 0
+8 6
+
+Latitude [degrees]
+
+30N 4 2
+
+00
+
+-2 30S -4
+
+-6 60S -8
+
+45E
+
+90E
+
+135E
+
+180E
+
+135W
+
+90W
+
+45W
+
+Longitude [degrees]
+
+Fig. 1. Advection of microbial genotypes by ocean currents. (A) The average meridional (latitudinal) distance traveled by 500-d microbial genotypes. Although microbes can be advected for thousands of kilometres in the global ocean, they are most likely to experience changes in temperature through meridional rather than zonal (longitudinal) transport. (B) The offset between the along-trajectory average temperature experienced by the microbes as they traveled for 500 d and the local temperature at each grid location. The poleward flowing western boundary currents carry microbes that have provenances in much warmer water than where they are found. In contrast, microbes on the northern flank of the Antarctic Circumpolar Current originate from the cold water close to Antarctica and have been carried northward by the Ekman transport.
+
+cooling (at more than 4 °C per day, sustained over a 5-d period) was for microbes arriving in the North Atlantic (Fig. S7), with a strong spatial agreement between regions of strong air–sea heat fluxes (37) and rapid cooling and warming. To our knowledge, there have been no experiments to date that examine fitness of microbes under such rapid, but transient, temperature changes.
+Discussion
+The thermal trajectories of microbes do more than contextualize the projected 2–4 °C rise in mean ocean temperature during the next century. Our results reshape the present view of temperature experienced by upper-ocean microbes, indicating that realized thermal niches are wider than previously thought. Furthermore, the along-trajectory temperature exposure of microbes has important implications for microbial life strategies and the assembly of microbial communities. Drifting communities experiencing large variations in temperature are under selection to be plastic (genotypes produce variable phenotypes in response to environmental conditions) or generalists (entrained genotypes produce
+
+invariable phenotypes over multiple environments), resulting in broad thermal tolerance compared with communities from stable environments that are more likely to be thermal specialists (36, 38). Based on empirical evidence from laboratory experiments, plasticity in an ancestral population is a good predictor of eventual evolutionary responses in subsequent generations, suggesting that populations in fluctuating environments are also more adaptable (35).
+Although there have been previous studies of microbes using Lagrangian floats and profilers (39–41), to our knowledge this is the first to provide a spatially explicit understanding of temperature exposure of pelagic microbes in the context of plastic and evolutionary responses to contemporary ocean change. Our analysis shows that the proportion of the global ocean showing greater thermal exposure of drifting versus stationary microbes increases with time (Fig. S4). At 500 d, there are only a few locations (e.g., Southern Ocean centered around 60°S, northwestern Pacific, and Atlantic) that show more limited thermal exposure of microbes in a Lagrangian compared with Eulerian
+
+5702 | www.pnas.org/cgi/doi/10.1073/pnas.1521093113
+
+Doblin and van Sebille
+
+Latitude [degrees]
+
+A
+60N
+30N
+0
+30S
+
+Average Eulerian temperature range [oC]
+
+25 20 15 10 5
+
+60S
+B
+60N 30N
+0 30S
+
+45E
+
+90E
+
+135E
+
+180E
+
+135W
+
+Longitude [degrees]
+
+Average Lagrangian temperature range [oC]
+
+90W
+
+45W
+
+0 25 20 15 10 5
+
+Latitude [degrees]
+
+Latitude [degrees]
+
+60S
+C
+60N 30N
+0 30S 60S
+
+45E
+
+90E
+
+135E
+
+180E
+
+135W
+
+Longitude [degrees]
+
+Difference in range [oC]
+
+90W
+
+45W
+
+0
+8 6 4 2 0 -2 -4 -6 -8
+
+45E
+
+90E
+
+135E
+
+180E
+
+135W
+
+90W
+
+45W
+
+Longitude [degrees]
+
+Fig. 2. Analysis of the temperature variability experienced by microbes. (A) The average range of temperatures (difference between minimum and maximum) experienced by microbial genotypes over 500 d if they did not move (i.e., were “Eulerian microbes”). The largest variability, up to 20 °C, is seen in the northwestern Pacific and Atlantic Ocean. (B) The average range of temperatures experienced by Lagrangian microbes along their 500-d trajectories. (C) The difference between B and A, showing in red/blue the regions where microbes carried by currents experience greater/lesser temperature variability compared with stationary microbes.
+
+MICROBIOLOGY
+
+ENVIRONMENTAL SCIENCES
+
+Doblin and van Sebille
+
+PNAS | May 17, 2016 | vol. 113 | no. 20 | 5703
+
+60N 30N
+
+Low variation & short distance (29%) Low variation & long distance (25%) High variation & short distance (21%) High variation & long distance (25%)
+
+Latitude [degrees]
+
+0
+
+30S
+
+60S
+
+45E
+
+90E
+
+135E
+
+180E
+
+135W
+
+90W
+
+45W
+
+Longitude [degrees]
+
+0
+
+Fig. 3. Thermal variability and transport distance of microbes in the ocean. Locations are partitioned based on median temperature range (6.5 °C) and median meridional travel distance (1,240 km) to reflect the magnitude of variation in temperature and distance traveled by microbes advected for 500 d. Map constructed using 2 × 2° grid cells as in the global ocean circulation model.
+
+frame (Fig. 2). It also reveals that thermal trajectories are complex (Fig. S6); they don’t monotonically increase or decrease; rather, they fluctuate, some with high variability and others with low variability (Fig. 3). Thus, as microbes are transported through this variable seascape, they are effectively under selection because populations must be able to deal with temperature fluctuation: if it exceeds their capacity, they die. We make no assumptions about other losses (e.g., grazing) or whether cooling or warming thermal histories (represented as skewness in Fig. S5) results in better outcomes with respect to microbial fitness, only that if a population has dealt with temperature variability in the past, then it has a greater capacity to deal with future temperature change. Tolerance of temperature variability in microbial populations arises through constituent genotypes being plastic or because entrained microbial genotypes produce phenotypes across multiple environments (i.e., are generalists). Both mechanisms could operate to shape microbial communities and would apply to phototrophs, grazers, and other plankton drifting in the surface ocean, provided they remain suspended in the upper mixed layer.
+Considering that numerical models are resolving planktonic community composition by the representation of microbial traits or ecotypes (42), Fig. 3 therefore suggests the global ocean can be partitioned into thermal generalist (plastic with relatively high evolutionary potential) versus thermal specialist selection regimes (high vs. low temperature fluctuations, respectively), and hence provide a guide for where microbial communities will be most or least stable in the future. Given the distinct thermal optima of polar versus tropical microbes (7), the global ocean could be further partitioned on the basis of variation around different mean temperatures, yielding low/high temperature specialists/generalists (Table 1). Studies on macroscopic marine biota indicate that organisms with broad temperature tolerance
+
+are more likely to establish in new habitats (43), suggesting that temperature generalists may become more prevalent in regions influenced by strong ocean currents. A good example of this is in western boundary currents, which are intensifying and increasing their poleward extension with global warming (44). A corollary of this is that thermal specialists with narrower thermal histories are more vulnerable to temperature change.
+Previous studies have compared the thermal responses of microbial ecotypes according to the average temperature of their isolation location (6, 7, 14), and concluded that some microbes are at greater risk of reduced fitness under future ocean warming because their thermal optima are closer to their habitat temperature. This is because thermal response curves are asymmetric, with a sharper decline in fitness at a supraoptimal temperature compared with suboptimal temperature (6, 7). However, this study indicates that microbes may experience large thermal fluctuations because they are being advected in the ocean before they reach their potential isolation location, suggesting that estimates of microbial fitness in a future ocean need to consider not only the direction, asymmetry, and magnitude of temperature variation from the thermal optimum, but also the time scale of temperature excursions. Given that in vitro evolution experiments indicate more plastic individuals evolve more (35), our analysis provides a framework to test whether natural communities of microbes in the mid latitudes (Fig. 3) have greater plasticity and evolutionary potential versus communities from the low and high latitudes. Studies on the mechanisms promoting diversity of microbes in the ocean (45, 46) show some consistency with our analysis, supporting the notion that to understand the assembly of communities at the local scale, it is not enough to understand local resource availability; we must account for transport of populations. Furthermore, this Lagrangian perspective of planktonic
+
+Table 1. Ocean regions that show low/high average temperature with relatively low/high variation in temperature
+
+Temperature variation
+
+Low mean temperature
+
+High mean temperature
+
+Low temperature variation High temperature variation
+
+High latitude southern hemisphere: low temperature specialists
+High latitude northern hemisphere: low temperature generalists
+
+Tropics: high temperature specialists Western boundary currents: high temperature generalists
+
+5704 | www.pnas.org/cgi/doi/10.1073/pnas.1521093113
+
+Doblin and van Sebille
+
+thermal exposure suggests that ocean warming not only has a direct impact on microbes by influencing metabolism and growth, but also through changes in ocean circulation, which could lead to new transport corridors and the potential for novel thermal trajectories.
+Materials and Methods
+The OFES model (47) is an eddy-resolving model based on the MOM3 ocean code and forced with National Centers for Environmental Protection winds. It has a 1/10° horizontal resolution and 54 vertical levels and spans the global ocean from 75°S to 75°N, and is available on 3D resolution from 1980 to 2010. Virtual microbes were released at 10-m depth every month for the years 1981–2007 on a 2° × 2° regular grid, yielding a total of 2.9 million particles. These particles were then tracked backward in time using the Connectivity Modeling System v1.1 (28). The Connectivity Modeling System has been extensively tested and widely applied in oceanographic and biological studies (30, 31). In particular, its trajectories have been explicitly validated in the tropical Pacific (29). The virtual microbes were advected using only the horizontal velocity fields, and thus did not change depth over the integration. Both the geographical and local sea-surface temperature information was stored on daily temporal resolution. Maps were produced using the average of the 360 particles released at each grid location.
+The temperature variation along trajectories was described by computing the average, range, variability, and skewness of local sea-surface temperature experienced along their trajectories by microbes arriving in each grid cell. These along-trajectory temperatures (Lagrangian temperatures) could then
+
+be compared against the average, range, and variability of the temperature within the grid cell (Eulerian temperatures). Distance traveled was also calculated by computing the path length over the daily locations from the start and end location of the trajectory.
+To visualize a subset of relevant thermal trajectories (Fig. S6), we used the isolation locations of strains in a global compilation of thermal performance curves as our destination points (n = 85) (6). Average along-trajectory temperature was plotted over time to illustrate thermal trajectories of virtual microbes arriving to grid cells.
+Examination of the range of temperature variation (i.e., difference between minimum and maximum temperature along each trajectory) and distance traveled allowed us to partition the global dataset into grids containing microbes that had experienced relatively high/low temperature fluctuation along long/short transport distances. Our temperature and distance thresholds were chosen using the median values of thermal variation and distance traveled. This process yielded a relatively even number of grid cells split across all categories, but nevertheless highlights that in absolute terms, microbes experience a large gradient in thermal variation when they are transported variable distances in ocean currents.
+ACKNOWLEDGMENTS. We thank K. A. Murray for useful comments and insights on a draft on this manuscript; and M. van Oppen, P. Ralph, K. Baker, and J. Clark, who helped motivate this work. This research was supported under the Australian Research Council’s Discovery Projects funding scheme (DP140101340); and Australian Research Council Discovery Early Career Researcher Award DE130101336 (to E.v.S.).
+
+1. Falkowski PG, Fenchel T, Delong EF (2008) The microbial engines that drive Earth’s biogeochemical cycles. Science 320(5879):1034–1039.
+2. Anderson DA, Glibert PM, Burkholder JM (2002) Harmful algal blooms and eutrophication: Nutrient sources, composition, and consequences. Estuaries 25(4b):704–726.
+3. Chassot E, et al. (2010) Global marine primary production constrains fisheries catches. Ecol Lett 13(4):495–505.
+4. Azam F, et al. (1983) The ecological role of water-column microbes in the sea. Mar Ecol Prog Ser 10:257–263.
+5. IPCC (2013) Climate Change 2013: The Physical Science Basis. Contribution of Working Group I to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change (Cambridge Univ Press, Cambridge, UK).
+6. Thomas MK, Kremer CT, Klausmeier CA, Litchman E (2012) A global pattern of thermal adaptation in marine phytoplankton. Science 338(6110):1085–1088.
+7. Boyd PW, et al. (2013) Marine phytoplankton temperature versus growth responses from polar to tropical waters—Outcome of a scientific community-wide study. PLoS One 8(5):e63091.
+8. Flombaum P, et al. (2013) Present and future global distributions of the marine Cyanobacteria Prochlorococcus and Synechococcus. Proc Natl Acad Sci USA 110(24): 9824–9829.
+9. Pittera J, et al. (2014) Connecting thermal physiology and latitudinal niche partitioning in marine Synechococcus. ISME J 8(6):1221–1236.
+10. Yung CM, et al. (2015) Thermally adaptive tradeoffs in closely related marine bacterial strains. Environ Microbiol 17(7):2421–2429.
+11. Costanza R, et al. (1997) The value of the world’s ecosystem services and natural capital. Nature 387:253–260.
+12. Costanza R, et al. (2014) Changes in the global value of ecosystem services. Glob Environ Change 26:152–158.
+13. Irwin AJ, Nelles AM, Finkel ZV (2012) Phytoplankton niches estimated from field data. Limnol Oceanogr 57(3):787–797.
+14. Mackey KRM, et al. (2013) Effect of temperature on photosynthesis and growth in marine Synechococcus spp. Plant Physiol 163(2):815–829.
+15. Steinacher M, et al. (2010) Projected 21st century decrease in marine productivity: A multi-model analysis. Biogeosciences 7:979–1005.
+16. Bopp L, et al. (2013) Multiple stressors of ocean ecosystems in the 21st century: Projections with CMIP5 models. Biogeosciences 10:6225–6245.
+17. Dutkiewicz S, Scott JR, Follows MJ (2013) Winners and losers: Ecological and biogeochemical changes in a warming ocean. Global Biogeochem Cy 27:463–477.
+18. Woods JD (2005) The Lagrangian Ensemble metamodel for simulating plankton ecosystems. Prog Oceanogr 67(1-2):84–159.
+19. Irwin AJ, Finkel ZV, Müller-Karger FE, Troccoli Ghinaglia L (2015) Phytoplankton adapt to changing ocean environments. Proc Natl Acad Sci USA 112(18):5762–5766.
+20. Schaum E, Rost B, Miller AJ, Collins S (2013) Variation in plastic responses of a globally distributed picoplankton species to ocean acidification. Nat Clim Chang 3:298–302.
+21. Schlüter L, et al. (2014) Adaptation of a globally important coccolithophore to ocean warming and acidification. Nat Clim Chang 4:1024–1030.
+22. Plough HH, Ives PT (1935) Induction of mutations by high temperature in Drosophila. Genetics 20(1):42–69.
+23. Purcell EM (1977) Life at low Reynolds number. Am J Phys 45(3):3–11. 24. Raven JA, Doblin MA (2014) Active water transport in unicellular algae: Where, why,
+and how. J Exp Bot 65(22):6279–6292.
+
+25. Helmuth B, et al. (2010) Organismal climatology: Analyzing environmental variability at scales relevant to physiological stress. J Exp Biol 213(6):995–1003.
+26. Hellweger FL, van Sebille E, Fredrick ND (2014) Biogeographic patterns in ocean microbes emerge in a neutral agent-based model. Science 345(6202):1346–1349.
+27. van Sebille E, et al. (2015) Ocean currents generate large footprints in marine palaeoclimate proxies. Nat Commun 6:6521.
+28. Paris CB, Helgers J, van Sebille E, Srinivasan A (2013) Connectivity Modeling System: A probabilistic modeling tool for the multi-scale tracking of biotic and abiotic variability in the ocean. Environ Model Softw 42:47–54.
+29. van Sebille E, et al. (2014) Pacific-to-Indian Ocean connectivity: Tasman leakage, Indonesian Throughflow, and the role of ENSO. J Geophys Res-Oceans 119(2):1365–1382.
+30. Kough AS, Paris CB, Butler MJ, 4th (2013) Larval connectivity and the international management of fisheries. PLoS One 8(6):e64970.
+31. Snyder RE, Paris CB, Vaz AC (2014) How much do marine connectivity fluctuations matter? Am Nat 184(4):523–530.
+32. Sala I, Harrison CS, Caldeira RMA (2016) The role of the Azores Archipelago in capturing and retaining incoming particles. J Mar Syst 154:146–156.
+33. Lumpkin R, Johnson GC (2013) Global ocean surface velocities from drifters: Mean, variance, ENSO response, and seasonal cycle. J Geophys Res-Oceans 118:2992–3006.
+34. Eppley RW (1972) Temperature and phytoplankton growth in the sea. Fish Bull 70(4): 1063–1085.
+35. Schaum CE, Collins S (2014) Plasticity predicts evolution in a marine alga. Proc Biol Sci 281(1793):20141486.
+36. Gilchrist GW (1995) Specialists and generalists in changing environments. I. Fitness landscapes of thermal sensitivity. Am Nat 146(2):252–270.
+37. Yu L, Weller RA (2007) Objectively analyzed air–sea heat fluxes for the global ice-free oceans (1981–2005). Bull Am Meteorol Soc 88:527–539.
+38. Reboud X, Bell G (1997) Experimental evolution in Chlamydomonas. III. Evolution of specialist and generalist types in environments that vary in space and time. Heredity 78:507–514.
+39. Abbott MR, et al. (1990) Observations of phytoplankton and nutrients from a Lagrangian drifter off Northern California. J Geophys Res 95(C6):9393–9409.
+40. Alkire MB, et al. (2012) Estimates of net community production and export using high-resolution, Lagrangian measurements of O2, NO3 and POC through the evolution of a spring diatom bloom in the North Atlantic. Deep Sea Res Part I Oceanogr Res Pap 64:157–174.
+41. Ottesen EA, et al. (2014) Ocean microbes. Multispecies diel transcriptional oscillations in open ocean heterotrophic bacterial assemblages. Science 345(6193):207–212.
+42. Follows MJ, Dutkiewicz S, Grant S, Chisholm SW (2007) Emergent biogeography of microbial communities in a model ocean. Science 315(5820):1843–1846.
+43. Bates AE, et al. (2013) Geographical range, heat tolerance and invasion success in aquatic species. Proc Biol Sci 280(1772):20131958.
+44. Wu L, et al. (2012) Enhanced warming over the global subtropical western boundary currents. Nat Clim Chang 2:161–166.
+45. Clayton S, Dutkiewicz S, Jahn O, Follows MJ (2014) Dispersal, eddies, and the diversity of marine phytoplankton. Limnol Oceanogr Fluids Environ 3:182–197.
+46. Lévy M, Jahn O, Dutkiewicz S, Follows MJ (2014) Phytoplankton diversity and community structure affected by oceanic dispersal and mesoscale turbulence. Limnol Oceanogr Fluids Environ 4:67–84.
+47. Masumoto Y, et al. (2004) A fifty-year eddy-resolving simulation of the world ocean— Preliminary outcomes of OFES (OGCM for the Earth Simulator). J Earth Simul 1:35–56.
+
+MICROBIOLOGY
+
+ENVIRONMENTAL SCIENCES
+
+Doblin and van Sebille
+
+PNAS | May 17, 2016 | vol. 113 | no. 20 | 5705
+

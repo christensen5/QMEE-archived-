@@ -1,0 +1,9 @@
+/*
+    Sets the placeholder colour for jquery plugin that mimics
+    placeholde on browsers that don't support the placeholder tag
+
+    Created on : 11-Sep-2014, 14:18:34
+    Author     : andrew.robinson
+*/
+
+.placeholder { color: #aaa; }

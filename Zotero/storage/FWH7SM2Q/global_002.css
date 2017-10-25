@@ -1,0 +1,1567 @@
+@font-face {
+    font-family: "Open Sans";
+}
+
+html {
+
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0 auto;
+    font-family: "Open Sans", sans-serif;
+    min-width: 980px;
+
+    font-size: 15px;
+    line-height: 1.4;
+    background-color:#f3f4ff;
+}
+
+/* Text and headers */
+p,
+ul.bullet-list {
+    margin: 10px 80px;
+    line-height:26px;
+    font-family: "Open Sans", sans-serif;
+    font-size:14px;
+    color: #292B36;
+}
+
+ul.bullet-list {
+    padding: 0 0 0 25px;
+}
+
+ul.bullet-list li {
+    list-style: disc;
+}
+
+div.withmargins {
+     margin: 10px 80px;
+}
+
+.smallprint {
+    font-size: 80%;
+}
+
+h1, .largetext {
+    color: #292B36;
+    font-family: "Open Sans", sans-serif;
+    background: none repeat scroll 0% 0% #FFDC53;
+    padding-left: 100px;
+    font-size: 24px;
+    padding: 23px 0px 23px 100px;
+    margin-bottom: 40px;
+}
+
+.page-head h1 {
+	padding: 23px 0;
+    margin-bottom:0;
+}
+
+h2, .middletext {
+    margin: 25px 80px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    color: #2457B5;
+    font-weight: 400;
+}
+
+h2 a {
+    //text-decoration:none; // bug 15615
+    text-decoration:underline;
+}
+
+.news_titles h3 {
+    font-size: 1.05em;
+    font-weight: normal;
+    margin: 0.6em 0;
+    color: #4d4d50;
+    font-family: "Open Sans", sans-serif;
+}
+
+.news_titles h3 a {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0.6em 80px;
+    color: #2457B5;
+    font-family: "Open Sans", sans-serif;
+}
+
+.news_item h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0.6em 80px;
+    color: #2457B5;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+
+h2 a {
+    color: #4d4d50;
+    font-size: 80%;
+}
+
+h3, .lowertext, strong.h3 {
+    margin: 25px 80px;
+    font-size: 18px;
+    color: #2457B5;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+}
+
+strong.h3 {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+
+a, .linkspan,
+input[type=submit].labbutton-link {
+    color: #0B2165;
+    text-decoration: underline;
+
+}
+
+a:hover, .linkspan:hover,
+input[type=submit].labbutton-link:hover {
+    text-decoration: underline;
+}
+
+a.nohover:hover {
+    text-decoration: none;
+}
+
+.linkspan {
+    /*color: rgb(82, 141, 207);*/
+	/*text-decoration: none;*/
+    cursor: pointer;
+}
+
+strong {
+    font-size: 100%;
+}
+
+em {
+    font-style: italic;
+}
+
+.disabledlink {
+    color: #999999;
+    cursor: not-allowed;
+}
+
+/*Lists*/
+
+li .bullet {
+    list-style-type: disc !important;
+    margin-left: 20px;
+    display:list-item!important;
+}
+
+ul .bullet{
+    list-style-type: disc;
+    margin: 0px 100px;
+    line-height: 26px;
+    font-size: 15px;
+    color: #292B36;
+}
+ul .number{
+    list-style:decimal;
+    margin:0px 100px;
+    line-height:26px;
+    font-size: 15px;
+    color: #292B36;
+}
+
+ul .bulletspaced {
+    list-style-type:disc;
+    margin:0px 110px;
+    line-height:26px;
+    font-size: 15px;
+    color: #292B36;
+}
+
+
+
+/* Formatting */
+
+.clear {
+    clear: both;
+}
+
+.invisible, .hidden {
+    display: none;
+}
+
+.smallicon {
+    font-size: 0.7em;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+/* Forms */
+
+input[type="submit"], input[type="button"] {
+
+}
+
+/* Accessibility */
+
+#skiplink {
+    display: none;
+}
+
+/* Global */
+
+.center {
+    text-align: center;
+}
+
+.error, .red {
+    color: red;
+}
+/* App Image */
+
+#allappsimg{
+    margin-left:100px;
+    width:75%;
+}
+
+#wiw_map {
+    border: 2px solid;
+	width: 85%;
+    z-index:99;
+}
+
+#ui-datepicker-div {
+    z-index:9999;
+}
+
+#map {
+    border: none;
+    height: 230px;
+    width: 230px;
+    margin-top: 215px;
+    margin-left: 580px;
+}
+
+#residencyimg{
+    align:left;
+}
+
+.colourless_curved_box {
+    margin: 0px 22px 20px 0px;
+    width: 250px;
+    float: left;
+}
+
+ul .popular {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    line-height:2.5em;
+}
+
+li .popularlist {
+    display: inline;
+    float:left;
+    width:40%;
+}
+
+.popular  a {
+    display: block;
+    margin-left:80px;
+}
+
+ul .categories {
+    margin: 0;
+    list-style-type: none;
+}
+
+li .categorieslist {
+    padding-right: 80px;
+    display: inline;
+    float:left;
+    height:100px;
+}
+
+.categories  a {
+    display: block;
+    width:350px;
+}
+
+.categories  p {
+    width:350px;
+    height:18px;
+}
+
+ul .apps {
+    list-style-type:circle;
+    margin-left:10%;
+}
+
+ul .booknow {
+    margin: 0;
+    list-style-type: none;
+}
+
+li .booknowlist {
+    width:25%;
+    display: inline;
+    float:left;
+}
+
+.booknow  a {
+    display: block;
+    width:170px;
+    text-align: center;
+    margin-left: 40px;
+}
+
+.booknowlist  p {
+    display: block;
+    width:170px;
+    text-align: center;
+    padding: 0;
+    margin-left: 40px;
+}
+
+
+/* Purchases Page */
+
+#purchases_page {
+    margin-left:90px;
+    margin-top:30px;
+    width:900px;
+}
+
+#purchases_page a {
+    height: 113px;
+    width: 196px;
+    margin: 0px 80px 20px 10px;
+    padding: 10px 0px 0px 10px;
+    float: left;
+    color: #000;
+}
+#purchases_page strong {
+    display: inline;
+    font-size: 130%;
+}
+#purchases_page a strong {
+    color: rgb(97, 168, 48) ;
+}
+#purchases_page a:hover, #purchases_page a:hover strong {
+    color: #000000 !important;
+    text-decoration: none;
+}
+#purchases_page span {
+    position: relative;
+    top: -130px;
+    left: 30px;
+    font-size: 90%;
+    padding-right: 7px;
+    display: block;
+    line-height: 1.5em;
+}
+.table-cell {
+    display: table-cell;
+}
+
+/*
+.corporatebenefitsright {
+    width: 350px;
+    margin-right:200px;
+    margin-top:-10px;
+}
+
+.corp_info {
+    width: 350px;
+    float: right;
+    margin-right: 200px;
+}*/
+
+.corporatebenefitscontainer {
+    margin: 2em 80px;
+}
+.corporatebenefitscontainer h2 {
+    padding: 0 0 25px 0;
+    margin: 0;
+}
+.corporatebenefitscontainer p {
+    margin: 0 0 1em 0;
+}
+.corporatebenefitscontainer ul {
+    margin: 0 0 1em 0;
+}
+.corporatebenefitscontainer li {
+    margin: 0 0 0 20px;
+}
+
+.corp_info {
+    margin: 25px 0 0 300px;
+}
+.corp_info * {
+    margin:0;
+}
+.corporatebenefitsright {
+    width: 45%;
+}
+.corporatebenefits {
+    width: 45%;
+}
+
+.corporatebuttonwrapper {
+    margin: 0 0 0 80px;
+}
+
+
+.ttpark-table {
+	line-height: 1.3;
+}
+.ttpark-table td, .ttpark-table th {
+	padding: 15px 0 15px 25px;
+	width: 24%;
+}
+.ttpark-table td:first-child, .ttpark-table th:first-child {
+	padding-left: 0;
+}
+.ttpark-table thead th {
+	font-weight: bold;
+	text-align: left;
+}
+.ttpark-table tbody td {
+	border-top: 2px solid #2457B5;
+}
+
+.horizontalline {
+
+    height:0.5px;
+    width: 100%;
+    border-bottom:solid 2.5px rgb(97, 168, 48);
+
+}
+
+.dashhorizontalline {
+
+    height:0.5px;
+    width: 100%;
+    border-bottom:dashed 1px #292B36;;
+
+}
+
+.fbiframe {
+
+    overflow:hidden;
+}
+
+
+.subscriptionoptions {
+    float: right;
+    margin-right: 120px;
+    position: relative;
+
+}
+
+.subscriptionoptions h2 {
+    margin: 0px;
+}
+
+.subscriptionoptions input[type="submit"] {
+    margin-right: 105px;
+}
+
+.residencystatus {
+    width: 500px;
+    margin-left: 370px;
+
+}
+
+.tablelessform li.reqnote {
+    font-size: 80%;
+    margin: 50px 0px 0px 5px;
+}
+
+.location {
+    margin-top: 20px;
+    margin-left:80px;
+}
+
+.location span {
+    padding-top: 2px;
+    font-size: 120%;
+}
+
+#go {
+    background: url('/images/RingGo-button.png') no-repeat;
+    padding: 0;
+    height: 30px;
+    /*	float: right;*/
+    position: relative;
+    top: -10px;
+    left: 7px;
+    font-size: 0;
+    width: 30px;
+}
+
+/*#dirGo, .dirGo {
+    background: url('/images/RingGo-button.png') no-repeat;
+    -webkit-background-size: cover; for webKit
+    -moz-background-size: cover; Mozilla
+    -o-background-size: cover; opera
+    background-size: cover; generic
+    border: 0;
+    height: 22px;
+    width: 24px;
+    vertical-align: middle;
+    font-size:0;
+}*/
+
+.infowindow img {
+    vertical-align:middle;
+    padding:2px;
+}
+
+ul .statementdate {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height:40px;
+    line-height:2em;
+    width: 100%;
+
+}
+
+li .statementlist {
+    display: inline;
+    float:left;
+    width:33%;
+}
+
+.statementlist  p {
+    display: block;
+    text-align: center;
+}
+.statementlistcontainer {
+    width:100%;
+    margin-top:20px;
+}
+
+ul .printlinks {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height:40px;
+    line-height:2em;
+    width: 100%;
+
+}
+
+li .printlinkslist {
+    display: inline;
+    float:left;
+    width: 200px;
+    margin-left: 75px;
+}
+
+.printlinkslist  p {
+    display: block;
+    margin: 0px 50px;
+    text-align: center;
+}
+.printlistcontainer {
+    width:100%;
+}
+
+/* Drop Down Menu */
+
+.ac_results {
+    padding: 0px;
+    border: 1px solid black;
+    background-color: white;
+    overflow: hidden;
+    z-index: 99999;
+    transform: translateZ(0);//fixes the results being shoved off to one side when a Google Map is on the page
+}
+
+.ac_results ul {
+    width: 100%;
+    list-style-position: outside;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ac_results li {
+    margin: 0px;
+    padding: 10px 10px;
+    cursor: default;
+    display: block;
+    /*
+    if width will be 100% horizontal scrollbar will apear
+    when scroll mode will be used
+    */
+    /*width: 100%;*/
+    font: menu;
+    font-size: 16px;
+    text-align: left;
+    /*
+    it is very important, if line-height not setted or setted
+    in relative units scroll will be broken in firefox
+    */
+    line-height: 16px;
+    overflow: hidden;
+}
+
+.ac_loading {
+    background: white right center no-repeat;
+}
+
+.ac_odd {
+    background-color: white;
+    color: black;
+}
+
+.ac_even {
+    background-color: white;
+    color: black;
+}
+
+.ac_over {
+    background-color: #404352;
+    color: white;
+}
+
+
+
+#summary {
+    margin-right:220px ;
+    height:400px;
+    float: right;
+    border-left: 1px solid #00336f;
+    padding-left: 20px;
+}
+
+#summary-no-margin {
+    height:400px;
+    float: right;
+    border-left: 1px solid #00336f;
+    padding-left: 20px;
+}
+
+.booknowiconcontainer {
+    height:120px;
+    width:100%;
+    margin-top: 40px;
+}
+
+
+
+.howringgoworkcontainer {
+    width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.howringgoworkcontainer p , .howringgoworkcontainer h2 , .howringgoworkcontainer ul.bullet {
+    margin: 10px 10px;
+
+}
+
+.howringgoworkcontainer ul.bullet {
+    margin: 10px 30px;
+}
+
+#howitworks_text p {
+    margin: 10px 0px;
+
+}
+
+.nexttime {
+    margin-right:60px;
+    width:350px;
+    margin-top: -10px;
+    float:right;
+}
+
+.texttoparkexamples {
+    float:left ;
+    margin-left: 70px;
+    width:40%;
+}
+
+
+
+.permitheader {
+    text-align: center;
+    margin-top:20px;
+}
+
+.permitlogo {
+    display: block;
+    padding: 0;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top:20px;
+    max-height:70px;
+}
+
+.permitcontainer {
+    margin-left: 55px;
+}
+
+.radiolabel {
+    display:inline-block;
+    width:55%;
+    vertical-align:middle;
+    margin:5px;
+}
+/*.extendDisabled {
+	visibility:hidden;
+}*/
+/*.vrnlabel, .parkAgain {
+	width:25%;
+	display:inline-block;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border: 2px solid;
+	padding:5px;
+	font-weight:bold;
+	text-align:center;
+}
+.vrnlabel {
+	background-color:#fff0b3;
+}*/
+.cannotExtend {
+    background-color: #efefef;
+    /*color: #808080;*/
+    /*opacity: 0.5;*/
+}
+.permitchoice {
+    display:inline-block;
+    width:90%;
+    vertical-align: middle;
+    padding: 5px;
+    margin: 5px;
+    /*	border: 1px solid darkgrey;
+	    background-color: lightyellow;
+	    border-radius: 8px;
+	    -moz-border-radius:8px;
+	    -webkit-border-radius:8px;*/
+    border: 1px solid #e5e5e5;
+    -webkit-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    -moz-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    background-color: #FFF;
+    /*cursor: pointer;*/
+}
+/*.permitchoice:hover {
+
+	background-color:#ECF4E6;
+}
+.cannotExtend:hover {
+	background-color: #efefef;
+	opacity: 0.5;
+}*/
+.cannotExtend, .disabledradio {
+    cursor:not-allowed;
+}
+input[type=radio]:checked + label ul {
+    background-image: none;
+    background-color:#C0DCAC;
+}
+#standardsessionchoice {
+    /*font-weight: bold;*/
+    color:darkgreen;
+}
+#standardsessionchoice img {
+    vertical-align: middle;
+}
+.permitchoice li {
+    margin:2px !important;
+}
+.permitchoice a {
+    text-decoration: underline;
+}
+.activesession {
+    background-color: #f0f0f0;
+}
+label ul.permitchoice {
+    width:75%;
+}
+#permitapps {
+    padding:5px;
+}
+/*.permitchoice .actions {
+	float:right;
+	width:10em;
+}*/
+.enabledradio, .disabledradio {
+    display: none;
+    display: inline\9;
+}
+.permitchoice .actions img {
+    display:inline;
+    vertical-align: middle;
+}
+
+.canExtend .actions{
+    color: darkgreen;
+}
+
+.cannotExtend .actions{
+    color: darkred;
+}
+
+.statementemail {
+    width:100%;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+.filterwrapper{
+    padding: 0px 10px 25px 10px;
+    margin: 10px 20px 30px 10px;
+    border: 1px solid #e5e5e5;
+    -webkit-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    -moz-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    width: 97%;
+    height: 50px;
+}
+
+
+.printlistwidget {
+
+    margin-top:25px;
+    height: 35%;
+}
+
+.printlistwidget p {
+    margin:0px;
+}
+
+.statementemailwidget {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    -webkit-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    -moz-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    width: 44%;
+    height: 200px;
+    margin-left: 52%;
+    padding-bottom: 70px;
+
+}
+.printvatwidget {
+    padding: 10px;
+    margin-right:6%;
+    border: 1px solid #e5e5e5;
+    -webkit-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    -moz-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    width: 48%;
+    height: 260px;
+    float:left;
+    margin-left:1%;
+
+}
+.statementtextcontainer {
+    margin-left:10px;
+}
+#sat_nav_text {
+    width:100%;
+}
+#sat_nav_page {
+    width:100%;
+}
+.xpresstext {
+    width:100%;
+}
+.vehiclelinks p {
+    display:inline;
+    padding-right:30px;
+}
+.vehiclelinks {
+    padding: 5px 0;
+    margin-bottom: 20px;
+    margin-left:90px;
+}
+#dupSessionTable, .dupSessionText {
+    margin: 10px 10px 10px 0px;
+}
+.printable {
+    margin-right:18% !important;
+}
+#park_info_inner2 {
+    height:100% !important;
+    margin-top: 25px;
+}
+.topbar {
+    padding: 0px 40px;
+    height: 50px;
+
+	/*  background: #0B183F\9;*/
+	background: #0d0e16;
+	background: -moz-linear-gradient(left, #0d0e16 15%, #0b2265 50%, #0d0e16 85%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(15%, #0d0e16), color-stop(50%, #0b2265), color-stop(85%, #0d0e16));
+	background: -webkit-linear-gradient(left, #0d0e16 15%, #0b2265 50%, #0d0e16 85%);
+	background: -o-linear-gradient(left, #0d0e16 15%, #0b2265 50%, #0d0e16 85%);
+	background: -ms-linear-gradient(left, #0d0e16 15%, #0b2265 50%, #0d0e16 85%);
+	background: linear-gradient(to right, #0d0e16 15%, #0b2265 50%, #0d0e16 85%);
+	
+}
+
+#searchbox {
+    height: 30px;
+    font-size: 16px;
+    padding: 0px 6.4px;
+}
+
+.horizontalline {
+    display:none;
+}
+br {
+    display:none;
+}
+
+br.show {
+    display:block;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.row {
+    width: 900px;
+    margin: 0px auto;
+    max-width: 75rem;
+}
+
+.traintickets {
+    display: none;
+}
+
+.firsttime {
+    width: 350px;
+    margin-top: 40px;
+}
+
+
+.printvatwidget p {
+    margin: 10px 0px;
+}
+
+.statementemailwidget p {
+    margin: 10px 0px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: none !important;
+    background: /*url('/css/js/jquery-ui/images/ui-bg_highlight-soft_60_4ca20b_1x100.png') repeat-x scroll 50% 50%*/ rgb(82, 141, 207) !important;
+    font-weight: normal;
+    color: #FFF;
+}
+
+.ui-state-hover{
+    background: #528DCF  !important;
+    border-color: #528DCF  !important;
+}
+
+.ui-widget-header {
+    border: none !important;
+    background: none repeat-x scroll 50% 50% rgb(82, 141, 207) !important;
+    color: #222;
+    font-weight: bold;
+}
+
+#emailTo {
+    width:340px;
+    height:40px;
+    font-size:20px;
+}
+
+ul.categories {
+    margin-left: 60px;
+}
+
+.helplink a, #helparticlesbox a {
+    color: #0B2165 !important;
+}
+
+#helparticlesbox {
+    margin: 0px 80px;
+}
+
+.helparticle ul {
+    margin: 0px 80px;
+    line-height: 26px;
+    font-size: 15px;
+    color: #292B36;
+}
+.helparticle ul li {
+	list-style-type:disc;
+    margin-left:20px;
+    line-height:1.5em;
+}
+
+.helpcentre {
+    margin: 25px 80px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    color: #2457B5;
+    font-weight: 400;
+    background:none;
+    padding:0px;
+}
+
+select[name="popQ[type]"] {
+    padding: 12px;
+    line-height: 50px;
+    height:50px !important;
+    width: 430px !important;
+    margin-right: 30px;
+}
+
+hr {
+    display: none;
+}
+
+/*textarea[name="info[text]"] {
+    max-width:681px;
+    min-width:681px;
+
+}*/
+
+#bulkemail #label-submit {
+    display:none;
+}
+
+#emailfreq #label-vat_save {
+    display:none;
+}
+
+#label-submit {
+    display:none;
+}
+
+#cardimage {
+    margin-left:80px;
+}
+
+#ajaxsearch #label-zone {
+    display:none;
+}
+
+input[name="submit[clear]"] {
+
+}
+
+input[name="submit[refresh]"] {
+
+}
+
+#CardSelect #label-static {
+    display:none;
+}
+
+.statictext-wrapper p {
+    margin: 0;
+}
+
+.statictext-wrapper h3 {
+    margin: 0;
+}
+
+.searchicon {
+    margin: 10px;
+}
+
+.printvatwidget button {
+    height: 65px !important;
+}
+
+.instructiontext br {
+    display: inherit;
+}
+
+.showbreaks br {
+    display: inline !important;
+}
+
+#permitapps ul {
+    margin-left: 80px;
+}
+
+#permitapps ul p{
+    margin-left: 0px;
+}
+
+#permitapps .menu {
+    float:none !important;
+    padding: 10px !important;
+    border: none !important;
+}
+
+#RVPTariff .labdefault {
+    left: 0px !important;
+}
+
+#permitform br {
+    display: inherit;
+}
+
+#RvpProofs br {
+    display: inherit;
+}
+
+.ui-widget-content h2 {
+   font-size:14px !important;
+   margin: 0px !important;
+}
+.ui-dialog-content ui-widget-content {
+    font-size:14px !important;
+}
+
+/*#CardSelect .labdefault {
+    left: 0px !important;
+}*/
+
+#Finish br {
+    display:inherit;
+}
+
+#ZoneVehicleSelect .labnext {
+    left: 230px !important;
+
+}
+
+#ZoneVehicleSelect .labcancel {
+       left: 0px !important;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+    height: 25px;
+}
+
+.ui-datepicker-trigger {
+    top: 5px;
+    position: relative;
+    padding: 0 2px;
+}
+
+#wiw_map {
+
+    margin-left:80px;
+}
+
+#wiw_innercontent br {
+    display: inline;
+}
+
+#wiw_CurrentLocLink {
+    font-size: 15px !important;
+    margin-left:80px;
+}
+
+/*#showZones {
+    margin-left:80px;
+}
+
+#showEpay {
+    margin-left:80px;
+}*/
+
+#zonelinks, #epaylinks {
+    margin-left:80px;
+}
+
+#zonelinks p , #epaylinks p {
+    margin: 0px;
+    margin-bottom:10px;
+}
+
+#printDiv {
+    margin-left : 80px;
+    margin-top:20px;
+}
+
+.infowindow h2 {
+    margin:0px;
+}
+/*
+#currentMembers ol {
+    width:750px;
+}
+
+#newMembers ol {
+    width:750px;
+}*/
+
+#UserDetails .labdefault{
+    left:0px !important;
+}
+
+#park_info_inner2 #map {
+    width:300px !important;
+    height:300px !important;
+    margin:0px !important;
+}
+
+#zone_info {
+    margin-left:80px;
+}
+
+#tariffboardbgpane h1 {
+    background : none;
+    margin-left: 80px;
+    color: #2457B5;
+    padding:0px;
+}
+
+#tariffboardtitle h1 {
+    background : none;
+    margin-left: 80px;
+    color: #2457B5;
+    padding:0px;
+}
+
+#zone_info .zoneInfoDuration {
+    white-space: nowrap;
+}
+#zone_info .zoneInfoCost {
+    white-space: nowrap;
+}
+#zone_info .zoneInfoInfo {
+    width: 40%;
+}
+
+#ajaxsearch li {
+    display:block !important;
+}
+
+.printvatwidget .blue {
+    color: #292B36 !important;
+}
+
+#permitinfoform .button {
+    display: none;
+}
+#permitinfoform #carPermitLink {
+    display: inline-block;
+}
+#permitinfoform #motorcyclePermitLink {
+    display: inline-block;
+}
+#permitinfoform #ecoPermitLink {
+    display: inline-block;
+}
+
+
+#vehdelete {
+    margin-left:80px;
+}
+
+#acceptedcards {
+    margin-left:80px;
+}
+
+.ui-widget button {
+    left:60px;
+}
+
+.ui-widget-content {
+    font-size: 13px;
+}
+
+a.ui-dialog-titlebar-close.ui-corner-all{
+    display:block;
+}
+.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix {
+    height:25px;
+    background: none repeat-x scroll 50% 50% #D6D8DC !important;
+}
+
+.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se.ui-icon-grip-diagonal-se {
+    display:none;
+}
+
+span#ui-dialog-title-1.ui-dialog-title {
+    font-size:15px;
+    font-weight: normal;
+}
+
+#dialog-edit p {
+    margin: 10px 10px;
+}
+
+#addvehicle {
+    width:auto !important;
+}
+
+#ContactPcn ol {
+    min-height: 170px;
+}
+
+#pl_checkbox {
+	margin-left: 80px;
+}
+
+#map_search li {
+	display: inline-block;
+}
+
+#map_search_form {
+	display: inherit !important;
+}
+
+#map_checkbox li {
+	width:200px;
+	margin:0;
+}
+
+#map_checkbox {
+	margin-left: 80px;
+}
+
+#plOperators{
+    display: inline-block;
+
+}
+
+#zoneDetail
+{
+    float:left;
+    display:inline-block;
+    width:55%;
+}
+
+#park_info2
+{
+    float:right;
+    display:inline-block;
+    width:42%;
+    margin-top:90px;
+    margin-left:0;
+}
+
+#directionsPanel
+{
+    margin-left: 80px;
+}
+
+#printDiv
+{
+    margin-right: 30px;
+}
+
+#pl_print li
+{
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.bookPermissions
+{
+	width: auto !important;
+	max-width: none !important;
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+}
+
+#wiw_searchSubmit
+{
+	margin-left: 80px;
+}
+
+li {
+	list-style: none;
+}
+
+.ac_over strong {
+	color: rgb(82, 141, 207);
+	font-weight: bold;
+}
+
+#label-vehicleDropDown a{
+    font-size: 15px;
+}
+
+.spacecheck {
+	height:1em;
+	width:1.5em;
+	display:inline-block;
+	text-decoration:none;
+}
+
+.spacecheck:hover {
+	text-decoration:none;
+	border:2px solid green;
+	margin:2px;
+}
+
+.unavailable {
+	background-color:pink;
+	border:1px solid darkred;
+	margin:3px;
+	cursor:not-allowed;
+}
+
+.unavailable:hover {
+	text-decoration:none;
+	border:1px solid darkred;
+	margin:3px;
+}
+
+.available {
+	background-color:lightgreen;
+	border:1px solid green;
+	margin:3px;
+}
+
+.selected {
+	border:4px solid darkgreen;
+	margin:0;
+}
+
+input[readonly] {
+	background-color: #f3f4ff;
+}
+
+.infoWindow {
+	line-height:1.35;
+	overflow:hidden;
+	white-space:nowrap;
+	max-width:420px;
+}
+
+#wiw_map .gm-style-iw .infoWindow p {
+    display: block;
+    margin: 0;
+}
+
+
+#ajaxStatus {
+	margin-left: 80px;
+	background-color: white;
+	border: 1px solid;
+	width:85%;
+	visibility: hidden;
+}
+
+.showbullet {
+    list-style: disc outside none;
+	list-style-type: disc !important;
+}
+
+.showbullet li{
+    list-style: disc outside none;
+	list-style-type: disc !important;
+}
+
+
+.infoTable {
+    border-top: 4px solid #1079AD;
+	border-left: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	width: 80%;
+	font-size: 0.85em;
+    margin-bottom: 20px;
+	margin-left: 80px;
+	margin-top: 10px;
+}
+.infoTable tr th {
+    background: none repeat scroll 0% 0% #D6D8DC;
+    
+    text-align: left;
+    border-right: 1px solid #DEDFDF;
+    padding: 5px 5px 5px 10px;
+}
+
+.infoTable tr td {
+    background: none repeat scroll 0% 0% #fff;
+    text-align: left;
+    border-right: 1px solid #DEDFDF;
+    padding: 5px 5px 5px 10px;
+}
+
+
+.helptext {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+.textarea {
+/*	width: 95%;*/
+	height: 8em;
+}
+
+#KerbSideType p {
+	margin: 0;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button{
+    float:none !important;
+}
+
+#addKP, #KPList, #applyKP {
+    margin: 15px 0;
+    display:inline;
+    padding: 15px 50px;
+}
+
+#KerbSideMap legend {
+    display: none;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+    float: none !important;
+}
+
+#applyForSusButton {
+    height:60px;
+    margin: 10px 80px;
+}
+
+.error strong {
+    color: red;
+}
+
+.hasDatepicker {
+    position: relative;
+    z-index: 1000;
+}
+
+ol.numbered, ol.numbered li {
+    list-style: decimal;
+    margin-left: 50px !important;
+}
+
+ul.list_bullet {
+    list-style-type: disc !important;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: 28px;
+}
+
+ul.list_bullet li {
+    list-style-type: disc !important;
+    display:list-item!important;
+    margin-top: 0;
+    padding-top: 1em;
+    padding-left: 1.4em;
+}
+
+.important-label {
+    font-weight: 600;
+}

@@ -1,0 +1,549 @@
+Marine Biology65, 69-75 (1981)
+
+MARINE BIOLOGY
+9 Springer-Verlag1981
+
+A Simulation Model of the Effects of Vertical Mixing on Primary Productivity *
+
+P. G. Falkowski and C. D. Wirick Oceanographic Sciences Division, Department of Energy and Environment, Brookhaven National Laboratory; Upton, New York 11973, USA
+
+Abstract
+A random walk stimulation model was developed to explore the effects of variations in light regimes due to vertical mixing on primary productivity. Cells were allowed to light-shade adapt on some time scale by altering chl: carbon ratios in response to variations in light regimes. Photosynthetic response was adjusted according to variations in chl:carbon ratios by either varying the initial slopes of photosynthesis-irradiance curves, or varying photosynthetic capacities. The model suggests that despite physiological adaptation to light, vertical mixing may have little effect on the integrated water column primary productivity. It is suggested that if photoinhibition does not have a pronounced effect, the average distribution of primary production in a water column is not related to variations in light regimes arising from turbulent diffusion processes.
+
+the maximum intensity at the sea surface. Local atmospheric conditions, clouds, and aerosols modulate the light reaching the sea surface. Atmospheric variations are likely to occur at either low frequencies, 3 to 10-d periods between storms, or at very high frequencies, the travel time for clouds to cross the sun. Low frequency variations are too long to influence diel productivity and the passing of clouds, while perhaps important on some days, is too intermittent to be a general characteristic of light variations. The light received by a cell is perhaps best predicted from the surface intensity and depth of the cell. In a turbulent ocean, cells are displaced vertically about a daily mean depth and these displacements also create variations in light. Marra (1978 b) suggested that vertical turbulence may increase water column productivity and inferred that the effect is due to variations in light experienced by the cells. In this paper we examine the role turbulence plays in creating variations in light, and the effect of these variations on the daily productivity of the water column.
+
+Introduction
+Phytoplankton cells experience large variations in light intensity over the course of a day. Because a cell's photosynthetic response to light is nonlinear, the amount of carbon it fixes might be influenced by temporal variations in light intensity as well as the total light it receives (e.g. Marra, 1978a). The first-order variation is clearly created by the sun as it travels across the sky. The path of the sun gives the total daily radiation, the length of the day, and
+* This research was performed under the auspices of the US Department of Energy under Contract No. DE-ACO276CH00016 and partially supported by the International Decade of Ocean Exploration (IDOE), NSF, as part of the Coastal UpweIling EcosystemsAnalysis (CUEA) program,
+/3y acceptance of this article, the publisher and/or recipient
+acknowledges the US Government's right to retain a nonexclusive, royalty-free license in and to any copyright covering this paper
+
+Material and Methods
+Our hypothesis is that within a mixed layer, vertical turbulence creates high frequency variations in the diel light regimes experienced by cells and that these variations influence the total daily productivity of the layer. Turbulence can also affect the productivity by aItering the vertical distribution of the phytoplankton cells during the day and by mixing nutrients both within and into the mixed layer. While important in the ocean, these effects are not part of our hypothesis and would mask or at least confound the light effect. The ideal mixed layer in which to investigate our hypothesis is then one where photosynthesis is not nutrient limited and where vertical turbulence, while moving cells about, does not alter the overall vertical distribution of cells. A vertical distribution which is unchanged by turbulence is one where cells are ran-
+
+0025-3162/81/0065/0069/$ 01.40
+
+70 P.G. Falkowskiand C.D.Wirick: Turbulence and Productivity
+
+domly distributed with depth. To test our hypothesis we constructed a simulation model of a mixed layer, where the mixing and photosynthetic processes are based upon conventional wisdom, and simply calculate, under varying degrees of turbulence, the daily photosynthesis of cells which are randomly distributed at the beginning of the day. In the model, cells are allowed to light-shade adapt as they are mixed.
+The Model
+The model simulates the carbon fixed during a day by individual cells as they are moved about by vertical turbulence. The depth history of each cell is obtained by simulating particle diffusion as a random walk. The light history of each cell is then calculated from its depth history and the light incident at the surface. The cells adapt their chl:carbon ratios in response to their light history and adjust their photosynthetic response accordingly. The diffusive, light-adapton and photosynthetic processes are developed individually and then combined to give the model.
+Diffusion and Light
+
+where R is the chl:carbon ratio of the cell. V is a rate constant taken to be 0.2 h -1 during daylight and zero at night, y is estimated from time course studies of lightshade adaptation using both field studies of natural phytoplankton communities and laboratory studies of single phytoplankton species (Falkowski, 1980). Basically ?, is calculated by fitting chl:carbon (or chl:cell) ratios To and Tn to a first-order kinetic expression. The kinetic coefficient, y, is temperature dependent (Qlo of ca 2.0). In the simulation model used here, temperature does not change as cells are mixed and therefore y can be taken as a constant. At night it is assumed that most cells do not produce much chl [the biosynthesis of chl requires light energy (see Bogorad, 1966)], and thus cells do not adapt to darkness. Hence, a value of zero is chosen for y at night. Rw is the chl:carbon ratio towards which the cell adapts. Shade-adapted cells have higher chl:carbon ratios than sun-adapted cells (Falkowski, 1980), suggesting that Rw should vary inversely with incident light. The relationship between Rw and incident light is non-linear and is best described by an exponential relationship of the form Rw= a + b In I (Falkowski and Owens, 1980). This relationship is well documented in the literature (e.g. Myers, 1946; Steemann-Nielsen, 1975; Falkowski and Owens, 1980). Therefore, we let
+
+Each cell is displaced by vertical eddy diffusion of the Fickian kind. The intensity of this diffusion is given by an eddy diffusivity and the path traveled by each cell is modeled (c.f. Skellam, 1951; Pielou, 1969) as the random walk
+
+Z(t + At) = z(t) • (2 AtKz) ~/2.
+
+(1)
+
+Here At is a time interval, Kz the Fickian eddy diffusivity with + being chosen with equal probability at each At. The surface and bottom of the mixed layer are treated as reflective boundaries. While this random walk may seem an awkward model for Fickian diffusion, it allows the depth histories or trajectories of individual cells to be simulated.
+The light incident upon a cell at depth z at time t after sunrise is modeled as
+
+I(z,t) = In sin (z~t/D)e-kZ,
+
+(2)
+
+where In is the light incident on the sea surface at noon, D is the day length, and k is the extinction coefficient. Throughout this paper the bottom of the mixed layer (z=H) is assumed to be coincident with the 1% light
+depth, so k =-ln(.01)H -1.
+
+0.04 if I/In< 0.01. Rw= 0.01+0.03 ln(I/In)/ln (0.01) if I/In> 0.01. (4)
+At noon cells which are completely adapted would have a chhcarbon ratio of 0.01 at the surface with this ratio increasing linearly with depth (exponentially with light depth), reaching 0.04 at the bottom of the mixed layer.
+In Fig. 1 the contoured solution to Eq. (3) subject to Eqs. (2) and (4) is presented. The solution gives the chl:carbon ratio for cells in a 20m deep mixed layer where there is no mixing, and begins with all cells having a chhcarbon ratio of 0.04 (i.e., dark adapted). By noon of the first day structure appears in the vertical distribution of chl:carbon. The solution settles down quickly and a diel pattern is well developed within 2 to 3 d. Cells do not
+Time (days) 0 12 3 L 5 0
+5-
+
+Adaptation
+
+Each cell is assumed to physiologically adapt its chl: carbon ratio towards a value R w, which is dictated by the
+
+light incident upon it. This adaptation obeys
+
+dR
+-- = ~ (Rw - P,),
+dt
+
+(3)
+
+~
+15-
+
+0035
+
+20-
+Fig. 1. Chl:carbon ratios for cells in the upper layer when there is no vertical mixing. The 1% light depth is at 20 m. Chl:carbon contoured from R=0.015 to 0.035 at 0.005 intervals. The solution
+is numerical
+
+P. G. Falkowski and C. D. Wirick: Turbulence and Productivity
+
+71
+
+adapt at night and the increase in chl:carbon following sunrise reflects that the cells were not completely shade adapted at sunset on the preceding day. By mid-morning cells begin decreasing their chl:carbon values, reaching a minimum at about noon. From noon to sunset cells at all depths increase their chl:carbon ratios but are always lagging somewhat behind the value dictated by the light incident upon them.
+
+08 0.6 0.4 02
+
+"0.01
+
+Photosynthesis
+
+The instantaneous photosynthetic rate of each cell is of the general form:
+
+P = a Pml/(I + K),
+
+(5)
+
+where Pm is a maximum rate, a is a nondimensional adjustment to the maximum rate, I is the light incident upon the cell, and K a half saturation light intensity with dimensions of I (cf. Platt el al., 1977). This relationship is empirically the easiest to model, but does not include the effects of photoinhibition. Nevertheless, as will be demonstrated, the choice of the shape of P vs I curve is not material to the results presented in this model.
+
+Sun- and shade-adapted cells have different photosynthetic responses. Two basic types of modifications of phytosynthetic responses have been identified (Prezelin and Sweeney, 1979; Falkowski, 1980). First, shade adaptation may increase the fight capturing ability of a cell because of an increase in either the size or number of photosynthetic units (Herron and Mauzerall, 1971). This process is manifested in an increase in the initial slopes of photosynthesis-irradiance curves. Secondly, shade adaptation may result in lowering the light-saturated photosyn-
+
+thetic rate (Pmax= aPrn) as a result of slower turnover times of photosynthetic units in vivo (Myers and Graham, 1971; Herron and Mauzerall, 1971; Falkowski, 1981). Both responses are macroscopically indistinguishable on the basis of chl:carbon or chl:cel], however, they lead to different types of photosynthetic responses (Prezelin and Sweeney, 1979; Falkowski and Owens, 1980). The two basic types of modification are considered here as photo-
+
+synthesis model I and II, respectively. In model I the half saturation intensity is a function of the cells chl:carbon value and the maximum rate is kept constant;
+
+cti= 1 KT= In (0.25-5 R).
+
+(6)
+
+In model II the half saturation intensity is constant and cells decrease their maximum photosynthetic rate as their chl: carbon ratio increases;
+
+alI= (3.5-50 R)/3 K11= 0.2 In.
+
+(7)
+
+The dimensionless photosynthetic rates, P/Pro, for models I and II are graphed in Fig. 2 as a function of light for cells with chl:carbon ratios of R = 0.01, 0.02, 0.03, and
+
+0[ E i I I -1 0 0.2 04 0.6 68 1.0
+
+~08-
+oE_ 0.6-
+s
+0.4-
+
+0.01 0.02 Q03 0.04
+
+0.2-
+
+Mode[ II
+
+0
+
+I I I~
+
+1
+
+0.2 0.4 06 0,8 10
+
+I/In
+
+Fig. 2. Photosynthetic response curves for models I and II. Curves for R=0.01, 0.02,0.03, and 0.04 are graphed for each model
+
+0.04. In model [ cells with low chl:carbon ratios photosynthesize at higher rates than those with higher ratios, while model II is the opposite (c.f. Fleischhacker and Senger, 1978).
+This model was implemented in the following manner. A 12-h daylight period was used and the 1% light depth and mixed layer depth set to 20 m. The light at a given depth and time were calculated using (2) with k=0.23 m-L The surface noon intensity, I,,, is not required because it factors out of both the adaption and photosynthetic expressions. A value of In= 0.002 E m -2 s-I is used in some figures for completeness. At sunrise of DayO (t=0 hrs), 200ceils, each with a chl:carbon ratio of R = 0.04, were placed randomly within the mixed layer. At each time step (At=0.0625 h) a new depth, and during daylight, a new chl:carbon ratio and photosynthetic rate, were calculated for each cell. The adaption was assumed to be from R(t) towards Rw(I(t+At)). Euler's one-step method was used to solve (3) and is adequate because the equation is strongly forced by Rw. The photosynthetic rate P(t) was calculated using I(t) and R(t), and the carbon fixed per day obtained by integrating P(t) using Simpson's rule. The initial chl:carbon ratio can be expected to affect the results for 1 to 2 d (see Fig. 1), therefore, the model was run for four simulated days and then sampled on the fifth day for results. Results are presented for eddy diffusivities of kz=0.0, 0.1, 1.0, and 10cm2s -1 for both photosynthesis model I and II.
+
+Results
+The essence of the hypothesis being examined is diffusion and its role in creating variations in the light histories of
+
+72
+0 0
+
+TtME 2 4 6 8 I0 12
+I I I i' '' I I 1' I I I I
+
+0.0020
+
+P.G. Falkowski and C. D. Wirick: Turbulence and Productivity
+
+"T~ 5
+,0
+o
+II
+
+0.0015
+I.1---
+o 0.0010 _i
+&O005
+
+20
+TIME 0 0 2 4 6 8 I0 12
+I I I I I tl I I I I I I I
+
+O.O00C 0 2 4 6 8 I0 12
+TIME
+~0020
+
+,89
+=o a
+,~NI5
+
+0.0015
+I--r o 0.0010 ,J
+0.0005
+
+20
+
+TI ME
+
+0(
+
+,
+
+2 ,
+
+4 ,i
+
+6 ii
+
+8 ,,
+
+= 1I0
+
+i2 ,,
+
+0.0000(~ 2 4 6 8 I0 12 TIME
+0.0020
+
+5 0.0015
+
+,o
+o
+
+I"-r 0.0010
+_1
+
+" a o ~.N 15 TIME oi., a, , 4 ^ ~er 1 6 281 6 3io I2
+
+0.0005
+
+o.oooo~
+
+2 4 6 8 I0 12
+
+TIME
+
+o.oozo
+
+,89 5 ~ ~ "
+
+,~' ~
+
+'
+
+0.00,5
+
+tO ~ O.OOlO
+
+15 0.0005
+
+- 20
+
+0.0000 r 0
+
+2
+
+4
+
+6
+
+8 I0 12
+
+TIME
+
+Fig. 3. Simulated depth and light histories during one photoperiod for two cells, one at 5 m and the other at 15 m, for kz=0, 0.1, 1.0, and 10.0 m2 s 1. (Time in h, light in E m -2 s-a)
+
+individual cells. In Fig. 3 the depth and light histories of two cells are presented for four cases with different eddy diffusivities (kz=0, 0.1, 1.0, and 10 cm 2 s-~). In each case a cell at 5 m and one at 15 m are followed from sunrise to sunset. There are 192 steps in each cell's walk and the vertical displacement per step ranges from 0.067 m when k z = 0 . 1 c m 2s -1 to 0.67m when k z = 1 0 c m 2s -1. The
+
+reflective boundaries at the surface and bottom of the mixed layer occasionally impede the cells in the case where kz = 1 0 c m 2s -1. When kz = 0 c m 2s -1, the light history curves are, of course, perfect sine functions. As vertical mixing increases, the light histories depart from sine waves and exhibit high-frequency variations of increasing amplitude. The frequencies of these variations
+
+P. G. Falkowski and C. D. Wirick: Turbulence and Productivity
+
+73
+
+0 0_
+-- r ~ 5
+) ,o
+
+CHL/C 0.01 0.02 0.03 0.04
+.....
+
+MODEL T
+P/PM 0 0 0.2 0.4 0.6 0.8 1.0
+
+MODEL 1"1"
+P/PM 0 0 0.2 0.4 0,6 0.8 1.0
+
+I5 /
+
+s5 / -'/
+
+,o ,o
+
+N 15
+3E
+2.0
+0 0 0.0,
+~s
+
+.
+
+t / /15 15
+
+20 P/PM
+
+20 P/PM
+
+._ .4
+
+0 0 0.2 0.4 0.6 0.8 ,.0
+
+u_ 0I , 0.2 0.4, 0.6 o.,o ,.0
+
+s
+
+a~
+2 is
+20
+o'
+
+CHL/C
+o.ol o.oz 0.03 0.04
+
+,o ,
+
+7i
+20 20
+
+P/PM
+00 0.2 0.4 0.6 0.8 Lo
+
+P/PM
+00 02 0.4 0.6 0.8 t.o
+
+~Q., o
+O-U~J ' vN' 15
+20
+0
+
+" 99
+AA
+
+0.01
+,
+
+CHL/C
+0.02 0.03 ~a. , ,,~I, A, , ,I, ,, I
+
+0.04
+,
+
+,o ,o!
+
+15 15
+
+20
+0 0.2
+0'
+
+P/PM
+0.4 0.6 0.8
+',,',F~ '~,,,'"'~ ,
+
+1.0
+~
+
+20
+
+P/PM
+0 0.2 0.4 0.6 0.8
+
+0 t , , ,,,~,, - ~, ,
+
+,
+
+i.0
+,
+
+% :1:
+o E 10
+
+" "%''"
+
+10 " , , ~ . . . . .
+
+'~ --
+
+20
+
+" ~'~"
+
+20 7"~ ,="
+
+20LII~,~"
+
+Fig. 4. Vertical distributions of chl:carbon ratios and primary productivity are shown for models I and II, where kz=0, 0.1, 1.0, and l0 cm 2 s-~
+
+depend on At and therefore are the same in all cases where kz> 0. The amplitude of the variations when kz= 10 cm 2 s-1 approaches ~0.5 of the diel signal. In this case the cell beginning at 15 m experiences the highest light intensity 3 h before noon, relatively low intensity at noon, and high values again in the midafternoon.
+Each cell adapts its chl:carbon ratio towards a value dictated by the light incident upon it. Since each cell has a unique light history, each will adapt along a unique trajectory. In Fig. 4 the chl:carbon ratios of the cells in 4 mixed layers (kz=0.0, 0.1, 1.0, 10 cm2 s-1) are presented. The chl:carbon ratios were sampled at sunset of the fifth
+
+simulated day and are plotted against the depth of the cell at sunset. When there is no vertical mixing the chl:carbon ratios vary almost linearly with depth from 0.015 at the surface to 0.04 near the bottom of the mixed layer. Cells in the depth interval 15 to 20 m adapt towards a limiting value R~, = 0.04 for much of the afternoon, which probably accounts for the departure from linearity in this interval. Simple linear regressions through these data are significant (ANOVA a=0.05) and the slopes of these lines are given in Table 1. As the intensity of mixing increases, the cells at a given depth exhibit a wider range of ratios. When depth is ignored, the sample mean and variance of
+
+74 P.G. Fatkowski and C. D. Wirick: Turbulence and Productivity
+
+Table 1. Statistical analysis of mean and variance for cht:carbon ratios and photosynthetic rates as a function of variation in diffusivity coefficients for models I and II
+
+kz chl:carbon cm2 S-1
+
+Model I P/Pro
+
+Model II P/Pm
+
+Mean (• 95% CI)
+
+Variance
+
+Slope (+ 95% CD
+
+Mean (• 95% CI)
+
+Variance
+
+Mean (• 95% CI)
+
+Variance
+
+0
+
+0.0288
+
+5.97l • 10-5
+
+1.304 x 10_3
+
+0.3889
+
+3.628 x 10-2
+
+_+0.0011
+
+• 0.015 x 10.3
+
+• 0.0265
+
+0.1
+
+0.02975
+
+4.662 x 10-s
+
+1.296 x 10.3
+
+0.3641
+
+2.852 x 10-2
+
++_0.00t0
+
+• 0.025 x 10 3
+
+• 0.0235
+
+1.0
+
+0.02921
+
+4.492 x 10.3
+
+1.185 x 10.3
+
+0.3791
+
+2.872 x 10.2
+
+_+0.0009
+
+• 0.045 x 10.3
+
+• 0.0236
+
+10.0
+
+0.02951
+
+3.699 x 10_5
+
+0.829 x 10-3
+
+0.3724
+
+2.967 x 10-2
+
+• 0.0008
+
+• 0.085 x 10.3
+
+• 0.0240
+
+0.2118 __ 0.0140
+0.2232 _+0.0140
+0.2293 • 0.0131
+0.2022 • 0.0105
+
+3.926 x l0 -2 3.925 x 10.2 3.432 x 10.2 2.223 x 10-2
+
+the chl:carbon ratios are similar in all 4 mixing cases (see Table 1). Statistically, these 4 popuiations of ratios cannot be distinguished from each other (Kruskal Wallis Test a=0.05). The 4 cases differ most with respect to how the total variance is partitioned. When vertical mixing is low, between depth differences dominate the variance, whereas when there is vigorous mixing, the total variance is dominated by within depth differences.
+The instantaneous photosynthetic rates of cells (model I and II) is forced by the ceils' chl:carbon ratios and the light incident upon them. In Fig. 4 the non-dimensional photosynthetic rate (model I) of each cell, averaged over the daylight period of Day 5, is plotted against each cell's depth at sunset. These results were sampled from the same simulations as the chl:carbon ratios given in Fig. 3. In the case where there is no vertical mixing, the average photosynthetic rate appears to decrease in an almost linear manner from the surface to ,-~ 12 m where it then decreases in an exponential fashion to the bottom of the mixed layer. In cases where kz> 0, a similar depth-dependence is evident, but the variance at a given depth increases with increasing kz. Table 1 gives the sample mean and variance of the cell's photosynthetic rates in each case. Since the cells are randomly distributed in the vertical, these means are proportional to a vertically-averaged diel rate and it should be noted that they are almost identical in all cases. When depth is ignored and the photosynthetic rates in each case are treated as samples from a population, these populations cannot be distinguished (Kruskal Wallis Test a=0.05) from each other. More simply, for modelI the integrated daily photosynthesis over the mixed layer is the same in all 4 mixing cases.
+In Fig. 4 and Table 1 similar data and statistics are given for simulations of the 4 mixing cases using photosynthesis model II. The chl:carbon ratios from these simulations are not presented because they are stochastically identical to those already presented. When there is no mixing, the daily average photosynthetic rates decrease with depth in a complex manner. Increased vertical mixing increases the variance at a given depth. The
+
+sample means and variances of the photosynthetic rate, however, are roughly equal in all 4 mixing cases (Table 1), and when depth is ignored the 4 populations of rates cannot be distinguished from one another (KruskaI Wallis Test a = .05). The daily vertically-averaged photosynthetic rates are apparently unaffected by increases in vertical mixing. The mean daily photosynthetic rates for model II are 0.19, which is only half of that for model I. The magnitude of this difference could have been predicted a
+])riori from the photosynthetic response curves of these
+models (see Fig. 2).
+
+Discussion
+
+The results of this model suggest that variations in light regimes due to turbulence have little influence on primary productivity in a mixed layer. We had anticipated the opposite result and a discussion of the model will clarify the results and our original reasoning. Visual inspection of the solution for chl: carbon ratios in the absence of mixing (Fig. 1). reveals that the ratio varies linearly with depth. Now at some daylight time let each cell take one step of the random walk. After this step the mean value of chl:earbon at each depth would be unchanged but there would be a range of values at each depth. Since photosynthesis model I is nonlinear with respect to R, the mean photosynthetic rate at each depth need not equal the rate given by the mean value of R at that depth. For example, let the chl:carbon ratios at a depth be uniformly distributed from f~-e to f~ + e after the single mixing step, then the expected photosynthetic rate for a cell at this depth is
+
+P/Pro =
+
+I/(I + I~(0.25 + 5 (P- + e))) de
+
+la---VeJ]'=p(pQ/pm.[l@eln{a+5e 1
+
+where a - I / ( I n + 0 . 2 5 - 0 . 5 R ). Here P(I~)/Pm is the rate based on the mean chl:carbon ratio, f~. The term in
+
+P. G. Falkowski and C. D. Wirick: Turbulence and Productivity
+
+75
+
+brackets is a multiplier to correct for nonlinearity. When R=0.02, I / I n = 0 . 1 and e=0.01, the multiplier is 1.014. This numerical example might apply for the mixing case where kz = 10 cm 2 s-1, and indicates that mixing increases the daily productivity by only 1.4%, an increase not statistically detectable in the simulations.
+Repeating this logic for photosynthesis model II yields
+1 e1
+P/Pro - 2e Ye3 - (1 + 50(P, + e)) (I/(I + 0.2 In)) de
+
+= P (P-)/Pm 9
+
+(9)
+
+productivity is highly variable; at times he found no differences, at other times relatively large differences were noted. As no data are available on the distribution of cells in the water column for his data set (J. Marra, personal communication), it is not possible to infer whether variations in light history resulting from vertical mixing caused the differences in primary production, or whether the differences that were occasionally observed were a consequence of mixing cells that were nonrandomly distributed in situ.
+
+There is, of course, no nonlinear effect because this photosynthetic model is linear with respect to R. A similar result would be expected if a cell increases Pm as a function of increasing chl: carbon ratios. While only a single mixing step is considered here, these analyses indicate that vertical mixing is likely to enhance the daily productivity only slightly in model I and have no effect in model II.
+In the model, 200 cells were selected randomly with respect to depth from those in the mixed layer and followed. Our simulations suggest that the effect of vertical mixing on the average primary productivity may be small. To evaluate the vertically integrated productivity within a mixed layer with this model, the cells must be selected randomly from those within the layer. When cells are uniformly distributed selecting cells with respect to depth is equivalent to selecting them from those in the layer. The model results therefore give the vertical integrated production for a uniform or random vertical distribution of cells. From analysis of the effects of mixing on photosynthetic responses presented in Eqs. (8) and (9), it is clear that the shape of the P versus I curve is not material to the integrated productivity. Incorporation of a photoinhibition term in Eq. (5) would lead to decreased integrated productivity compared with the models used here; however, as cells are mixed, the proportion of the population exposed to inhibiting light intensities would remain constant and therefore the integrated effects of photoinhibition in such a submodel would be independent of mixing.
+It is more common to find non-uniform distributions of cells, and the model could be applied to these situations by following cells selected at random from these vertical distributions. The difficulty with such models is that they are strongly influenced by the initial vertical distribution of cells and how the distribution is altered by mixing. If the initial distribution is skewed towards the top or bottom of the mixed layer respectively, then vertical mixing will decrease or increase the mean depth of cells. Should the mean cell depth be decreased by mixing, then the integrated productivity will be increased because the cells are exposed to higher average light intensities. Marra (1978 b) suggested that the influence of vertical mixing on primary
+
+Literature Cited
+Bogorad, L.: The biosynthesis of chlorophylls. In: The chlorophylls, pp481-510. Ed. by L. P. Vernon and G. R. Seely. New York: Academic Press 1966
+Falkowski, P. G.: Light-shade adaptation in marine phytoplankton. In: Primary productivity in the sea, 531pp. Ed. by P. G. Falkowski. New York: Plenum Press 1980
+Falkowski, P.G. and T. G. Owens: Light-shade adaptation: two strategies in marine phytoplankton. Plant Physiol. 66, 592-595 (1980)
+Falkowski, P. G.: Light-shade adaptation and assimilation numbers. L Plankton Res. 3, 203-216 (1981)
+Fleischhacker, P. and H. Senger: Adaptation of the photosynthetic apparatus of Scenedeamus obliquus to strong and weak light conditions. Physiol. Plant. 43, 43-51 (1978)
+Herron, H.A. and D. Mauzerall: The development of photosynthesis in a greening mutant of Chlorella and an analysis of the light saturation curve. Plant Physiol. 50, 141-148 (1971)
+Marra, J.: Effects of short-term variations in fight intensity on photosynthesis of a marine phytoplankter: a laboratory simulation study. Mar. Biol. 46, 191-202 (1978 a)
+Marra, J.: Phytoplankton photosynthetic response to vertical movement in a mixed layer. Mar. Biot. 46, 203-208 (1978 b)
+Myers, J.: Culture conditions and the development of the photosynthetic mechanism III. Influence of light intensity or cellular characteristics of Chlorella. J. gen. Physiol. 29, 419-427 (1946)
+Myers, J. and J. Graham: The photosynthetic unit in Chlorella measured by repetitive short flashes. Plant Physiol. 48, 282-286 (1971)
+Platt, T., K.L. Denman, and A. D. Jassby: Modeling the productivity of phytoplankton. In: The sea, Vol. 6, pp807-856. Ed. by E. D. Goldbcrg, I.N. McCave, J. J. O'Brien and J. H. Steele. New York: Wiley Interscience 1977
+Pielou, E.C.: An introduction to mathematical ecology, p 126. New York: Wiley Interscience 1969
+Prezelin, B.B. and B.M. Sweeney: Photoadaptation of photosynthesis in two bloom-forming dinoflagellates. In: The second international conference on toxic dinoflagellate blooms, pp 101-106. Ed. by D. L. Taylor and H. H. Selinger. New York: Elsevier 1979
+Skellam, J.G.: Random dispersal in theoretical populations. Biometrika 38, 196-218 (1951)
+Steemann Nielsen, E.: Marine photosynthesis, 141pp. New York: Elsevier 1975
+Date of final manuscript acceptance: August 10, 1981. Communicated by R. O. Fournier, Halifax
+

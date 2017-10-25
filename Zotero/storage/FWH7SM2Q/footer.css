@@ -1,0 +1,169 @@
+#footer {
+  padding: 0px;
+}
+
+#waystopay {
+  border-bottom: 5px solid #61A830; /* #61A830 GREEN */;
+  /*border-top: 1px solid #BBB; /* #61A830 GREEN */;
+  background-color: #000000;
+  height:50px;
+}
+
+#waystopay ul {
+  float: left;
+  height: 41px;
+  
+}
+
+#waystopay ul li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  height: 41px;
+  padding: 0 0.3em;
+}
+
+#mainfooter {
+
+}
+
+#greyfooter {
+  background: #58595e;
+  height: 43px;
+}
+
+#whitefooter * {
+  display: inline-block;
+}
+
+/* Footer Menu */
+
+.footermenu {
+  float: left;
+  padding: 0 0 20px 0;
+}
+
+.footermenu a {
+  color: #292B36;
+}
+
+.footermenu a:hover {
+    color: #2457B5;
+}
+
+.footermenu li {
+	margin: 1em 0;
+	padding: 0px 25px;
+}
+
+.countryselectlist {
+}
+
+.countryselectlist li {
+  display: inline;
+}
+
+/* Copy */
+
+#copyright {
+  padding: 0 1em;
+  margin: 0;
+}
+
+/* Translate */
+
+#google_translate_element {
+  float: right;
+}
+
+.precontent {
+    background: none repeat scroll 0% 0% #B9BCCE;
+    height: 50px;
+}
+
+.footercontent {
+    background: none repeat scroll 0% 0% #D2D5E8;
+
+height:198px
+}
+
+.footercontent h2 {
+   margin: 0px 0px;
+padding-top: 15px;
+color: #404352;
+border-bottom: 1px solid #404352;
+padding-bottom: 10px;
+}
+
+.postcontent {
+    background: none repeat scroll 0% 0% #E0E3F6;
+color: #292B36;
+height: 50px;
+}
+
+.lastbar {
+background: none repeat scroll 0% 0% #9C9EAD;
+color: #4C4E5D;
+padding: 0px;
+height: 67px;
+margin-bottom: -25px;
+}
+
+.footer-column {
+    position: relative;
+   
+    float: left;
+}
+
+.f-links li {
+    float: left;
+    margin: 0px;
+    display: inline-block;
+    font-size:15px;
+    padding-top: 12px;
+    width: 138px;
+    
+}
+
+.f-links li a {
+    color: #292B36;
+    text-decoration: none;
+}
+
+.f-links li a:hover {
+   color: #2457B5;
+}
+
+.main-footer .post-cont {
+    padding: 15px 50px;
+}
+.copyright p {
+    margin: 0px;
+    color: #4C4E5D;
+}
+.copyright {
+   padding-top: 15px;
+    float:right;
+}
+.explorelinks li {
+    display:inline-block;
+    width: 202px;
+    margin-top: 20px;
+    
+}
+.explorelinks a {
+    color: #404352;
+    text-decoration: none;
+}
+.explorelinks a:hover {
+    color: #2457B5;
+}
+
+
+.poweredby p {
+    margin: 0px;
+}
+.poweredby {
+    width: 100px;
+}
+

@@ -1,0 +1,692 @@
+#content {
+    width: 920px;
+    background-color: #fff;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 5px;
+}
+
+/* Column Page Style */
+
+#templet-container {
+    width: 100%;
+    padding: 0;
+    display: inline;
+}
+
+.column {
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+.double-column, .half-column {
+    width: 50%;
+}
+
+.side-column {
+    width: 15%;
+}
+
+.left-side-column {
+
+}
+
+.x3box {
+    width: 100%;
+}
+
+.box66 {
+    width: 100%;
+    /*height: 1000px;*/
+    padding-top: 30px;
+    background-color: white;
+}
+
+.box33 {
+    width: 33%;
+}
+
+.rightgreyborder {
+    -webkit-box-shadow:
+	inset -1px 0   0 #808288,
+	inset  0   0   0 #808288,
+	inset  0   0   0 #808288;
+    -moz-box-shadow:
+	inset -1px 0   0 #808288,
+	inset  0   0   0 #808288,
+	inset  0   0   0 #808288;
+    box-shadow:
+	inset -1px 0   0 #808288,
+	inset  0   0   0 #808288,
+	inset  0   0   0 #808288;
+}
+
+.leftgreyborder {
+
+
+}
+
+.bothgreyborder {
+    -webkit-box-shadow:
+	inset -1px 0   0 #808288,
+	inset  1px 0   0 #808288,
+	inset  0   0   0 #808288,
+	inset  0   0   0 #808288;
+    -moz-box-shadow:
+	inset -1px 0   0 #808288,
+	inset  1px 0   0 #808288,
+	inset  0   0   0 #808288,
+	inset  0   0   0 #808288;
+    box-shadow:
+	inset -1px 0   0 #808288,
+	inset  1px 0   0 #808288,
+	inset  0   0   0 #808288,
+	inset  0   0   0 #808288;
+}
+
+.border-bottom-grey {
+    border-bottom: 1px solid #808288;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    padding: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #fff;
+    height: 33px;
+    width: 910px;
+    padding-top: 12px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.breadcrumbs a {
+    font-size: 13px;
+    text-decoration:none;
+}
+
+/* PAGE SPECIFIC */
+
+/* Home Page */
+.front_button {
+    background: #E2EFD9;
+    text-align: center;
+    margin: 1em 0 0 0;
+    padding: 0.5em 0;
+}
+
+.front_button:hover {
+    background: #A7CF8C;
+    text-decoration: none;
+}
+
+.widget {
+    padding: 0 20px 20px 20px;
+   
+    border: 1px solid #e5e5e5;
+    -webkit-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    -moz-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.10);
+    min-height: 40px;
+    height: auto !important;
+    height: 40px;
+    overflow: visible;
+}
+
+.bullet-link {
+    list-style: square url("/images/bullet-green.png");
+    margin-left: 15px;
+}
+
+
+.accept-bullet {
+    list-style: square url("/images/add.png");
+    margin-left: 15px;
+}
+
+.progressbar {
+    background-color: black;
+    border-radius: 13px; /* (height of inner div) / 2 + padding */
+    padding: 3px;
+    width: 200px;
+    margin: 10px;
+}
+
+.progressbar div {
+    background-color: #61A830;
+    width: 0%; /* Adjust */
+    height: 20px;
+    border-radius: 10px;
+}
+
+.profilepercentage {
+    margin: 3px;
+}
+
+/* WIW */
+
+#wiw_searchbox {
+	width: 220px;
+}
+
+#wiw_searchbox {
+	margin:0px 20px 20px 80px;
+}
+
+#wiw_searchbox, .iwsearch {
+    height:40px;
+    font-size: 15px;
+}
+
+.iwsearch {
+	width: 200px !important;
+	margin-right: 20px;
+}
+
+#kp_searchbox {
+	width: 220px;
+	margin:0px 20px 20px 80px;
+	height:40px;
+    font-size: 15px;
+}
+
+#wiw_placeselect {
+    height:40px;
+    margin:0px 20px 20px 80px;
+    width: 220px;
+    font-size: 15px;
+}
+
+/* Login Register */
+
+.registertypeselect {
+    float: left;
+}
+
+ul.registertypeselect li {
+    display: inline;
+}
+
+fieldset#newMembers .element input[type="radio"], fieldset#currentMembers .element input[type="radio"] {
+    left: -3000px\9;
+    position: absolute\9;
+    display: none;
+    width: 40px\9;
+}
+
+fieldset#newMembers .element label, fieldset#currentMembers .element label:first-of-type {
+    
+    -webkit-box-shadow: inset -1px 0 0 #000,
+	inset 0 0 0 #000,
+	inset 0 0 0 #000;
+    -moz-box-shadow: inset -1px 0 0 #000,
+	inset 0 0 0 #000,
+	inset 0 0 0 #000;
+    box-shadow: inset -1px 0 0 #000,
+	inset 0 0 0 #000,
+	inset 0 0 0 #000;
+    
+}
+
+/*fieldset#newMembers .element a, fieldset#currentMembers .element a,*/ 
+/*fieldset#newMembers .element label, fieldset#currentMembers .element label, .personalLogin {
+    padding: 0 15px;
+    margin: 0;
+}*/
+
+fieldset#currentMembers .accountTypeLogin-wrapper a,
+fieldset#currentMembers .accountTypeLogin-wrapper label {
+    padding: 0 15px 0 15px;
+    margin: 0;
+}
+fieldset#currentMembers .accountTypeLogin-wrapper .element input:first-child + label {
+    padding-left:0;
+}
+
+fieldset#newMembers .accountType-wrapper a,
+fieldset#newMembers .accountType-wrapper label {
+    padding: 0 15px 0 15px;
+    margin: 0;
+}
+fieldset#newMembers .accountType-wrapper .element input:first-child + label {
+    padding-left:0;
+}
+
+fieldset#newMembers  .accountType-wrapper input[checked="checked"] + label.parkingRegister {
+    background: url('/images/accept.png') left center no-repeat;
+    padding: 0 15px 0 20px;
+}
+
+fieldset#newMembers  .accountType-wrapper label.permitRegister {
+    background: url('/images/accept.png') 10px center no-repeat;
+    padding: 0 15px 0 30px;
+}
+fieldset#currentMembers .accountTypeLogin-wrapper input[checked="checked"] + label.personalLogin {
+    background: url('/images/accept.png') left center no-repeat;
+    padding: 0 15px 0 20px;
+}
+
+
+/* Text to park */
+
+#texttoparkWrapper {
+    padding: 0 80px;
+}
+#texttoparkfields br {
+    display: block;
+}
+
+
+/* Parking Locator */
+
+#zone_info p {
+    margin: 1px;
+}
+
+/* RingGo Statments Page */
+
+#sessionsform .blue {
+    color: #1F48C5;
+}
+.permitwidgetcontainer{
+	margin-top:20px;
+}
+
+.permitwidget {
+
+    margin: 20px 20px 20px 20px;
+    vertical-align: text-bottom;
+    width: 225px;
+    height: 160px;
+    display: inline-block;
+    background-color: #ffdc53;
+}
+.permitwidget h3 {
+    margin:0px;
+    padding-top: 20px;
+ vertical-align: text-bottom !important;
+    color: #292B36;
+}
+
+.permitlinks h3 {
+    margin:0px;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    margin-right: 110px;
+}
+
+.permitlinkslight h3 {
+    margin: 0;
+    color: #1C1C1C;;
+    font-size: 22px;
+    padding: 15px;
+}
+
+/* Help Articles */
+#helparticlebody ul {
+	margin: 0 0 0 80px;
+}
+#helparticlebody ul li {
+    list-style-type:disc;
+    margin-left:20px;
+    line-height:1.5em;
+}
+
+.textContent ul {
+    margin: 0 0 0 80px;
+}
+.textContent ul li {
+    list-style-type:disc;
+    margin-left:20px;
+    line-height:1.5em;
+}
+
+
+/* Wallets */
+
+#transactions #header1 li, #transactions #header1 li label, #transactions #header1 li div, #transactions #header1 li div input {
+    display: inline;
+}
+
+#transactions #header1 li label {
+    width: auto;
+    float: none;
+}
+
+#transactions #hiddenfieldset {
+    background: none;
+}
+
+.appinfo{
+    margin-top: 0px !important;
+    margin-left:30px;
+    width:95% !important;
+}
+
+.appinfo span {
+    color: #292B36; 
+}
+.page-head-wrap {
+    margin-bottom: 40px;
+}
+
+.page-head {
+
+    background: none repeat scroll 0% 0% #FFDC53;
+    padding-left: 100px;
+    position: relative;
+    z-index: 20;
+    margin-top: -1px;
+    height: 80px;
+}
+
+.page-head .go-up {
+    background: none repeat scroll 0% 0% #FECB00;
+
+    width: 80px;
+    line-height: 84px;
+    border-right: 0px none;
+    position: absolute;
+    color: #FFF;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    text-align: center;
+}
+
+.page-head a:hover {
+    background-color:#e1ac0c;
+    text-decoration: none;
+}
+
+/*  Corp: funds - top up    */
+.list li{
+    margin-left: 100px;
+    list-style-type: disc;
+}
+
+
+.helplink {
+    margin: 0px 80px;
+}
+
+#help {
+    margin-top: 20px;
+}
+
+#help input {
+    margin: 20px 15px;
+}
+
+ul.normal {
+    margin-left: 15px !important;
+}
+
+.bullet li p, .list li p, .number li p {
+    margin: 0px;
+}
+
+#how_it_works_img {
+    margin-left: 90px;
+}
+.ringgohowelseheader{
+    width:780px !important;
+}
+.ringgohowelse{
+    width:780px !important;
+}
+#accountmenu a {
+    color:#000;
+}
+#user_pin {
+    width:auto !important;
+}
+
+#header2 p {
+    margin:0px 0px 10px;
+}
+
+.left-side-column img {
+    margin-top: 20px;
+}
+
+#download {
+    padding-bottom: 0px;
+}
+.breadcrumbcontainer {
+    height:40px;
+    margin-top:-40px;
+}
+
+
+#summary {
+    display: none;
+}
+
+.permitsearchbar {
+
+    height:50px;
+    width: 765px;
+    margin-top: 40px;
+    margin-left: 70px;
+}
+.permitlinks {
+
+    height:60px;
+    /*width: 700px;*/
+    margin-left: 65px;
+    background: none repeat scroll 0% 0% #404352;
+    /*float: right;*/
+}
+
+.permitlinks a {
+    height:60px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+}
+
+.permitlinkslight {
+    display: inline-block;
+    height:60px;
+    width: 695px;
+    background: #e0e3f6;
+    float: right;
+}
+
+.permitlinkslight a {
+    height:60px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+}
+
+.permitwidget a {
+    height:100%;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+}
+
+.permitlinks a:hover {
+    height:60px;
+    width: 100%;
+    display: block;
+    background-color: #292b36;
+}
+
+.permitlinkslight a:hover {
+    background-color: #d2d5e8;
+}
+
+.permitlinksicon {
+    height:60px;
+    width:60px;
+    margin: 0;
+    padding: 0;
+    background-color: #292b36;
+    float:left;
+}
+.permitlinkcontainer {
+    width:765px;
+    height: 60px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.wcc-new .permitlinkcontainer {
+    margin-top: 12px;
+}
+
+.permitlinksiconlight {
+    height:60px;
+    width:60px;
+    background-color: #FFDC53;
+    float: left;
+}
+.permitlinkcontainerlight {
+    width:765px;
+    height: 60px;
+    margin-top: 5px;
+    margin-left: 20px;
+    clear: both;
+}
+
+.permitsearchbar #search_box input {
+    width: 670px;
+    height: 60px;
+    font-size: 26px;
+
+}
+
+.parkingicon {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.permitwidgetimg {
+    padding-top: 25px;
+    padding-left: 85px;
+}
+.Benefitsimage {
+    margin-left: 80px;
+}
+
+.bullet p {
+    margin:0px;
+}
+
+#benefits_list ul.bulletspaced {
+    margin:0px;
+}
+
+.termsandconditions {
+    margin-left:80px;
+}
+
+.backicon {
+    margin-top:30px;
+    margin-left: 5px;
+}
+
+.permitsearchbar #search_box button {
+    height: 60px;
+    width: 70px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px 0px #1C1C1C;
+}
+
+#submits[searchterm] input {
+
+}
+
+.anchor {
+    font-size: 24px;
+    color: #2457B5;
+    font-weight: 400;
+}
+
+.lastupdated {
+	margin: 0;
+	display: block;
+}
+.widget p {
+    margin: 25px 0px;
+}
+
+.widget {
+  margin:10px 20px;
+}
+
+.dgridtable {
+    width:100%;
+    margin: 0 auto;
+}
+
+#corporate ol {
+    width: 370px;
+   
+}
+
+#corporate ol label {
+    margin:0px;
+}
+
+ul.widgets {
+    margin-top: 20px;
+}
+
+/* Basket */
+.BasketPayment .dgridtable {
+    /*margin-right: 35px;*/
+}
+/* Web Chat */
+#webchatbutton {
+    margin-top: 80px;
+    margin-left: 30px;
+}
+
+/* custom changes for webchat button*/
+button.webchatbutton {
+    background-color: transparent !important;
+    background-image: url(/images/chatcloud.png) !important;
+    background-repeat: no-repeat !important;
+    //background-position-y: 60% !important;
+    padding-left: 55px;
+    margin-top: 15px;
+    font-size: 18px;
+    height: 45px;
+    max-width: 160px;
+}
+
+button.webchatbutton:active {
+    box-shadow: none;
+    top: 0;
+}
+
+#basketButtons {
+    padding: 0 20px;
+}
+
+#basketButtons a {
+    width: 100%;
+    max-width: 218px;
+}
+
+#added-emps-table {
+    /*float: right;*/
+    margin-left: auto;
+    margin-right:auto;
+    width: 760px;
+    padding: 5px;
+    border: 1px solid;
+}
+
+#added-emps-table td {
+    padding: 5px;
+    border: 0;
+    vertical-align: middle;
+}

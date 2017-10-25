@@ -1,0 +1,252 @@
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}
+
+
+.flexImg {
+    max-width: 100%;
+    height: auto;
+}
+
+ol.numbered, ol.numbered li {
+    list-style: decimal;
+    margin-left: 10px;
+}
+
+ul.list_bullet {
+    list-style:circle;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: 28px;
+}
+
+ul.list_bullet li {
+    margin-top: 0;
+    padding-top: 1em;
+    padding-left: 1.4em;
+}
+
+/* Key for availability on parking locator map */
+#mapKey {
+    width: 100%;
+    clear: both;
+    margin: 0;
+    margin-top: 23px;
+    padding: 0;
+}
+
+#mapKey h4 {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+#mapKey ul li {
+    width: 16%;
+    min-width: 160px;
+    height: 25px;
+    margin: 0 0 1px;
+    padding: 10px 0 0 29px;
+    font-size: 0.9em;
+    line-height: 1em;
+    display: inline-block;
+}
+
+#mapKey ul li.unknown {
+    background: url("/images/pins/unknown.svg") no-repeat scroll left top transparent;
+}
+#mapKey ul li.full {
+    background: url("/images/pins/full.svg") no-repeat scroll left top transparent;
+}
+#mapKey ul li.warning {
+    background: url("/images/pins/warning.svg") no-repeat scroll left top transparent;
+}
+#mapKey ul li.spaces {
+    background: url("/images/pins/spaces.svg") no-repeat scroll left top transparent;
+}
+
+#mapKey ul, #mapKey p {
+    clear: both;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+#mapKey p small {
+    font-size: 10px;
+    line-height: 9px;
+}
+
+a.ringgo-tooltip,
+a.ringgo-tooltip-click
+{
+    cursor: pointer;
+    position: relative;
+}
+
+a.ringgo-tooltip:hover span.tooltipposition,
+a.ringgo-tooltip-click.show-tooltip span.tooltipposition
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+a.ringgo-tooltip span.tooltipposition,
+a.ringgo-tooltip-click span.tooltipposition
+{
+    color: rgba(51, 51, 51, 1);
+    display: block;
+    font-size: 14px;
+    height: 0px;
+    left: 50%;
+    line-height: 20px;
+    opacity: 0;
+    overflow: visible;
+    position: absolute;
+    text-transform: none;
+    top: -10px;
+    transition: all 0.1s linear 0s;
+    width: 0px;
+    visibility: hidden;
+    z-index: 500;
+}
+
+a.ringgo-tooltip span.tooltipposition span.tooltiptext::before,
+a.ringgo-tooltip-click span.tooltipposition span.tooltiptext::before
+{
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.1);
+    clear: both;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+}
+
+a.ringgo-tooltip span.tooltipposition span.tooltiptext::after,
+a.ringgo-tooltip-click span.tooltipposition span.tooltiptext::after
+{
+    background-color: rgba(255, 255, 255, 1);
+    bottom: -8px;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.1);
+    content: '';
+    height: 15px;
+    left: 140px;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 15px;
+    z-index: -1;
+}
+
+a.ringgo-tooltip span.tooltipposition span.tooltiptext,
+a.ringgo-tooltip-click span.tooltipposition span.tooltiptext
+{
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    bottom: 0px;
+    box-sizing: border-box;
+    display: inline-block;
+    height: auto;
+    left: -145px;
+    padding: 10px;
+    position: absolute;
+    width: 300px;
+}
+
+a.ringgo-tooltip span.tooltipposition span.tooltiptext strong:before,
+a.ringgo-tooltip-click span.tooltipposition span.tooltiptext strong:before {
+    border-bottom: none;
+    border-left: none;
+    border-right: 2px solid #CCCCCC;
+    border-top: 2px solid #CCCCCC;
+    content: '';
+    height: 7px;
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    transform: rotate(45deg);
+    width: 7px;
+}
+
+a.ringgo-tooltip span.tooltipposition span.tooltiptext strong:after,
+a.ringgo-tooltip-click span.tooltipposition span.tooltiptext strong:after {
+    border-bottom: 2px solid #CCCCCC;
+    border-left: 2px solid #CCCCCC;
+    border-right: none;
+    border-top: none;
+    content: '';
+    height: 7px;
+    position: absolute;
+    right: 0px;
+    top: 3px;
+    transform: rotate(45deg);
+    width: 7px;
+}
+
+a.ringgo-tooltip span.tooltipposition span.tooltiptext strong,
+a.ringgo-tooltip-click span.tooltipposition span.tooltiptext strong {
+    display: block;
+    position: relative;
+}
+
+html body div input[type=submit].labbutton-link,
+html body div input[type=submit].labbutton-link:hover {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: inherit;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: auto;
+    min-width: initial;
+    height: auto;
+    min-height: initial;
+    display: inline;
+    box-shadow: 0px 0px 0px 0px transparent;
+    outline: none;
+    font-size: inherit;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    text-shadow: none;
+    text-transform: none;
+    vertical-align: inherit;
+    border-radius: 0 0 0 0;
+}

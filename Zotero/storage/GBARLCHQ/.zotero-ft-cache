@@ -1,0 +1,55 @@
+
+Loading [MathJax]/extensions/tex2jax.js
+Cornell University
+Cornell University Library
+We gratefully acknowledge support from
+the Simons Foundation
+and Imperial College London
+arXiv.org > cs > arXiv:1707.03776
+( Help | Advanced search )
+Full-text links:
+Download:
+
+    PDF
+    Other formats
+
+( license )
+Current browse context:
+cs.MS
+< prev  |  next >
+new  | recent  | 1707
+Change to browse by:
+cs
+References & Citations
+
+    NASA ADS
+
+DBLP - CS Bibliography
+listing | bibtex
+Michael Lange
+Navjot Kukreja
+Fabio Luporini
+Mathias Louboutin
+Charles Yount
+...
+Bookmark
+( what is this? )
+CiteULike logo BibSonomy logo Mendeley logo del.icio.us logo Digg logo Reddit logo ScienceWISE logo
+Computer Science > Mathematical Software
+Title: Optimised finite difference computation from symbolic equations
+Authors: Michael Lange , Navjot Kukreja , Fabio Luporini , Mathias Louboutin , Charles Yount , Jan Hückelheim , Gerard J. Gorman
+(Submitted on 12 Jul 2017)
+
+    Abstract: Domain-specific high-productivity environments are playing an increasingly important role in scientific computing due to the levels of abstraction and automation they provide. In this paper we introduce Devito, an open-source domain-specific framework for solving partial differential equations from symbolic problem definitions by the finite difference method. We highlight the generation and automated execution of highly optimized stencil code from only a few lines of high-level symbolic Python for a set of scientific equations, before exploring the use of Devito operators in seismic inversion problems. 
+
+Comments: 	Accepted for publication in Proceedings of the 16th Python in Science Conference (SciPy 2017)
+Subjects: 	Mathematical Software (cs.MS)
+Cite as: 	arXiv:1707.03776 [cs.MS]
+  	(or arXiv:1707.03776v1 [cs.MS] for this version)
+Submission history
+From: Michael Lange [ view email ]
+[v1] Wed, 12 Jul 2017 15:51:35 GMT (347kb,D)
+Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? )
+
+Link back to: arXiv , form interface , contact .
+Twitter

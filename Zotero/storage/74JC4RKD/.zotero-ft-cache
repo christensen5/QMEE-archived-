@@ -1,0 +1,254 @@
+CHAPTER ONE
+
+Scaling-up Trait Variation from Individuals to Ecosystems
+Jean P. Gibert*,1, Anthony I. Dell†, John P. DeLong*, Samraat Pawar{
+*School of Biological Sciences, University of Nebraska-Lincoln, Lincoln, Nebraska, USA †National Great Rivers Research and Education Center (NGRREC), East Alton, Illinois, USA {Grand Challenges in Ecosystems and the Environment, Silwood Park, Department of Life Sciences, Imperial College London, Ascot, Berkshire, United Kingdom 1Corresponding author: e-mail address: jeanphisth@gmail.com
+
+Contents
+
+1. Why Is it Important to Understand Traits and Trait Variation? 2. Traits and Individual-Level Variation 3. Population-Level Effects of Trait Variation
+3.1 Functional Response and Prey Selection 3.2 Functional Response, Interference Competition and Species Interactions 4. Meta-Population Effects of Trait Variation 4.1 Dispersal Ability 5. Community-Level Effects of Trait Variation 5.1 Eco-Evolutionary Dynamics of Traits in Tri-Trophic Systems 5.2 Patterns of Functional Trait Distributions in Real Systems 5.3 Functional Traits and Community Assembly 6. Ecosystem-Level Effects of Trait Variation 6.1 Functional Traits and Their Effect on Ecosystem Functioning 6.2 Functional Traits, Variation and Metabolic Theory: A Trait-Driver Approach to
+Ecosystems 6.3 A Relational Approach to Trait Ecology 7. Concluding Remarks References
+
+2 3 4 4 5 6 6 7 7 8 9 10 10
+11 12 13 14
+
+Abstract
+Ecology has traditionally focused on species diversity as a way of characterizing the health of an ecosystem. In recent years, however, the focus has increasingly shifted towards trait diversity both within and across species. As we increasingly recognize that ecological and evolutionary timescales may not be all that different, understanding the ecological effects of trait variation becomes paramount. Trait variation is thus the keystone to our understanding of how evolutionary processes may affect ecological dynamics as they unfold, and how these may in turn alter evolutionary trajectories. However, a multi-level understanding of how trait variation scales up from individuals to whole communities or ecosystems is still a work in progress. The chapters in this volume
+
+Advances in Ecological Research, Volume 52 ISSN 0065-2504 http://dx.doi.org/10.1016/bs.aecr.2015.03.001
+
+# 2015 Elsevier Ltd All rights reserved.
+
+1
+
+2 Jean P. Gibert et al.
+explore how functional trait diversity affects ecological processes across levels of biological organization. This chapter aims at binding the messages of the different contributions and considers how they advance our understanding of how trait variation can be scaled up to understand the interplay between ecological and evolutionary dynamics from individuals to ecosystems.
+1. WHY IS IT IMPORTANT TO UNDERSTAND TRAITS AND TRAIT VARIATION?
+Evolutionary theory has long recognized the importance of heritable individual (or intraspecific) variation in phenotypic traits (Fordyce, 2006; Lande, 2013). At the same time, ecology has historically focused on mean traits as both a characterization of populations and a response variable (Arau´jo et al., 2011; Bolnick et al., 2011; Sherratt and Macdougal, 1995; Violle et al., 2012). This difference in focus, to a large extent, stems from the viewpoint that ecology and evolution operate at vastly different time scales. And the origins of this viewpoint, in turn, are probably to be found in the fact that including Darwin’s work, early evolutionary ideas were based on the fossil record and tended to be ‘gradualist’ (Stanley, 1989). In Darwin’s (1859) words ‘I do believe that natural selection will generally act very slowly, only at long intervals of time, and only on a few of the inhabitants of the same region. I further believe that these slow, intermittent results accord well with what geology tells us of the rate and manner at which the inhabitants of the world have changed’. This view was reinforced by the fact that examples of evolutionary change mostly came from observations of gradual change over millions of years in the fossil record.
+We are now becoming increasingly aware that evolutionary and ecological processes do not occur in isolation and that the time scales of ecological (changes in population sizes) and evolutionary (changes in allele frequencies or trait distributions) rates of change often overlap (Hairston et al., 2005; Schoener, 2011; Schoener et al., 2014). Indeed, feedback loops between ecological and evolutionary processes, or ‘eco-evolutionary feedbacks’, may be common in natural systems (Fussmann et al., 2003; Jones et al., 2009; Yoshida et al., 2003). Evolutionary biologists have long recognized that the variation in (heritable) individual traits can change during the course of evolution and can affect the strength of selection (Dobzhansky, 1937)—a process central to the evolutionary component of the eco-evolutionary feedbacks. But the potential effects of this individual variation on ecological processes per se are less well understood (Arau´jo et al., 2011; Bolnick et al.,
+
+Scaling-up Trait Variation
+
+3
+
+2011; Lomnicki, 1988; McGill et al., 2006). To fully grasp how individual variation in functional traits can affect ecological dynamics and processes (and thus potentially eco-evolutionary feedbacks), we need to develop a mechanistic understanding of how trait variation ‘scales up’ from individuals, through species interactions, to ecosystem dynamics (Pawar et al., 2014). The goal of this volume is to advance these ideas by proposing ways to assess how variation in functional traits may alter the outcome of ecological interactions. In this introductory chapter, we present a brief description of each of the contributions to the volume, including a discussion about how they fit into a broader perspective of ecological processes, and how they contribute to a better understanding of how trait variation effects scale up from individuals to ecosystems.
+
+2. TRAITS AND INDIVIDUAL-LEVEL VARIATION
+To understand community structure and ecosystem processes, ecologists have long focused on species diversity as an important explanatory mechanism where, for example, decomposition rates, primary production or food web topology results from the number and types of species present (Chapin et al., 1997, 2000; Naeem et al., 2012). This approach has been the basis for some of the most successful ecological theories, such as Tilman’s R* competition theory (Tilman, 1982, 1986). Species-centric approaches like these build upon the idea that groups of organisms differing in species composition will differentially impact higher levels of biological organization such as communities or ecosystems. Focusing on groups of species with similar trophic positions or feeding types (functional groups) has also yielded important and powerful insights (Hooper et al., 2005; Loreau et al., 2001), but can mask information regarding the effect of particular species (Naeem and Wright, 2003; Reich et al., 2004), and its predictive capacity has been difficult to assess (McGill et al., 2006; Schmitz, 2010).
+As a consequence, alternative approaches for understanding the emergence of complex properties of communities and ecosystems have been sought, and many ecologists now consider that it is the specific traits that species have that are largely responsible for determining the properties and dynamics of ecological systems (Eviner and Chapin, 2003; Lavorel and Garnier, 2002; McGill et al., 2006; Mlambo, 2014; Naeem and Wright, 2003; Violle et al., 2007). This perspective suggests that in order to understand and predict community and ecosystem organization, ecologists should also focus on the mechanistic basis of ‘functional traits’ of species
+
+4 Jean P. Gibert et al.
+in the focal system, instead of simply categorizing their broad functional role (Eviner and Chapin, 2003; Mlambo, 2014). Such a mechanistic trait-based approach should be generalizable across taxa and habitats and may yield general predictions about how ecosystems respond to environmental effects, such as climate change or overharvesting of animals or plants.
+The definition of exactly what are functional traits remains controversial, and a historical perspective of this issue is provided by Schmitz et al. (2015) in their chapter “Functional Traits and Trait-Mediated Interactions: Connecting Community-Level Interactions with Ecosystem Functioning”. Adopting Schmitz et al.’s definition, a functional trait represents any given trait (whether physiological, behavioural or morphological) that, in the course of maximizing fitness, impacts or regulates higher-level ecological processes and patterns (Mlambo, 2014). At the same time, a functional trait also affects the absolute fitness of individuals, and thus the mean fitness of the population. This is no different from the traditional, evolutionary, quantitative-genetic definition of a trait, but in an ecological framework, heritability of traits is no longer a pre-requisite as purely plastic change can have important ecological implications as well (Gibert and Brassil, 2014). Nor is it necessary to restrict focus of trait variation to phenotypic distributions within populations—as shown by Norberg et al. (Norberg et al., 2001; Savage et al., 2007), it is possible to meaningfully study the effects of across-species trait distributions, especially when it is necessary to tractably link trait variation to ecosystem function.
+3. POPULATION-LEVEL EFFECTS OF TRAIT VARIATION
+3.1 Functional Response and Prey Selection
+In the chapter “Individual Variability: The Missing Component to our Understanding of Predator -Prey Interactions”, Pettorelli et al. (2015) explore how individual variation in traits controlling ‘predation risk’ in prey and ‘prey selection’ in predators can alter population dynamics. They argue that trait variation can have important yet poorly understood consequences for the shape of predator functional responses, which can in turn affect population dynamics. The authors discuss examples where individual variation in body size, age, sex, condition, behavioural type and territory location can increase or decrease predation risk in a wide range or organisms, including ungulates, cetaceans, lagomorphs and birds. For example, individuals that are older, less healthy or larger are more prone to predation, potentially due to their reduced ability to perform defensive manoeuvres (see Laskowski et al. (2015)
+
+Scaling-up Trait Variation
+
+5
+
+in this volume for an example of how variation in body size can alter mobility and dispersal). Thus, ignoring individual variation in functional traits can deeply affect our ability to understand predator–prey interactions and dynamics.
+Pettorelli et al. also point out that patterns of prey selection among conspecific predators are highly variable and can change throughout ontogeny. Individual specialization, therefore, can directly impact interaction strengths between predators and prey (Pettorelli et al., 2011). For example, individual southern sea otters (Enhydra lutris nereis) can learn to selectively hunt different prey items, resulting in strong within individual specialization and decreased intraspecific competition (Tinker et al., 2008). Different populations of sea otters with different degrees of specialization result in different individual-level interaction networks, which in turn affect the structure of the overall community in which the species reside (Tinker et al., 2012).
+Finally, Pettorelli et al. discuss how individual variation in functional traits can alter the strength and shape of predator functional responses. Such variation can alter the magnitude of the attack rate in a predator, impacting the strength of the trophic interaction, or lower prey handling time, which can alter the form of the response, e.g., from type II to type I. Some aspects of these effects were revealed by Gibert and Brassil (2014) in a simple pairwise consumer–resource model that accounts for individual variation in a trait simultaneously controlling attack rate and handling time such as body size. The authors find that increased individual variation decreased interaction strengths under some assumptions by lowering attack rates and increasing handling times. Consequently, increased intraspecific trait variation can lead to more stable population dynamics with a higher probability of persistence. Together, these results stress the need to study the effect of variation in multiple functional traits simultaneously as different traits can have potentially antagonistic effects (see Gibert and DeLong, 2015 in the paper entitled “Individual Variation Decreases Interference Competition but Increases Species Persistence”).
+3.2 Functional Response, Interference Competition and Species Interactions
+In this paper Gibert and DeLong (2015) assess how variation in a trait simultaneously controlling attack rate, handling time and interference competition can affect population persistence, and subsequently the competitive ability of the population and community structure. The authors extend a predator–prey model to incorporate individual phenotypic variation in
+
+6 Jean P. Gibert et al.
+attack rate and handling time (Gibert and Brassil, 2014) and use an empirically quantified relationship between attack rate and interference competition (DeLong and Vasseur, 2013) to incorporate individual variation in interference. They then assess the effect of variation in consumer–resource dynamics and competitive ability via its joint effects on attack rate, handling time and interference competition.
+Interference competition is thought to be mostly stabilizing in natural systems (Arditi et al., 2004; DeLong and Vasseur, 2013), while attack rate is mostly destabilizing (Rosenzweig and MacArthur, 1963). However, an increase in attack rate can be accompanied by an increase in interference competition (DeLong and Vasseur, 2013). Thus, individual trait variation could potentially have opposing effects on predator–prey dynamics. Their results suggest that while trait variation mostly decreases interference competition, it often decreases attack rate to a larger extent, thus being largely stabilizing. Moreover, increased variation reduces the chance of species extinction due to demographic stochasticity. These results make an interesting comparison with those of Pawar (2015) in this volume, who shows that the scaling (or lack thereof ) of interference competition with body size has a strong influence on interaction-driven community assembly dynamics and outcomes.
+The authors also show how trait variation can have important effects upon competitive ability and community structure. When predators compete for a common resource, those that can reduce resource levels the most will competitively exclude all other predators (Tilman, 1982, 1986). Because individual variation hinders their ability to reduce resource levels, greater trait variation leads to predators with a larger chance of persisting, but with a lower competitive ability, thus leading to a fundamental trade-off between persistence and competitive ability. This chapter shows that intermediate levels of individual variation optimize that trade-off, which further deserves experimental investigation.
+4. META-POPULATION EFFECTS OF TRAIT VARIATION
+4.1 Dispersal Ability
+In their chapter “Predictors of Individual Variation in Movement in a Natural Population of Threespine Stickleback”, Laskowski et al. (2015) consider variation in the dispersal behaviour of individuals within a population of threespine sticklebacks (Gasterosteus aculeatus). In a first experiment, the authors use a controlled, open field arena and then test whether those results could be generalized to movements within a natural stream. In both instances, they find consistent levels of individual variation, with individual
+
+Scaling-up Trait Variation
+
+7
+
+fish tending to repeat their dispersal behaviour across contexts. Similar results have been observed in other systems (Bell et al., 2009; Sih et al., 2004). Also, dispersal in the stream was strongly influenced by variation in body condition and habitat type, which further suggests that behaviour depends upon key features of both the organism and the environment. As other studies in this volume suggest (Georgelin et al., 2015; Gibert and DeLong, 2015; Schmitz et al., 2015), dispersal behaviour is also affected by other ecological factors, such as time of the day, individual size, sex and year. Thus, the key to understanding the ecological effects of behavioural variation between individuals is likely to be an approach that integrates both the variation itself and other ecological factors (Gibert and DeLong, 2015; Pettorelli et al., 2015; Schmitz et al., 2015 of this same issue). Interestingly, Laskowski et al. find that dispersal distance did not depend on time to recapture, which strongly suggests that the observed variation in dispersal behaviour is a core component of the ecology of this species.
+Their results suggest that variation in dispersal behaviour can have important yet poorly understood effects upon meta-population dynamics. Indeed, it is possible that meta-populations with larger behavioural variation in dispersal abilities may have increased chances of persisting than meta-populations with less variation, only because larger individual variation in dispersal may result in larger colonization rates. Systems such as the threespine stickleback are well suited to empirically test some these predictions. These kinds of studies are also crucial for parameterizing more general models that incorporate dispersal kernels (e.g. Pawar, 2015 in this volume).
+
+5. COMMUNITY-LEVEL EFFECTS OF TRAIT VARIATION
+5.1 Eco-Evolutionary Dynamics of Traits in Tri-Trophic Systems
+In their chapter “Eco-Evolutionary Dynamics of Plant—Insect Communities Facing Disturbances: Implications for Community Maintenance and Agricultural Management”, Georgelin et al. (2015) study how functional trait evolution and eco-evolutionary dynamics can impact species persistence and community structure in a tri-trophic system involving plants, pollinators and herbivores. They also assess how this might occur when environmental disturbances are frequent and severe, such as in agricultural landscapes where populations of the interacting species might be affected by frequent exposure to pesticides.
+
+8 Jean P. Gibert et al.
+The authors use an adaptive dynamics eco-evolutionary model that follows the abundance of a plant species, a pollinator and an herbivore, as well as the pollinator and herbivore sensitivities to pesticides. To understand the effect of the evolution of these traits on the tri-trophic interaction, they devise three separate models for comparison. A first model where the sensitivity of the herbivore only is allowed to evolve, a second model where the sensitivity of the pollinator only is allowed to evolve and a third model where both sensitivities are allowed to evolve. Their results suggest that when herbivore sensitivities evolve, pollinators can go extinct due to low plant densities. When pollinators evolve but not herbivores, all species co-exist. When the two species evolve, however, the model predicts more diverse systems than can be accounted for based on eco-evolutionary dynamics, and they suggest multiple mechanisms that could explain that pattern based on density-dependent effects and individual phenotypic variation.
+These results have important implications for the maintenance of pollinators in frequently disturbed habitats, a major contemporary problem. Ecosystems across the world are facing pollinator losses, and while the causes of this depletion are largely unknown, many authors linked this pattern to the abuse of pesticides in agricultural landscapes (Barnett et al., 2007; Porrini et al., 2003, and also Frainer and McKie, 2015 in this volume). The authors also show that to understand the joint effect of frequent disturbances and eco-evolutionary dynamics on population persistence and species richness, it is paramount to account for the broader network of interacting species in which each pairwise interaction is embedded. More importantly, they show that while antagonistic interactions are important (e.g. predation), positive interactions (e.g. mutualism) can have large yet poorly understood effects for the persistence of the overall community, as other studies have also argued (Guimara˜es et al., 2011; Saavedra et al., 2011; Staniczenko et al., 2013).
+5.2 Patterns of Functional Trait Distributions in Real Systems
+In their chapter “Population and Community Body Size Structure Across a Complex Environmental Gradient”, Dell et al. (2015) quantify functional trait distributions for each species in an experimental intermittent pool bed to understand how processes at underlying levels of biological organization (i.e. individuals) can affect patterns at higher levels of organization (i.e. populations and communities). Their experimental design allows them to do so at different successional stages across both aquatic and terrestrial habitat.
+
+Scaling-up Trait Variation
+
+9
+
+They find that species abundance and total biomass strongly depend on the type of community considered, with both factors increasing with the amount of moisture/water present. For example, for the same given area, terrestrial communities were less rich in species and had a smaller total biomass than moist (ecotonal) communities, but these were in turn less rich than aquatic communities. On the other hand, terrestrial communities tended to be more even, which suggests that as moisture increased, communities tended to be increasingly dominated by a few superabundant species. This chapter also presents novel results with respect to community behaviour in the ecotone habitat along the transition from aquatic to terrestrial. These ecotonal communities tended to have more species with more individuals because they were pooling species from both the aquatic and terrestrial ecosystems. More importantly, their results show how total community biomass peaks at the ecotone, suggesting interesting interactions between ecological constraints, ecosystem type and functional traits of the ecotonal species.
+Their results are not only consistent with previous studies (e.g. Helio€la¨ et al., 2001), but also the comprehensiveness of the data collected allowed the authors to show patterns that could not have been noticed without a size-explicit description of individuals in populations spanning multiple complex ecosystems. For instance, the authors show that both the mean and the variance of the population size distributions within a given community change with moisture; mean, range and variance of size distributions were larger in moist than in terrestrial communities. This further suggests the existence of a feedback between environmental conditions and functional trait distributions (also see Georgelin et al., 2015; Gibert and DeLong, 2015; Schmitz et al., 2015 of this volume).
+
+5.3 Functional Traits and Community Assembly
+In the paper entitled “The Role of Body Size Variation in Community Assembly”, Pawar (2015) takes into account the fact that body sizes can span as much as 20 orders in magnitude in natural communities (Brose et al., 2006; Cohen et al., 2003; Jonsson et al., 2005, and also Dell et al. in this same volume) to study what role the distribution of body sizes in the immigrating species pool plays in the dynamics of non-neutral (interaction driven) community food web assembly. Pawar uses a size-constrained mathematical model of food web assembly and shows that assembled food webs at quasi-equilibrium (i.e. where species numbers remains relatively constant; Bastolla et al., 2005; Pawar, 2009) are expected to exhibit ‘signatures’ of
+
+10 Jean P. Gibert et al.
+non-neutral assembly in a number of aspects: (i) the distribution of body sizes, (ii) the distribution of size-ratios between consumers and resources and (iii) the distribution of size and size-ratios across trophic levels. Interestingly, the results remain robust, and the signatures emerge consistently across a wide range of size distribution types—ranging from distributions that impose immigration bias towards small species to those that result in a bias towards large species. That is, species interactions impose a very strong ‘filter’ on functional trait (body size) distributions during assembly. The author also evaluates the predictions of the model using food web data from nine terrestrial and aquatic communities and finds that the predicted signatures are indeed observed in most of them.
+It is worth noting that Pawar considers both body sizes and consumer– resource size-ratios. Size-ratio can arguably be considered a trait in itself because it strongly determines trophic level (Yvon-Durocher et al., 2011) and interaction strength (Berlow et al., 2009; Pawar et al., 2012), both key factors driving individual invasion fitness as well as community stability (Brose et al., 2006; Otto et al., 2007; Tang et al., 2014). Size-ratios are also known to change with temperature (Gibert and DeLong, 2014), which suggests that body-size distributions may have an important role to play in a context of global warming.
+Overall, Pawar’s results suggest that body-size variation has important implications for community food web assembly and recovery (also see Dell et al., 2015 of this same volume). This adds a much-needed assemblyoriented perspective to current knowledge of the effects of trait distribution and variation on community and ecosystem dynamics.
+6. ECOSYSTEM-LEVEL EFFECTS OF TRAIT VARIATION
+6.1 Functional Traits and Their Effect on Ecosystem Functioning
+In their chapter “Shifts in the Diversity and Composition of Consumer Traits Constrain the Effects of Land Use on Stream Ecosystem Functioning”, Frainer and McKie (2015) study the effect of agricultural land use on the distribution and diversity of functional traits across 10 boreal streams covering a gradient of agricultural use and subsequent effects on ecosystem processes such as litter decomposition. The study was conducted in two different seasons (Fall and Spring) to account for the fact that decomposition rates change dramatically across seasons.
+
+Scaling-up Trait Variation
+
+11
+
+The authors show that disturbed sites, such as agricultural lands, tend to have diverse but less even species composition (Stirling and Wilsey, 2001). Less even communities may result in lower ecosystem functioning (e.g. decomposition rates) because these systems tend to be dominated by generalist leaf-consumers rather than obligate leaf-consumers (McKie and Malmqvist, 2009). The authors showed that leaf decomposition was positively related to diversity in functional traits and that this relationship declined along an agricultural land use gradient. However, agricultural use did not favour dominance of generalist traits associated with non-obligate leaf-litter consumers. Actually, obligate consumers were more abundant in agricultural streams. In a sense, these results suggest the existence of buffering mechanisms that mitigate the effect of human-related disturbances on agricultural streams.
+Finally, this contribution provides empirical evidence that variation in species traits are linked with ecosystem process rates, suggesting contextdependent effects of functional diversity in ecosystem processes (also see Schmitz et al., 2015 in this same volume). It also shows how the effects of human disturbance on ecosystem functioning were buffered by concurrent shifts in the functional diversity and composition of a key consumer guild, which highlights the value of a trait-based framework for understanding ecosystem-level responses to environmental change.
+6.2 Functional Traits, Variation and Metabolic Theory: A Trait-Driver Approach to Ecosystems
+In chapter “Scaling from Traits to Ecosystems: Developing a General Trait Driver Theory via Integrating Trait-Based and Metabolic Scaling Theories”, Enquist et al. (2015) argue that there is a need to move beyond species richness and into an integrative and predictive framework that takes into account the mechanisms generating species diversity via trait composition, distribution and diversity (also see Dell et al., 2015; Gibert and DeLong, 2015; Pawar, 2015; Pettorelli et al., 2015 in this same volume). To do so, building upon previous work (Norberg et al., 2001; Savage et al., 2007), they formulate and propose a framework, which they name ‘Traits Drivers Theory’ (TDT), that is applicable across different geographic and temporal scales and gradients. Their TDT unifies trait-based approaches and the Metabolic Theory of Ecology to understand and predict ecosystem processes and patterns.
+TDT makes several predictions with respect to the feedbacks between traits, trait distributions and ecosystem patterns. First, it predicts that shifts
+
+12 Jean P. Gibert et al.
+in environments will cause shifts in trait distributions. Second, it predicts that the difference between the optimal trait, the observed mean trait value and the individual variation in the trait provides a measure of the capacity of a community to respond to environmental change (also see Gibert and Brassil, 2014; Schreiber et al., 2011; Vasseur et al., 2011, and Gibert and DeLong, 2015 of this same volume). Third, the skewness of the trait distribution can be an indicator of recent immigration or environmental change (also see Pawar, 2015 in this volume). Fourth, the rate of change of ecosystem productivity in response to an environmental change is a function of the community biomass-trait distribution. And last, an increase in individual variation in a trait controlling primary production will lead to a decrease in primary production (see Gibert and Brassil, 2014 and Gibert and DeLong in this volume).
+The authors test these predictions with an extensive dataset of shifts in trait distribution and ecosystem productivity across an elevational gradient and a 140-year long ecological experiment spanning local and global gradients. They argue that their framework (i) provides predictions of ecological patterns based on the shape of trait distributions, (ii) integrates how specific traits and functional diversity influence the dynamics of species assemblages across gradients and (iii) provides predictions as to how shifts in functional composition can influence ecosystem functioning.
+6.3 A Relational Approach to Trait Ecology
+In their chapter “Functional Traits and Trait-Mediated Interactions: Connecting Community-Level Interactions with Ecosystem Functioning”, Schmitz et al. (2015) argue that there is a need to move beyond functional groups to understand ecosystem processes (also see Enquist et al., 2015 of this volume). They thus propose a framework that links functional traits and food web structure to understand and predict ecosystem-level processes and patterns. Their approach builds upon the notion that plastic traits of intermediate trophic levels can have ecosystem-wide effects (Schmitz, 2010). Biologists thus need to take these into account to explain most of the residual variation that ends up largely unexplained in classic approaches. To do so, they propose the use of a ‘relational’ approach that involves focusing on the plastic response of functional traits in intermediate trophic levels in different contexts to understand how and why ecosystem function is context dependent. They illustrate their approach by applying it to four different empirical examples of plant-based and
+
+Scaling-up Trait Variation
+
+13
+
+detritus-based food chains: a carnivore–herbivore–plant pathway, an herbivore–plant–detritus pathway, a carnivore–detritus/microbivore– detritus pathway and a detritivore/microbivore–soil microbe–detritus pathway.
+This contribution sets the stage for understanding how organismal-level processes, community-level processes and ecosystem-level processes may interplay to yield the patterns we observe in nature. More importantly, their approach suggests new potential ways in which ecologists could approach questions and devise experiments when trying to understand upper-level patterns. This experimental take on trait ecology can provide important clues as to how context-dependency may come about in ecosystems in a changing world.
+Together, the contributions by Enquist et al. (2015) and Schmitz et al. (2015) provide a new integrative approach that merges quantification of temporal changes in trait distributions and plastic trait responses of intermediate trophic levels.
+
+7. CONCLUDING REMARKS
+The contributions in this volume not only show the importance of taking into account functional traits to understand ecological patterns and processes, but also how individual variation in these functional traits may have paramount effects upon population dynamics (Pettorelli et al., 2015) and community structure (Gibert and DeLong, 2015). These contributions also suggest that individual variation in functional traits can have pervasive effects upon meta-population persistence through variation in dispersal rates (Laskowski et al., 2015). One contribution shows how variation in functional traits can affect eco-evolutionary dynamics in a tri-trophic system (Georgelin et al., 2015), while another contribution quantifies body-size distributions across ecotones (Dell et al., 2015). Variation in body size is later shown to determine food web assembly dynamics and outcomes (Pawar, 2015) and to be linked to ecosystem process rates (Frainer and McKie, 2015). Finally, this volume provides two integrative frameworks: one that aims at making testable quantitative predictions of how trait distributions can affect upper-level patterns (Enquist et al., 2015), and another that aims at providing with a common experimental approach to assess the effect of phenotypically plastic traits on ecosystem context-dependency (Schmitz et al., 2015; Fig. 1).
+
+14 Jean P. Gibert et al.
+
+Meta-population dynamics
+
+Ecosystem processes
+
+Assembly dynamics
+
+Frainer and McKie Enquist
+et al. Schmitz
+et al.
+
+Laskowski et al.
+
+Pawar
+
+Pawar
+Georgelin et al.
+
+Pettorelli et al.
+Gibert and DeLong
+
+Dispersal
+
+Laskowski et al.
+DeEllneqtuaisl.t et al.
+
+Trait variation
+
+Georgelin et al.
+EnquDisetlleettaall..
+
+Trait evolution
+
+Population structure and
+dynamics
+
+Pettorelli et al.
+Gibert and DeLong
+
+Trophic interactions
+
+Gibert and DeLong
+
+Community structure and
+dynamics
+
+Figure 1 Effects of trait variation at different levels of biological organization, as shown by the chapters in this volume.
+
+REFERENCES
+Arau´jo, M.S., Bolnick, D.I., Layman, C.A., 2011. The ecological causes of individual specialisation. Ecol. Lett. 14, 948–958.
+Arditi, R., Callois, J., Tyutyunov, Y., Jost, C., 2004. Does mutual interference always stabilize predator-prey dynamics? A comparison of models. C. R. Biol. 327, 1037–1057.
+Barnett, E.A., Charlton, A.J., Fletcher, M.R., 2007. Incidents of bee poisoning with pesticides in the United Kingdom, 1994–2003. Pest Manag. Sci. 1057, 1051–1057.
+Bastolla, U., Lassig, M., Manrubia, S.C., Valleriani, A., 2005. Biodiversity in model ecosystems, II: species assembly and food web structure. J. Theor. Biol. 235, 531–539.
+Bell, A.M., Hankison, S.J., Laskowski, K.L., 2009. The repeatability of behaviour: a metaanalysis. Anim. Behav. 77, 771–783.
+Berlow, E.L., Dunne, J.A., Martinez, N.D., Stark, P.B., Williams, R.J., Brose, U., 2009. Simple prediction of interaction strengths in complex food webs. Proc. Natl. Acad. Sci. U.S.A. 106, 187–191.
+Bolnick, D.I., Amarasekare, P., Arau´jo, M.S., Bu€rger, R., Levine, J.M., Novak, M., Rudolf, V.H.W., Schreiber, S.J., Urban, M.C., Vasseur, D.A., 2011. Why intraspecific trait variation matters in community ecology. Trends Ecol. Evol. 26, 183–192.
+Brose, U., Jonsson, T., Berlow, E.L., Warren, P.H., Banasek-Richter, C., Bersier, L.-F., Blanchard, J.L., Brey, T., Carpenter, S.R., Cattin, M.-F., Cushing, L., Hassan, A.D., Dell, A.I., Edwards, F., Harper-Smith, S., Jacob, U., Ledger, M.E., Martinez, N.D., Memmott, J., Mintenbeck, K., Pinnegar, J.K., Rall, B.C., Rayner, T.S., Reuman, D.C., Ruess, L., Ulrich, W., Williams, R.J., Woodward, G., Cohen, J.E., 2006. Consumer– resource body-size relationships in natural food webs. Ecology 87, 2411–2417.
+Chapin, F.S., Walker, B.H., Hobbs, R.J., Hooper, D.U., Lawton, J.H., Sala, O.E., Tilman, D., 1997. Biotic control over the functioning of ecosystems. Science 277, 500–504.
+Chapin, F.S., Zavaleta, E.S., Eviner, V.T., Naylor, R.L., Vitousek, P.M., Reynolds, H.L., Hooper, D.U., Lavorel, S., Sala, O.E., Hobbie, S.E., Mack, M.C., D´ıaz, S., 2000. Consequences of changing biodiversity. Nature 405, 234–242.
+
+Scaling-up Trait Variation
+
+15
+
+Cohen, J.E., Jonsson, T., Carpenter, S.R., 2003. Ecological community description using the food web, species abundance, and body size. Proc. Natl. Acad. Sci. U.S.A. 100, 1781–1786.
+Darwin, C., 1859. On the Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life, sixth ed. P. F. Collier & Son co., New York.
+DeLong, J.P., Vasseur, D.A., 2013. Linked exploitation and interference competition drives the variable behavior of a classic predator-prey system. Oikos 122, 1393–1400.
+Dobzhansky, T., 1937. Genetics and the Origin of Species. Columbia University Press, New York, p. 364.
+Eviner, V.T., Chapin, F.S., 2003. Functional matrix: a conceptual framework for predicting multiple plant effects on ecosystem processes. Annu. Rev. Ecol. Evol. Syst. 34, 455–485.
+Fordyce, J.A., 2006. The evolutionary consequences of ecological interactions mediated through phenotypic plasticity. J. Exp. Biol. 209, 2377–2383.
+Fussmann, G.F., Ellner, S.P., Hairston Jr., N.G., 2003. Evolution as a critical component of plankton dynamics. Proc. R. Soc. B Biol. Sci. 270, 1015–1022.
+Gibert, J.P., Brassil, C.E., 2014. Individual phenotypic variation reduces interaction strengths in a consumer-resource system. Ecol. Evol. 4, 3703–3713.
+Gibert, J.P., DeLong, J.P., 2014. Temperature alters food web body-size structure. Biol. Lett. 10, 20140573.
+Guimara˜es Jr., P.R., Jordano, P., Thompson, J.N., 2011. Evolution and coevolution in mutualistic networks. Ecol. Lett. 14, 877–885.
+Hairston, N.G., Ellner, S.P., Geber, M.A., Yoshida, T., Fox, J.A., 2005. Rapid evolution and the convergence of ecological and evolutionary time. Ecol. Lett. 8, 1114–1127.
+Helio€la¨, J., Koivula, M., Niemela¨, J., 2001. Distribution of carabid beetles (Coleoptera, Carabidae) across a boreal forest—clearcut ecotone. Conserv. Biol. 15, 370–377.
+Hooper, D.U., Chapin, F.S., Ewel, J.J., Hector, A., Inchausti, P., Lavorel, S., Lawton, J.H., Lodge, D.M., Loreau, M., Naeem, S., Schmid, B., Seta¨la¨, H., Symstad, A.J., Vandermeer, J., Wardle, D.A., 2005. Effects of biodiversity on ecosystem functioning: a concensus of current knowledge. Ecol. Monogr. 75, 3–35.
+Jones, L.E., Becks, L., Ellner, S.P., Hairston, N.G., Yoshida, T., Fussmann, G.F., 2009. Rapid contemporary evolution and clonal food web dynamics. Philos. Trans. R. Soc. B-Biol. Sci. 364, 1579–1591.
+Jonsson, T., Cohen, J., Carpenter, S., 2005. Food webs, body size, and species abundance in ecological community description. Adv. Ecol. Res. 36, 1–84.
+Lande, R., 2013. Neutral theory of quantitative genetic variance in an Island model with local extinction and colonization. Evolution 46, 381–389.
+Lavorel, S., Garnier, E., 2002. Predicting changes in community composition and ecosystem functioning from plant traits: revisiting the Holy Grail. Funct. Ecol. 16, 545–556.
+Lomnicki, A., 1988. Population Ecology of Individuals. Princeton University Press, Princeton.
+Loreau, M., Naeem, S., Inchausti, P., Bengtsson, J.P., Grime, A., Hector, D.U., Hooper, M.A., Huston, D., Raffaelli, B., Schmid, D. Tilman, Wardle, D.A., 2001. Biodiversity and ecosystem functioning: current knowledge and future challenges. Science 294, 804–808.
+McGill, B.J., Enquist, B.J., Weiher, E., Westoby, M., 2006. Rebuilding community ecology from functional traits. Trends Ecol. Evol. 21, 178–185.
+McKie, B.G., Malmqvist, B., 2009. Assessing ecosystem functioning in streams affected by forest management: increased leaf decomposition occurs without changes to the composition of benthic assemblages. Freshw. Biol. 54, 2086–2100.
+Mlambo, M.C., 2014. Not all traits are “functional”: insights from taxonomy and biodiversity-ecosystem functioning research. Biodivers. Conserv. 23, 781–790.
+
+16 Jean P. Gibert et al.
+Naeem, S., Wright, S., 2003. Disentangling biodiversity effects on ecosystem functioning: deriving solutions to a seemingly insurmountable problem. Ecol. Lett. 6, 567–579.
+Naeem, S., Duffy, J.E., Zavaleta, E., 2012. The functions of biological diversity in an age of extinction. Science 336, 1401–1407.
+Norberg, J., Swaney, D.P., Dushoff, J., Lin, J., Casagrandi, R., Levin, S.A., 2001. Phenotypic diversity and ecosystem functioning in changing environments: a theoretical framework. Proc. Natl. Acad. Sci. U.S.A. 98, 11376–11381.
+Otto, S.B., Rall, B.C.B.C., Brose, U., 2007. Allometric degree distributions facilitate foodweb stability. Nature 450, 1226–1229.
+Pawar, S., 2009. Community assembly, stability and signatures of dynamical constraints on food web structure. J. Theor. Biol. 259, 601–612.
+Pawar, S., Dell, A.I.A., Savage, V.M.V., 2012. Dimensionality of consumer search space drives trophic interaction strengths. Nature 486, 485–489.
+Pawar, S., Dell, A.I., Savage, V.M., 2014. From metabolic constraints on individuals to the eco-evolutionary dynamics of ecosystems. In: Belgrano, A., Woodward, G., Jacob, U. (Eds.), Aquatic Functional Biodiversity: An Eco-Evolutionary Approach. Elsevier, Waltham, Massachusetts.
+Pettorelli, N., Coulson, T., Durant, S.M., Gaillard, J.-M., 2011. Predation, individual variability and vertebrate population dynamics. Oecologia 167, 305–314.
+Porrini, C., Sabatini, A.G.S., Girotti, S., Fini, F., Monaco, L., Celli, G., Bortolotti, L., Ghini, S., 2003. The death of honey bees and environmental pollution by pesticides: the honey bees as biological indicators. Bull. Insectol. 56, 147–152.
+Reich, P.B., Tilman, D., Naeem, S., Ellsworth, D.S., Knops, J., Craine, J., Wedin, D., Trost, J., 2004. Species and functional group diversity independently influence biomass accumulation and its response to CO2 and N. Proc. Natl. Acad. Sci. U.S.A. 101, 10101–10106.
+Rosenzweig, M.L., MacArthur, R.H., 1963. Graphical representation and stability conditions of predator-prey interactions. Am. Nat. 97, 209–223.
+Saavedra, S., Stouffer, D.B., Uzzi, B., Bascompte, J., 2011. Strong contributors to network persistence are the most vulnerable to extinction. Nature 478, 233–235.
+Savage, V.M., Webb, C.T., Norberg, J., 2007. A general multi-trait-based framework for studying the effects of biodiversity on ecosystem functioning. J. Theor. Biol. 247, 213–229.
+Schmitz, O.J., 2010. Resolving Ecosystem Complexity. Princeton University Press, Princeton, p. 192.
+Schoener, T.W., 2011. The newest synthesis: understanding the interplay of evolutionary and ecological dynamics. Science 331, 426–429.
+Schoener, T.W., Moya-Laran˜o, J., Rowntree, J., Woodward, G., 2014. Preface. Adv. Ecol. Res. 50, 13–22.
+Schreiber, S.J., Bu€rger, R., Bolnick, D.I., 2011. The community effects of phenotypic and genetic variation within a predator population. Ecology 92, 1582–1593.
+Sherratt, T., Macdougal, A.D., 1995. Some population consequences of variation in preference among individual predators. Biol. J. Linn. Soc. 55, 93–107.
+Sih, A., Bell, A., Johnson, J.C., 2004. Behavioral syndromes: an ecological and evolutionary overview. Trends Ecol. Evol. 19, 372–378.
+Staniczenko, P.P., Kopp, J.C., Allesina, S., 2013. The ghost of nestedness in ecological networks. Nat. Commun. 4, 1391.
+Stanley, S.M., 1989. Fossils, macroevolution, and theoretical ecology. In: Roughgarden, J., May, R.M., Levin, S.A. (Eds.), Perspectives in Ecological Theory. Princeton University Press, Princeton, NJ, pp. 125–134.
+Stirling, G., Wilsey, B., 2001. Empirical relationships between species richness, evenness, and proportional diversity. Am. Nat. 158, 286–299.
+
+Scaling-up Trait Variation
+
+17
+
+Tang, S., Pawar, S., Allesina, S., 2014. Correlation between interaction strengths drives stability in large ecological networks. Ecol. Lett. 17, 1094–1100.
+Tilman, D., 1982. Resource competition and community structure. In: Simon, A.L., Henry, S.H. (Eds.), Monographs in Population Biology, vol. 17. Princeton University Press, Princeton, NJ, p. xi, 296 p.
+Tilman, D., 1986. Resources, competition and the dynamics of plant communities. In: Plant Ecology. Blackwell Scientific Publications, Oxford, pp. 51–75.
+Tinker, M.T., Bentall, G., Estes, J.A., 2008. Food limitation leads to behavioral diversification and dietary specialization in sea otters. Proc. Natl. Acad. Sci. U.S.A. 105, 560–565.
+Tinker, M.T., Guimara˜es Jr., P.R., Novak, M., Marquitti, F.M.D., Bodkin, J.L., Staedler, M., Bentall, G., Estes, J.A., 2012. Structure and mechanism of diet specialisation: testing models of individual variation in resource use with sea otters. Ecol. Lett. 15, 475–483.
+Vasseur, D.A., Amarasekare, P., Rudolf, V.H.W., Levine, J.M., 2011. Eco-Evolutionary dynamics enable coexistence via neighbor-dependent selection. Am. Nat. 178, E96–E109.
+Violle, C., Navas, M.-L., Vile, D., Kazakou, E., Fortunel, C., Hummel, I., Garnier, E., 2007. Let the concept of trait be functional! Oikos 116, 882–892.
+Violle, C., Enquist, B.J., McGill, B.J., Jiang, L., Albert, C.H., Hulshof, C., Jung, V., Messier, J., 2012. The return of the variance: intraspecific variability in community ecology. Trends Ecol. Evol. 27, 244–252.
+Yoshida, T., Jones, L.E., Ellner, S.P., Fussmann, G.F., Hairston, N.G., 2003. Rapid evolution drives ecological dynamics in a predator-prey system. Nature 424, 303–306.
+Yvon-Durocher, G., Reiss, J., Blanchard, J., Ebenman, B., Perkins, D.M., Reuman, D.C., Thierry, A., Woodward, G., Petchey, O.L., 2011. Across ecosystem comparisons of size structure: methods, approaches and prospects. Oikos 120, 550–563.
+

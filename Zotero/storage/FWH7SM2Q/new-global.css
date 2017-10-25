@@ -1,0 +1,2443 @@
+.logoimage
+{
+    position: relative;
+    top: 5px;
+    margin:0px;
+}
+
+#content .tablelessform .date input.input-short,
+#content .tablelessform .date select.input-short
+{
+    margin: 0px 10px 0px 0px;
+}
+
+#content .tablelessform input.input-short,
+#content .tablelessform select.input-short
+{
+    min-width: unset;
+    min-width: auto;
+    min-width: initial;
+    width: 80px;
+}
+
+#content .tablelessform input.input-medium,
+#content .tablelessform select.input-medium
+{
+    min-width: unset;
+    min-width: auto;
+    min-width: initial;
+    width: 240px;
+}
+
+#content .RVPEdit.tablelessform input.input-medium,
+#content .RVPEdit.tablelessform select.input-medium
+{
+    width: 220px;
+}
+
+#content .tablelessform input.input-long,
+#content .tablelessform select.input-long
+{
+    min-width: unset;
+    min-width: auto;
+    min-width: initial;
+    width: 350px;
+}
+
+#content .tablelessform li span.error
+{
+    display: block;
+    padding: 5px 0px 0px 0px;
+}
+
+#content .tablelessform li label > span.error
+{
+    display: inline;
+}
+
+.wcc-new .dgridtable tfoot
+{
+    border: 0px;
+}
+
+span.lowercase
+{
+    text-transform: lowercase;
+}
+
+.wcc-new .lighter-text-style {
+    color: rgba(102, 102, 102, 1);
+}
+
+ul.headermenu.smallmenu li a span.smallicon
+{
+    padding-left: 5px;
+}
+
+#navbar
+{
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#FFFFFF;
+    width:920px;
+    height:60px;
+    padding: 0px;
+    border-bottom: 1px solid rgb(243, 244, 255);
+}
+
+#navbar .currentitem
+{
+    background-color:rgb(255, 220, 83);
+}
+
+#navbar .navbarli
+{
+    display: inline-block;
+    font-size: 14px;
+    height: 100%;
+    padding: 0px;
+    text-align:center;
+    width: 131.4px;
+}
+
+#navbar .navbarli .navbara
+{
+    position:relative;
+    display:table;
+    text-align:center;
+    vertical-align:middle;
+    color:#000000;
+    z-index:501;
+    text-decoration:none;
+    cursor:pointer;
+    padding: 0px;
+    height: 100%;
+    width:100%
+}
+#navbar .navbarli a {
+    text-decoration:none;
+}
+#navbar .navbarli .navbara span
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#navbar .navbarlirollover
+{
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.3);
+    background-color:#FFFFFF;
+}
+
+#navbar .navbarlirollover .navbara
+{
+    margin-bottom:0px;
+    background-color:#FFFFFF;
+}
+
+#navbar .navbarul
+{
+    font-size: 0px;
+    margin: 0px;
+    display: block;
+    width:100%;
+    height:100%;
+    position: relative;
+}
+
+.navbarmenu
+{
+    position:absolute;
+    top:60px;
+    margin-top:0px;
+    padding:18px;
+    background-color:#FFFFFF;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.3);
+    z-index:500;
+    display:none;
+}
+
+.navbarmenuli
+{
+    font-size: 12px;
+    margin: 0px 0px 15px 0px;
+}
+
+.navbarmenuli:last-of-type
+{
+    margin: 0px;
+}
+
+.navbarmenuli
+{
+    font-size: 12px;
+    margin: 0px 0px 15px 0px;
+}
+
+.navbarmenutitle,
+.navbarmenutitle > a,
+.wcc-new .navbarmenutitle > a
+{
+    display: block;
+    font-weight:900;
+    margin-bottom:15px;
+    color: #000000;
+}
+
+.navbarmenuul
+{
+
+}
+
+#navbarmoremenu
+{
+    width:280px;
+    margin-left:-185px;
+    text-align:left;
+}
+
+#navbarpermitsmenu
+{
+    width:394px;
+    margin-left:-167px;
+}
+
+#navbarpermitsmenuleft
+{
+    position:relative;
+    float:left;
+    width:236px;
+    text-align:left;
+    padding-right:10px;
+}
+
+#navbarpermitsmenuright
+{
+    position:relative;
+    float:left;
+    width:124px;
+    padding-left:20px;
+    text-align:left;
+    border-left:1px solid rgb(240, 240, 240);
+}
+
+.screennotifications
+{
+    padding: 0;
+}
+
+.notice-notification, 
+.warning-notification, 
+.success-notification, 
+.error-notification
+{
+    padding: 10px 0px;
+    border-radius: 5px;
+}
+
+.notice-notification p, 
+.warning-notification p, 
+.success-notification p, 
+.error-notification p,
+.notice-notification ul, 
+.warning-notification ul, 
+.success-notification ul, 
+.error-notification ul
+{
+    margin: 10px 60px;
+    font-size: 13px;
+    font-weight:bold;
+    color: #333333;
+}
+
+.wcc-new .pagecontent .warning-notification p
+{
+    box-sizing: border-box;
+    padding: 0px 0px 0px 50px;
+}
+
+.notice-notification
+{
+    background: #e6f1fc url('/images/westminster/ico-info-30-2.svg') no-repeat 10px 50%;
+    border: 2px solid #2473c7;
+}
+
+.warning-notification
+{
+    background: #fcf7e6 url('/images/westminster/ico-warning-30.svg') no-repeat 10px 50%;
+    border: 2px solid #ffba30;
+}
+
+.success-notification
+{
+    background: #f4ffe8 url('/images/westminster/ico-success-30.svg') no-repeat 10px 50%;
+    border: 2px solid #7cbd35;
+}
+
+.error-notification
+{
+    background: #fce8e6 url('/images/westminster/ico-error-30.svg') no-repeat 10px 50%;
+    border: 2px solid #d10f1e;
+}
+
+select
+{
+    padding: 8px 5px;
+}
+
+#content select
+{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: rgba(255, 255, 255, 1);
+    background-image: url('/images/down.gif');
+    background-position: center right 10px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding-right: 25px;
+    border: 1px solid darkgrey;/*without this firefox adds an ugly inset 1.6px black border*/
+}
+
+/* IE hack to hide the default dropdown down arrow */
+select::-ms-expand {
+    display: none;
+}
+
+/*.wcc-new*/
+.wcc-new *
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Keep hidden even when JQuery .show() is run on the element (which removes .hidden class) */
+.wcc-new .superhidden
+{
+    display: none;
+}
+
+
+
+.wcc-new a,
+input[type=submit].labbutton-link
+{
+    color: rgba(80, 137, 207, 1);
+    text-decoration: none;
+}
+
+.wcc-new a.noninline
+{
+    color: rgba(51, 51, 51, 1);
+}
+
+/* Small Links */
+.wcc-new .breadcrumbs a,
+.wcc-new .tablelessform.Login fieldset#currentMembers a
+{
+    /* font-size: 14px; */
+}
+
+.wcc-new .breadcrumbs strong a
+{
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Buttons */
+.wcc-new button, 
+.wcc-new .button,
+.wcc-new #content .labbutton,
+.wcc-new #content input[type="button"], 
+.wcc-new #content input[type="submit"],
+.wcc-new #content .tablelessform .fileuploadlabel
+{
+    background-color: rgba(80, 137, 207, 1);
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 1);
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 30px;
+    padding: 0px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 0px;
+    width: 160px;
+    margin-right: 0px;
+}
+
+/* The main submit button */
+.wcc-new #content .labbutton.labdefault {
+    min-width: 180px;
+    font-size: 20px;
+}
+
+.wcc-new .clear
+{
+    clear: both;
+}
+
+.wcc-new #content fieldset.hiddenfieldset,
+.wcc-new fieldset.hiddenfieldset
+{
+    clear: both;
+    margin: 0px;
+    padding: 0px;
+    width: 760px;
+}
+
+.wcc-new #content fieldset.hiddenfieldset
+{
+    /*    display: none;*/
+}
+
+.wcc-new fieldset > ol > li > .element {
+    font-size: 14px;
+    line-height: 22px;
+    /* padding: 10px 20px; */
+}
+
+.wcc-new .RVPBookingForm fieldset.hiddenfieldset,
+.wcc-new #content .RVPBookingForm fieldset.hiddenfieldset
+{
+    display: block;
+}
+
+.wcc-new #content fieldset.permits div.permitactions ul
+{
+    margin-left: 0px;
+    margin-top: 5px;
+}
+
+.wcc-new #content .pagecontent .maincontent .big-button,
+.wcc-new #content .tablelessform .submits-wrapper .labbutton.big-button
+{
+    font-size: 20px;
+    width: 260px;
+}
+
+.wcc-new #content form.tablelessform ol > li.submits-wrapper
+{
+    padding: 20px;
+}
+
+.wcc-new #content form.tablelessform ol > li.submits-wrapper input.labbutton
+{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.wcc-new #content .pagecontent .maincontent .med-button {
+    font-size: 20px;
+    width: 200px;
+}
+.wcc-new #content .pagecontent .maincontent input
+{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.wcc-new #content #rvpinfo fieldset.hiddenfieldset,
+.wcc-new #content #permitinfoform fieldset.hiddenfieldset
+{
+    display:block;
+}
+
+.wcc-new #content #rvpinfo .ecotooltipicon,
+.wcc-new #content #permitinfoform .ecotooltipicon
+{
+    vertical-align: middle;
+    cursor:pointer;
+}
+
+.wcc-new #content #rvpinfo .labbutton,
+.wcc-new #content #permitinfoform .button
+{
+    display: table-cell;
+    float: none;
+    height:50px;
+    font-size:14px;
+    white-space:normal;
+    line-height: normal;
+    font-weight:normal;
+    padding:0px 10px;
+    margin:0px;
+    vertical-align: middle;
+    width:175px;
+}
+
+.wcc-new #content #rvpinfo .labbutton:nth-child(2),
+.wcc-new #content #permitinfoform .submits-wrapper a:nth-child(2) .button
+{
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.wcc-new #content #rvpinfo li .rvpinfo1bullet,
+.wcc-new #content #permitinfoform li .rvpinfo1bullet,
+.wcc-new #content #rvpinfo li .rvpinfo2bullet,
+.wcc-new #content #permitinfoform li .rvpinfo2bullet
+{
+    list-style: circle;
+    list-style-type: disc;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.wcc-new #content #rvpinfo li .rvpinfo2bullet,
+.wcc-new #content #permitinfoform li .rvpinfo2bullet
+{
+    padding-bottom: 15px;
+}
+
+.wcc-new #content #rvpinfo li .rvpinfoh3,
+.wcc-new #content #permitinfoform li .rvpinfoh3
+{
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.wcc-new #content #rvpinfo p,
+.wcc-new #content #permitinfoform p
+{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.wcc-new #content #rvpinfo .submits-wrapper div.element > div,
+.wcc-new #content #permitinfoform .submits-wrapper div.element > div
+{
+    display: table;
+    text-align: center;
+}
+
+.wcc-new #content #permitinfoform .submits-wrapper div.element > div a
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.wcc-new #content #rvpinfo .submits-wrapper div.element .submits-or,
+.wcc-new #content #permitinfoform .submits-wrapper div.element .submits-or
+{
+    display: table-cell;
+    float: none;
+    margin: 0px;
+    padding: 0px 25px;
+    position: relative;
+    top: 0px;
+    vertical-align: middle;
+}
+
+.wcc-new #content .tablelessform .addressOptions-wrapper
+{
+    padding-bottom: 20px;
+}
+
+.wcc-new #content .tablelessform .addressOptions-wrapper label
+{
+    font-size: 12px;
+}
+
+.wcc-new #content .tablelessform .elemErrorWrap span.characters-remaining
+{
+    color: rgba(153, 153, 153, 1);
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+}
+.wcc-new #content .tablelessform .elemErrorWrap span.error {
+    display: block;
+}
+/* Outlined Buttons */
+.wcc-new #content .tablelessform .fileuploadlabel,
+.wcc-new #content .tablelessform .ghost-button,
+.wcc-new #content .tablelessform #submitPostcode
+{
+    background-color: transparent;
+    border: 1px solid rgba(79, 135, 207, 1);
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: rgba(79, 135, 207, 1);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    height: 42px;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+}
+
+.wcc-new #content .tablelessform #submitPostcode
+{
+    max-width: 120px;
+}
+
+.wcc-new #content .tablelessform .fileuploadlabel
+{
+    font-size: 14px;
+    width: 118px;
+}
+
+.wcc-new #content .tablelessform .postcode-wrapper #postcode,
+.wcc-new #content .tablelessform .wcc-new-postcode #submitPostcode
+{
+    font-size: 14px;
+    width: 120px;
+}
+
+.wcc-new #content .tablelessform .postcode-wrapper #updateaddress
+{
+    box-sizing: border-box;
+    margin-left: 10px;
+    max-width: 120px;
+    position: relative;
+    top: -1px;
+}
+
+.wcc-new #content .tablelessform .subheading-button
+{
+    font-size: 12px;
+    height: 30px;
+    line-height: 28px;
+    padding: 0px 8px;
+    position: absolute;
+    right: 10px;
+    text-transform: uppercase;
+    top: -41px;
+}
+
+.wcc-new .divider
+{
+    border-bottom: 2px solid rgba(229, 230, 244, 1);
+    height: 0px;
+    width: 100%;
+}
+
+.wcc-new fieldset.permits,
+.wcc-new .tablelessform fieldset
+{
+    background-color:rgba(243, 244, 255, 1);
+    clear: both;
+    margin: 20px auto 0px auto;
+    width: 760px;
+}
+
+.wcc-new fieldset.permits div.permitactions
+{
+    border-left: 1px solid rgba(229, 230, 244, 1);
+    box-sizing: border-box;
+    float: right;
+    margin: 20px 0px 20px 0px;
+    padding: 0px 20px;
+    width: 30%;
+}
+
+.wcc-new fieldset.permits div.permitactions h4
+{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.wcc-new fieldset.permits div.permitactions ul li
+{
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.wcc-new fieldset.permits div.permitinformation
+{
+    box-sizing: border-box;
+    float: left;
+    padding: 15px;
+    padding-left: 20px;
+    width: 70%;
+}
+
+.wcc-new a.ringgo-tooltip
+{
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 1px dashed rgba(80, 137, 207, 1);
+}
+
+.wcc-new #content #overview.RVPEdit.tablelessform h3
+{
+    margin: 0px;
+    padding: 13px 20px 13px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555555;
+    text-transform:uppercase;
+}
+
+.wcc-new #content #overview.RVPEdit.tablelessform fieldset#proofs ol li:first-of-type
+{
+    padding-top: 0px;
+}
+
+.wcc-new #content .tablelessform fieldset > ol > li
+{
+    display: table;
+    float: none;
+}
+
+.wcc-new #content .tablelessform fieldset > ol > li label.element
+{
+    display: table-cell;
+    float: none;
+    padding-right: 20px;
+    width:200px;
+    vertical-align: middle;
+}
+
+.wcc-new #content .tablelessform fieldset > ol > li label ~ div.element
+{
+    display: table-cell;
+    float: none;
+    width:520px;
+}
+
+.wcc-new #content form.tablelessform fieldset ol li.checkbox
+{}
+
+.wcc-new #content form.tablelessform fieldset ol li.checkbox label.element
+{
+    display: inline-block;
+    float: right;
+    width:685px;
+}
+
+.wcc-new #content form.tablelessform fieldset ol li.checkbox > div.element,
+.wcc-new #content div.pagecontent div.maincontent form.tablelessform fieldset > ol > li.checkbox > div.element
+{
+    display: inline-block;
+    float: left;
+    padding: 0px 10px 0px 0px;
+    width:35px;
+}
+
+.wcc-new #content .maincontent form.tablelessform fieldset ol li
+{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.wcc-new #content .maincontent form.tablelessform fieldset ol li.checkbox > label.element
+{
+    width: 474px;
+}
+
+.wcc-new #content .maincontent form.tablelessform fieldset ol li.checkbox > div.element > div.checkbox-wrapper
+{
+    display: inline-block;
+    overflow: hidden;
+}
+
+.wcc-new #content .maincontent form.tablelessform fieldset ol li > label.element
+{
+    width: 160px;
+    vertical-align: top;
+}
+
+.wcc-new #content form.tablelessform fieldset.cancellation-form ol li.checkbox span.error,
+.wcc-new #content form.RVPRegistration.tablelessform fieldset ol li.checkbox span.error
+{
+    clear: both;
+    position:relative;
+    left:35px;
+    padding: 0px;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform #field-Member_Title
+{
+    width: 100px;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform #field-Member_Email
+{
+    margin-bottom: 0px;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform .div-Member_Email span.error
+{
+    margin-left: 14px;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform #field-Member_Address
+{
+    width: 350px;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform #label-Member_Address,
+.wcc-new #content #Options.RVPRegistration.tablelessform #label-ParkingZoneText
+{
+    padding-top: 0px;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform .div-Member_Address .address-container
+{
+    float:left;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform li label,
+.wcc-new #content #overview.RVPEdit.tablelessform ol li label.element
+{
+    margin-top: 0px;
+}
+
+.wcc-new #content #overview.RVPEdit.tablelessform fieldset ol li:first-of-type
+{
+    padding-bottom: 10px;
+}
+
+.wcc-new #content #overview .overview-awaiting-proof
+{
+    color: #d0021b;
+    font-style:italic;
+}
+
+.wcc-new #content #overview .warning-notification p
+{
+    margin-left: 62px;
+    margin-right: 18px;
+    margin-top: 0px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.wcc-new #content #overview .warning-notification
+{
+    margin: 0px;
+    background-position: 16px 15px;
+}
+
+.wcc-new #content #overview .warning-notification button
+{
+    font-size: 12px;
+    padding: 10px 7px;
+    width: 120px;
+    height: 30px;
+    line-height: 12px;
+    font-weight: normal;
+}
+
+.wcc-new #content #overview #activepermitsession ol
+{
+    padding-bottom: 5px;
+    padding-top: 15px;
+}
+
+.wcc-new #content #overview #activepermitsession ol li
+{
+    clear: none;
+    display: inline-block;
+    float: left;
+    margin: 0px;
+    padding: 0px 10px 10px 20px;
+    width: 50%;
+}
+
+.wcc-new #content #overview #activepermitsession li label
+{
+    min-width: 90px;
+}
+
+.wcc-new #content #overview #activepermitsession li div.element
+{
+    max-width: 125px;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform #details legend .field-note
+{
+    text-align:right;
+    font-weight:normal;
+    font-size: 12px;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform #details .field-note a
+{
+    color: #000000;
+    text-decoration: underline;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform .ghost-button,
+.wcc-new #content #editVehicleForm.RVPEdit.tablelessform .ghost-button
+{
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform .ghost-button.additional-vehicle-button,
+.wcc-new #content #editVehicleForm.RVPEdit.tablelessform .ghost-button.additional-vehicle-button
+{
+    padding: 0 10px;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform .ghost-button.additional-vehicle-button {
+    width: 100%;
+}
+
+.wcc-new #content #editVehicleForm.RVPEdit.tablelessform .ghost-button.additional-vehicle-button {
+    width: auto;
+}
+
+.wcc-new #content .tablelessform .submits-wrapper .labbutton
+{
+    font-size: 20px;
+    width: 180px;
+    height: 50px;
+    font-weight: normal;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform .reqnote
+{
+    display: none;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform .vehicletitle1,
+.wcc-new #content #Options.RVPRegistration.tablelessform .vehicletitle2
+{
+    font-weight: bold;
+}
+
+.wcc-new #content .tablelessform .startdate-wrapper input[type=text]#datepicker
+{
+    min-width: unset;
+    min-width: auto;
+    min-width: initial;
+    width: 140px;
+}
+
+.wcc-new #content .startdate-wrapper b
+{
+    padding: 0px 5px 0px 0px;
+}
+
+#content img.ui-datepicker-trigger
+{
+    padding: 0px 5px;
+}
+
+.wcc-new #content .startdate-wrapper .startdatetime-wrapper select
+{
+    min-width: unset;
+    min-width: auto;
+    min-width: initial;
+    margin: 0px 3px;
+}
+
+.wcc-new #content .tablelessform .submits-wrapper .middle
+{
+    margin-right: 270px;
+}
+
+
+.wcc-new .field-note
+{
+    font-size: 10px;
+    width: 250px;
+    float: right;
+    line-height: 14px;
+    margin-top:5px;
+}
+
+.wcc-new fieldset.permits div.permitproofalert
+{
+    background-color: #fcf7e6;
+    border: 2px solid #ffba30;
+    clear: both;
+    color: #333333;
+    float: left;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.wcc-new fieldset.permits div.permitproofalert .button
+{
+    float: right;
+    font-size: 12px;
+    height: 30px;
+    margin: 0px;
+    top: 3px;
+    width: 120px;
+}
+
+.wcc-new fieldset.permits div.permitproofalert img
+{
+    height: 27px;
+    margin-right: 10px;
+    position: relative;
+    width: 30px;
+}
+
+.wcc-new fieldset.permits div.permitproofalert span
+{
+    display: inline-block;
+    width: 75%;
+    word-break: keep-all;
+    word-wrap: normal;
+}
+
+.wcc-new fieldset.permits table
+{
+    width: 100%;
+}
+
+.wcc-new fieldset.permits table td
+{
+    font-size: 14px;
+    line-height: 30px;
+}
+.wcc-new fieldset.permits td:nth-of-type(1)
+{
+    width:55px;
+}
+
+.wcc-new fieldset.permits td:nth-of-type(2)
+{
+    width:182px;
+}
+
+.wcc-new fieldset.permits td:nth-of-type(3)
+{
+    width:179px;
+}
+
+.wcc-new fieldset.permits td:nth-of-type(4)
+{
+    width:150px;
+}
+
+.wcc-new li.lab_progress_bar_current p
+{
+    background: none;
+}
+
+.wcc-new #permitapps h2
+{
+    margin-top:0px;
+    color: #333333;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.wcc-new #permitapps fieldset legend span
+{
+    line-height: 28px;
+}
+
+.wcc-new fieldset.permits .permitactions a
+{
+    color: rgba(51, 51, 51, 1);
+}
+
+/* Sub-headings */
+.wcc-new fieldset.permits legend,
+.wcc-new .tablelessform fieldset h2, 
+.wcc-new .tablelessform fieldset legend
+{
+    background-color: transparent;
+    border-bottom: 1px solid rgba(229, 230, 244, 1);
+    box-sizing: border-box;
+    float: left;
+    color: rgba(51, 51, 51, 1);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 14px 20px;
+    width: 100%;
+}
+
+.wcc-new .tablelessform.RVPBookingForm fieldset legend
+{
+    margin-bottom: 15px;
+}
+
+.wcc-new .tablelessform fieldset .reqnote
+{
+    padding: 10px 20px;
+}
+
+.wcc-new fieldset.permits legend img,
+.wcc-new .tablelessform fieldset h2 img,
+.wcc-new .tablelessform fieldset legend img
+{
+    margin-right: 10px;
+}
+
+.wcc-new fieldset.permits legend span,
+.wcc-new .tablelessform fieldset h2 span,
+.wcc-new .tablelessform fieldset legend span
+{
+    position: relative;
+    top: -5px;
+}
+
+/* Form Sections */
+.wcc-new fieldset.permits ol,
+.wcc-new .tablelessform fieldset ol
+{
+    background-color: transparent;
+    box-sizing: border-box;
+    clear: both;
+    float: left;
+    margin: 0;
+}
+
+.wcc-new h2.page-sub-head
+{
+    color: rgba(51, 51, 51, 1);
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.wcc-new h2.page-sub-head > span.right-link
+{
+    float: right;
+}
+.wcc-new h2.page-sub-head > span.right-link > a
+{
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.wcc-new .navbarmenuli a
+{
+    color: rgba(0, 0, 0, 1);
+}
+
+.wcc-new .new-red
+{
+    color: rgba(208, 2, 27, 1);
+}
+
+.wcc-new .no-border
+{
+    border: 0px !important;
+}
+
+.wcc-new .screennotifications
+{
+    padding: 0;
+}
+
+.wcc-new .interim-warning-notification
+{
+    background: #fff7e6 url('/images/westminster/ico-warning-30.svg') no-repeat 10px 20%;
+    border: 2px solid #ffba30;
+}
+
+.wcc-new ul.interim-warning-notification,
+.wcc-new ul.interim-warning-notification li
+{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+.wcc-new ul.interim-warning-notification li p,
+.wcc-new .interim-warning-notification p
+{
+    margin: 10px 60px;
+    font-size: 13px;
+    font-weight:bold;
+    color: #333333;
+}
+
+.wcc-new .notice-notification
+{
+    background: #e6f1fc url('/images/westminster/ico-info-30-2.svg') no-repeat 10px 50%;
+    border: 2px solid #2473c7;
+}
+
+.wcc-new .interim-warning-notification .button
+{
+    height: 30px;
+    width: 120px;
+    margin-top: 0px;
+}
+
+.wcc-new .interim-warning-notification a.button
+{
+    font-size: 12px;
+    text-align: center;
+}
+
+.wcc-new .error-notification
+{
+    background: #fce8e6 url('/images/westminster/ico-error-30.svg') no-repeat 10px 50%;
+    border: 2px solid #d10f1e;
+}
+
+
+.wcc-new .RVPEdit.tablelessform fieldset ol,
+.wcc-new .RVPEdit.tablelessform fieldset ol li .element
+{
+    padding: 0px;
+}
+
+.wcc-new .RVPEdit.tablelessform fieldset ol li
+{
+    padding: 0px 20px 10px 20px;
+}
+.wcc-new .RVPEdit.tablelessform fieldset ol li:first-child
+{
+    padding-bottom: 0;
+}
+
+.wcc-new .RVPEdit.tablelessform fieldset ol li:first-of-type
+{
+    padding-top: 15px;
+}
+
+.wcc-new .RVPEdit.tablelessform fieldset ol li:last-of-type
+{
+    padding-bottom: 15px;
+}
+
+.wcc-new .pagecontent
+{
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.wcc-new .pagecontent p
+{
+    margin-left: 0px;
+    margin-right: 0px;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.wcc-new .pagecontent .top-text-paragraphs p {
+    font-size: 14px;
+    line-height: 22px;
+    padding-bottom: 18px;
+}
+
+.wcc-new .pagecontent .maincontent
+{
+    float:left;
+    width: 550px;
+}
+
+.wcc-new #content .pagecontent .maincontent form,
+.wcc-new #content div.pagecontent div.maincontent form > fieldset,
+.wcc-new #content div.pagecontent div.maincontent form > fieldset > div
+{
+    clear: both;
+    display: block;
+    float: none;
+    min-width: unset;
+    min-width: auto;
+    min-width: initial;
+    position: relative;
+    width: 100%;
+}
+
+.wcc-new #content div.pagecontent div.maincontent form > fieldset
+{
+    max-width: 550px;
+}
+
+.wcc-new #content div.pagecontent .maincontent form fieldset > ol > li label ~ div.element
+{
+    width: 350px;
+}
+
+.wcc-new .pagecontent .sidenavigation
+{
+    background-color: rgba(243, 244, 255, 1);
+    float: right;
+    width: 190px;
+}
+
+.wcc-new .pagecontent .sidenavigation h4
+{
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.wcc-new .pagecontent .sidenavigation ul,
+.wcc-new .pagecontent .sidenavigation ul li
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.wcc-new .pagecontent .sidenavigation ul li a
+{
+    border-top: 1px solid rgba(229, 230, 244, 1);
+    box-sizing: border-box;
+    color: rgba(51, 51, 51, 1);
+    display: block;
+    font-size: 14px;
+    height: 100%;
+    padding: 15px 0px 15px 20px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.wcc-new .pagecontent .sidenavigation ul li a.current
+{
+    background-color: rgba(226, 233, 250, 1);
+}
+
+.wcc-new li.permitdetails-wrapper .permitdetails td
+{
+    padding: 0px 10px 10px 0px;
+}
+
+.wcc-new li.permitdetails-wrapper .permitdetails td:first-of-type
+{
+    width: 180px;
+}
+
+.wcc-new .navbarmenuli a.strong {
+    font-weight: bold;
+}
+
+/* Permit Buttons */
+.wcc-new .permitcontainer .permitwidget
+{
+    width: 225px;
+    height: 160px;
+    background-color: rgba(255, 220, 83, 1);
+    margin: 0px 20px 40px 20px;
+}
+
+.wcc-new .permitlinks {
+    margin-left: 60px;
+}
+
+/** So child can be absolutely positioned relative to this container, not body */
+.wcc-new .permitlinks a {
+    position: relative;
+}
+
+.wcc-new .permitwidgetimg
+{
+    padding-top: 20px;
+}
+
+.wcc-new permitwidgetimg.recenter
+{
+    padding-left: 80px;
+}
+
+.wcc-new .permitwidget h3
+{
+    padding-top: 10px;
+}
+
+.wcc-new .permitlinks h3
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    padding: 0;
+    padding-left: 10px;
+}
+
+.wcc-new .permitheader > span
+{
+    display: block;
+    font-size: 16px;
+}
+.wcc-new .permitheader > span:nth-child(2) {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.wcc-new .submits-wrapper
+{
+    box-sizing: border-box;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wcc-new #rvpinfo .submits-wrapper,
+.wcc-new #permitinfoform .submits-wrapper,
+.wcc-new .pagecontent .submits-wrapper
+{
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wcc-new #Options .submits-wrapper, .wcc-new .RVPEdit.tablelessform .submits-wrapper
+{
+    text-align: center;
+}
+
+.wcc-new #content .submits-wrapper .elemErrorWrap
+{
+    position: relative;
+}
+
+.wcc-new #content fieldset > ol > li.submits-wrapper > div.element
+{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.wcc-new #rvpinfo table,
+.wcc-new #permitinfoform table,
+.wcc-new #overview table 
+{
+    border-top: none;
+    width: auto;
+    border-left: none;
+}
+
+.wcc-new #rvpinfo table th,
+.wcc-new #permitinfoform table th,
+.wcc-new #overview table th
+{
+    background-color: rgb(229, 230, 244);
+    font-size: 16px;
+    font-weight: bold;
+    border-right: none;
+    text-transform: uppercase;
+}
+
+.wcc-new #rvpinfo table td,
+.wcc-new #permitinfoform table td,
+.wcc-new #overview table td
+{
+    font-size: 14px;
+    line-height: 18px;
+    border-right: none;
+}
+
+.wcc-new #rvpinfo table tr:nth-child(2) td,
+.wcc-new #permitinfoform table tr:nth-child(2) td
+{
+    padding-top: 15px;
+}
+
+.wcc-new #rvpinfo table tr:last-child td,
+.wcc-new #permitinfoform table tr:last-child td
+{
+    padding-bottom: 15px;
+}
+
+
+.wcc-new #rvpinfo table td:nth-child(1),
+.wcc-new #permitinfoform table td:nth-child(1),
+.wcc-new #overview table td:nth-child(1)
+{
+    min-width: 200px;
+    padding-right:20px;
+}
+
+.wcc-new #rvpinfo table td:nth-child(2),
+.wcc-new #permitinfoform table td:nth-child(2),
+.wcc-new #overview table td:nth-child(2)
+{
+    min-width: 80px;
+}
+
+.wcc-new #overview table th.curvestyleheaderleft,
+.wcc-new #overview table td.dgridtable-row-toggle
+{
+    display:none;
+}
+
+.wcc-new #overview table 
+{
+    width: calc(100% - 40px);
+    margin: 20px;
+    margin-top: 0px;
+}
+
+.wcc-new #overview table th
+{
+    text-align:left;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 10px !important;
+}
+
+.wcc-new #overview table td
+{
+    padding-left: 10px !important; 
+}
+
+.wcc-new #overview table td p
+{
+    text-align: left;
+    font-size: 12px;
+}
+
+.wcc-new #overview table tr:nth-child(even)
+{
+    background-color: #e5e6f4;
+}
+
+.wcc-new #overview table.dgridtable td,
+.wcc-new #overview table.dgridtable th
+{
+    border-bottom: none;
+}
+
+.wcc-new #overview .PermitReviewInfoTable #pagerinfo
+{
+    margin-left: 20px;
+}
+
+.wcc-new #proofForm #ProofPostFieldset label
+{
+    margin-bottom: 15px;
+}
+
+.wcc-new #proofForm #ProofPostFieldset span#proofaddress
+{
+    display: none;
+}
+
+.wcc-new .smallmenu a
+{
+    color:#FFFFFF;
+}
+
+.wcc-new .tablelessform fieldset ol
+{
+    padding: 0px;
+}
+
+.wcc-new .tablelessform fieldset ol li,
+.wcc-new .tablelessform fieldset ol label,
+.wcc-new .tablelessform fieldset > ol > li > .element
+{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    padding: 0;
+    color: #333333;
+    font-size: 14px;
+    padding: 0px;
+}
+
+.wcc-new .tablelessform fieldset > ol > li label ~ div.element
+{
+    width: 560px;
+}
+.wcc-new .RVPEdit.tablelessform fieldset > ol > li label ~ div.element
+{
+    width: 70%;
+}
+
+.wcc-new .tablelessform fieldset > ol > li::after
+{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.wcc-new .tablelessform fieldset ol li,
+.wcc-new .tablelessform fieldset.permits ol li
+{
+    padding-bottom: 20px;
+}
+
+.wcc-new .tablelessform fieldset ol li
+{
+    padding: 0px 20px 15px 20px;
+}
+
+.wcc-new .tablelessform fieldset > ol > li:first-of-type
+{
+    padding: 15px 20px 15px 20px;
+}
+
+.wcc-new #content .submits-wrapper div.elemErrorWrap input[type="submit"].labnext.has-arrow {
+    background-image: url('/images/westminster/icon-right.svg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 80% 50%;
+    padding-right: 16px;
+}
+
+.wcc-new #rvpinfo .submits-wrapper > div.element,
+.wcc-new #permitinfoform .submits-wrapper > div.element
+{
+    border-top:none;
+}
+
+/* Form Elements */
+.wcc-new .tablelessform input[type=password], 
+.wcc-new .tablelessform input[type=text],
+.wcc-new .tablelessform select,
+.wcc-new .tablelessform textarea
+{
+    border: 1px solid rgba(211, 213, 231, 1);
+    box-sizing: border-box;
+    color: rgba(51, 51, 51, 1);
+    font-size: 14px;
+    height: 42px;
+    padding: 5px;
+    width: 230px;
+}
+.wcc-new .tablelessform textarea, .wcc-new .tablelessform select
+{
+    width: 100%;
+    min-width: 230px;
+    max-width: 350px;
+}
+
+.wcc-new textarea.wcc-textarea
+{
+    min-height: 70px;
+}
+.wcc-new .tablelessform input[type=text]#field-PostcodeSearch
+{
+    width: 125px
+}
+
+.wcc-new .tablelessform select#SelectAddress, .wcc-new .tablelessform select.full-width
+{
+    width: 100%;
+}
+
+/*Generic Error Span Text*/
+.wcc-new .tablelessform li span.error
+{
+    color: #d4463f;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*Begin wcc-new login page CSS - custom pre-fix .wcc-login-page added to body tag with JavaScript*/
+/*Hide The new members registration box.*/
+.wcc-new.wcc-login-page #currentMembers > legend,
+.wcc-new.wcc-login-page .box-content > p,
+.wcc-new.wcc-login-page #newMembers
+{
+    display: none;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset ol
+{
+    padding: 0px;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset ol li
+{
+    padding: 0;
+}
+
+.wcc-new.wcc-login-page #Login.tablelessform fieldset ol li.cli-wrapper label,
+.wcc-new.wcc-login-page #Login.tablelessform fieldset ol li.pin-wrapper label
+{
+    box-sizing: border-box;
+    padding: 0px 15px 0px 0px;
+    width: 175px;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset ol li div.div-cli,
+.wcc-new.wcc-login-page .tablelessform fieldset ol li div.div-pin
+{
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+    width: auto;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset#currentMembers ol li input[type='password'],
+.wcc-new.wcc-login-page .tablelessform fieldset#currentMembers ol li input[type='text']
+{
+    padding-right: 35px;
+    position: relative;
+    width: 250px;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset#currentMembers ol li .invalid,
+.wcc-new.wcc-login-page .tablelessform fieldset#currentMembers ol li .valid
+{
+    width: 20px;
+    position: absolute;
+    left: -30px;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset#currentMembers ol li .invalid
+{
+    height:20px;
+    top: -15px;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset#currentMembers ol li .valid
+{
+    top: -13px;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset#currentMembers ol li .position-validity
+{
+    display: inline-block;
+    height: 0px;
+    position: relative;
+    width: 0px;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset#currentMembers ol li .elemErrorWrap span.error
+{
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0px 10px 0px 10px;
+    right: 0px;
+    width: 240px;
+}
+
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper input + label,
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper input[checked="checked"] + label.personalLogin,
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper a,
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper label,
+.wcc-new .tablelessform label.tab-label,
+#userdetails.tablelessform label.tab-label
+{
+    background: #ffffff;
+    background-image: none;
+    display: inline-block;
+    font-size: 14px;
+    height: 19px;
+    margin: 0;
+    min-width: 120px;
+    overflow: visible;
+    padding: 8px 10px;
+    position:relative;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: auto;
+}
+
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper input + label,
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper input[checked="checked"] + label.personalLogin,
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper a,
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper label
+{
+    font-size: 12px;
+    height: 20px;
+    padding: 10px 0px;
+}
+
+.wcc-new.wcc-login-page #label-pin,
+.wcc-new.wcc-login-page #label-cli
+{
+    display: table-cell;
+    float: none;
+    height: 100%;
+    margin: 0;
+    padding: 0px;
+    vertical-align: middle;
+    width: 170px;
+}
+
+.wcc-new.wcc-login-page #label-pin
+{
+    line-height: 20px;
+}
+
+/*LogIn Box Li Padding*/
+.wcc-new.wcc-login-page #currentMembers > ol > li
+{
+    padding-left: 75px;
+    padding-right: 75px;
+}
+
+/*LogIn Box Li Padding*/
+.wcc-new.wcc-login-page #currentMembers > ol > li.static2-wrapper
+{
+    display: block;
+}
+
+.wcc-new.wcc-login-page #currentMembers > ol > li:first-of-type
+{
+    padding-bottom: 20px;
+}
+
+.wcc-new.wcc-login-page #currentMembers > ol > li.cli-wrapper,
+.wcc-new.wcc-login-page #currentMembers > ol > li.pin-wrapper
+{
+    box-sizing: border-box;
+    display: table;
+    float: none;
+    height: 55px;
+    padding: 0px 0px 0px 100px;
+    position: relative;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset ol li.submits-wrapper
+{
+    min-height:auto;
+    padding: 10px 0px 0px 0px;
+}
+
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper input[checked="checked"] + label.tab-label.personalLogin
+{
+    border: none;
+    border-radius: 0px;
+}
+
+.wcc-new.wcc-login-page .tablelessform fieldset ol li.submits-wrapper > div.element
+{
+    padding: 0px 0px 0px 195px;
+}
+
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper input + label > a {
+    padding: 0;
+    color: #000;
+    text-decoration: none;
+}
+
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper input[checked="checked"] + label.personalLogin,
+.wcc-new .tablelessform label.tab-label.selected,
+#userdetails.tablelessform label.tab-label.selected
+{
+    background-image: none;
+    background: #ffdc53;
+}
+
+.wcc-new.wcc-login-page fieldset#currentMembers .accountTypeLogin-wrapper input[checked="checked"] + label.personalLogin::after
+/*.wcc-new .tablelessform label.tab-label.selected::after*/
+{
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffdc53;
+    content: '';
+    display: block;
+    height: 0;
+    left: 60px;
+    position: absolute;
+    top: 100%;
+    width: 0;
+}
+
+
+.wcc-new form#editVehicleForm .tempVRNChange-wrapper label.selected::after
+{
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffdc53;
+    content: '';
+    display: block;
+    height: 0;
+    left: 79px;
+    position: absolute;
+    top: 100%;
+    width: 0;
+}
+
+/** THESE BELONG IN FORM BUT TO HELP KEEP THEM TOGETHER RATHER THAN SPLITTING THEM UP, I HAVE PUT THEM HERE **/
+#content fieldset > ol > li > div label.tab-label
+{
+    border: 1px solid rgba(211, 213, 231, 1);
+}
+
+/** THESE BELONG IN FORM BUT TO HELP KEEP THEM TOGETHER RATHER THAN SPLITTING THEM UP, I HAVE PUT THEM HERE **/
+#content fieldset > ol > li > div label.tab-label:first-of-type
+{
+    border-radius: 4px 0px 0px 4px;
+    border-right: none;
+}
+
+/** THESE BELONG IN FORM BUT TO HELP KEEP THEM TOGETHER RATHER THAN SPLITTING THEM UP, I HAVE PUT THEM HERE **/
+#content fieldset > ol > li > div label.tab-label:last-of-type
+{
+    border-radius: 0px 4px 4px 0px;
+}
+
+.wcc-new.wcc-login-page fieldset#newMembers .element label,
+.wcc-new.wcc-login-page fieldset#currentMembers .element label:first-of-type
+{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.wcc-new.wcc-login-page #content .tablelessform .labbutton
+{
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    height: 40px;
+    margin: 0px;
+    width: 48px;
+}
+
+.wcc-new.wcc-login-page div.error > div.elemErrorWrap > input
+{
+    border: 1px solid #d4463f;
+}
+
+.wcc-new.wcc-login-page li.accountTypeLogin-wrapper
+{
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+}
+
+.wcc-new.wcc-login-page li.accountTypeLogin-wrapper > div > div
+{
+    text-align: center;
+}
+
+.wcc-new.wcc-login-page #currentMembers > ol
+{
+    padding-top: 15px;
+}
+
+.wcc-new.wcc-login-page #currentMembers > ol > li.static1-wrapper
+{
+    margin: 15px 0px 25px 0px;
+}
+
+.wcc-new.wcc-login-page #currentMembers > ol > li.static1-wrapper span.wcc-forgot-text
+{
+    color: rgba(204, 204, 204, 1);
+    padding: 0px 0px 0px 190px;
+}
+
+.wcc-new.wcc-login-page #currentMembers > ol > li.static1-wrapper span a
+{
+    margin: 0px 5px;
+}
+
+.wcc-new.wcc-login-page #currentMembers > ol > li.static2-wrapper
+{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.wcc-new.wcc-login-page #currentMembers > ol > li.static2-wrapper > div
+{
+    border-top: 1px solid #e5e6f4;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin: 0px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.wcc-new .wcc-permit-eligibility.howtoapplycontainer
+{
+    width:100%;
+    margin-top:30px;
+}
+
+.wcc-new .wcc-permit-eligibility .howtoapplyiconcontainer
+{
+    position:relative;
+    float:left;
+    width:29%;
+    margin-left:2%;
+    margin-right:2%;
+    text-align:center;
+}
+
+.wcc-new .wcc-permit-eligibility .howtoapplyiconcontainer p
+{
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.wcc-new .wcc-permit-eligibility .howtoapplyiconheader
+{
+    position:relative;
+    float:left;
+    width:100%;
+    font-size:18px;
+    line-height:20px;
+    margin-top:20px;
+    margin-bottom:10px; 
+    font-weight:bold;
+}
+
+.wcc-new .wcc-permit-eligibility .howtoapplyimagecontainer
+{
+    position:relative;
+    float:left;
+    width:100%;
+    height:61px;
+    text-align:center;
+}
+
+.wcc-new .wcc-permit-eligibility .howtoapplyarrowgraphic
+{
+    position:absolute;
+    top:80px;
+    left:-18px;
+}
+
+
+
+.wcc-new #webchatbutton
+{
+    margin: 40px 0px 5px 30px;
+}
+
+.wcc-new #webchatbutton .webchatbutton
+{
+    background-color: rgba(85, 142, 205, 1);
+    height: 50px;
+    position: relative;
+    width: 160px;
+}
+
+.wcc-new #webchatbutton .webchatbutton:before
+{
+    clear: both;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    width: 50px;
+    z-index: 1;
+}
+
+.wcc-new #webchatbutton .webChatBtn
+{
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.wcc-new #webchatbutton .webChatBtn:after
+{
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 4px;
+    clear: both;
+    content: '';
+    height: 20px;
+    left: 13px;
+    position: absolute;
+    top: 13px;
+    width: 24px;
+}
+
+.wcc-new #webchatbutton .webChatBtn:before
+{
+    border: 0px solid transparent;
+    border-left-width: 0px;
+    border-right-width: 8px;
+    border-top: 8px solid rgba(255, 255, 255, 1);
+    clear: both;
+    content: '';
+    height: 0px;
+    left: 18px;
+    position: absolute;
+    top: 30px;
+    width: 0px;
+}
+
+.wcc-new #webchatbutton .webChatBtn button.webChatStart
+{
+    background-color: rgba(119, 165, 215, 1);
+    border: none;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: normal;
+    height: 100%;
+    margin: 0px;
+    outline: none;
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 110px;
+}
+
+.wcc-new #content .hidden,
+.wcc-new #content div.hidden,
+.wcc-new .hidden-wrapper
+{
+    display: none !important; /* I'm sorry! */
+}
+
+.wcc-new .wccaddressbox,
+.wcc-new .tablelessform fieldset > ol > li label ~ div.element.wccaddressbox
+{
+    border: 0;
+    padding: 0;
+    width: 70%;
+}
+
+.wcc-new input#submitPostcode.wccaddressbox {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.wcc-new .wccaddressbox .element.div-PostcodeSearch.wccaddressbox {
+    padding: 0;
+    border: 0;
+}
+
+.wcc-new #content .tablelessform .singleColumn .element
+{
+    padding:0;
+    margin: 0;
+    width: 70%;
+    left: -2px;
+}
+
+.wcc-new .tablelessform fieldset > ol > li
+{
+    display: table;
+    float: none;
+    table-layout: fixed;
+    vertical-align: middle;
+    /*margin-top: 8px;*/
+}
+
+.wcc-new #content .tablelessform .singleColumn div.element,
+.wcc-new .tablelessform fieldset > ol > li > label ~ div.element
+{
+    display: table-cell;
+    float: none;
+    padding:0;
+    margin: 0;
+    width: 160px;
+    vertical-align: middle;
+    /*margin-top: 8px;*/
+}
+
+.wcc-new #content .tablelessform .singleColumn label.element,
+.wcc-new .tablelessform fieldset > ol > li label.element
+{
+    display: table-cell;
+    float: none;
+    padding:0;
+    margin: 0;
+    width: 200px;
+    vertical-align: middle;
+    /*margin-top: 8px;*/
+}
+
+.wcc-new #content form.RVPEdit.tablelessform fieldset#activepermitsession > ol > li > label.element
+{
+    width: 30%
+}
+
+.wcc-new #loading
+{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.wcc-new .elemErrorWrap select ~ .addAddressLink,
+.wcc-new span.addVehicleLink
+{
+    cursor: pointer;
+    float: right;
+    border-bottom: 0 !important;
+    color: #5089cf;
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.wcc-new .checkbox-wrapper
+{
+    border: 1px solid #d3d5e7;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+}
+
+.wcc-new .checkbox-wrapper > input[type=checkbox]
+{
+    visibility: hidden;
+}
+
+.wcc-new .checkbox-wrapper > div > .checkbox-ticked
+{
+    border: 3px solid #5089cf;
+    border-right: none;
+    border-top: none;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    height: 5px;
+    width: 11px;
+    height: 4px;
+    top: 5px;
+    left: 3px;
+    position: relative;
+}
+
+.wcc-new .checkbox-wrapper > div.check-watcher
+{
+    width: 100%;
+    height: 100%;
+}
+
+.wcc-new .RVPRegistration fieldset checkbox > label
+{
+    width: 95% !important; /*have to overwrite an !important in a different file*/
+}
+
+.wcc-new .RVPRegistration fieldset label.fileuploadlabel
+{
+    width: 150px !important; /*have to overwrite an !important in a different file*/
+}
+
+.wcc-new .RVPRegistration  select,
+.wcc-new .RVPRegistration  select#SelectAddress
+{
+    width: 400px;
+}
+
+.wcc-new .RVPRegistration .pastDateSelect
+{
+    width: auto;
+    min-width: inherit;
+}
+
+.wcc-new .RVPRegistration  select#field-ParkingZone
+{
+    max-width: 230px;
+}
+
+.wcc-new #content div.elemErrorWrap input[type=submit].textstyle-back-button
+{
+    position: absolute;
+    margin-left: 0;
+    text-transform: none;
+    background: none;
+    color: rgba(51,51,51,0.5);
+    padding: 0;
+    width: auto;
+    left: 0;
+    margin-top: 15px;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.wcc-new #content form#chargeForm li.submits-wrapper input[type=submit].textstyle-back-button,
+.wcc-new #content form#chargeConfirm li.submits-wrapper input[type=submit].textstyle-back-button
+{
+    height: 30px;
+    margin: 10px 0px 0px 0px;
+    position: relative;
+    min-width: 75px;
+}
+
+.wcc-new #content input[type=submit].next-step-button.labbutton {
+    position: relative;
+    margin: auto auto auto auto;
+    padding: 0;
+    font-size: 20px;
+    float: none;
+    display: block;
+}
+
+.wcc-new .tablelessform fieldset ol li.submits-wrapper
+{
+    min-height: 50px;
+}
+
+.wcc-new .upload-size-warning {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #808080;
+}
+
+.wcc-new .tablelessform fieldset .proofOption ul li {
+    list-style: disc;
+    padding-left: 0;
+    padding-bottom: 6px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.wcc-new .tablelessform fieldset .proofOption ul li:last-child
+{
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+
+.wcc-new.wcc-login-page #currentMembers ol li span.wcc-forgot-text
+{
+    font-size: 12px;
+}
+
+.wcc-new .uploaded-file-info {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+ul.inline-list, ul.inline-list li {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.wcc-new.wcc-login-page #currentMembers ol li span.wcc-forgot-text
+{
+    font-size: 12px;
+}
+.wcc-new.wcc-login-page #Login.tablelessform input.labdefault {
+    margin-left: 55px;
+}
+
+.wcc-new .view-permit-txt-in-bar,
+.wcc-new .view-permit-txt-in-bar a
+{
+    color: #fff;
+    float: right;
+    line-height: 0;
+    font-size: 14px;
+    padding-right: 10px;
+}
+
+.wcc-new .view-permit-txt-in-bar a {
+    position: relative;
+}
+
+/** Absolute positioned to fix allignment when .wcc-new .permitlinks h3 wrapps */
+.wcc-new .view-permit-txt-in-bar {
+    position: absolute;
+    top: 27px;
+    right: 0;
+}
+
+ul.inline-list li {
+    display: inline-block;
+    margin-right: 19px !important; /* I'm sorry! */
+}
+.uploaded-file-info a {
+    text-decoration: underline;
+}
+
+.wcc-new .uploaded-file-info a {
+    text-decoration: underline;
+}
+
+.wcc-new .uploaded-file-info .date-added {
+    font-size: 12px;
+    line-height: 20px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: #808080;
+}
+
+.wcc-new #content #Options.RVPRegistration.tablelessform fieldset ol li.submits-wrapper div.element.clearfix
+{
+    width: 100%;   
+}
+
+.wcc-new .vehicle-title
+{
+    border-top: 1px solid #e5e6f4;
+    padding-top: 8px;
+    font-weight: bold;
+}
+
+.wcc-new #vehicle-title1.vehicle-title
+{
+    border-top: 0px solid #e5e6f4;
+    padding-top: 0px;
+}
+
+.wcc-new .vehicle-title > .remove-text
+{
+    color: #d0021b;
+    padding-left: 24px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#vehicle-title1.vehicle-title > .remove-text
+{
+    display: none;
+    width: 100%;
+}
+.wcc-new .loading-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #FFF;
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 5% 5em 0;
+    z-index: 999;
+}
+.wcc-new p.vehicle-reg-label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.wcc-new span.vehicle-reg {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.wcc-new #content .RVPEdit.tablelessform .subheading-button#revert_button {
+    font-size: 12px !important;
+    width: auto;
+}
+
+.wcc-new #Options.tablelessform .labnext {
+    float: none;
+}
+
+.wcc-new .no-wrap {
+    white-space: nowrap;
+}
+
+#newVehReg {
+    width: auto;
+}
+.wcc-new .ui-dialog-title {
+    color: #000000;
+}
+
+.disabledWCCButton {
+    background:#dddddd !important;
+    pointer-events:none;
+}
+
+.disabledSelect {
+    pointer-events:none;
+    color: #333 !important;
+    opacity: 0.5 !important;
+}
+.disabledSelect option {
+    color: #000 !important;
+    opacity: 1 !important;
+}​

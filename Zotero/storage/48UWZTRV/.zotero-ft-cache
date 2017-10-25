@@ -1,0 +1,67 @@
+The Lagrangian Ensemble metamodel for simulating plankton ecosystems - ScienceDirect
+Skip to main content
+View ScienceDirect over a secure connection: switch to HTTPS
+ScienceDirect
+
+    Journals
+    Books
+    Register
+
+    Sign in
+    Help
+
+Brought to you by: Imperial College London Library
+
+    Journals
+    Books
+    Register
+
+Sign in
+Help
+ 
+Download PDF Download
+Export
+Advanced
+ 
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page.
+Elsevier
+Progress in Oceanography
+Volume 67, Issues 1–2 , October 2005 , Pages 84-159
+Progress in Oceanography
+The Lagrangian Ensemble metamodel for simulating plankton ecosystems
+Author links open overlay panel J.D. Woods
+Show more
+https://doi.org/10.1016/j.pocean.2005.04.003 Get rights and content
+Abstract
+
+This paper presents a detailed account of the Lagrangian Ensemble (LE) metamodel for simulating plankton ecosystems. It uses agent-based modelling to describe the life histories of many thousands of individual plankters. The demography of each plankton population is computed from those life histories. So too is bio-optical and biochemical feedback to the environment. The resulting “virtual ecosystem” is a comprehensive simulation of the plankton ecosystem. It is based on phenotypic equations for individual micro-organisms.
+
+LE modelling differs significantly from population-based modelling. The latter uses prognostic equations to compute demography and biofeedback directly. LE modelling diagnoses them from the properties of individual micro-organisms, whose behaviour is computed from prognostic equations. That indirect approach permits the ecosystem to adjust gracefully to changes in exogenous forcing.
+
+The paper starts with theory: it defines the Lagrangian Ensemble metamodel and explains how LE code performs a number of computations “behind the curtain”. They include budgeting chemicals, and deriving biofeedback and demography from individuals. The next section describes the practice of LE modelling. It starts with designing a model that complies with the LE metamodel. Then it describes the scenario for exogenous properties that provide the computation with initial and boundary conditions. These procedures differ significantly from those used in population-based modelling.
+
+The next section shows how LE modelling is used in research, teaching and planning. The practice depends largely on hindcasting to overcome the limits to predictability of weather forecasting. The scientific method explains observable ecosystem phenomena in terms of finer-grained processes that cannot be observed, but which are controlled by the basic laws of physics, chemistry and biology. What-If? Prediction ( WIP ), used for planning, extends hindcasting by adding events that describe natural or man-made hazards and remedial actions. Verification is based on the Ecological Turing Test, which takes account of uncertainties in the observed and simulated versions of a target ecological phenomenon.
+
+The rest of the paper is devoted to a case study designed to show what LE modelling offers the biological oceanographer. The case study is presented in two parts. The first documents the WB model (Woods & Barkmann, 1994) and scenario used to simulate the ecosystem in a mesocosm moored in deep water off the Azores. The second part illustrates the emergent properties of that virtual ecosystem. The behaviour and development of an individual plankton lineage are revealed by an audit trail of the agent used in the computation. The fields of environmental properties reveal the impact of biofeedback. The fields of demographic properties show how changes in individuals cumulatively affect the birth and death rates of their population.
+
+This case study documents the virtual ecosystem used by Woods, Perilli and Barkmann (2005; hereafter WPB); to investigate the stability of simulations created by the Lagrangian Ensemble metamodel. The Azores virtual ecosystem was created and analysed on the Virtual Ecology Workbench (VEW) which is described briefly in the Appendix.
+Keywords
+Plankton ecosystem modelling
+Lagrangian Ensemble method
+Mathematical simulation
+Virtual ecology
+Azores
+Loading...
+Recommended articles
+Citing articles (0)
+Copyright © 2005 Elsevier Ltd. All rights reserved.
+Recommended articles
+Loading...
+Citing articles
+Loading…
+Elsevier
+About ScienceDirect Remote access Shopping cart Contact and support Terms and conditions Privacy policy
+Cookies are used by this site. For more information, visit the cookies page .
+Copyright © 2017 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.
+RELX Group
+ 
