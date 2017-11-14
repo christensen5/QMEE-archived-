@@ -1,15 +1,15 @@
 {
 	"translatorID": "e5e34825-1314-43bd-a9fe-f38f6ab48403",
+	"translatorType": 4,
 	"label": "Jahrbuch",
 	"creator": "Aurimas Vinckevicius",
 	"target": "^https?://www\\.emis\\.de/cgi-bin/jfmen/MATH/JFM/",
 	"minVersion": "3.0",
-	"maxVersion": "",
+	"maxVersion": null,
 	"priority": 100,
 	"inRepository": true,
-	"translatorType": 4,
-	"browserSupport": "gv",
-	"lastUpdated": "2017-01-01 15:22:27"
+	"browserSupport": "gcsv",
+	"lastUpdated": "2017-11-07 21:10:00"
 }
 
 function detectWeb(doc, url) {

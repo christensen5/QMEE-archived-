@@ -1,11 +1,14 @@
 {
 	"translatorID": "32d59d2d-b65a-4da4-b0a3-bdd3cfb979e7",
+	"translatorType": 3,
 	"label": "RIS",
 	"creator": "Simon Kornblith and Aurimas Vinckevicius",
 	"target": "ris",
 	"minVersion": "3.0.4",
-	"maxVersion": "",
+	"maxVersion": null,
 	"priority": 100,
+	"inRepository": true,
+	"browserSupport": "gcsv",
 	"configOptions": {
 		"async": true,
 		"getCollections": "true"
@@ -15,10 +18,7 @@
 		"exportNotes": true,
 		"exportFileData": false
 	},
-	"inRepository": true,
-	"translatorType": 3,
-	"browserSupport": "gcsv",
-	"lastUpdated": "2017-07-27 09:11:30"
+	"lastUpdated": "2017-11-07 21:15:00"
 }
 
 function detectImport() {
@@ -153,7 +153,7 @@ for(ty in degenerateExportTypeMap) {
  *****************************/
 /** Syntax
  * {
- *   RIS-TAG: 
+ *   RIS-TAG:
  *     String, Zotero field used for any item type
  *     List, item-type dependent mapping
  *     {
@@ -1920,7 +1920,9 @@ function doExport() {
 					if(!value.length) value = undefined;
 				break;
 				case "notes":
-					value = item.notes.map(function(n) { return n.note.replace(/(?:\r\n?|\n)/g, "\r\n"); });
+					if (item.notes && Zotero.getOption("exportNotes")) {
+						value = item.notes.map(function(n) { return n.note.replace(/(?:\r\n?|\n)/g, "\r\n"); });
+					}
 				break;
 				case "tags":
 					value = item.tags.map(function(t) { return t.tag; });

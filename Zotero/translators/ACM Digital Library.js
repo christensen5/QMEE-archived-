@@ -1,15 +1,15 @@
 {
 	"translatorID": "f3f092bf-ae09-4be6-8855-a22ddd817925",
+	"translatorType": 4,
 	"label": "ACM Digital Library",
 	"creator": "Simon Kornblith, Michael Berkowitz, John McCaffery, and Sebastian Karcher",
 	"target": "^https?://([^/]+\\.)?dl\\.acm\\.org/(results|citation|author_page)\\.cfm",
 	"minVersion": "3.0",
-	"maxVersion": "",
+	"maxVersion": null,
 	"priority": 100,
 	"inRepository": true,
-	"translatorType": 4,
 	"browserSupport": "gcsibv",
-	"lastUpdated": "2017-01-26 12:12:58"
+	"lastUpdated": "2017-11-07 21:10:00"
 }
 
 /*
@@ -94,7 +94,8 @@ function scrape(doc) {
 
 	//compose bibtex URL
 	var bibtexstring = 'id=' + itemID + '&parent_id=' + parentID + '&expformat=bibtex';
-	var bibtexURL = url.replace(/citation\.cfm/, 'downformats.cfm')
+	var bibtexURL = url.replace(/dl[.-]acm[.-]org[^\/]*/, "dl.acm.org")  //deproxify the URL above.
+		.replace(/citation\.cfm/, 'downformats.cfm')
 		.replace(/([?&])id=[^&#]+/, '$1' + bibtexstring);
 	Zotero.debug('bibtex URL: ' + bibtexURL);
 	
@@ -106,8 +107,10 @@ function scrape(doc) {
 			//get the URL for the pdf fulltext from the metadata
 			var pdfURL = ZU.xpath(doc, '//meta[@name="citation_pdf_url"]/@content')[0];
 			if (pdfURL) {
+				pdfURL = pdfURL.textContent.replace(/dl[.-]acm[.-]org[^\/]*/, "dl.acm.org"); //deproxify URL
+				Z.debug("pdfURL: " + pdfURL);
 				item.attachments = [{
-					url: pdfURL.textContent,
+					url: pdfURL,
 					title: "ACM Full Text PDF",
 					mimeType: "application/pdf"
 				}];
