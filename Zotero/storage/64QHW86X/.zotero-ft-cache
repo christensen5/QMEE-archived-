@@ -1,0 +1,333 @@
+LETTER
+
+Ecology Letters, (2010) 13: 495–505
+
+doi: 10.1111/j.1461-0248.2010.01443.x
+
+Global marine primary production constrains ﬁsheries catches
+
+Emmanuel Chassot,1* Sylvain Bonhommeau,1 Nicholas K. Dulvy,2 Fre´ de´ ric Me´ lin,3 Reg Watson,4 Didier Gascuel5 and Olivier Le Pape5
+
+Abstract Primary production must constrain the amount of ﬁsh and invertebrates available to expanding ﬁsheries; however the degree of limitation has only been demonstrated at regional scales to date. Here we show that phytoplanktonic primary production, estimated from an ocean-colour satellite (SeaWiFS), is related to global ﬁsheries catches at the scale of Large Marine Ecosystems, while accounting for temperature and ecological factors such as ecosystem size and type, species richness, animal body size, and the degree and nature of ﬁsheries exploitation. Indeed we show that global ﬁsheries catches since 1950 have been increasingly constrained by the amount of primary production. The primary production appropriated by current global ﬁsheries is 17–112% higher than that appropriated by sustainable ﬁsheries. Global primary production appears to be declining, in some part due to climate variability and change, with consequences for the near future ﬁsheries catches.
+Keywords Bottom-up, Large Marine Ecosystem, quantile regression, sustainable fishing.
+Ecology Letters (2010) 13: 495–505
+
+INTRODUCTION
+Fisheries have long been thought inexhaustible because of the vastness of the oceans that represent more than 70% of the surface of planet Earth. Over time, technology has advanced and ﬁshing has progressively spread over the world oceans to affect marine species at lower trophic levels and in offshore deeper waters (Pauly et al. 2003; Essington et al. 2006). After a long period of steady increase, cumulative world marine ﬁsheries catches stabilized in the mid-1990s at between 75 and 85 · 106 tons (Watson & Pauly 2001). Such stability might actually be spurious, instead it is likely that global ﬁsheries catches are declining and the decline has been masked by underreporting and
+
+misreporting of catch by countries combined with large environmentally-forced ﬂuctuations in the catch of small pelagic species, such as the Peruvian anchoveta (Watson & Pauly 2001). The decrease in global catch might be explained by the sequential depletion of individual stocks, which in the past would have been balanced by ﬁsheries expansion to new opportunities in the high seas and into deeper water or by the exploitation of lower trophic levels (Pauly et al. 2002). Although limited empirical evidence has been provided to date, the attainment of a maximum of global catch is consistent with fundamental energetic limits to ﬁsheries exploitation (Ryther 1969).
+Solar radiation is the main external source of energy for marine ecosystems. More than 90% of oceanic productivity
+
+1UMR 212 EME, IRD-IFREMER-UM2, Centre de Recherche Halieutique Me´ diterrane´ enne et Tropicale, Avenue Jean Monnet, BP 171, 34 200 Se` te, France 2Earth to Ocean Research Group, Simon Fraser University Burnaby, BC V5A 1S6, Canada 3European Commission, Joint Research Centre, Institute for Environment and Sustainability, I-21027 Ispra (VA), Italy
+
+4Sea Around Us project, Fisheries Centre, University of British Columbia, 2202 Main Mall, Vancouver, BC V6T 1Z4, Canada 5Universite´ Europe´ enne de Bretagne, UMR ESE 985, INRA – Agrocampus Ouest, 65 rue de St Brieuc, CS 84215, 35042 Rennes, France *Correspondence: E-mail: emmanuel.chassot@ird.fr
+Ó 2010 Blackwell Publishing Ltd/CNRS
+
+496 E. Chassot et al.
+
+Letter
+
+is ﬁxed by phytoplankton which is then transferred through food webs by predation and lost through metabolism (Lindeman 1942; Duarte & Cebrian 1996). The total ﬁsh and invertebrate production in an ecosystem results from the conversion of organic matter at each trophic level. This production depends on ecological features such as the number of feeding links, the efﬁciency of energy transfer from one trophic level to the next, and temperaturedependent metabolic kinetics in aquatic food web (Lindeman 1942; Ryther 1969; Iverson 1990; Ernest et al. 2003; Gascuel et al. 2008), and on ecosystem-speciﬁc features such as ecosystem size (Post et al. 2000), species richness (Frank et al. 2007), and consumer body size (Denney et al. 2002). In addition, the total secondary production available to ﬁsheries depends upon the degree of ﬁshing mortality and the nature of ﬁsheries targeting of different trophic levels in the food web. Fisheries focusing only on lower trophic levels have the potential to appropriate orders of magnitude more energy than those focused on top predators (Pauly & Christensen 1995; Gascuel & Pauly 2009).
+Two opportunities enable a global scale exploration of the relationship between primary production and ﬁsheries catches: the recognition and description of large biogeochemical and biologically consistent provinces (Large Marine Ecosystems) and the advent of satellite monitoring of ocean colour and primary productivity. Large Marine Ecosystems encompass similar physical and ecological features, such as hydrography and productivity and provide convenient spatial units to test whether patterns of correlations between primary production and ﬁsheries catches observed for some regions (Ware & Thomson 2005; Chassot et al. 2007; Frank et al. 2007) also persist at a global scale. Ocean primary productivity is inherently variable over short temporal (daily) and spatial (meter) scales, synoptic views are difﬁcult to achieve with oceanographic ships which cross oceans at the speed of a bicycle. The only high frequency, basin-scale sampling of oceanic primary production is available from satellites (Longhurst 1998).
+Here, we test the relationship between marine primary production and ﬁsheries catches across the worldÕs Large Marine Ecosystems. Primary production estimates in each LME were combined with global catch statistics that account for illegal and unreported ﬁshing (Agnew et al. 2009). First, we test the degree to which primary production but also ecosystem features (type and size of ecosystem, sea surface temperature, species richness) and the degree and nature of ﬁsheries (level of pressure, trophic and size structure of the catch) explain the spatial variation in ﬁsheries catches. Second, we explore the degree to which global ﬁsheries catches are constrained by primary production using quantile regression models.
+Ó 2010 Blackwell Publishing Ltd/CNRS
+
+MATERIALS AND METHODS
+Estimating primary production
+Annual estimates of primary production (PP) in each Large Marine Ecosystem over the period 2000–2004 were derived from averaged monthly global maps of surface concentrations of chlorophyll-a based on the Sea-viewing Wide Field-of-View Sensor (SeaWiFS, NASA) global time series (McClain et al. 2004). PP was computed from the surface concentration of the chlorophyll-a pigment, which serves as a proxy for algal biomass, using a wavelengthand depth-resolved model (Longhurst et al. 1995), further details are in the supplementary material online (Fig. S1). The PP estimates obtained at global scales with this approach were broadly consistent with those from other models driven by ocean colour data in terms of global average (47 Pg C year)1) as well as spatial distribution (Carr et al. 2006) and compared favourably with a set of PP ﬁeld measurements collected in the Equatorial Paciﬁc and assembled for an international intercomparison exercise (Friedrichs et al. 2009). For long term analysis, we assumed that PP estimates during 2000–2004 reﬂect the large-scale spatial gradients in PP since 1950; this assumption is later discussed.
+Fisheries catches
+Annual catch data, including all quantities landed for both food and feed purposes, were available from spatially resolved global catch datasets prepared by the Sea Around Us project (http://www.seaaroundus.org/). Time series of catch data were derived from the harmonized global catch statistics of the Food and Agriculture Organization (FAO) of the United Nations and several other sources including collaborative national catch reconstructions using rule-based procedures which assign catch to 30-min spatial cells based on taxon distribution, and on the ﬁshing patterns ⁄ arrangements of reporting countries (Watson et al. 2004). Catch data were corrected for illegal and unreported catches that can represent a substantial amount of ﬁsheries catches (Agnew et al. 2009). The data set was available for the period 1950–2004 and excluded (1) ecosystems where data were incomplete, insufﬁciently detailed or suspected to be unreliable (e.g. Yellow Sea; Watson & Pauly 2001), (2) catches from distant-water ﬂeets (not allocated to ﬁshing areas) and (3) large and medium pelagic species that can migrate outside and between LME boundaries. Thus, the dataset included resident species deﬁned as populations that occupy the continental margin year-round and undertake only spatially limited seasonal migrations (Ware & Thomson 2005). As a result, the following 10 of the 64 LMEs were excluded from the analysis: Antarctic, Arctic Ocean, Beaufort Sea, Chukchi Sea, East China Sea, East Siberian
+
+Letter
+
+Primary production constrains global ﬁsheries catch 497
+
+Sea, Hudson Bay, Kara Sea, Laptev Sea, and Yellow Sea. The remaining 54 LMEs considered here represented more than 68% of the world ﬁsheries catches during 1950–2004. The selected resident non-migratory ﬁshes and invertebrates corresponded to 90% of total catch in these LMEs during 1950–2004.
+
+Primary production required to support ﬁshery catches
+
+To convert ﬁsheries catches into comparable energy units,
+
+we calculated the primary production required (PPR) to support ﬁshery catches in t C km)2 year)1. This allows
+
+comparison of ﬁsheries catches consisting of species from
+
+different trophic levels (Ryther 1969; Pauly & Christensen
+
+1995). The primary production required to produce the
+
+catches was calculated as following:
+
+PPRj
+
+¼
+
+Xn
+
+ Cij
+
+
+
+Â
+
+
+
+1
+
+TLi À1
+
+i¼1 9
+
+TEj
+
+ð1Þ
+
+where Cij is the catch (in metric tons) of species i in LMEj, TE is the trophic transfer efﬁciency in LMEj, i.e. the proportion of prey production converted to predator production, TLi is the trophic level of species i and n is the number of species harvested in the LME. PPR estimates were based on a conservative 9:1 ratio for the conversion of wet weight to carbon (Strathmann 1967).
+Trophic levels derived from stomach content data were extracted from the FishBase database (Froese & Pauly 2009) and assigned to each species, assuming they were stable from year to year and valid for the area covered by the study.
+
+Potential covariates of the primary production and ﬁsheries catch relationship
+Several candidate covariates that represent major physical and ecological processes within Large Marine Ecosystems were considered as predictors of ﬁsheries catch. In addition to primary production, we selected seven covariates for which data were available at LME scale: ecosystem type, sea surface temperature (Jennings et al. 2008), ecosystem size (Post et al. 2000), species richness (Frank et al. 2007), ﬁshing pressure (Coll et al. 2008), mean trophic level (Gascuel et al. 2008), and maximum average body length (Denney et al. 2002). In doing so we explore the link between energy and ﬁsheries production while accounting for all other major hypotheses.
+Ecosystem type Three ecosystem types were considered: upwelling, temperate, and tropical. Transfer efﬁciency TE was derived from a synthesis of ecosystem models and set equal to 5%, 10%,
+
+and 14% for upwelling, temperate and tropical ecosystems, respectively (Coll et al. 2008; Libralato et al. 2008), and assumed constant for each trophic level during 1950–2004.
+Sea surface temperature The sea surface temperature (SST) distributions, obtained from the Physical Oceanography Distributed Active Archive Center (PO. DAAC, Jet Propulsion Laboratory), are provided by the AVHRR Pathﬁnder data set (version 5) as monthly maps (1985–2004) with a resolution of 4 km (http://podaac.jpl.nasa.gov/). Only the data points associated with the highest level of quality ﬂags were considered.
+Ecosystem size (ES) The surface area of each Large Marine Ecosystem was computed using a geographic information system and assumed to be a good proxy of ecosystem size.
+Species richness (SR) The number of marine ﬁshes in each Large Marine Ecosystem was derived from the Sea Around Us project (http://www.seaaroundus.org/). We calculated species richness per unit of area in each LME to account for the underlying species area relationship.
+Fishing pressure (Psust) Fishing has both direct and indirect effects on ﬁsh populations and marine ecosystems (e.g. decline in stock abundance and habitat degradation) eventually affecting their structure and functioning (Garcia et al. 2003). Overexploitation of single species limits the catch that can be taken, but in a multispecies context the removal of relatively unproductive high trophic level predatory species can lead to increased ﬁsheries catch potential through the proliferation of smaller, more-productive individuals and species (e.g. Gascuel et al. 2008). As marine ecosystems exhibit large differences in ﬁsheries history, levels of exploitation, and trophic structure of the catch; an index of the overall ecosystem effects of ﬁshing was used to account for differences in ﬁshing pressure. The mean annual probability of sustainable ﬁshing (Psust) was recently developed to assess the level of overﬁshing at ecosystem scale based on the total removal of secondary production compared to reference levels derived from ecosystem models (Coll et al. 2008; Libralato et al. 2008). The mean annual value of Psust calculated for the period 2000–2004 accounting for discards and 30% illegal and unreported catch estimates was used. Lower probabilities of sustainable ﬁshing Psust indicate higher ﬁshing pressures (Coll et al. 2008).
+Mean trophic level of the catch (MTL) For each LME, MTL of the catch, computed as the weighted average of trophic level of harvested species, was
+
+Ó 2010 Blackwell Publishing Ltd/CNRS
+
+498 E. Chassot et al.
+
+Letter
+
+used to describe the position of the ﬁshery in the food web during 2000–2004 (Froese & Pauly 2009).
+Average maximum length (Lmax) Fisheries yield and sustainability is, to some degree, determined by the intrinsic population growth rate of the target species – for a given ﬁshing mortality, shark ﬁsheries are likely to be less sustainable and less productive than anchovy ﬁsheries (Reynolds et al. 2005). We used body size as a proxy for the intrinsic rate of population increase, based on theoretical and empirical evidence for a scaling relationship between body size and the intrinsic rate of population increase (Denney et al. 2002; Savage et al. 2004). The average maximum length of the ﬁsh catch within each LME (Froese & Pauly 2009), computed as the weighted average of maximum length of harvested species, was used as a surrogate for the intrinsic growth rate of increase of the ﬁsh community (Denney et al. 2002).
+
+Testing for covariates of ﬁsheries catch production
+
+We used linear models to test for the effects of ﬁshing pressure, average maximum length, sea surface temperature, mean trophic level, ecosystem size, species richness, logprimary production and ecosystem type on ﬁsheries catches (log-PPR) during the period 2000–2004. No interaction effect was included in the model. Log-transformation of the response variable (PPR) and the primary production covariate enabled to remove skew and minimize the large standard deviations in the data. The following model was considered:
+
+ÀÁ log PPRj ¼ Psustj þÀ LmÁaxj þSSTj þMTLj þESj þSRj
+þlog PPj þETj þej
+
+ð2Þ
+
+where j indexes LME, Psust is the probability of sustainable ﬁshing, Lmax is the average maximum length of the catch, SST is the sea surface temperature, MTL is the mean trophic level of the catch, ES is the ecosystem size, SR is the species richness, PP is the primary production, ET is the ecosystem type. j was modelled as an independent, normally distributed random variable with mean zero and constant variance. The assumptions of homoscedasticity and Gaussian error were checked through the residuals. Models were evaluated using the Akaike information criterion (AIC).
+
+Inferring constraints or limits using quantile regression
+Changes in the slope of the regression models were used to investigate whether primary production may constrain ﬁshery catches. Quantile regressions are used to identify limiting factors when relating ecological variables (e.g. ﬁsh abundance) to environmental indices (Cade & Noon 2003;
+
+Ó 2010 Blackwell Publishing Ltd/CNRS
+
+Planque & Buffaz 2008). A factor is inferred to be limiting when the slope tends to be steeper for upper quantiles and when it is signiﬁcantly different from zero for high quantiles (Planque & Buffaz 2008). In particular, linear regression models for quantiles ranging from 10% to 90% by steps of 10% were used to describe how the range of catch and PPR levels varied according to PP over long- (1950–2004) and short-term scales (2000–2004). The 90% quantile was used as a proxy of the maximum ﬁshery production, although the upper regression quantiles do not describe the exact limit of the distribution function.
+We tested whether the ﬁshery catch changed over time through the slope of linear model ﬁtted between mean annual values of catch and PPR per LME averaged over (1) the recent period (2000–2004) and (2) the long-term (1950–2004). We then estimated the slope of the 90% quantile regressions ﬁtted without intercept to data grouped by 5-year periods over 1950–2004 to analyse the temporal changes in the maximum of PPR ⁄ PP ratio, considered as an index of LME exploitation (Pauly & Christensen 1995; Libralato et al. 2008).
+Deﬁning the upper limit of ﬁsheries catch is a pre-requisite to assess current levels of ﬁshing relative to benchmarks and give insights into future ﬁsheries catch. We used the slopes estimated from the 90% quantile linear regression models ﬁtted without intercept to predict the maximum global ﬁsheries catches for 2000–2004, considering that all Large Marine Ecosystems could be exploited at maximum levels given their ecosystem-speciﬁc primary production. Similarly, sustainable levels of maximum global ﬁsheries catch have been calculated from the 90% quantile regression slopes estimated using solely LMEs where the probability of sustainable ﬁshing Psust was higher than 75% and 95%. Quantile regression models were performed using the R package quantreg (Koenker 2009).
+RESULTS
+A large spatial variability in ﬁsheries catch
+The mean annual catch during 2000–2004 for all species in the 54 LMEs was 68 · 106 t year)1 (SD = 4 · 106 t year)1), corresponding to a PPR of 3.5 · 109 t C year)1 (SD = 0.09 · 109 t C year)1). The LMEs showed strong differences in ﬁshery catch over the long term (1950– 2004) and recent period (2000–2004), without any clear pattern associated with ecosystem type (Fig. 1a,c). In the 2000s, approximately 1 t km)2 year)1 of ﬁsh catch is derived from 600 t C km)2 year)1 of primary production. Three of the 54 LMEs showed high levels of mean annual catch when averaged over the whole period 1950– 2004 (Fig. 1a): the North Sea (PP = 919 t C km)2 year)1, catch = 5.6 t km)2 year)1), the Humboldt Current (PP = 822 t C km)2 year)1, catch = 4.0 t km)2 year)1), and the
+
+Letter
+Iceland shelf (PP = 561 t C km)2 year)1, catch = 3.9 t km)2 year)1). These LMEs were still the most productive in 2000–2004, with the Humboldt LME reaching an average ﬁsheries catch of 7.0 t km)2 year)1, being by far the most productive ecosystem of the world (Fig. 1c). The high catch levels in these LMEs in the recent period were mainly due to the catch being comprised largely of low trophic level (TL) species, i.e. sandeels (Ammodytes spp.; TL = 3.1), anchovy (Engraulis ringens; TL = 2.7), and capelin (Mallotus villosus; TL = 3.05) for the North Sea, Humboldt, and Iceland Shelf, respectively.
+The conversion of catch weights into the Primary Production Required to support these ﬁsheries reduced the spatial variability in ﬁshery catch among LMEs (Fig. 1b,d) and showed that eastern boundary upwelling systems exhibit the highest values of PPR. The LMEs where the highest proportion of primary production is appropriated by ﬁsheries catch over 1950–2004 include the Canary, Humboldt, and Benguela eastern boundary current upwell-
+
+Primary production constrains global ﬁsheries catch 499
+ing ecosystems, with values of 44%, 50%, and 24%, respectively in the 2000s. Again the high PPR can be attributed to the high catches of small low trophic level pelagic species such as anchovies (Engraulis spp.), sardines (Sardina pilchardus and Sardinops spp.), and sardinellas (Sardinella spp.) in upwelling LMEs and the low transfer efficiency of this type of ecosystems.
+Disentangling the major factors explaining ﬁsheries catch
+The spatial variance in global ﬁsheries catches was best explained by four variables which explained 77% of the interLME variance in log-PPR: primary production (logPP), the probability of sustainable ﬁshing (Psust), the average maximum length (Lmax), and ecosystem type (ET). Primary production, ecosystem type, and ﬁshing pressure explained most of the variance (Table 1). The effects of other potential covariates, SST, MTL, ES, and SR were not signiﬁcantly different from zero and hence removed from
+
+Figure 1 Global marine primary production (PP) and ﬁsheries production expressed in (a,c) catch (t km)2 year)1) and (b,d) primary production required (PPR) to sustain catches (in t C km)2 year)1) over the long-term period (1950–2004) and recent period (2000–2004). Solid lines indicate quantile regressions models with quantile = 10%, 50%, and 90%.
+Ó 2010 Blackwell Publishing Ltd/CNRS
+
+500 E. Chassot et al.
+
+Letter
+
+the ﬁnal model. The estimates of the ecosystem type parameters were higher for upwellings than tropical and temperate ecosystems, in accordance with the transfer efﬁciency we used to calculate PPR.
+The prediction of Primary Production Required in each LME was reasonably accurate (Normalized Root Mean Square Error = 12%). The model prediction of global PPR was 3.74 · 109 t C year)1 which is very similar to the actual PPR computed from the data (3.46 · 109 t C year)1). More sustainable ﬁsheries would decrease the PPR, the negative coefﬁcient suggests PPR signiﬁcantly decreased with higher values of Psust (Table 1). Exploitation of smaller-bodied ﬁshes results in greater ﬁsheries catch; the negative coefﬁcient shows that PPR signiﬁcantly decreased with Lmax (Table 1). Primary production appears to constrain ﬁsheries catches since PP positively and signiﬁcantly affects PPR, once ecosystem type, degree of ﬁsheries exploitation (Psust), and intrinsic population growth (Lmax) are accounted for (Table 1).
+Primary production as a limiting factor of ﬁsheries catch
+Primary production limits average and maximum ﬁsheries catch across the world at the LME scale over both short and longer time scales (Fig. 1a, c and S2). The limitation has become increasingly apparent as regression slopes become steeper in more recent time periods (Fig. 2). The signiﬁcant relationship found between long-term (1950–2004) and recent catch (2000–2004) (slope = 0.76, adjusted r2 = 0.82, P < 0.001) revealed that the spatial gradients in fisheries catches were consistent through time (Figs S3 and S4).
+Increasing levels of ﬁshing exploitation through time
+There has been a steady increase in the level of exploitation (PPR ⁄ PP) with a maximum value of 16% during 2000– 2004, based on the change in the 90% quantile regression slope (Figs 3 and S5). The stability of the PPR ⁄ PP ratio in
+
+the last 20 years could suggest that current ﬁshing patterns, and especially the ﬁshing strategy currently applied in term of trophic levels that are targeted, may not allow any further increase in LME ﬁsheries catch relative to primary production levels.
+Predictions of maximum global ﬁsheries catch
+The potential maximum of global catch in the LMEs was predicted to be 146 · 106 t year)1 during 2000–2004 based on the 90% quantile regression model ( Table 2). The mean total catch during 2000–2004 exceeded the maximum global ﬁsheries catch predicted from the Large Marine Ecosystems where ﬁshing is considered sustainable by 17% and 112% for Psust > 75% and Psust > 95%, respectively (Table 2). These results emphasize the dependence of the current levels of ﬁsheries catch on the unsustainable exploitation of these Large Marine Ecosystems.
+DISCUSSION
+Linkage between primary production and ﬁsheries catches
+Globally, ﬁsheries catches are increasingly constrained by the primary productivity of the underlying Large Marine Ecosystems (Pauly & Christensen 1995). While this has been shown at regional scales (Ware & Thomson 2005; Chassot et al. 2007), the novelty of the present work is to show that primary production constrains ﬁsheries catches worldwide, while accounting for ecosystem and ﬁsheries features. Here, we show that the primary production appropriated by ﬁsheries catches depends on the scale and nature of ﬁsheries, with heavily exploited ﬁsheries and those ﬁsheries targeting the smallest ﬁsh species appropriating more primary production per tonne of catch. In addition, comparison of long-term vs. recent catches showed that the regional gradients in ﬁsheries catches have not been modiﬁed during the last half century, in spite of different
+
+Table 1 Primary production, ﬁshing pressure, ecosystem type and average maximum length of ﬁsheries catches best explain the spatial
+
+variance in ﬁsheries catch among Large Marine Ecosystems
+
+ÀÁ
+
+ÀÁ
+
+Selected model: log PPRj ¼ Psustj þ Lmaxj þ log PPj þ ETj þ ej
+
+Explanatory variable
+
+Parameter value
+
+Degrees of freedom
+
+Standard Error
+
+P-value
+
+% Deviance explained
+
+Probability of sustainable ﬁshing Psust Average maximum length Lmax Primary production log-PP Ecosystem Type ET (Tropical) Ecosystem Type ET (Upwelling)
+
+)0.0311 )0.0384
+1.3755 1.2913 3.0516
+
+1 1 1
+2
+
+0.0046 0.0093 0.2793 0.2577 0.3770
+
+<0.001 <0.001 <0.001 <0.001 <0.001
+
+28.24 6.28 23.53
+30.35
+
+Summary table of the parameter estimates, degrees of freedom, standard errors, P-value, and percentage of deviance explained for the selected model. j index LME and  is a normally distributed random variable with mean zero and constant variance.
+
+Ó 2010 Blackwell Publishing Ltd/CNRS
+
+Letter
+
+Primary production constrains global ﬁsheries catch 501
+
+Figure 2 Slope of quantile regression between primary production and (a,c) catch and (b,d) primary production required to sustain catches (PPR) as a function of quantile over the long-term period (19502004) and recent period (2000–2004). Shaded area indicates the 95% conﬁdence interval.
+
+Figure 3 Change in the 90% quantile regression slope of the relationship between primary production (PP) and primary production required to sustain catches (PPR). Solid line indicates standard deviation around estimates.
+histories and developments of the LME ﬁsheries combined with increasing exploitation intensity. This coupling between marine production and ﬁsheries catches reveals that similar mechanisms underlie the functioning of marine ecosystems worldwide. Based on the trophodynamic approach of Lindeman (1942), we suggest these patterns are consistent with energetic transfers along the food web, from the biomass produced by phytoplankton photosynthesis to upper trophic levels.
+
+Global open-access databases for characterizing ecosystem-level ecological patterns
+The advent of open-access global datasets derived from remote sensing, the compilation of ecological studies, ( i.e. estimates of trophic levels, average maximum length, transfer efﬁciency, and species richness), and ﬁshery statistics allowed us to unveil the relative importance of bottom-up and extrinsic control of ﬁsheries catch at global scale. The availability of global databases such as SeaWiFS, FishBase, and ECOwEB (Cohen 1989) has proven to be a fundamental tool for detecting ecosystem-level ecological patterns and for testing for hypotheses on general laws and rules in ecology (e.g. Pimm et al. 1991). The development of access web services and data management infrastructures based on international collaborative work (e.g. SeaDataNet; http://www.seadatanet.org/) combined with openness of datasets collected through public funds is a major step toward the improvement of our knowledge on the structure and functioning of marine ecosystems.
+Due to the short span of SeaWiFS data, we assumed time-consistency in the spatial gradients of primary production although signiﬁcant changes in phytoplankton may have occurred in the last decades (Reid et al. 1998). Comparison of chlorophyll climatologies derived from historical in situ data going back to the 1950s and remote sensing data sets showed that seasonal and spatial patterns are consistent at global scale (Conkright & Gregg 2003). This was supported by our data as the spatial differences in primary production were generally greater than the temporal variations observed in the Large Marine Ecosystems for the
+Ó 2010 Blackwell Publishing Ltd/CNRS
+
+502 E. Chassot et al.
+
+Letter
+
+Table 2 Global ﬁsheries catch during 2000–2004 and maximum global ﬁsheries catch (MGFC) predicted from quantile linear regression models for different levels of sustainability
+
+Number of LMEs Catch (·106 t y)1)
+
+Global ﬁsheries catch 2000–2004
+54 68 (60–76)
+
+Maximum global ﬁsheries catch MGFC
+54 146 (101–191)
+
+Maximum global ﬁsheries catch MGFC75
+31 58 (48–68)
+
+Maximum global ﬁsheries catch MGFC95
+16 32 (23–41)
+
+MGFC, MGFC75, MGFC95 computed for all Large Marine Ecosystems, LMEs where Psust > 75%, and LMEs where Psust > 95%, respectively. Values between brackets indicate 95% conﬁdence interval.
+
+period 2000–2004. There are still large uncertainties associated with estimates of primary production in the optically complex waters of some coastal areas, especially when turbidity is increased owing to suspended and dissolved materials. Furthermore, annual primary production estimates are seasonally biased in Large Marine Ecosystems of northern and southern latitudes due to cloud and ice coverage. Moreover, these high latitude ecosystems face the biggest but uncertain anticipated potential impacts from climate change on primary production due to reduced sea ice and early impact from ocean acidiﬁcation. Some of these physical changes are anticipated to lead to high species turnover due to local extinction and invasion in the Arctic and the sub-polar region of the Southern Ocean (Reid et al. 2007; Cheung et al. 2009). Primary production distributions provided by ocean colour and appropriate models remain the major source of information for a synoptic and consistent mapping of phytoplankton activity over large spatial and temporal scales (Longhurst 1998). A better knowledge of climate impacts on ﬁsheries will require focusing on understanding primary production and energy transfers in both coastal waters and high latitude Large Marine Ecosystems.
+Given the lack of precise information on transfer efﬁciency in the complex marine food webs of the Large Marine Ecosystems, we assumed constant ecosystem typespeciﬁc transfer efﬁciency values (Libralato et al. 2008). These values were based on a set of ecosystem models constructed from large datasets and steady state assumptions. Assuming constant transfer efﬁciency in dynamic food webs might affect our perception of the spatiotemporal variability of energy transfers from primary production to upper trophic levels. Further fundamental work is required to analyse trade-offs between transfer efﬁciencies and predator–prey mass ratio and how these parameters vary across environments (Jennings et al. 2008).
+We used the probability of sustainability (Coll et al. 2008) as a measure of ﬁshing pressure in the Large Marine Ecosystems. Despite some limitations, this index is based on a suite of indicators of overﬁshing that account for ﬁshing effects at both population and ecosystem levels (Murawski 2000; Coll et al. 2008). In addition to the direct
+Ó 2010 Blackwell Publishing Ltd/CNRS
+
+impact of overﬁshing on stock dynamics, the probability of being sustainably ﬁshed includes several components such as non-harvest mortality and habitat degradation that affect ecosystem properties and ﬁsheries catches (Murawski 2000). Estimating an index of ﬁshing pressure, i.e. ﬁshing mortality at the scale of a population from observations of ﬁshing effort (e.g. number of days at sea) is already a major task faced by ﬁsheries scientists when assessing the state of ﬁsh stocks. Inferring ﬁshing pressure estimates from the population to the community and whole ecosystem can be very complex due to interaction effects such as prey release which can increase secondary production and other ﬁshing effects such as habitat degradation (Garcia et al. 2003). A better compilation and accessibility of global ﬁshing effort and mortality estimates from Regional Marine Fisheries Organisations (RMFOs) and research institutes will ultimately facilitate comparative analyses among exploited ecosystems.
+Life-history traits have been shown to affect the response of ﬁsh stocks to ﬁsheries exploitation, with larger and later maturing species being less able to withstand a given rate of ﬁshing mortality than their smaller earlier maturing counterparts (Jennings et al. 1998). Maximum length is a key lifehistory trait and has been shown to be highly correlated with recruit and adult production and density dependence (Denney et al. 2002). Using the FishBase global information system (Froese & Pauly 2009), we computed an average maximum length within each Large Marine Ecosystem to synthesize life-history traits of the ﬁsh community in order to account for its capacity to sustain ﬁshing mortality. Since detailed information on population dynamics (e.g. stockrecruitment relationship) is only available for ﬁsh stocks assessed within the framework of the RMFOs, maximum body size currently provides the most appropriate proxy for intrinsic population growth for the 901 exploited ﬁsh species considered in the present analysis (Denney et al. 2002).
+Global ﬁsheries catch in a context of climate change
+Our results conﬁrm the linkage between primary production and ﬁsheries catches to estimate the potential maximum
+
+Letter
+
+Primary production constrains global ﬁsheries catch 503
+
+catch of the world oceans based on marine systems described by different ecological transfer efﬁciencies (Ryther 1969; Pauly & Christensen 1995). In a context where cumulative world ﬁsheries catches have already shown signs of decline since the mid-1990s after a long period of steady increase (Watson & Pauly 2001; Pauly et al. 2002), our estimates indicate that current total ﬁsheries catch could exceed sustainable reference levels, compared to LMEs where ﬁshing is considered sustainable (Table 2). PPR predictions from the linear model were found to be in good agreement with observed data and consistent with global estimates of Pauly (1996) ($3.109 t C year)1).
+Our model could be used to predict potential changes in ﬁsheries catch given future mean maximum size, levels of ﬁshing sustainability, and projections of marine production following the Intergovernmental Panel on Climate Change (IPCC) scenarios. The recent analysis of 50-year time series of sea surface temperature (SST) has shown warming trends in most of the LMEs of the world, with acceleration in the late 1970s-early 1980s and strong regional variations in SST change (Belkin 2009). Primary production remote sensing observations revealed that the recent surface temperature increase has triggered large spatial changes and a reduction in the global production of ocean phytoplankton since the early 1980s (e.g. Behrenfeld et al. 2006). This trend is especially marked outside the equatorial zone, where the areas of low chlorophyll production have recently expanded signiﬁcantly (Polovina et al. 2008). Following our analysis, a reduction in primary production could have global negative impacts on ﬁsheries catch and exacerbate current trends of overﬁshing. Predictions of chlorophyll-a concentrations to climate warming derived from coupled atmosphere-ocean general circulation models indicate little overall change in PP by 2050 (Sarmiento et al. 2004). However these small changes at the global scale belie marked regional differences in the PP such as 17–42% contraction of productive marginal sea ice biomes and 7–16% expansion of the less productive subtropical oligotrophic gyres (Sarmiento et al. 2004). OÕConnor et al. (2009) recently showed that the metabolic effects of temperature change will affect food web structure and productivity in mesocosms. Although the metabolic role of temperature is widely recognized (Lo´pezUrrutia et al. 2006; Gascuel et al. 2008; Jennings et al. 2008), temperature appears to be relatively unimportant compared to the other variables in our model. Outside the laboratory, the metabolic effect of temperature variation appears relatively unimportant at ecosystem scales compared to the level of primary production, mean body size, and degree of ﬁsheries exploitation.
+Our results have an important bearing for ecosystem approaches to ﬁsheries and future climate change impact on global ﬁsheries catches. First, many sustainably ﬁshed ecosystems may actually be drawing down the balance of
+
+ecological capital by taking ﬁsheries catches beyond that which can be sustained by current primary production. Second, predicted decline in global primary production might exacerbate current trends of overﬁshing and may not only lead to food security issues but also affect the human well-being and economies of many ﬁshery-dependent countries.
+ACKNOWLEDGEMENTS
+The authors would like to thank the Ocean Biology Processing Group of NASA for the distribution of the SeaWiFS products. Authors acknowledge the support of the Sea Around Us Project, a scientiﬁc collaboration between the University of British Columbia and the Pew Environment Group, for harmonized global catch statistics. A Bundy, D Duplisea (DFO, Canada), P Cury (IRD, France), and DA Siegel (UCSB, USA) made useful comments to improve the manuscript. We thank M Barange, the Quest-Fish project, L Harrisson (SFU, Canada), A Yool (SOC, UK), E Rivot (Agrocampus Ouest, France), W Blanchard and C. Minto (Dalhousie University, Canada) and J Bob Barde (IRD, France) for their support and three referees for constructive criticism. We ﬁnally thank T Platt and S Sathyendranath (DFO, Canada) for organising the SAFARI workshop.
+REFERENCES
+Agnew, D.J., Pearce, J., Pramod, G., Peatman, T., Watson, R., Beddington, J.R. et al. (2009). Estimating the Worldwide Extent of Illegal Fishing. PLoS ONE, 4, e4570.
+Behrenfeld, M.J., OÕMalley, R.T., Siegel, D.A., McClain, C.R., Sarmiento, J.L., Feldman, G.C. et al. (2006). Climate-driven trends in contemporary ocean productivity. Nature, 444, 752–755.
+Belkin, I. (2009). Rapid warming of Large Marine Ecosystems. Progr. Oceanogr., 81, 207–213.
+Cade, B. & Noon, B. (2003). A gentle introduction to quantile regression for ecologists. Front. Ecol. Environ., 1, 412–420.
+Carr, M.-E., Friedrichs, M.A., Schmeltz, M., Aita, M.N., Antoine, D., Arrigo, K.R. et al. (2006). A comparison of global estimates of marine primary production from ocean color. Deep-Sea Res. Part II, 53, 741–770.
+Chassot, E., Me´lin, F., Le Pape, O. & Gascuel, D. (2007). Bottom-up control regulates ﬁsheries production at the scale of eco-regions in European seas. Mar. Ecol. -Progr. Ser., 343, 45–55.
+Cheung, W.W., Lam, V.W., Sarmiento, J.L., Kearney, K., Watson, R. & Pauly, D. (2009). Projecting global marine biodiversity impacts under climate change scenarios. Fish Fish., 10, 235–251.
+Cohen, J.E. (1989). EcologistsÕ Co-Operative Web Bank (ECOWeB). Version 1.0. Machine-Readable Data Base of Food Webs. Rockfeller University, New York, USA.
+Coll, M., Libralato, S., Tudela, S., Palomera, I. & Pranovi, F. (2008). Ecosystem overﬁshing in the ocean. PLoS ONE, 3, e3881.
+Conkright, M. & Gregg, W. (2003). Comparison of global chlorophyll climatologies: In situ, CZCS, Blended in situ-CZCS and SeaWiFS. Int. J. Remote Sens., 24, 969–991.
+Ó 2010 Blackwell Publishing Ltd/CNRS
+
+504 E. Chassot et al.
+
+Letter
+
+Denney, N.H., Jennings, S. & Reynolds, J.D. (2002). Life-history correlates of maximum population growth rates in marine ﬁshes. Proc. Roy. Soc. Lond. B, 269, 2229–2237.
+Duarte, C.M. & Cebrian, J. (1996). The fate of marine autotrophic production. Limnol. Oceanogr., 41, 1758–1766.
+Ernest, S.K.M., Enquist, B.J., Brown, J.H., Charnov, E.L., Gillooly, J.F., Savage, V.M. et al. (2003). Thermodynamic and metabolic effects on the scaling of production and population energy use. Ecol. Lett., 6, 990–995.
+Essington, T., Beaudreau, A.H. & Wiedenmann, J. (2006). Fishing through marine food webs. Proc. Natl. Acad. Sci., 103, 3171–3175.
+Frank, K.T., Petrie, B. & Shackell, N.L. (2007). The ups and downs of trophic control in continental shelf ecosystems. Trends Ecol. Evol., 22, 236–242.
+Friedrichs, M.A., Carr, M., Barber, R.T., Scardi, M., Antoine, D., Armstrong, R.A. et al. (2009). Assessing the uncertainties of model estimates of primary productivity in the tropical Paciﬁc Ocean. J. Mar. Syst., 76, 113–133.
+Froese, R. & Pauly, D. (2009). FishBase. World Wide Web electronic publication. Retrieved from http://www.fishbase.org.
+Garcia, S.M., Zerbi, A., Do Chi, T. & Lasserre, G. (2003). The Ecosystem Approach to Fisheries. Issues, Terminology, Principles, Institutional Foundations, Implementation and Outlook. (ed. FAO) FAO Fisheries Technical Paper. Rome, Italy.
+Gascuel, D. & Pauly, D. (2009). EcoTroph: modelling marine ecosystem functioning and impact of ﬁshing. Ecol. Model., 220, 2885–2898.
+Gascuel, D., Morissette, L., Palomares, D. & Christensen, V. (2008). Trophic ﬂow kinetics in marine ecosystems: toward a theoretical approach to ecosystem functioning. Ecol. Model., 217, 33–47.
+Iverson, R. (1990). Control of marine ﬁsh production. Limnol. Oceanogr., 35, 1593–1604.
+Jennings, S., Reynolds, J.D. & Mills, S.C. (1998). Life history correlates of responses to ﬁsheries exploitation. Proc. Roy. Soc. Lond. B, 265, 333–339.
+Jennings, S., Me´lin, F., Blanchard, J.L., Forster, R., Dulvy, N.K. & Wilson, R. (2008). Global-scale predictions of community and ecosystem properties from simple ecological theory. Proc. Roy. Soc. Lond. B, 275, 1375–1383.
+Koenker, R. (2009). Quantreg: Quantile Regression. R package version 4.30
+Libralato, S., Coll, M., Tudela, S., Palomera, I. & Pranovi, F. (2008). Novel index for quantiﬁcation of ecosystem effects of ﬁshing as removal of secondary production. Mar. Ecol. -Prog. Ser., 355, 107– 129.
+Lindeman, R.L. (1942). The trophic-dynamic aspect of ecology. Ecology, 23, 399–418.
+Longhurst, A. (1998). Ecological Geography of the Sea. Academic Press, San Diego, USA.
+Longhurst, A.R., Sathyendranath, S., Platt, T. & Caverhill, C. (1995). An estimate of global primary production in the ocean from satellite radiometer data. J. Plank. Res., 17, 1245–1271.
+Lo´pez-Urrutia, A´ ., San Martin, E., Harris, R.P. & Irigoien, X. (2006). Scaling the metabolic balance of the oceans. Proc. Natl Acad. Sci. USA, 103, 8739–8744.
+McClain, C.R., Feldman, G.C. & Hooker, S.B. (2004). An overview of the SeaWiFS project and strategies for producing a climate research quality global ocean bio-optical time series. Deep-Sea Res. Part II, 51, 5–42.
+
+Murawski, S.A. (2000). Deﬁnitions of overﬁshing from an ecosystem perspective. ICES J. Mar. Sci., 57, 649–658.
+OÕConnor, M.I., Piehler, M.F., Leech, D.M., Anton, A. & Bruno, J.F. (2009). Warming and resource availability shift food web structure and metabolism. PLoS Biol., 7, e1000178.
+Pauly, D. (1996). One hundred million tonnes of ﬁsh, and ﬁsheries research. Fish. Res., 25, 25–38.
+Pauly, D. & Christensen, V. (1995). Primary production required to sustain global ﬁsheries. Nature, 374, 255–257.
+Pauly, D., Christensen, V., Gue´nette, S., Pitcher, T.J., Sumaila, U.R., Walters, C.J. et al. (2002). Towards sustainability in world ﬁsheries. Nature, 418, 689–695.
+Pauly, D., Alder, J., Bennett, E., Christensen, V., Tyedmers, P. & Watson, R. (2003). The future of ﬁsheries. Science, 302, 1359–1361.
+Pimm, S.L., Lawton, J.H. & Cohen, J.E. (1991). Food web patterns and their consequences. Nature, 350, 669–674.
+Planque, B. & Buffaz, L. (2008). Quantile regression models for ﬁsh recruitment-environment relationships: four case studies. Mar. Ecol. -Progr. Ser., 357, 213–223.
+Polovina, J.J., Howell, E.A. & Abecassis, M. (2008). OceanÕs least productive waters are expanding, Geophys. Res. Lett., 35, L03618.
+Post, D.M., Pace, M.L. & Hairston, N.G. (2000). Ecosystem size determines food-chain length in lakes. Nature, 405, 1047– 1049.
+Reid, P.C., Edwards, M., Hunt, H.G. & Warner, A.J. (1998). Phytoplankton change in the North Atlantic. Nature, 391, 546.
+Reid, P.C., Johns, D.G., Edwards, M., Starr, M., Poulin, M. & Snoeijs, P. (2007). A biological consequence of reducing Arctic ice cover: arrival of the Paciﬁc diatom Neodenticula seminae in the North Atlantic for the first time in 800000 years. Glob. Change Biol., 13, 1910–1921.
+Reynolds, J.D., Dulvy, N.K., Goodwin, N.B. & Hutchings, J.A. (2005). Biology of extinction risk in marine ﬁshes. Proc. Roy. Soc. Lond. B, 272, 2337–2344.
+Ryther, J.H. (1969). Photosynthesis and ﬁsh production in the sea. Science, 166, 72–76.
+Sarmiento, J.L., Slater, R., Barber, R., Bopp, L., Doney, S.C., Hirst, A.C. et al. (2004). Response of ocean ecosystems to climate warming. Glob. Biogeochem. Cycle, 18, GB3003.
+Savage, V.M., Gillooly, J.F., Brown, J.H., West, G.B. & Charnov, E.L. (2004). Effects of body size and temperature on population growth. Am. Nat., 163, 429–441.
+Strathmann, R.R. (1967). Estimating organic carbon content of phytoplankton from cell volume or plasma volume. Limnol. Oceanogr., 12, 411–418.
+Ware, D.M. & Thomson, R.E. (2005). Bottom-up ecosystem trophic dynamics determine ﬁsh production in the Northeast Paciﬁc. Science, 308, 1280–1284.
+Watson, R. & Pauly, D. (2001). Systematic distortions in world ﬁsheries catch trends. Nature, 414, 534–536.
+Watson, R., Kitchingman, A., Gelchu, A. & Pauly, D. (2004). Mapping global ﬁsheries: sharpening our focus. Fish Fish., 5, 168–177.
+SUPPORTING INFORMATION
+Additional Supporting Information may be found in the online version of this article:
+
+Ó 2010 Blackwell Publishing Ltd/CNRS
+
+Letter
+
+Primary production constrains global ﬁsheries catch 505
+
+Figure S1 Large Marine Ecosystems of the world. 1. East Bering Sea 2. Gulf of Alaska 3. California Current 4. Gulf of California 5. Gulf of Mexico 6. Southeast U.S. Continental Shelf 7. Northeast U.S. Continental Shelf 8. Scotian Shelf 9. Newfoundland-Labrador Shelf 10. Insular Paciﬁc-Hawaiian 11. Paciﬁc Central-American Coastal 12. Caribbean Sea 13. Humboldt Current 14. Patagonian Shelf 15. South Brazil Shelf 16. East Brazil Shelf 17. North Brazil Shelf 18. West Greenland Shelf 19. East Greenland Shelf 20. Barents Sea 21. Norwegian Shelf 22. North Sea 23. Baltic Sea 24. Celtic-Biscay Shelf 25. Iberian Coastal 26. Mediterranean Sea 27. Canary Current 28. Guinea Current 29. Benguela Current 30. Agulhas Current 31. Somali Coastal Current 32. Arabian Sea 33. Red Sea 34. Bay of Bengal 35. Gulf of Thailand 36. South China Sea 37. SuluCelebes Sea 38. Indonesian Sea 39. North Australian Shelf 40. Northeast Australian Shelf 41. East-Central Australian Shelf 42. Southeast Australian Shelf 43. Southwest Australian Shelf 44. West-Central Australian Shelf 45. Northwest Australian Shelf 46. New Zealand Shelf 47. East China Sea 48. Yellow Sea 49. Kuroshio Current 50. Sea of Japan 51. Oyashio Current 52. Sea of Okhotsk 53. West Bering Sea 54. Chukchi Sea 55. Beaufort Sea 56. East Siberian Sea 57. Laptev Sea 58. Kara Sea 59. Iceland Shelf 60. Faroe Plateau 61. Antarctica 62. Black Sea 63. Hudson Bay 64. Arctic Ocean. Figure S2 Mean annual catch in each Large Marine Ecosystems (LME) as a function of global marine primary production (PP) over 5-year block periods. Solid dashed lines indicate quantile regressions models with quantile = 10%, 50%, and 90%.
+
+Figure S3 Relationship between the mean annual catch in each Large Marine Ecosystem (LME) during 1950–2004 and the mean annual catch in each LME during 2000–2004. r is the PearsonÕs correlation coefﬁcient for the different relationship. Figure S4 Relationship between the mean annual catch in the each Large Marine Ecosystems (LME) over 5-year block periods and the mean annual catch during 2000–2004. r is the PearsonÕs correlation coefﬁcient for the different relationship. Figure S5 Mean annual primary production required (PPR) to sustain catches in each Large Marine Ecosystems (LME) as a function of global marine primary production (PP) over 5-year block periods. Solid dashed lines indicate quantile regressions models with quantile = 10%, 50%, and 90%.
+As a service to our authors and readers, this journal provides supporting information supplied by the authors. Such materials are peer-reviewed and may be re-organized for online delivery, but are not copy-edited or typeset. Technical support issues arising from supporting information (other than missing ﬁles) should be addressed to the authors.
+Editor, Giulio De Leo Manuscript received 22 September 2009 First decision made 2 November 2009 Manuscript accepted 26 December 2009
+
+Ó 2010 Blackwell Publishing Ltd/CNRS
+

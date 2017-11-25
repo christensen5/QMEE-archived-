@@ -1,15 +1,15 @@
 {
 	"translatorID": "d6c6210a-297c-4b2c-8c43-48cb503cc49e",
+	"translatorType": 4,
 	"label": "Springer Link",
 	"creator": "Aurimas Vinckevicius",
 	"target": "^https?://link\\.springer\\.com/(search(/page/\\d+)?\\?|(article|chapter|book|referenceworkentry|protocol|journal|referencework)/.+)",
 	"minVersion": "3.0",
-	"maxVersion": "",
+	"maxVersion": null,
 	"priority": 100,
 	"inRepository": true,
-	"translatorType": 4,
 	"browserSupport": "gcsbv",
-	"lastUpdated": "2017-06-24 17:34:19"
+	"lastUpdated": "2017-11-18 15:50:00"
 }
 
 function detectWeb(doc, url) {
@@ -47,6 +47,10 @@ function getResultList(doc) {
 	if(!results.length) {
 		results = ZU.xpath(doc,
 			'//div[@class="toc"]/ol//div[contains(@class,"toc-item")]/h3/a');
+	}
+	if(!results.length) {
+		results = ZU.xpath(doc,
+			'//div[@class="book-toc-container"]/ol//div[contains(@class,"content-type-list__meta")]/div/a');
 	}
 	if(!results.length) {
 		results = ZU.xpath(doc,
@@ -399,7 +403,7 @@ var testCases = [
 	},
 	{
 		"type": "web",
-		"url": "http://link.springer.com/book/10.1007/978-3-540-88682-2/page/1",
+		"url": "http://link.springer.com/book/10.1007/978-3-540-88682-2",
 		"items": "multiple"
 	},
 	{

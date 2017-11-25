@@ -22,18 +22,19 @@ nodes_file.close()
 edges = sc.array
 csvread = csv.reader(edges_file)
 AdjNames = list(csvread.next())
-Adj = sc.asmatrix(csvread.next())
+tmp = csvread.next()
+tmp = map(int, tmp)
+Adj = sc.asmatrix(tmp)
 for row in csvread:
-    Adj = sc.append(Adj, [row] , axis = 0)
+    tmp = map(int, row)
+    Adj = sc.append(Adj, [tmp], axis = 0)
 edges_file.close()
 
 
 ###### PLOTTING #######
 plt.close('all')
 
-pos = nx.circular_layout(AdjNames)
-
-G = nx.Graph()
-G.add_nodes_from(nodes)
-G.add_edges_from(Adj)
+G = nx.Graph(Adj)
+nx.draw_circular(G)
+plt.show()
 
