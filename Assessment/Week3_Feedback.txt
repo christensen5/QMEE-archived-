@@ -1,0 +1,1032 @@
+Starting weekly assessment for Alexander, Week3
+
+Current Marks = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 533.60 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: Week3, .idea, Reading, Week1, Firedrake Learning, Zotero, Week2, .git, Assessment, Week6
+
+Found the following files in parent directory: .gitignore, README.txt
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+**********************************************************************
+*~ 
+*.tmp
+**********************************************************************
+
+Found README in parent directory, named: README.txt
+
+Printing contents of README.txt:
+**********************************************************************
+My QMEE Repository
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Found 4 weekly directories: Week1, Week2, Week3, Week6
+
+The Week3 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+Assessing WEEK3...
+
+Found the following directories: .idea, Data, Code, Results
+
+Found the following files: 
+
+Checking for readme file in weekly directory...
+
+README file missing, 1 pt deducted
+
+Current Marks = 99
+
+Found 20 code files: GPDD_Plotter.R, control.R, apply1.R, get_TreeHeight.R, tapply.R, Vectorize1.R, run_get_TreeHeight.sh, apply2.R, TAutoCorr.R, Ricker.R, sample.R, get_TreeHeight.py, TreeHeight.R, basic_io.R, break.R, browse.R, DataWrang.R, Vectorize2.R, boilerplate.R, next.R
+
+Found the following extra files: Rplots.pdf, .Rhistory, PoundHillMetaData.csv, PoundHillData.csv
+0.5 pt deducted per extra file
+
+Current Marks = 97.0
+
+======================================================================
+Testing script/code files...
+
+======================================================================
+Inspecting script file GPDD_Plotter.R...
+
+File contents are:
+**********************************************************************
+## This function will accept processed data on global species distribution and plot it on a global map using the map() R package.
+
+## IMPORTS
+load("../Data/GPDDFiltered.RData") # Load default dataset
+library(maps) # load the maps package
+
+## DEFINE WORKHORSE FUNCTION
+GPDD_Plotter <- function(gpdd_data=gpdd) {
+  graphics.off() #clear previous plots
+  
+  
+  png('../Results/GPDD_plot.png',width = 1440, height = 1440, units = "px") #Open plot device
+  
+  fig = map('world', resolution=0) #plot base world map
+  points(gpdd_data[,3], gpdd_data[,2], pch = 20, col='red') #For each species in dataset, plot its location over the base map, as a solid red circle.
+  
+  dev.off() #close plot device
+}
+
+GPDD_Plotter() #for testing purposes, call the function with default argument when the file is sourced.
+  
+## Biases would stem principally from there being no data for the vast majority of the planet, besides the UK, Europe and NA. UK is particularly overrepresented.**********************************************************************
+
+Testing GPDD_Plotter.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+null device 
+          1 
+
+**********************************************************************
+
+Encountered error:
+
+ # ATTENTION: maps v3.0 has an updated 'world' map.        #
+ # Many country borders and names have changed since 1990. #
+ # Type '?world' or 'news(package="maps")'. See README_v3. #
+
+
+
+======================================================================
+Inspecting script file control.R...
+
+File contents are:
+**********************************************************************
+## If statement
+a <- TRUE
+if (a == TRUE){
+  print ("a is TRUE")
+} else {
+  print ("a is FALSE")
+}
+## On a single line
+z <- runif(1) ##random number
+if (z <= 0.5) {
+  print ("Less than a quarter")
+}
+## For loop using a sequence
+for (i in 1:100){
+  j <- i * i
+  print(paste(i, " squared is", j ))
+}
+## For loop over vector of strings
+for(species in c('Heliodoxa rubinoides',
+                 'Boissonneaua jardini',
+                 'Sula nebouxii'))
+{
+  print(paste('The species is', species))
+}
+## for loop using a vector
+v1 <- c("a","bc","def")
+for (i in v1){
+  print(i)
+}
+## While loop
+i <- 0
+while (i<100){
+  i <- i+1
+  print(i^2)
+}**********************************************************************
+
+Testing control.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] "a is TRUE"
+[1] "Less than a quarter"
+[1] "1  squared is 1"
+[1] "2  squared is 4"
+[1] "3  squared is 9"
+[1] "4  squared is 16"
+[1] "5  squared is 25"
+[1] "6  squared is 36"
+[1] "7  squared is 49"
+[1] "8  squared is 64"
+[1] "9  squared is 81"
+[1] "10  squared is 100"
+[1] "11  squared is 121"
+[1] "12  squared is 144"
+[1] "13  squared is 169"
+[1] "14  squared is 196"
+[1] "15  squared is 225"
+[1] "16  squared is 256"
+[1] "17  squared is 289"
+[1] "18  squared is 324"
+[1] "19  squared is 361"
+[1] "
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.05878s
+
+======================================================================
+Inspecting script file apply1.R...
+
+File contents are:
+**********************************************************************
+## apply: applying the same function to rows/columns of a matrix.
+
+## Build a random matrix
+M <- matrix(rnorm(100), 10, 10)
+
+## Take the mean of each row
+RowMeans <- apply(M, 1, mean)
+print(RowMeans)
+
+## Now the variance
+RowVars <- apply(M, 1, var)
+print(RowVars)
+
+## By column
+ColMeans <- apply(M, 2, mean)
+print(ColMeans)**********************************************************************
+
+Testing apply1.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+ [1] -0.22590262 -0.22664582 -0.04638528 -0.11087673  0.37621534  0.43546821
+ [7]  0.30004044  0.58664461  0.09437467  0.02828891
+ [1] 1.6286998 2.2950182 0.6435382 0.8167123 0.4127766 1.2443964 0.4024662
+ [8] 0.3953322 1.3767421 1.5402730
+ [1]  0.24542012  0.24105934  0.22181305 -0.04747517  0.22461207 -0.15657480
+ [7]  0.25639561 -0.02838592 -0.29917858  0.55353601
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.05676s
+
+======================================================================
+Inspecting script file get_TreeHeight.R...
+
+File contents are:
+**********************************************************************
+# This function calculates heights of trees in a user-supplied csv file from the angle of
+# elevation and the distance from the base using the trigonometric
+# formula height = distance * tan(radians)
+#
+# INPUTS:
+# csv file containing angle of elevation and distance from base for each desired tree
+#
+# ARGUMENTS:
+# degrees
+# distance
+# The angle of elevation
+# The distance from base
+# 
+# OUTPUT:
+# csv file containing the input data as well as the height of each tree.
+
+# Define TreeHeight to compute height of a tree given angle of elevation and base distance
+TreeHeight <- function(degrees, distance){
+  radians <- degrees * pi / 180
+  height <- distance * tan(radians)
+  print(paste("Tree height is:", height))
+  
+  return(height)
+}
+
+
+
+# Define the input data file.
+args = commandArgs(trailingOnly=TRUE)
+Input.Dir = paste("../Data/",args[1], sep="")
+Input.File = read.csv(Input.Dir, header = TRUE)
+
+# Run TreeHeight on each entry in the input file, saving the outputs as a column vector.
+Tree.Height.m = c();
+for (i in 1:dim(Input.File)[1]) {
+  Tree.Height.m = rbind(Tree.Height.m, TreeHeight(Input.File[i,3],Input.File[i,2]))
+}
+Output.Frame = cbind(Input.File, Tree.Height.m) #Append the vector of tree heights to the input data.
+Output.Dir = paste("../Results/",substr(args[1],1,nchar(args[1])-4),"_treeheights.csv", sep="") #Generate the output filename
+write.csv(Output.Frame, Output.Dir) #Save the data frame to disk.
+**********************************************************************
+
+Testing get_TreeHeight.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+Error in file(file, "rt") : cannot open the connection
+Calls: read.csv -> read.table -> file
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file '../Data/NA': No such file or directory
+Execution halted
+
+======================================================================
+Inspecting script file tapply.R...
+
+File contents are:
+**********************************************************************
+x <- 1:20 # A vector
+
+# A factor (of the same length) defining groups
+y <- factor(rep(letters[1:5], each = 4))
+
+tapply(x, y, sum)**********************************************************************
+
+Testing tapply.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+ a  b  c  d  e 
+10 26 42 58 74 
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.05580s
+
+======================================================================
+Inspecting script file Vectorize1.R...
+
+File contents are:
+**********************************************************************
+M <- matrix (runif(1000000),1000,1000)
+
+SumAllElements <- function(M){
+  Dimensions <- dim(M)
+  Tot <- 0
+  for (i in 1:Dimensions[1]){
+    for (j in 1:Dimensions[2]){
+      Tot <- Tot + M[i,j]
+    }
+  }
+  return(Tot)
+}
+
+## This on Samraat's computer takes about 1 seconds.
+print(system.time(SumAllElements(M)))
+
+## While this takes about 0.01 seconds.
+print(system.time(sum(M)))**********************************************************************
+
+Testing Vectorize1.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+   user  system elapsed 
+  0.360   0.000   0.358 
+   user  system elapsed 
+  0.000   0.000   0.001 
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.48185s
+
+======================================================================
+Inspecting script file run_get_TreeHeight.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+
+Rscript get_TreeHeight.R trees.csv
+
+python get_TreeHeight.py trees.csv
+**********************************************************************
+
+Testing run_get_TreeHeight.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] "Tree height is: 27.8021161438536"
+[1] "Tree height is: 45.2460250644405"
+[1] "Tree height is: 14.6654828109493"
+[1] "Tree height is: 14.9341751666304"
+[1] "Tree height is: 35.9703591412599"
+[1] "Tree height is: 32.4102133664874"
+[1] "Tree height is: 17.4582436344144"
+[1] "Tree height is: 30.1373803987097"
+[1] "Tree height is: 20.3124778877177"
+[1] "Tree height is: 24.4316633466933"
+[1] "Tree height is: 27.5021323376702"
+[1] "Tree height is: 25.1559006982628"
+[1] "Tree height is: 29.392479642
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.10773s
+
+======================================================================
+Inspecting script file apply2.R...
+
+File contents are:
+**********************************************************************
+SomeOperation <- function(v){
+  if (sum(v) > 0){
+    return(v * 100)
+  }
+  return(v)
+}
+
+M <- matrix(rnorm(100), 10, 10)
+print(apply(M, 1, SomeOperation))**********************************************************************
+
+Testing apply2.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+            [,1]       [,2]       [,3]         [,4]        [,5]       [,6]
+ [1,] -0.3995854  139.15052 -1.4497179 -107.0258228  1.04924727 -1.4093464
+ [2,] -1.3586066   31.34203  0.5530931  -82.6822541  0.79944898 -0.4633080
+ [3,] -1.0642325  106.74269 -0.2193483  229.3640863 -1.89004201 -0.6633713
+ [4,]  0.2569867  -31.06326 -0.4872362   19.7139201  0.19877664 -0.2066574
+ [5,] -0.6035299 -223.33440 -0.3639101   44.8169155 -0.09870836  0.7335438
+ [6,] -0.2912785 -114.16177 -0.4798676  -34.2539536
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.05792s
+
+======================================================================
+Inspecting script file TAutoCorr.R...
+
+File contents are:
+**********************************************************************
+## Load mean temperature data for Key West, Florida, and perform statistical correlation analysis.
+
+load('../Data/KeyWestAnnualMeanTemperature.RData') #load data
+
+datamat = as.matrix(ats) #store at matrix for efficiency
+
+natCor = cor(datamat[1:99,2], datamat[2:100,2]) #compute correlation between pairs of successive years
+
+numPerms = 10000
+permCors = rep(NA,numPerms) #pre-allocate vector in which to store post-permutation correlations
+for (i in 1:numPerms) {
+  perm = sample(datamat[,2]) #permute years randomly
+  permCors[i] = cor.test(perm[1:99], perm[2:100])[[1]] #compute correlation between pairs of successive (post-permutation) years
+}
+
+p.eff = sum(permCors > natCor)/numPerms #effective P-value is the proportion of post-permutation correlation coeffs which are greater than initial correlation coeff
+
+print(paste("The effective P-value is", as.character(p.eff)))**********************************************************************
+
+Testing TAutoCorr.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] "The effective P-value is 0.34"
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 1.70935s
+
+======================================================================
+Inspecting script file Ricker.R...
+
+File contents are:
+**********************************************************************
+Ricker <- function(N0=1, r=1, K=10, generations=50) {
+  
+  # Runs a simulation of the Ricker model
+  # Returns a vector of length generations
+  
+  N <- rep(NA, generations) # Creates a vector of NA
+  
+  N[1] <- N0
+  for (t in 2:generations) {
+    N[t] <- N[t-1] * exp(r*(1.0-(N[t-1]/K)))
+  }
+  return(N)
+}
+plot(Ricker(generations=10), type="l")**********************************************************************
+
+Testing Ricker.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.08470s
+
+======================================================================
+Inspecting script file sample.R...
+
+File contents are:
+**********************************************************************
+## run a simulation that involves sampling from a population
+
+x <- rnorm(50)
+doit <- function(x){
+  x <- sample(x,replace=TRUE) 
+  if(length(unique(x)) > 30) { #only take mean if sample sufficient
+    print(paste("Mean fo this sample was:", as.character(mean(x))))
+  } else {
+    stop("Couldn't calculate mean: too few unique points!")
+  }
+}
+
+#run 100 iterations using vectorization
+result <- lapply(1:100, function(i) try(doit(x),FALSE))**********************************************************************
+
+Testing sample.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] "Mean fo this sample was: -0.192570115178733"
+[1] "Mean fo this sample was: -0.438962241429263"
+[1] "Mean fo this sample was: -0.144163467120569"
+[1] "Mean fo this sample was: -0.286098564928504"
+[1] "Mean fo this sample was: -0.0840658737979599"
+[1] "Mean fo this sample was: 0.00339761113047625"
+[1] "Mean fo this sample was: -0.0493964466194925"
+[1] "Mean fo this sample was: -0.287839932498682"
+[1] "Mean fo this sample was: -0.10988027113236"
+[1] "Mean fo this sample was: 0.202413847790691"
+
+**********************************************************************
+
+Encountered error:
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+Error in doit(x) : Couldn't calculate mean: too few unique points!
+
+======================================================================
+Inspecting script file get_TreeHeight.py...
+
+File contents are:
+**********************************************************************
+import csv
+import sys
+import math
+import scipy
+
+def computeHeight(degrees, distance):
+    radians = math.radians(degrees)
+    height = distance * math.tan(radians)
+    print("Tree height is:" + str(height))
+
+    return height
+
+def main(argv):
+    # read i
+    input_filename = '../Data/' + str(argv[1])
+    f = open(input_filename, 'rb')
+    namestr = str(argv[1])
+    g = open('../Results/' + namestr[:-4] + '_treeheights_python.csv', 'wb')
+    trees = csv.reader(f)
+    csvwrite = csv.writer(g)
+    next(trees) # skip header line
+
+    csvwrite.writerow(['', 'Species', 'Distance.m', 'Angle.degrees', 'Tree.Height.m'])
+    i = 1
+    for row in trees:
+        csvwrite.writerow([i, row[0], row[1], row[2], computeHeight(float(row[2]), float(row[1]))])
+        i += 1
+
+    f.close()
+    g.close()
+    return 0
+
+if __name__ == "__main__":
+    main(sys.argv)**********************************************************************
+
+Testing get_TreeHeight.py...
+
+get_TreeHeight.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 96.0
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+Traceback (most recent call last):
+  File "get_TreeHeight.py", line 34, in <module>
+    main(sys.argv)
+  File "get_TreeHeight.py", line 15, in main
+    input_filename = '../Data/' + str(argv[1])
+IndexError: list index out of range
+
+======================================================================
+Inspecting script file TreeHeight.R...
+
+File contents are:
+**********************************************************************
+# This function calculates heights of trees in a given csv file from the angle of
+# elevation and the distance from the base using the trigonometric
+# formula height = distance * tan(radians)
+#
+# INPUTS:
+# csv file containing angle of elevation and distance from base for each desired tree
+#
+# ARGUMENTS:
+# degrees
+# distance
+# The angle of elevation
+# The distance from base
+# 
+# OUTPUT:
+# The height of the tree, same units as "distance"
+
+# Define TreeHeight to compute height of a tree given angle of elevation and base distance
+TreeHeight <- function(degrees, distance){
+  radians <- degrees * pi / 180
+  height <- distance * tan(radians)
+  print(paste("Tree height is:", height))
+  
+  return(height)
+}
+
+# TreeHeight(37, 40)
+
+# Define the input data file.
+Input.File = read.csv("../Data/trees.csv", header = TRUE)
+
+# Run TreeHeight on each entry in the input file, saving the outputs as a column vector.
+Tree.Height.m = c();
+for (i in 1:dim(Input.File)[1]) {
+  Tree.Height.m = rbind(Tree.Height.m, TreeHeight(Input.File[i,3],Input.File[i,2]))
+}
+Output.Frame = cbind(Input.File, Tree.Height.m) #Appent the vector of tree heights to the input data.
+write.csv(Output.Frame, "../Results/TreeHts.csv") #Save the data frame to disk.
+**********************************************************************
+
+Testing TreeHeight.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] "Tree height is: 27.8021161438536"
+[1] "Tree height is: 45.2460250644405"
+[1] "Tree height is: 14.6654828109493"
+[1] "Tree height is: 14.9341751666304"
+[1] "Tree height is: 35.9703591412599"
+[1] "Tree height is: 32.4102133664874"
+[1] "Tree height is: 17.4582436344144"
+[1] "Tree height is: 30.1373803987097"
+[1] "Tree height is: 20.3124778877177"
+[1] "Tree height is: 24.4316633466933"
+[1] "Tree height is: 27.5021323376702"
+[1] "Tree height is: 25.1559006982628"
+[1] "Tree height is: 29.392479642
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.07338s
+
+======================================================================
+Inspecting script file basic_io.R...
+
+File contents are:
+**********************************************************************
+# A simple R script to illustrate R inpout-output.
+# Run line by line and check inputs outputs to understand what is happening.
+
+MyData <- read.csv("../Data/trees.csv", header = TRUE) #import with headers
+
+write.csv(MyData, "../Results/MyData.csv") #write it out as a new file
+
+write.table(MyData[1,], file = "../Results/MyData.csv", append = TRUE) #append to it
+
+write.csv(MyData, "../Results/MyData.csv", row.names = TRUE) #write row names
+
+write.table(MyData, "../Results/MyData.csv", col.names = FALSE) #ignore column names**********************************************************************
+
+Testing basic_io.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+Warning message:
+In write.table(MyData[1, ], file = "../Results/MyData.csv", append = TRUE) :
+  appending column names to file
+
+======================================================================
+Inspecting script file break.R...
+
+File contents are:
+**********************************************************************
+i <- 0 #Initialise i
+while(i < Inf) {
+  if (i==20) {
+    break
+  } else {
+    cat("i equals " , i , " \n")
+    i <- i + 1
+  }
+}**********************************************************************
+
+Testing break.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+i equals  0  
+i equals  1  
+i equals  2  
+i equals  3  
+i equals  4  
+i equals  5  
+i equals  6  
+i equals  7  
+i equals  8  
+i equals  9  
+i equals  10  
+i equals  11  
+i equals  12  
+i equals  13  
+i equals  14  
+i equals  15  
+i equals  16  
+i equals  17  
+i equals  18  
+i equals  19  
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.05540s
+
+======================================================================
+Inspecting script file browse.R...
+
+File contents are:
+**********************************************************************
+Exponential <- function(N0 = 1, r = 1, generations = 10){
+  # Runs a simulation of exponential growth
+  # Returns a vector of length generations
+  N <- rep(NA, generations)
+  # Creates a vector of NA
+  N[1] <- N0
+  for (t in 2:generations){
+    N[t] <- N[t-1] * exp(r)
+    #
+    browser()
+  }
+  return (N)
+}
+plot(Exponential(), type="l", main="Exponential growth")**********************************************************************
+
+Testing browse.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+Called from: Exponential()
+debug: N[t] <- N[t - 1] * exp(r)
+debug: browser()
+debug: N[t] <- N[t - 1] * exp(r)
+debug: browser()
+debug: N[t] <- N[t - 1] * exp(r)
+debug: browser()
+debug: N[t] <- N[t - 1] * exp(r)
+debug: browser()
+debug: N[t] <- N[t - 1] * exp(r)
+debug: browser()
+debug: N[t] <- N[t - 1] * exp(r)
+debug: browser()
+debug: N[t] <- N[t - 1] * exp(r)
+debug: browser()
+debug: N[t] <- N[t - 1] * exp(r)
+debug: browser()
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.08617s
+
+======================================================================
+Inspecting script file DataWrang.R...
+
+File contents are:
+**********************************************************************
+################################################################
+################## Wrangling the Pound Hill Dataset ############
+################################################################
+
+############# Load the dataset ###############
+# header = false because the raw data don't have real headers
+MyData <- as.matrix(read.csv("../Data/PoundHillData.csv",header = F)) 
+
+# header = true because we do have metadata headers
+MyMetaData <- read.csv("../Data/PoundHillMetaData.csv",header = T, sep=";", stringsAsFactors = F)
+
+############# Inspect the dataset ###############
+head(MyData)
+dim(MyData)
+str(MyData)
+fix(MyData) #you can also do this
+fix(MyMetaData)
+
+############# Transpose ###############
+# To get those species into columns and treatments into rows 
+MyData <- t(MyData) 
+head(MyData)
+dim(MyData)
+
+############# Replace species absences with zeros ###############
+MyData[MyData == ""] = 0
+
+############# Convert raw matrix to data frame ###############
+
+TempData <- as.data.frame(MyData[-1,],stringsAsFactors = F) #stringsAsFactors = F is important!
+colnames(TempData) <- MyData[1,] # assign column names from original data
+
+############# Convert from wide to long format  ###############
+require(reshape2) # load the reshape2 package
+
+?melt #check out the melt function
+
+MyWrangledData <- melt(TempData, id=c("Cultivation", "Block", "Plot", "Quadrat"), 
+variable.name = "Species", value.name = "Count")
+MyWrangledData[, "Cultivation"] <- as.factor(MyWrangledData[, "Cultivation"])
+MyWrangledData[, "Block"] <- as.factor(MyWrangledData[, "Block"])
+MyWrangledData[, "Plot"] <- as.factor(MyWrangledData[, "Plot"])
+MyWrangledData[, "Quadrat"] <- as.factor(MyWrangledData[, "Quadrat"])
+MyWrangledData[, "Count"] <- as.numeric(MyWrangledData[, "Count"])
+
+str(MyWrangledData)
+head(MyWrangledData)
+dim(MyWrangledData)
+
+############# Start exploring the data (extend the script below)!  ###############
+**********************************************************************
+
+Testing DataWrang.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+     V1                     V2        V3        V4        V5        V6       
+[1,] "Cultivation"          "october" "october" "october" "october" "october"
+[2,] "Block"                "a"       "a"       "a"       "a"       "a"      
+[3,] "Plot"                 "1"       "1"       "1"       "1"       "1"      
+[4,] "Quadrat"              "Q1"      "Q2"      "Q3"      "Q4"      "Q5"     
+[5,] "Achillea millefolium" "4"       "8"       "3"       "20"      "6"      
+[6,] "Agrostis gigantea"    ""   
+**********************************************************************
+
+Encountered error:
+Loading required package: reshape2
+
+======================================================================
+Inspecting script file Vectorize2.R...
+
+File contents are:
+**********************************************************************
+# Runs the stochastic (with gaussian fluctuations) Ricker Eqn .
+rm(list=ls())
+
+stochrick<-function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100)
+{
+  #initialize
+  N<-matrix(NA,numyears,length(p0))
+  N[1,]<-p0
+  
+  for (pop in 1:length(p0)) #loop through the populations
+  {
+    for (yr in 2:numyears) #for each pop, loop through the years
+    {
+      N[yr,pop]<-N[yr-1,pop]*exp(r*(1-N[yr-1,pop]/K) + rnorm(1,0,sigma) )
+    }
+  }
+  return(N)
+}
+
+print("Stochastic Ricker takes:")
+print(system.time(res1<-stochrick()))
+
+# Now write another code called stochrickvect that vectorizes the above 
+# to the extent possible, with improved performance: 
+  
+stochrickvect <- function(p0 = runif(1000,.5,1.5), r = 1.2, K = 1, sigma = 0.2, numyears = 100) {
+  rands = replicate(length(p0),rnorm(numyears,1,sigma)) #pre-generate random fluctuations for each generation of each population.
+  N <- matrix(NA, numyears, length(p0)) #pre-allocate output matrix N for efficiency.
+  N[1,] <- p0 #store initial populations.
+  # Loop through the years, vectorise-computing the new value for each population.
+  for (yr in 2:numyears) {
+    N[yr,] <- N[yr-1,]*exp(r*(1-(N[yr-1,]/K)) + rands[yr-1,]) #essentially apply the Ricker eqn to the last computed row of N and then store the result as the next row.
+  }
+  return(N)
+}
+print("Vectorized Stochastic Ricker takes:")
+print(system.time(res2<-stochrickvect()))**********************************************************************
+
+Testing Vectorize2.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] "Stochastic Ricker takes:"
+   user  system elapsed 
+  0.328   0.000   0.328 
+[1] "Vectorized Stochastic Ricker takes:"
+   user  system elapsed 
+  0.016   0.000   0.017 
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.41525s
+
+======================================================================
+Inspecting script file boilerplate.R...
+
+File contents are:
+**********************************************************************
+MyFunction <- function(Arg1, Arg2){
+  
+  # Statements involving Arg1, Arg2
+  print(paste("Argument", as.character(Arg1), "is a", class(Arg1))) # print Arg1's type
+  print(paste("Argument", as.character(Arg2), "is a", class(Arg2))) # likewise Arg2
+  
+  return (c(Arg1, Arg2)) #this is optional but very useful
+}
+
+MyFunction(1,2) #test the function
+MyFunction("Riki","Tiki") #a different test**********************************************************************
+
+Testing boilerplate.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] "Argument 1 is a numeric"
+[1] "Argument 2 is a numeric"
+[1] 1 2
+[1] "Argument Riki is a character"
+[1] "Argument Tiki is a character"
+[1] "Riki" "Tiki"
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.05606s
+
+======================================================================
+Inspecting script file next.R...
+
+File contents are:
+**********************************************************************
+for (i in 1:10) {
+  if ((i %% 2) == 0)
+    next # pass to next iteration of the loop
+  print(i)
+}**********************************************************************
+
+Testing next.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] 1
+[1] 3
+[1] 5
+[1] 7
+[1] 9
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.05672s
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 6 errors
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Marks for the Week = 96.0
+
+NOTE THAT THESE ARE NOT THE FINAL MARKS FOR THE WEEK, BUT AN UPPER BOUND ON THE MARKS!
