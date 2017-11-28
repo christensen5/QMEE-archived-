@@ -60,7 +60,12 @@ Current Marks = 99
 
 Results directory missing!
 
-Found 8 code files: ConcatenateTwoFiles.sh, CountLines.sh, variables.sh, csvtospace.sh, MyExampleScript.sh, UnixPrac1.txt, tabtocsv.sh, boilerplate.sh
+Found 9 code files: ConcatenateTwoFiles.sh, .txt, CountLines.sh, variables.sh, csvtospace.sh, MyExampleScript.sh, UnixPrac1.txt, tabtocsv.sh, boilerplate.sh
+
+Found the following extra files: .csv
+0.5 pt deducted per extra file
+
+Current Marks = 98.5
 
 ======================================================================
 Testing script/code files...
@@ -89,6 +94,15 @@ Merged file is
 Encountered error:
 ConcatenateTwoFiles.sh: line 2: $3: ambiguous redirect
 ConcatenateTwoFiles.sh: line 3: $3: ambiguous redirect
+
+======================================================================
+Inspecting script file .txt...
+
+File contents are:
+**********************************************************************
+**********************************************************************
+
+Testing .txt...
 
 ======================================================================
 Inspecting script file CountLines.sh...
@@ -187,7 +201,7 @@ Done!
 
 Code ran without errors
 
-Time consumed = 0.00531s
+Time consumed = 0.00608s
 
 ======================================================================
 Inspecting script file MyExampleScript.sh...
@@ -218,7 +232,7 @@ Hello mhasoba
 
 Code ran without errors
 
-Time consumed = 0.00336s
+Time consumed = 0.00404s
 
 ======================================================================
 Inspecting script file UnixPrac1.txt...
@@ -289,7 +303,7 @@ Done!
 
 Code ran without errors
 
-Time consumed = 0.00384s
+Time consumed = 0.00652s
 
 ======================================================================
 Inspecting script file boilerplate.sh...
@@ -321,7 +335,7 @@ This is a shell script!
 
 Code ran without errors
 
-Time consumed = 0.00213s
+Time consumed = 0.00303s
 
 ======================================================================
 ======================================================================
@@ -334,6 +348,6 @@ Ran into 3 errors
 
 FINISHED WEEKLY ASSESSMENT
 
-Current Marks for the Week = 99
+Current Marks for the Week = 98.5
 
 NOTE THAT THESE ARE NOT THE FINAL MARKS FOR THE WEEK, BUT AN UPPER BOUND ON THE MARKS!

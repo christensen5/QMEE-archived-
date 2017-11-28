@@ -1,0 +1,2398 @@
+Starting weekly assessment for Alexander, Week2
+
+Current Marks = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 514.28 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: Week1, Assessment, Zotero, Week2, Reading, .git, Week3
+
+Found the following files in parent directory: README.txt, QMEE_Individual_Training_Needs_Analysis.odt, .gitignore
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+**********************************************************************
+*~ 
+*.tmp
+**********************************************************************
+
+Found README in parent directory, named: README.txt
+
+Printing contents of README.txt:
+**********************************************************************
+My QMEE Repository
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Found 3 weekly directories: Week1, Week2, Week3
+
+The Week2 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+Assessing WEEK2...
+
+Found the following directories: .idea, Code, Data, Sandbox
+
+Found the following files: 
+
+Checking for readme file in weekly directory...
+
+README file missing, 1 pt deducted
+
+Current Marks = 99
+
+Results directory missing!
+
+Found 26 code files: lc2.py, boilerplate.py, LV3.py, basic_csv.py, timeitme.py, profileme.py, LV4.py, temp.py, test_oaks.py, dictionary.py, LV1.py, debugme.py, scope.py, tuple.py, LV5.py, basic_io.py, lc1.py, oaks.py, LV2.py, loops.py, using_name.py, cfexercises.py, align_seqs.py, run_LV.sh, control_flow.py, test_control_flow.py
+
+======================================================================
+Testing script/code files...
+
+======================================================================
+Inspecting script file lc2.py...
+
+File contents are:
+**********************************************************************
+#!/usr/bin/python
+
+"""This script will exemplify the use of list comprehensions. Three
+    tasks will be carried out, each using both a list comprehension and
+    a loop. The tasks consist of extracting information from the 
+    provided dataset 'birds'. """
+__author__ = 'Alexander Kier Christensen'
+__version__ = '0.0.1'
+
+# Average UK Rainfall (mm) for 1910 by month
+# http://www.metoffice.gov.uk/climate/uk/datasets
+rainfall = (('JAN', 111.4),
+            ('FEB', 126.1),
+            ('MAR', 49.9),
+            ('APR', 95.3),
+            ('MAY', 71.8),
+            ('JUN', 70.2),
+            ('JUL', 97.1),
+            ('AUG', 140.2),
+            ('SEP', 27.0),
+            ('OCT', 89.4),
+            ('NOV', 128.4),
+            ('DEC', 142.2),
+            )
+
+# (1) Use a list comprehension to create a list of month,rainfall tuples where
+# the amount of rain was greater than 100 mm.
+
+# (2) Use a list comprehension to create a list of just month names where the
+# amount of rain was less than 50 mm. 
+
+# (3) Now do (1) and (2) using conventional loops (you can choose to do 
+# this before 1 and 2 !). 
+
+# ANNOTATE WHAT EVERY BLOCK OR IF NECESSARY, LINE IS DOING! 
+
+# ALSO, PLEASE INCLUDE A DOCSTRING AT THE BEGINNING OF THIS FILE THAT 
+# SAYS WHAT THE SCRIPT DOES AND WHO THE AUTHOR IS
+
+# ======================================================================================================================
+# LIST COMPREHENSIONS
+# 1
+# Populate a list directly with tuples from rainfall whose second element exceeds 100.
+lc1 = list(entry for entry in rainfall if entry[1] > 100)
+
+# 2
+# Populate a list directly with months from rainfall whose respective rainfall is less than 50.
+lc2 = list(entry[0] for entry in rainfall if entry[1] < 50)
+
+# ======================================================================================================================
+# CONVENTIONAL LOOPS
+# 1
+# Instantiate an empty list, then run a for loop over each line in rainfall to find months with >100mm rain and save
+# each such line in the new list.
+loops1 = list()
+for entry in rainfall:
+    if entry[1] > 100:
+        loops1.append(entry)
+
+# 2
+# Instantiate an empty list, then run a for loop over each line in rainfall to find months with <50mm rain, and save
+# only the month names in the new list.
+loops2 = list()
+for entry in rainfall:
+    if entry[1] < 50:
+        loops2.append(entry[0])
+**********************************************************************
+
+Testing lc2.py...
+
+lc2.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01147s
+
+======================================================================
+Inspecting script file boilerplate.py...
+
+File contents are:
+**********************************************************************
+#!/user/bin/python
+
+"""Description of this program
+	you can use several lines."""
+	
+__author__ = 'Samraat Pawar (email here)'
+__version__ = '0.0.1'
+
+# imports
+import sys #module to interface our program with the operating system
+
+# constants
+
+# functions
+def main(argv):
+    print 'This is a boilerplate'
+    return 0
+	
+if (__name__ == "__main__"): #makes sure the "main" function is called from commandline
+    status = main(sys.argv)
+    sys.exit(status)
+**********************************************************************
+
+Testing boilerplate.py...
+
+boilerplate.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+This is a boilerplate
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01051s
+
+======================================================================
+Inspecting script file LV3.py...
+
+File contents are:
+**********************************************************************
+""" The typical Lotka-Volterra Model simulated using scipy. This version differs from LV1 in that it has pre-defined
+    parameters which guarantee the persistence of both predator and prey."""
+__author__ = 'Alexander Christensen'
+__version__ = '0.0.1'
+
+import sys
+import scipy as sc
+import scipy.integrate as integrate
+import pylab as p  # Contains matplotlib for plotting
+from matplotlib.offsetbox import AnchoredText
+
+
+# import matplotlip.pylab as p #Some people might need to do this
+
+def dCR_dt(pops, t=0):
+    """ Returns the growth rate of predator and prey populations at any
+    given time step """
+
+    R = pops[0]
+    C = pops[1]
+    dRdt = r * R * (1 - (R / K)) - a * R * C
+    dydt = -z * C + e * a * R * C
+
+    return sc.array([dRdt, dydt])
+
+
+""" The remaining part of the function carries out the integration step in simulating LV populations, and plots the
+    result. Takes user-supplied inputs for parameters:
+    r = resource growth rate
+    a = consumer resource rate
+    z = consumer mortality rate
+    e consumer production efficiency"""
+
+# Define parameters to ensure persistence of both predator and prey:
+r = 1. # Resource growth rate
+a = 0.1 # Consumer search rate (determines consumption rate)
+z = 1.5 # Consumer mortality rate
+e = 0.75 # Consumer production efficiency
+K = 35 # Consumer carrying capacity
+
+# Now define time -- integrate from 0 to 30, using 1000 points:
+t = sc.linspace(0, 30, 1000)
+
+x0 = 10
+y0 = 5
+z0 = sc.array([x0, y0])  # initials conditions: 10 prey and 5 predators per unit area
+
+pops, infodict = integrate.odeint(dCR_dt, z0, t, full_output=True)
+
+infodict['message']  # >>> 'Integration successful.'
+
+prey, predators = pops.T  # What's this for?
+print("Final resource population is: %d" % prey[-1]) #print final population levels to terminal
+print("Final consumer population is: %d" % predators[-1])
+f1 = p.figure()  # Open empty figure object
+p.plot(t, prey, 'g-', label='Resource density')  # Plot
+p.plot(t, predators, 'b-', label='Consumer density')
+p.grid()
+# add parameters to plot
+paramstring = "r = " + str(r) + "\na = " + str(a) + "\nz = " + str(z) + "\ne = " + str(e) + "\nK = " + str(K)
+p.annotate(paramstring, (26, 5.1))
+p.legend(loc='best')
+p.xlabel('Time')
+p.ylabel('Population')
+p.title('Consumer-Resource population dynamics')
+p.show()
+f1.savefig('../Results/prey_and_predators_3.pdf')  # Save figure
+**********************************************************************
+
+Testing LV3.py...
+
+LV3.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/font_manager.py:280: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  'Matplotlib is building the font cache using fc-list. '
+
+======================================================================
+Inspecting script file basic_csv.py...
+
+File contents are:
+**********************************************************************
+import csv
+
+# Read a file containing:
+# 'Species' , 'Infraorder', 'Family' , 'Distribution' , 'Body mass male (Kg)'
+f= open('../Sandbox/testcsv.csv','rb')
+
+csvread = csv.reader(f)
+temp = []
+for row in csvread:
+    temp.append(tuple(row))
+    print row
+    print "The species is" , row[0]
+	
+f.close()
+
+# write  a file containing only species name and body mass
+f = open('../Sandbox/testcsv.csv','rb')
+g = open('../Sandbox/bodymass.csv','wb')
+
+csvread =  csv.reader(f)
+csvwrite = csv.writer(g)
+
+for row in csvread:
+    print row
+    csvwrite.writerow([row[0],row[4]])
+
+f.close()
+g.close()
+**********************************************************************
+
+Testing basic_csv.py...
+
+basic_csv.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 98
+
+Output (only first 500 characters): 
+
+**********************************************************************
+['Species', 'Infraorder', 'Family', 'Distribution', 'Body mass male (Kg)']
+The species is Species
+['Daubentonia_madagascariensis', 'Chiromyiformes ', 'Daubentoniidae', 'Madagascar', '2.7']
+The species is Daubentonia_madagascariensis
+['Allocebus_trichotis', 'Lemuriformes', 'Cheirogaleidae', 'Madagascar', '0.1']
+The species is Allocebus_trichotis
+['Avahi_laniger', 'Lemuriformes', 'Indridae', 'America', '1.03']
+The species is Avahi_laniger
+['Avahi_occidentalis', 'Lemuriformes', 'Indridae', 'Madagasc
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01218s
+
+======================================================================
+Inspecting script file timeitme.py...
+
+File contents are:
+**********************************************************************
+#####################################################################
+######################################################################
+# range vs xrange
+####################################################################
+
+# imports
+import time
+import timeit
+
+
+def a_not_useful_function():
+    y = 0
+    for i in range(100000):
+        y = y + i
+    return 0
+
+
+def a_less_useless_function():
+    y = 0
+    for i in xrange(100000):
+        y = y + i
+    return 0
+
+
+# One approach is to time it like this:
+start = time.time()
+a_not_useful_function()
+print "a_not_useful_function takes %fs to run." % (time.time() - start)
+
+start = time.time()
+a_less_useless_function()
+print "a_less_useless_function takes %fs to run." % (time.time() - start)
+
+# But youll notice that if you run it multiple times, the time taken
+# changes a little each time. SO instead you can run:
+# %timeit a_not_useful_function()
+# %timeit a_less_useles
+
+
+##############################################################################
+# for loops vs. list comprehensions.
+##############################################################################
+
+my_list = range(1000)
+
+def my_squares_loop(x):
+    out = []
+    for i in x:
+        out.append(i ** 2)
+    return out
+
+def my_squares_lc(x):
+    out = [i ** 2 for i in x]
+    return out
+
+# %timeit my_squares_loop(my_list)
+# %timeit my_squares_lc(my_list)**********************************************************************
+
+Testing timeitme.py...
+
+timeitme.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 97
+
+Output (only first 500 characters): 
+
+**********************************************************************
+a_not_useful_function takes 0.004625s to run.
+a_less_useless_function takes 0.002715s to run.
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01877s
+
+======================================================================
+Inspecting script file profileme.py...
+
+File contents are:
+**********************************************************************
+def a_useless_function(x):
+    y = 0
+    # eight zeros!
+    for i in xrange(100000000):
+        y = y + i
+    return 0
+
+
+def a_less_useless_function(x):
+    y = 0
+    # five zeros!
+    for i in xrange(100000):
+        y = y + i
+    return 0
+
+
+def some_function(x):
+    print x
+    a_useless_function(x)
+    a_less_useless_function(x)
+    return 0
+
+
+some_function(1000)**********************************************************************
+
+Testing profileme.py...
+
+profileme.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 96
+
+Output (only first 500 characters): 
+
+**********************************************************************
+1000
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 2.52629s
+
+======================================================================
+Inspecting script file LV4.py...
+
+File contents are:
+**********************************************************************
+""" A discrete-time Lotka-Volterra Model simulated using scipy."""
+__author__ = 'Alexander Christensen'
+__version__ = '0.0.1'
+
+import sys
+import scipy as sc
+import scipy.integrate as integrate
+import pylab as p  # Contains matplotlib for plotting
+from matplotlib.offsetbox import AnchoredText
+
+
+def CR_t1(pops):
+    """ Returns the growth rate of predator and prey populations at time step t1 given the previous time step t0."""
+
+    # If first iteration, pops is only 1-dimensional
+    # if pops.ndim == 1:
+    #     R0 = pops[0] # find t0 Resource population
+    #     C0 = pops[1] # find t0 Consumer population
+    # else:
+    R0 = pops[-1, 0] # find t0 Resource population
+    C0 = pops[-1, 1] # find t0 Consumer population
+
+    # Apply discrete LV equations to compute t1 Resource and Consumer populations
+    R1 = R0 * (1 + r * (1 - (R0 / K)) - a*C0)
+    C1 = C0 * (1 - z + e * a * R0)
+
+    return sc.array([R1, C1])
+
+# Store parameters from user input:
+r = float(sys.argv[1]) # Resource growth rate
+a = float(sys.argv[2]) # Consumer search rate (determines consumption rate)
+z = float(sys.argv[3]) # Consumer mortality rate
+e = float(sys.argv[4]) # Consumer production efficiency
+K = float(sys.argv[5]) # Resource carrying capacity
+
+# Now define time -- integrate from 0 to 30, using 1000 points:
+t = sc.arange(0, 100) # CHANGING START POINT WILL NOT CHANGE START TIME OF SIMULATION BELOW!!
+
+x0 = 10
+y0 = 5
+z0 = sc.array([x0, y0])  # initials conditions: 10 prey and 5 predators per unit area
+
+pops = sc.array([[x0, y0]])
+for timestep in t[:-1]: # All but the last timestep or we'll have one more population step than time steps
+    pops = sc.append(pops, [CR_t1(pops)], axis=0)
+
+prey = pops[:,0]
+predators = pops[:,1]
+f1 = p.figure() #Open empty figure object
+p.plot(t, prey, 'g-', label='Resource density') # Plot
+p.plot(t, predators, 'b-', label='Consumer density')
+p.grid()
+# add parameters to plot
+paramstring = "r = " + str(r) + "\na = " + str(a) + "\nz = " + str(z) + "\ne = " + str(e) + "\nK = " + str(K)
+p.annotate(paramstring, (t.size - 10, 5.1))
+p.legend(loc='best')
+p.xlabel('Timesteps')
+p.ylabel('Population')
+p.title('Consumer-Resource discrete population dynamics')
+p.show()
+f1.savefig('../Results/prey_and_predators_4.pdf')  # Save figure
+**********************************************************************
+
+Testing LV4.py...
+
+LV4.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/font_manager.py:280: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  'Matplotlib is building the font cache using fc-list. '
+
+======================================================================
+Inspecting script file temp.py...
+
+File contents are:
+**********************************************************************
+for i in range(x)
+    if i > 3:
+        print i
+**********************************************************************
+
+Testing temp.py...
+
+temp.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 95
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+  File "temp.py", line 1
+    for i in range(x)
+                    ^
+SyntaxError: invalid syntax
+
+======================================================================
+Inspecting script file test_oaks.py...
+
+File contents are:
+**********************************************************************
+import csv
+import sys
+import pdb
+import doctest
+
+
+# Define function
+def is_an_oak(name):
+    """ Returns True if name starts with 'quercus '
+        >>> is_an_oak('quercus ')
+        True
+    """
+    return name.lower().startswith('quercus ')
+
+
+print(is_an_oak.__doc__)
+
+
+def main(argv): 
+    f = open('../Data/TestOaksData.csv','rb')
+    g = open('../Data/JustOaksData.csv','wb')
+    taxa = csv.reader(f)
+    csvwrite = csv.writer(g)
+    oaks = set()
+    for row in taxa:
+        print row
+        print "The genus is", row[0]
+        if is_an_oak(row[0]+" "):
+            print row[0]
+            print 'FOUND AN OAK!'
+            print " "
+            csvwrite.writerow([row[0], row[1]])    
+
+    f.close()
+    g.close()
+    return 0
+
+if __name__ == "__main__":
+    main(sys.argv)
+
+#doctest.testmod()
+**********************************************************************
+
+Testing test_oaks.py...
+
+test_oaks.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+ Returns True if name starts with 'quercus '
+        >>> is_an_oak('quercus ')
+        True
+    
+['Genus', ' species']
+The genus is Genus
+['Quercus', ' robur']
+The genus is Quercus
+Quercus
+FOUND AN OAK!
+ 
+['Fraxinus', ' excelsior']
+The genus is Fraxinus
+['Pinus', ' sylvestris']
+The genus is Pinus
+['Quercus', ' cerris']
+The genus is Quercus
+Quercus
+FOUND AN OAK!
+ 
+['Quercus', ' petraea']
+The genus is Quercus
+Quercus
+FOUND AN OAK!
+ 
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.03342s
+
+======================================================================
+Inspecting script file dictionary.py...
+
+File contents are:
+**********************************************************************
+#!/usr/bin/python
+
+"""This script will take taxa and populate a dictionary with it,
+    mapping order names to sets of taxa."""
+__author__ = 'Alexander Kier Christensen'
+__version__ = '0.0.2'
+
+## Imports
+import sys
+
+taxa = [ ('Myotis lucifugus','Chiroptera'),
+         ('Gerbillus henleyi','Rodentia',),
+         ('Peromyscus crinitus', 'Rodentia'),
+         ('Mus domesticus', 'Rodentia'),
+         ('Cleithrionomys rutilus', 'Rodentia'),
+         ('Microgale dobsoni', 'Afrosoricida'),
+         ('Microgale talazaci', 'Afrosoricida'),
+         ('Lyacon pictus', 'Carnivora'),
+         ('Arctocephalus gazella', 'Carnivora'),
+         ('Canis lupus', 'Carnivora'),
+        ]
+
+# Write a short python script to populate a dictionary called taxa_dic 
+# derived from taxa so that it maps order names to sets of taxa. 
+# E.g. 'Chiroptera' : set(['Myotis lucifugus']) etc. 
+
+# ANNOTATE WHAT EVERY BLOCK OR IF NECESSARY, LINE IS DOING! 
+
+# ALSO, PLEASE INCLUDE A DOCSTRING AT THE BEGINNING OF THIS FILE THAT 
+# SAYS WHAT THE SCRIPT DOES AND WHO THE AUTHOR IS
+
+# Write your script here:
+
+
+def ext_order_set(any_taxa=taxa):  # default to taxa if no input given
+    """Extract the order names and create a set from them."""
+    order_set = set()
+    for entry in any_taxa:
+        order_set.add(entry[1]) 
+    print "The orders in the dictionary are " + str(list(order_set))
+    
+    return order_set
+    
+    
+def main(argv):
+    # Initialise taxa_dic with keys defined by ext_order_set and a
+    # DIFFERENT empty set as the value assigned to each key.
+    taxa_dic = {k: set() for k in ext_order_set(taxa)}
+    
+    # Iterate over taxa and populate the taxa_dic keys with the relevant
+    # species.
+    for entry in taxa:
+        taxa_dic[entry[1]].add(entry[0])
+    
+    print "\nThe dictionary is " + str(taxa_dic)
+    return taxa_dic
+     
+        
+if __name__ == "__main__":
+    main(sys.argv)
+
+
+
+
+
+
+
+**********************************************************************
+
+Testing dictionary.py...
+
+dictionary.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+The orders in the dictionary are ['Rodentia', 'Afrosoricida', 'Chiroptera', 'Carnivora']
+
+The dictionary is {'Rodentia': set(['Peromyscus crinitus', 'Mus domesticus', 'Gerbillus henleyi', 'Cleithrionomys rutilus']), 'Afrosoricida': set(['Microgale dobsoni', 'Microgale talazaci']), 'Chiroptera': set(['Myotis lucifugus']), 'Carnivora': set(['Arctocephalus gazella', 'Lyacon pictus', 'Canis lupus'])}
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01072s
+
+======================================================================
+Inspecting script file LV1.py...
+
+File contents are:
+**********************************************************************
+""" The typical Lotka-Volterra Model simulated using scipy """
+
+import scipy as sc 
+import scipy.integrate as integrate
+import pylab as p #Contains matplotlib for plotting
+
+# import matplotlip.pylab as p #Some people might need to do this
+
+def dCR_dt(pops, t=0):
+    """ Returns the growth rate of predator and prey populations at any 
+    given time step """
+    
+    R = pops[0]
+    C = pops[1]
+    dRdt = r*R - a*R*C 
+    dydt = -z*C + e*a*R*C
+    
+    return sc.array([dRdt, dydt])
+
+# Define parameters:
+r = 1. # Resource growth rate
+a = 0.1 # Consumer search rate (determines consumption rate) 
+z = 1.5 # Consumer mortality rate
+e = 0.75 # Consumer production efficiency
+
+# Now define time -- integrate from 0 to 15, using 1000 points:
+t = sc.linspace(0, 15,  1000)
+
+x0 = 10
+y0 = 5 
+z0 = sc.array([x0, y0]) # initials conditions: 10 prey and 5 predators per unit area
+
+pops, infodict = integrate.odeint(dCR_dt, z0, t, full_output=True)
+
+infodict['message']     # >>> 'Integration successful.'
+
+prey, predators = pops.T # What's this for?
+f1 = p.figure() #Open empty figure object
+p.plot(t, prey, 'g-', label='Resource density') # Plot
+p.plot(t, predators  , 'b-', label='Consumer density')
+p.grid()
+p.legend(loc='best')
+p.xlabel('Time')
+p.ylabel('Population')
+p.title('Consumer-Resource population dynamics')
+p.show()
+f1.savefig('../Results/prey_and_predators_1.pdf') #Save figure
+**********************************************************************
+
+Testing LV1.py...
+
+LV1.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/font_manager.py:280: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  'Matplotlib is building the font cache using fc-list. '
+
+======================================================================
+Inspecting script file debugme.py...
+
+File contents are:
+**********************************************************************
+def createabug(x):
+    y = x**4
+    z=0.
+    y = y/z
+    return y
+    
+createabug(25)
+**********************************************************************
+
+Testing debugme.py...
+
+debugme.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 94
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+Traceback (most recent call last):
+  File "debugme.py", line 7, in <module>
+    createabug(25)
+  File "debugme.py", line 4, in createabug
+    y = y/z
+ZeroDivisionError: float division by zero
+
+======================================================================
+Inspecting script file scope.py...
+
+File contents are:
+**********************************************************************
+print "FIRST TRY THIS\n"
+
+_a_global = 10
+
+def a_function():
+    _a_global = 5
+    _a_local = 4
+    print "Inside the function, the value is", _a_global
+    print "Inside the function, the value is", _a_local
+    return None
+	
+a_function()
+print "Outside the function the value is ", _a_global
+
+
+print "NOW TRY THIS\n"
+
+_a_global = 10
+
+def a_function():
+    global _a_global
+    _a_global = 5
+    _a_local = 4
+    print "Inside the function, the value is", _a_global
+    print "Inside the function, the value is", _a_local
+    return None
+	
+a_function()
+print "Outside the function the value is", _a_global
+**********************************************************************
+
+Testing scope.py...
+
+scope.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 93
+
+Output (only first 500 characters): 
+
+**********************************************************************
+FIRST TRY THIS
+
+Inside the function, the value is 5
+Inside the function, the value is 4
+Outside the function the value is  10
+NOW TRY THIS
+
+Inside the function, the value is 5
+Inside the function, the value is 4
+Outside the function the value is 5
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01070s
+
+======================================================================
+Inspecting script file tuple.py...
+
+File contents are:
+**********************************************************************
+#!/usr/bin/python
+
+"""This script will take the dataset 'birds', and print information from it to the console."""
+__author__ = 'Alexander Kier Christensen'
+__version__ = '0.0.1'
+
+## Imports
+import sys
+
+birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
+          ('Delichon urbica','House martin',19),
+          ('Junco phaeonotus','Yellow-eyed junco',19.5),
+          ('Junco hyemalis','Dark-eyed junco',19.6),
+          ('Tachycineata bicolor','Tree swallow',20.2),
+        )
+
+# Birds is a tuple of tuples of length three: latin name, common name, mass.
+# write a (short) script to print these on a separate line for each species
+# Hints: use the "print" command! You can use list comprehensions!
+
+# ANNOTATE WHAT EVERY BLOCK OR IF NECESSARY, LINE IS DOING! 
+# ALSO, PLEASE INCLUDE A DOCSTRING AT THE BEGINNING OF THIS FILE THAT
+# SAYS WHAT THE SCRIPT DOES AND WHO THE AUTHOR IS
+
+bird_str = ""
+for entry in birds:
+    bird_str += str(entry)+'\n'
+print bird_str
+
+
+
+
+**********************************************************************
+
+Testing tuple.py...
+
+tuple.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+('Passerculus sandwichensis', 'Savannah sparrow', 18.7)
+('Delichon urbica', 'House martin', 19)
+('Junco phaeonotus', 'Yellow-eyed junco', 19.5)
+('Junco hyemalis', 'Dark-eyed junco', 19.6)
+('Tachycineata bicolor', 'Tree swallow', 20.2)
+
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01164s
+
+======================================================================
+Inspecting script file LV5.py...
+
+File contents are:
+**********************************************************************
+""" A discrete-time Lotka-Volterra Model simulated using scipy, including random Gaussian prey fluctuations."""
+__author__ = 'Alexander Christensen'
+__version__ = '0.0.1'
+
+import sys
+import scipy.stats
+import scipy as sc
+import scipy.integrate as integrate
+import pylab as p  # Contains matplotlib for plotting
+from matplotlib.offsetbox import AnchoredText
+
+
+def CR_t1(pops):
+    """ Returns the growth rate of predator and prey populations at time step t1 given the previous time step t0."""
+
+    # If first iteration, pops is only 1-dimensional
+    # if pops.ndim == 1:
+    #     R0 = pops[0] # find t0 Resource population
+    #     C0 = pops[1] # find t0 Consumer population
+    # else:
+    R0 = pops[-1, 0] # find t0 Resource population
+    C0 = pops[-1, 1] # find t0 Consumer population
+
+    # Apply discrete LV equations to compute t1 Resource and Consumer populations
+    R1 = R0 * (1 + (r + gscale * scipy.stats.norm.rvs()) * (1 - (R0 / K)) - a*C0)
+    C1 = C0 * (1 - z + e * a * R0)
+
+    return sc.array([R1, C1])
+
+# Store parameters from user input:
+r = float(sys.argv[1]) # Resource growth rate
+a = float(sys.argv[2]) # Consumer search rate (determines consumption rate)
+z = float(sys.argv[3]) # Consumer mortality rate
+e = float(sys.argv[4]) # Consumer production efficiency
+K = float(sys.argv[5]) # Resource carrying capacity
+gscale = 0.125 # Scaling factor for random Gaussian component of growth rate.
+
+# Now define time -- integrate from 0 to 30, using 1000 points:
+t = sc.arange(0, 100) # CHANGING START POINT WILL NOT CHANGE START TIME OF SIMULATION BELOW!!
+
+x0 = 10
+y0 = 5
+z0 = sc.array([x0, y0])  # initials conditions: 10 prey and 5 predators per unit area
+
+pops = sc.array([[x0, y0]])
+for timestep in t[:-1]: # All but the last timestep or we'll have one more population step than time steps
+    pops = sc.append(pops, [CR_t1(pops)], axis=0)
+
+prey = pops[:,0]
+predators = pops[:,1]
+f1 = p.figure() #Open empty figure object
+p.plot(t, prey, 'g-', label='Resource density') # Plot
+p.plot(t, predators, 'b-', label='Consumer density')
+p.grid()
+# add parameters to plot
+paramstring = "r = " + str(r) + "\na = " + str(a) + "\nz = " + str(z) + "\ne = " + str(e) + "\nK = " + str(K) + "\neps ~ N(0," + str(gscale) + ")"
+p.annotate(paramstring, (t.size - 10, 5.1))
+p.legend(loc='best')
+p.xlabel('Timesteps')
+p.ylabel('Population')
+p.title('Consumer-Resource discrete population dynamics (w/ random Prey fluctuation)')
+p.show()
+f1.savefig('../Results/prey_and_predators_5.pdf')  # Save figure
+**********************************************************************
+
+Testing LV5.py...
+
+LV5.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/font_manager.py:280: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  'Matplotlib is building the font cache using fc-list. '
+
+======================================================================
+Inspecting script file basic_io.py...
+
+File contents are:
+**********************************************************************
+#############################################
+# FILE INPUT
+#############################################
+# Open a file for reading.
+f = open('../Sandbox/test.txt','r')
+# use implicit for loop
+# if the object is a file, python will cycle over lines
+for line in f:
+    print line, # the "," prevents adding a new line
+#close the ile
+f.close()
+
+# Same example, skip blank lines
+f = open('../Sandbox/test.txt','r')
+for line in f:
+    if len(line.strip()) > 0:
+        print line,
+f.close()
+
+#############################################
+# FILE OUTPUT
+#############################################
+# Save the elements of a list to a file
+list_to_save = range(100)
+
+f=open('../Sandbox/testout.txt','w')
+for i in list_to_save:
+    f.write(str(i) + '\n') #Add a new line at the end.
+f.close()
+
+#############################################
+# STORING OBJECTS
+#############################################
+# To save an object (even complex) for later use.
+my_dictionary = {"a key": 10, "another key": 11}
+
+import pickle
+
+f = open('../Sandbox/testp.p','wb') # b means accept binary files
+pickle.dump(my_dictionary,f)
+f.close()
+
+# Load the data again
+f = open('../Sandbox/testp.p','rb')
+another_dictionary = pickle.load(f)
+f.close()
+
+print another_dictionary
+**********************************************************************
+
+Testing basic_io.py...
+
+basic_io.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 92
+
+Output (only first 500 characters): 
+
+**********************************************************************
+First Line
+Second Line
+
+Third Line
+
+Fourth Line
+First Line
+Second Line
+Third Line
+Fourth Line
+{'another key': 11, 'a key': 10}
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01460s
+
+======================================================================
+Inspecting script file lc1.py...
+
+File contents are:
+**********************************************************************
+#!/usr/bin/python
+
+"""This script will exemplify the use of list comprehensions. Three
+    tasks will be carried out, each using both a list comprehension and
+    a loop. The tasks consist of extracting information from the 
+    provided dataset 'birds'. """
+__author__ = 'Alexander Kier Christensen'
+__version__ = '0.0.1'
+
+## Imports
+import sys
+
+birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
+          ('Delichon urbica','House martin',19),
+          ('Junco phaeonotus','Yellow-eyed junco',19.5),
+          ('Junco hyemalis','Dark-eyed junco',19.6),
+          ('Tachycineata bicolor','Tree swallow',20.2),
+         )
+
+#(1) Write three separate list comprehensions that create three different
+# lists containing the latin names, common names and mean body masses for
+# each species in birds, respectively. 
+
+# (2) Now do the same using conventional loops (you can shoose to do this 
+# before 1 !). 
+
+# ANNOTATE WHAT EVERY BLOCK OR, IF NECESSARY, LINE IS DOING! 
+
+# ALSO, PLEASE INCLUDE A DOCSTRING AT THE BEGINNING OF THIS FILE THAT 
+# SAYS WHAT THE SCRIPT DOES AND WHO THE AUTHOR IS
+
+
+## LIST COMPREHENSIONS
+#1
+# Create and populate a list directly with latin names.
+latin_names_lc = list(tuple[0] for tuple in birds)
+
+#2
+# Create and populate a list directly with common names.
+common_names_lc = list(tuple[1] for tuple in birds)
+
+#3
+# Create and populate a list directly with mean masses.
+mean_mass_lc = list(tuple[2] for tuple in birds)
+
+## CONVENTIONAL LOOPS
+#1
+#Initialise empty list, then populate with latin names with a loop.
+latin_names_loop = list()
+for tuple in birds:
+    latin_names_loop.append(tuple[0])
+    
+#2
+#Initialise empty list, then populate with common names with a loop.
+common_names_loop = list()
+for tuple in birds:
+    common_names_loop.append(tuple[1])
+    
+#3
+#Initialise empty list, then populate with mean masses with a loop.
+mean_mass_loop = list()
+for tuple in birds:
+    mean_mass_loop.append(tuple[2])    
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Testing lc1.py...
+
+lc1.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01174s
+
+======================================================================
+Inspecting script file oaks.py...
+
+File contents are:
+**********************************************************************
+## Let's find just those taxa that are oak trees from a list of species.
+
+taxa = [ 'Quercus robur',
+         'Fraxinus exelsior',
+         'Pinus sylvestris',
+         'Quercus cerris',
+         'Quercus petraea',
+       ]
+       
+def is_an_oak(name):
+	return name.lower().startswith('quercus ')
+	
+# Using for loops
+oaks_loops = set()
+for species in taxa:
+	if is_an_oak(species):
+		oaks_loops.add(species)
+print oaks_loops
+
+# Using list comprehensions
+oaks_lc = set([species for species in taxa if is_an_oak(species)])
+print oaks_lc
+
+# Get names in UPPER CASE using for loops
+oaks_loops = set()
+for species in taxa:
+	if is_an_oak(species):
+		oaks_loops.add(species.upper())
+print oaks_loops
+
+# Get names in UPPER CASE using list comprehensions
+oaks_lc = set([species.upper() for species in taxa if is_an_oak(species)])
+print oaks_lc
+**********************************************************************
+
+Testing oaks.py...
+
+oaks.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 91
+
+Output (only first 500 characters): 
+
+**********************************************************************
+set(['Quercus robur', 'Quercus cerris', 'Quercus petraea'])
+set(['Quercus robur', 'Quercus cerris', 'Quercus petraea'])
+set(['QUERCUS ROBUR', 'QUERCUS CERRIS', 'QUERCUS PETRAEA'])
+set(['QUERCUS ROBUR', 'QUERCUS CERRIS', 'QUERCUS PETRAEA'])
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01002s
+
+======================================================================
+Inspecting script file LV2.py...
+
+File contents are:
+**********************************************************************
+""" The typical Lotka-Volterra Model simulated using scipy. This version differs from LV1 in that it accepts
+    LV parameters as user-specified arguments, and saves the resulting plot to disk."""
+__author__ = 'Alexander Christensen'
+__version__ = '0.0.1'
+
+import sys
+import scipy as sc 
+import scipy.integrate as integrate
+import pylab as p  # Contains matplotlib for plotting
+from matplotlib.offsetbox import AnchoredText
+
+# import matplotlip.pylab as p #Some people might need to do this
+
+def dCR_dt(pops, t=0):
+    """ Returns the growth rate of predator and prey populations at any 
+    given time step """
+    
+    R = pops[0]
+    C = pops[1]
+    dRdt = r*R*(1-(R/K)) - a*R*C
+    dydt = -z*C + e*a*R*C
+    
+    return sc.array([dRdt, dydt])
+
+""" The remaining part of the function carries out the integration step in simulating LV populations, and plots the
+    result. Takes user-supplied inputs for parameters:
+    r = resource growth rate
+    a = consumer resource rate
+    z = consumer mortality rate
+    e consumer production efficiency"""
+
+# Store parameters from user input:
+r = float(sys.argv[1]) # Resource growth rate
+a = float(sys.argv[2]) # Consumer search rate (determines consumption rate)
+z = float(sys.argv[3]) # Consumer mortality rate
+e = float(sys.argv[4]) # Consumer production efficiency
+K = float(sys.argv[5]) # Resource carrying capacity
+
+# Now define time -- integrate from 0 to 30, using 1000 points:
+t = sc.linspace(0, 30,  1000)
+
+x0 = 10
+y0 = 5
+z0 = sc.array([x0, y0]) # initials conditions: 10 prey and 5 predators per unit area
+
+pops, infodict = integrate.odeint(dCR_dt, z0, t, full_output=True)
+
+infodict['message']     # >>> 'Integration successful.'
+
+prey, predators = pops.T # What's this for?
+f1 = p.figure() #Open empty figure object
+p.plot(t, prey, 'g-', label='Resource density') # Plot
+p.plot(t, predators  , 'b-', label='Consumer density')
+p.grid()
+# add parameters to plot
+paramstring = "r = " + str(r) + "\na = " + str(a) + "\nz = " + str(z) + "\ne = " + str(e) + "\nK = " + str(K)
+p.annotate(paramstring,(26,5.1))
+p.legend(loc='best')
+p.xlabel('Time')
+p.ylabel('Population')
+p.title('Consumer-Resource population dynamics')
+p.show()
+f1.savefig('../Results/prey_and_predators_2.pdf')  # Save figure
+**********************************************************************
+
+Testing LV2.py...
+
+LV2.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/font_manager.py:280: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  'Matplotlib is building the font cache using fc-list. '
+
+======================================================================
+Inspecting script file loops.py...
+
+File contents are:
+**********************************************************************
+# for loops in Python
+for i in range(5):
+	print i
+	
+my_list = [0, 2, "geronimo!", 3.0, True, False]
+for k in my_list:
+	print k
+	
+total = 0
+summands = [0, 1, 11, 111, 1111]
+for s in summands:
+	total = total + s
+	print total
+	
+# while loops in python
+z = 0
+while z < 100:
+	z = z + 1
+	print (z)
+	
+b = True
+while b:
+	print "GERONIMO! infinite loop!"
+**********************************************************************
+
+Testing loops.py...
+
+loops.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 90
+
+Output (only first 500 characters): 
+
+**********************************************************************
+0
+1
+2
+3
+4
+0
+2
+geronimo!
+3.0
+True
+False
+0
+1
+12
+123
+1234
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+GERONIMO! infinite loop!
+GERONIMO! infinite loop!
+GERONIMO! infinite loop!
+GERONIMO! infinite loop!
+GERONIMO! infinite loop!
+GERONIMO! infinite loop!
+GERO
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 10.26014s
+
+======================================================================
+Inspecting script file using_name.py...
+
+File contents are:
+**********************************************************************
+#!/usr/bin/python
+# Filename: using_name.py
+
+if __name__ == '__main__':
+    print 'This program is being run by itself'
+else:
+    print 'I am being imported from another module.'
+**********************************************************************
+
+Testing using_name.py...
+
+using_name.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 89
+
+Output (only first 500 characters): 
+
+**********************************************************************
+This program is being run by itself
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01230s
+
+======================================================================
+Inspecting script file cfexercises.py...
+
+File contents are:
+**********************************************************************
+#!/user/bin/python
+
+"""Some statements printing 'hello', and some functions demonstrating
+    loops and recursion"""
+__author__ = 'Samraat Pawar, edited by Alexander Christensen'
+__version__ = '0.0.2'
+
+## Imports
+import sys
+
+## How many times will 'hello' be printed?
+## 1)
+for i in range(3, 17):
+    print 'hello'
+    
+# 2)
+for j in range(12):
+    if j % 3 == 0:
+        print 'hello'
+    
+# 3)
+for j in range(15):
+    if j % 5 == 3:
+        print 'hello'
+    elif j % 4 == 3:
+        print 'hello'
+        
+# 4)
+z = 0
+while z != 15:
+    print 'hello'
+    z = z + 3
+    
+# 5)
+z = 12
+while z < 100:
+    if z == 31:
+        for k in range(7):
+            print 'hello'
+    elif z == 18:
+        print 'hello'
+    z = z + 1
+    
+## What does fooXX do?
+def foo1(x=4): 
+    """Find the square root of x"""
+    print "The square root of x is %d" % (x ** 0.5)
+    return x ** 0.5
+    
+def foo2(x=1, y=2):
+    """Find the greater of x and y. If equal return y"""
+    if x > y:
+        print "%d is greater" % x
+        return x
+    print "%d is greater" % y
+    return y
+    
+def foo3(x=1, y=2, z=3):
+    """Swap x and y if x>y, THEN swap y and z if y>z"""
+    if x > y:
+        print "Swapping %d and %d" % (x, y)
+        tmp = y
+        y = x
+        x = tmp
+    if y > z:
+        print "Swapping %d and %d" % (y, z)
+        tmp = z
+        z = y
+        y = tmp
+    print "The result is (%d, %d, %d)" % (x, y, z)
+    return [x, y, z]
+    
+def foo4(x=10):
+    """Find x! (using a for-loop)"""
+    result = 1
+    for i in range (1, x + 1):
+        result = result * i
+    print "%d! = %d" % (x, result)
+    return result
+    
+# This is a recursive function, meaning that the function calls itself.
+def foo5(x=10):
+    """Find x! (using recursion)"""
+    if x == 1:
+        return 1
+    result = x * foo5(x - 1)
+    # Can't print result this time - would print at every recursive call
+    return result
+    
+    
+def main(argv):
+    # sys.exit("don't want to do this right now!")
+    foo1()
+    foo2()
+    foo3()
+    foo4()
+    print "10! = %d" % foo5()
+    return 0
+    
+if (__name__ == "__main__"):
+    status = main(sys.argv)
+    sys.exit(status)
+**********************************************************************
+
+Testing cfexercises.py...
+
+cfexercises.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+The square root of x is 2
+2 is greater
+The result is (1, 2, 3)
+10! = 3628800
+10! = 3628800
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01167s
+
+======================================================================
+Inspecting script file align_seqs.py...
+
+File contents are:
+**********************************************************************
+# Imports
+import csv
+
+# These are the two sequences to match
+seqs_csv = csv.reader(open("../Data/seq.csv","rb"))
+
+# Convert them to lists
+for row in seqs_csv:
+    seq1 = row[0]
+    seq2 = row[1]
+
+# assign the longest sequence s1, and the shortest to s2
+# l1 is the length of the longest, l2 that of the shortest
+
+l1 = len(seq1)
+l2 = len(seq2)
+if l1 >= l2:
+    s1 = seq1
+    s2 = seq2
+else:
+    s1 = seq2
+    s2 = seq1
+    l1, l2 = l2, l1 # swap the two lengths
+
+# function that computes a score
+# by returning the number of matches 
+# starting from arbitrary startpoint
+def calculate_score(s1, s2, l1, l2, startpoint):
+    # startpoint is the point at which we want to start
+    matched = "" # contains string for alignement
+    score = 0
+    for i in range(l2):
+        if (i + startpoint) < l1:
+            # if its matching the character
+            if s1[i + startpoint] == s2[i]:
+                matched = matched + "*"
+                score = score + 1
+            else:
+                matched = matched + "-"
+
+    # build some formatted output
+    print "." * startpoint + matched           
+    print "." * startpoint + s2
+    print s1
+    print score 
+    print ""
+
+    return score
+
+# calculate_score(s1, s2, l1, l2, 0)
+# calculate_score(s1, s2, l1, l2, 1)
+# calculate_score(s1, s2, l1, l2, 5)
+
+# now try to find the best match (highest score)
+my_best_align = None
+my_best_score = -1
+
+for i in range(l1):
+    z = calculate_score(s1, s2, l1, l2, i)
+    if z > my_best_score:
+        my_best_align = "." * i + s2
+        my_best_score = z
+
+print my_best_align
+print s1
+print "Best score:", my_best_score
+
+f = open("../Results/align_seq.txt","wb")
+f.write("Best alignment is: " + my_best_align + "\n")
+f.write("Best score is: " + str(my_best_score))
+f.close()
+**********************************************************************
+
+Testing align_seqs.py...
+
+align_seqs.py is a Python script file;
+ checking for docstrings...
+
+Found no doctrings!
+1 pt deducted
+
+Current Marks = 88
+
+Output (only first 500 characters): 
+
+**********************************************************************
+-----*****
+CAATTCGGAT
+ATCGCCGGATTACGGG
+5
+
+.------*--*
+.CAATTCGGAT
+ATCGCCGGATTACGGG
+2
+
+..*---------
+..CAATTCGGAT
+ATCGCCGGATTACGGG
+1
+
+...--------*-
+...CAATTCGGAT
+ATCGCCGGATTACGGG
+1
+
+....*---------
+....CAATTCGGAT
+ATCGCCGGATTACGGG
+1
+
+.....*---*-----
+.....CAATTCGGAT
+ATCGCCGGATTACGGG
+2
+
+......--***--*--
+......CAATTCGGAT
+ATCGCCGGATTACGGG
+4
+
+.......-*-*-***-
+.......CAATTCGGAT
+ATCGCCGGATTACGGG
+5
+
+........------**
+........CAATTCGGAT
+ATCGCCGGATTACGGG
+2
+
+.........--*---*
+.........CAATTCGGAT
+ATCGCCGGATTACGGG
+
+**********************************************************************
+
+Encountered error:
+Traceback (most recent call last):
+  File "align_seqs.py", line 68, in <module>
+    f = open("../Results/align_seq.txt","wb")
+IOError: [Errno 2] No such file or directory: '../Results/align_seq.txt'
+
+======================================================================
+Inspecting script file run_LV.sh...
+
+File contents are:
+**********************************************************************
+#!/user/bin/bash
+
+# This script runs and profiles both LV1.py and LV2.py to aid in optimisation.
+
+# Profile the functions.
+python -m cProfile LV1.py &
+
+python -m cProfile LV2.py 1. 0.1 1.5 0.75 35 &
+
+python -m cProfile LV3.py &
+
+python -m cProfile LV4.py 1. 0.1 1.5 0.8 35 &
+
+python -m cProfile LV5.py 1. 0.1 1.5 0.8 35 &
+**********************************************************************
+
+Testing run_LV.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+Final resource population is: 20
+Final consumer population is: 4
+         13815306 function calls (13809892 primitive calls) in 72.574 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 <decorator-gen-0>:1(<module>)
+        1    0.000    0.000    0.000    0.000 <decorator-gen-1>:1(<module>)
+        1    0.000    0.000    0.000    0.000 <decorator-gen-2>:1(<module>)
+        1    0.000    0.000
+**********************************************************************
+
+Encountered error:
+/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/font_manager.py:280: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  'Matplotlib is building the font cache using fc-list. '
+/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/font_manager.py:280: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  'Matplotlib is building the font cache using fc-list. '
+/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/font_manager.py:280: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  'Matplotlib is building the font cache using fc-list. '
+/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/font_manager.py:280: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  'Matplotlib is building the font cache using fc-list. '
+/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/font_manager.py:280: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  'Matplotlib is building the font cache using fc-list. '
+LV5.py:25: RuntimeWarning: overflow encountered in double_scalars
+  R1 = R0 * (1 + (r + gscale * scipy.stats.norm.rvs()) * (1 - (R0 / K)) - a*C0)
+LV5.py:26: RuntimeWarning: overflow encountered in double_scalars
+  C1 = C0 * (1 - z + e * a * R0)
+LV5.py:25: RuntimeWarning: invalid value encountered in double_scalars
+  R1 = R0 * (1 + (r + gscale * scipy.stats.norm.rvs()) * (1 - (R0 / K)) - a*C0)
+Traceback (most recent call last):
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 199, in <module>
+    main()
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 192, in main
+    runctx(code, globs, None, options.outfile, options.sort)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 49, in runctx
+    prof = prof.runctx(statement, globals, locals)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 140, in runctx
+    exec cmd in globals, locals
+  File "LV3.py", line 67, in <module>
+    f1.savefig('../Results/prey_and_predators_3.pdf')  # Save figure
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/figure.py", line 1573, in savefig
+    self.canvas.print_figure(*args, **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_qt5agg.py", line 222, in print_figure
+    FigureCanvasAgg.print_figure(self, *args, **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backend_bases.py", line 2252, in print_figure
+    **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_pdf.py", line 2519, in print_pdf
+    file = PdfFile(filename)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_pdf.py", line 422, in __init__
+    fh = open(filename, 'wb')
+IOError: [Errno 2] No such file or directory: '../Results/prey_and_predators_3.pdf'
+Traceback (most recent call last):
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 199, in <module>
+    main()
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 192, in main
+    runctx(code, globs, None, options.outfile, options.sort)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 49, in runctx
+    prof = prof.runctx(statement, globals, locals)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 140, in runctx
+    exec cmd in globals, locals
+  File "LV1.py", line 47, in <module>
+    f1.savefig('../Results/prey_and_predators_1.pdf') #Save figure
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/figure.py", line 1573, in savefig
+    self.canvas.print_figure(*args, **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_qt5agg.py", line 222, in print_figure
+    FigureCanvasAgg.print_figure(self, *args, **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backend_bases.py", line 2252, in print_figure
+    **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_pdf.py", line 2519, in print_pdf
+    file = PdfFile(filename)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_pdf.py", line 422, in __init__
+    fh = open(filename, 'wb')
+IOError: [Errno 2] No such file or directory: '../Results/prey_and_predators_1.pdf'
+Traceback (most recent call last):
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 199, in <module>
+    main()
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 192, in main
+    runctx(code, globs, None, options.outfile, options.sort)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 49, in runctx
+    prof = prof.runctx(statement, globals, locals)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 140, in runctx
+    exec cmd in globals, locals
+  File "LV2.py", line 63, in <module>
+    f1.savefig('../Results/prey_and_predators_2.pdf')  # Save figure
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/figure.py", line 1573, in savefig
+    self.canvas.print_figure(*args, **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_qt5agg.py", line 222, in print_figure
+    FigureCanvasAgg.print_figure(self, *args, **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backend_bases.py", line 2252, in print_figure
+    **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_pdf.py", line 2519, in print_pdf
+    file = PdfFile(filename)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_pdf.py", line 422, in __init__
+    fh = open(filename, 'wb')
+IOError: [Errno 2] No such file or directory: '../Results/prey_and_predators_2.pdf'
+Traceback (most recent call last):
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 199, in <module>
+    main()
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 192, in main
+    runctx(code, globs, None, options.outfile, options.sort)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 49, in runctx
+    prof = prof.runctx(statement, globals, locals)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 140, in runctx
+    exec cmd in globals, locals
+  File "LV5.py", line 63, in <module>
+    f1.savefig('../Results/prey_and_predators_5.pdf')  # Save figure
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/figure.py", line 1573, in savefig
+    self.canvas.print_figure(*args, **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_qt5agg.py", line 222, in print_figure
+    FigureCanvasAgg.print_figure(self, *args, **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backend_bases.py", line 2252, in print_figure
+    **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_pdf.py", line 2519, in print_pdf
+    file = PdfFile(filename)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_pdf.py", line 422, in __init__
+    fh = open(filename, 'wb')
+IOError: [Errno 2] No such file or directory: '../Results/prey_and_predators_5.pdf'
+Traceback (most recent call last):
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 199, in <module>
+    main()
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 192, in main
+    runctx(code, globs, None, options.outfile, options.sort)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 49, in runctx
+    prof = prof.runctx(statement, globals, locals)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/cProfile.py", line 140, in runctx
+    exec cmd in globals, locals
+  File "LV4.py", line 61, in <module>
+    f1.savefig('../Results/prey_and_predators_4.pdf')  # Save figure
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/figure.py", line 1573, in savefig
+    self.canvas.print_figure(*args, **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_qt5agg.py", line 222, in print_figure
+    FigureCanvasAgg.print_figure(self, *args, **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backend_bases.py", line 2252, in print_figure
+    **kwargs)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_pdf.py", line 2519, in print_pdf
+    file = PdfFile(filename)
+  File "/home/mhasoba/.conda/envs/py27/lib/python2.7/site-packages/matplotlib/backends/backend_pdf.py", line 422, in __init__
+    fh = open(filename, 'wb')
+IOError: [Errno 2] No such file or directory: '../Results/prey_and_predators_4.pdf'
+
+======================================================================
+Inspecting script file control_flow.py...
+
+File contents are:
+**********************************************************************
+#!/user/bin/python
+
+"""Some functions exemplifying the use of control statements"""
+#docstrings are considered part of the running code (normal comments are
+#stripped). Hence you can access your docstrings at run time.
+__author__ = 'Samraat Pawar'
+__version__ = '0.0.1'
+
+# imports
+import sys
+
+# constants
+
+# functions
+def even_or_odd(x=0): #if not specified, x takes value 0
+    """Find whether a number is even or odd."""
+    if x % 2 == 0:
+        return "%d is even!" % x
+    return "%d is odd!" % x
+	
+def largest_divisor_five(x=120):
+    """ Find which is the largest divisor of x among 2,3,4,5."""
+    largest = 0
+    if x % 5 == 0:
+        largest = 5
+    elif x % 4 == 0:
+        largest = 4
+    elif x % 3 == 0:
+        largest = 3
+    elif x % 2 == 0:
+        largest = 2
+    else: #When all other conditions are not met...
+        return "No divisor found for %d!" % x
+        
+    return "The largest divisor of %d is %d" % (x, largest)
+
+def is_prime(x=70):
+    """Find whether an integer is prime."""
+    for i in range(2,x):
+        if x % i == 0:
+            print "%d is not a prime: %d is a divisor" % (x, i)
+            
+            return False
+    print "%d is a prime!" % x
+    return True
+    
+def find_all_primes(x=22):
+    """Find all primes up to x"""
+    allprimes = []
+    for i in range (2, x + 1):
+        if is_prime(i):
+            allprimes.append(i)
+        print "There are %d primes between 2 and %d" % (len(allprimes), x)
+        
+def main(argv):
+    # sys.exit("don't want to do this right now!")
+    print even_or_odd(22)
+    print even_or_odd(33)
+    print largest_divisor_five(120)
+    print largest_divisor_five(121)
+    print is_prime(60)
+    print is_prime(59)
+    print find_all_primes(100)
+    return 0
+    
+if (__name__ == "__main__"):
+    status = main(sys.argv)
+    sys.exit(status)
+**********************************************************************
+
+Testing control_flow.py...
+
+control_flow.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+22 is even!
+33 is odd!
+The largest divisor of 120 is 5
+No divisor found for 121!
+60 is not a prime: 2 is a divisor
+False
+59 is a prime!
+True
+2 is a prime!
+There are 1 primes between 2 and 100
+3 is a prime!
+There are 2 primes between 2 and 100
+4 is not a prime: 2 is a divisor
+There are 2 primes between 2 and 100
+5 is a prime!
+There are 3 primes between 2 and 100
+6 is not a prime: 2 is a divisor
+There are 3 primes between 2 and 100
+7 is a prime!
+There are 4 primes between 2 and 100
+8 is not a prime
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.01404s
+
+======================================================================
+Inspecting script file test_control_flow.py...
+
+File contents are:
+**********************************************************************
+    #!/user/bin/python
+
+"""Some functions exemplifying the use of control statements"""
+#docstrings are considered part of the running code (normal comments are
+#stripped). Hence you can access your docstrings at run time.
+__author__ = 'Samraat Pawar'
+__version__ = '0.0.1'
+
+# imports
+import sys
+import doctest
+
+# constants
+
+# functions
+def even_or_odd(x=0): #if not specified, x takes value 0
+    """Find whether a number is even or odd.
+    
+    >>> even_or_odd(10)
+    '10 is Even!'
+    
+    >>> even_or_odd(5)
+    '5 is Odd!'
+    
+    whenever a float is provided, then the closest integer is used:
+    >>> even_or_odd(3.2)
+    '3 is Odd!'
+    
+    in case of negative numbers, the positive is taken:
+    >>> even_or_odd(-2)
+    '-2 is Even!'
+    
+    """
+    if x % 2 == 0:
+        return "%d is Even!" % x
+    return "%d is Odd!" % x
+	
+#def largest_divisor_five(x=120):
+    #""" Find which is the largest divisor of x among 2,3,4,5."""
+    #largest = 0
+    #if x % 5 == 0:
+        #largest = 5
+    #elif x % 4 == 0:
+        #largest = 4
+    #elif x % 3 == 0:
+        #largest = 3
+    #elif x % 2 == 0:
+        #largest = 2
+    #else: #When all other conditions are not met...
+        #return "No divisor found for %d!" % x
+        
+    #return "The largest divisor of %d is %d" % (x, largest)
+
+#def is_prime(x=70):
+    #"""Find whether an integer is prime."""
+    #for i in range(2,x):
+        #if x % i == 0:
+            #print "%d is not a prime: %d is a divisor" % (x, i)
+            
+            #return False
+    #print "%d is a prime!" % x
+    #return True
+    
+#def find_all_primes(x=22):
+    #"""Find all primes up to x"""
+    #allprimes = []
+    #for i in range (2, x + 1):
+        #if is_prime(i):
+            #allprimes.append(i)
+        #print "There are %d primes between 2 and %d" % (len(allprimes), x)
+        
+#def main(argv):
+    ## sys.exit("don't want to do this right now!")
+    #print even_or_odd(22)
+    #print even_or_odd(33)
+    #print largest_divisor_five(120)
+    #print largest_divisor_five(121)
+    #print is_prime(60)
+    #print is_prime(59)
+    #print find_all_primes(100)
+    #return 0
+    
+#if (__name__ == "__main__"):
+    #main(sys.argv)
+
+
+doctest.testmod() # to run with embedded tests!
+**********************************************************************
+
+Testing test_control_flow.py...
+
+test_control_flow.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.03646s
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 9 errors
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Marks for the Week = 88
+
+NOTE THAT THESE ARE NOT THE FINAL MARKS FOR THE WEEK, BUT AN UPPER BOUND ON THE MARKS!
