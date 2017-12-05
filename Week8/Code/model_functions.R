@@ -1,5 +1,8 @@
 # This script defines all the functions required for our population model.
 
+# Initial stuff
+rm(list=ls())
+graphics.off()
 #====================================================================================================================================
 # 1
 species_richness <- function(community) {
@@ -165,7 +168,8 @@ question_12 <- function() {
   ggplot(plotframe, aes(generations)) +
     geom_line(aes(y=richness.1, colour = "Maximally diverse start")) + 
     geom_line(aes(y=richness.2, colour = "Minimally diverse start")) +
-    labs(title = "Species Diversity in a Neutral Model Simulation (with speciation)", x = "Generation", y = "Species Richness", colour = "")
+    labs(title = "Species Diversity in a Neutral Model Simulation (with speciation)", x = "Generation", y = "Species Richness", colour = "") +
+    theme(plot.title = element_text(hjust=0.5))
 }
 
 
@@ -222,3 +226,63 @@ sum_vect <- function(x,y) {
 
 #====================================================================================================================================
 # 16
+question_16 <- function() {
+  
+  # This function produces the output for question 16, which requires us to run a full Neutral simulation with speciation, including
+  # burn in period, periodically recording species abundances, and plotting the results.
+  library(ggplot2)
+  v = 0.1
+  initialSize = 100
+ 
+  burn_in = 200
+  numGen = 2000
+  recPeriod = 20
+  numRecs = 1 + (numGen/20)  # 1 initial record + records every recPeriod generations for all of numGen
+  
+  # Burn-in run & then record abundances.
+  burn_in_sim = neutral_generation_speciation(initialise_max(initialSize), v)
+  for (i in 2:burn_in) {
+    burn_in_sim = neutral_generation_speciation(burn_in_sim, v)
+  }
+  octave_mat = as.matrix(octaves(species_abundance(burn_in_sim)))  # typecast to matrix to avoid issues with dim() later.
+  
+  # Run the post-burn-in simulations.
+  simulations = neutral_generation_speciation(burn_in_sim, v)
+  for (i in 2:numGen) {
+    simulations = neutral_generation_speciation(simulations, v)
+    
+    # Compute and record abundances every recPeriod generations
+    if (i%%recPeriod == 0) {
+      octave_vect = octaves(species_abundance(simulations))
+      
+      # Edit dimensions of octave_mat or octave_vect so we can cbind them.
+      diff = length(octave_vect) - dim(octave_mat)[1]
+      if (diff == 0) {
+        octave_mat = cbind(octave_mat, octave_vect)
+      } else if (diff > 0) {
+        octave_mat = rbind(octave_mat, matrix(0,diff,dim(octave_mat)[2]))
+        octave_mat = cbind(octave_mat, octave_vect)
+      } else {
+        octave_vect = c(octave_vect, numeric(-diff))
+        octave_mat = cbind(octave_mat, octave_vect)
+      }
+    }
+  }
+  
+  octave_means = rowMeans(octave_mat)
+  
+  # Plot
+  title = paste("Mean Species Abundances after", numGen, "Generations with", burn_in, "Gen burn-in")
+  barplot(octave_means,
+          ylim = c(0,2*ceiling(max(octave_means)/2)),
+          main = title, 
+          col = "navy",
+          xlab = "Abundance Octaves",
+          ylab = "Species Counts",
+          names.arg=c(parse(text=("2^0 - 2^1")), parse(text=("2^1 - 2^2")), parse(text=("2^2 - 2^3")),
+                      parse(text=("2^3 - 2^4")), parse(text=("2^4 - 2^5")), parse(text=("2^5 - 2^6")))
+  )
+  #print(ceiling(max(octave_means)))
+  
+  
+}

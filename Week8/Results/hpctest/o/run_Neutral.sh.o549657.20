@@ -1,0 +1,196 @@
+R is about to run
+
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #====================================================================================================================================
+> #====================================================================================================================================
+> ### This script will run a large Neutral simulation, and is intended to be passed to the Imperial HPC cluster.
+> ### Author: Alexander Kier Christensen
+> ### QMEE CDT, High-Performance Computing week.
+> #====================================================================================================================================
+> #====================================================================================================================================
+> rm(list=ls())
+> graphics.off()
+> 
+> 
+> # First define all the functions required to produce our actual population model:
+> 
+> species_richness <- function(community) {
++   
++   # This function accepts a vector wherein each entry is the identity of the species in the relevant position in the environment.
++   return(length(unique(community)))
++   
++ }
+> 
+> 
+> initialise_min <- function(size){
++   
++   # This function creates an initial state for the simulation community with the minimum possible number of species for the community size.
++   return(rep(1,size))
++   
++ }
+> 
+> 
+> choose_two <- function(x) {
++   
++   # Generate a random pair of DIFFERENT integers between 1 and x (inclusive).
++   return(sample(seq(x),2))
++   
++ }
+> 
+> 
+> neutral_step <- function(community) {
++   
++   # This function performs a single step of a simple neutral model simulation, without speciation, on the community vector.
++   fate = choose_two(length(community))  # Choose the indexes of the individual to die and to reproduce.
++   community[fate[1]] <- community[fate[2]] # Kill the individual in entry fate[1] and replace with another individual from species in fate[2]
++   return(community)
++ } 
+> 
+> 
+> neutral_step_speciation <- function(community, v) {
++   
++   # This performs a step of a neutral model with speciation (with speciation probability v).
++   roll = runif(1)
++   if (roll > v) {
++     
++     return(neutral_step(community))  # reduce to non-speciation case if speciation doesnt occur this step.
++   
++   } else {
++     fate = sample(length(community),1)  # Choose the index of the individual to speciate.
++     community[fate] = max(community) + 1  # Give the new species a new label.
++     # It doesn't matter if this number has been used as a label before and died out, as long as its not currently in use (since we only care about species richness, not species history).
++     
++     return(community)
++   }
++ }
+> 
+> 
+> neutral_generation_speciation <- function(community,v) {
++   
++   # This function performs neutral_step_speciation() on a community for a single generation's worth of timesteps (= communitysize/2)
++   generationTime = length(community)/2
++   i = 1
++   while (i < generationTime) {
++     community = neutral_step_speciation(community,v)  # Perform the simulation step.
++     i = i+1
++   }
++   
++   return(community)
++ 
++ }
+> 
+> 
+> species_abundance <- function(community) {
++   
++   # This function computes the species abundances in the community.
++   return(as.numeric(sort(table(community), decreasing=TRUE)))
++   
++ }
+> 
+> 
+> octaves <- function(abundances) {
++   
++   # This function bins the abundances of species into octave classes (based on powers of 2).
++   log_abundances = log2(abundances)
++   binCeiling = floor(log2(max(abundances)))+1  # Find the power of two relating to the final bin.
++   binning = numeric(binCeiling)  # Initialise vector to hold result.
++   i=1
++   while (i<=binCeiling) {
++     binning[i] = sum(as.numeric(i-1 == floor(log_abundances)))
++     i = i+1
++   }
++   
++   return(binning)
++   
++ }
+> 
+> 
+> #====================================================================================================================================
+> 
+> # Now define a function which will carry out the modelling and save outputs etc...
+> cluster_run <- function(speciation_rate, size, wall_time, interval_rich, interval_oct, burn_in_generations, output_file_name) {
++   
++   # We'll use a timer to keep track of how long we have left on the HPC server.
++   starttime = proc.time()[3]
++   
++   # Initialise ALL THE THINGS!!
++   community = initialise_min(size)
++   richness = numeric(0)
++   abundances = list()
++   numGenerations = 1
++   
++   # Simulate until we near wall_time.
++   while ((proc.time()[3] - starttime) / 60 < wall_time) {
++     numGenerations = numGenerations + 1
++     community = neutral_generation_speciation(community, speciation_rate)
++     
++     # Store species richness every interval_rich generations until burn-in is complete.
++     if ((numGenerations <= burn_in_generations) && (numGenerations%%interval_rich == 0)) {
++       richness = c(richness, species_richness(community))
++     }
++     
++     # Store species abundance octaves every interval_oct generations for the entire simulation.
++     if (numGenerations%%interval_oct == 0) {
++       abundances = c(abundances, list(octaves(species_abundance(community))))
++     }
++   }
++   
++   # When wall_time is reached, stop and save the results.
++   runtime_mins = (proc.time()[3]-starttime)/60
++   save(speciation_rate, size, wall_time, interval_rich, interval_oct, burn_in_generations, output_file_name, richness, abundances, community, numGenerations, runtime_mins, file = output_file_name)
++ 
++ }
+> 
+> 
+> #====================================================================================================================================
+> 
+> # Now call cluster_run() with appropriate settings for the HPC cluster.
+> 
+> iter = as.numeric(Sys.getenv("PBS_ARRAY_INDEX"))
+> set.seed(iter)
+> J = c(5000, 500, 1000, 2500)  # vector of population sizes to cycle through
+> 
+> # Set simulation parameters
+> speciation_rate = 0.1
+> size = J[(iter%%4)+1]
+> print(paste("J =",size))
+[1] "J = 5000"
+> wall_time = 6.9  # 100sims * 0.115 hrs = 11.5hrs (12h requested on cluster)
+> interval_rich = 1
+> interval_oct = size/10
+> burn_in_generations = 8*size
+> output_file_name = paste0("AKC_NTSresult_iter",iter,".rda")
+> 
+> # Begin the sim
+> cluster_run(speciation_rate,
++             size,
++             wall_time,
++             interval_rich,
++             interval_oct,
++             burn_in_generations,
++             output_file_name
++             )
+> 
+R has finished running
+ 
+Imperial College London HPC Service
+-----------------------------------
+Job run_Neutral.sh, jobid 549657[20].cx1, username akc17 - end of execution at 22:27:58 Tue 28/11/17 on system cx1-135-2-1
+ 
