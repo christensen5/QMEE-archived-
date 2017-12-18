@@ -1,0 +1,6 @@
+\select@language {english}
+\contentsline {section}{Key Notes to NEVER FORGET}{ii}{section*.2}
+\contentsline {subsection}{"Integration by Parts"}{ii}{section*.3}
+\contentsline {subsubsection}{Example: Linear Poisson Equation}{ii}{section*.4}
+\contentsline {subsubsection}{Example: Nonlinear Poisson Equation}{iii}{section*.5}
+\contentsline {section}{References}{iv}{section*.6}
