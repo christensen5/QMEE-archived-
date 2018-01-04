@@ -1,0 +1,279 @@
+\documentclass[english, 11pt]{article}
+\usepackage{CourseNotes}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{esint} %for closed integral symbols
+%\usepackage{titlesec}
+
+\newcommand{\thiscoursename}{Firedrake Notes}
+\newcommand{\thisprof}{Supervisors: Dr Pawar, Prof Piggott, Dr Sebille}
+\newcommand{\me}{Alexander Kier Christensen}
+\newcommand{\thisterm}{201718}
+\newcommand{\Langle}{\Big\langle}
+\newcommand{\Rangle}{\Big\rangle}
+
+\newcommand\given[1][]{\:#1\vert\:}
+
+
+% Headers
+\lhead{\thisterm}
+
+
+%%%%%% TITLE %%%%%%
+\newcommand{\notefront} {
+\pagenumbering{roman}
+\begin{center}
+
+\textbf{\Huge{\noun{\thiscoursename}}}{\Huge \par} \vspace{0.1in}
+
+\vspace{0.1in}
+
+  {\noun \thisprof} \ $\bullet$ \ {\noun \thisterm} \ $\bullet$ \ {\noun {Imperial College London}} \\
+
+  \end{center}
+}
+
+
+
+% Begin Document
+\begin{document}
+
+
+  % Notes front
+  \notefront
+  % Table of Contents and List of Figures
+  \tocandfigures
+  % Abstract
+  %\doabstract{These notes are intended as a resource for myself; past, present, or future students of my thesis, and anyone interested in the material. The goal is to provide an end-to-end resource that covers all material discussed in the thesis displayed in an organized manner. If you spot any errors or would like to contribute, please contact me directly.}
+
+ % \begin{defn}[addition]\label{addition}
+ % Two {\bf addition} operation adds two numbers, for $a, b \in \R$, their sum is
+ % \[ a + b \]
+ % \end{defn}
+
+  %The \nameref{addition} rule is very good.
+
+  %\begin{lstlisting}[language=lisp]
+  %(define sum (lambda args (foldr + 0 args)))
+  %\end{lstlisting}
+
+  %\tc{this is code}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{section}{1}
+\begin{center}
+\section{Key Notes to NEVER FORGET}
+\end{center} 
+  
+  \subsection{"Integration by Parts"}
+  
+  This comes up constantly in FEM stuff, when expressing problems in variational form. The usual spiel is to say "multiply by a test function $v$ and then integrate by parts", to obtain the desired form. This hides a number of key subtle steps that otherwise look like magic.\\
+  \\
+  First to note is that "integrate by parts" really means "apply (a corollary of) the Divergence Theorem":
+  
+  \begin{thm}[Divergence Theorem]
+  If $\Omega$ is a compact subset of $\R^N$ with a piecewise smooth boundary $\partial\Omega = \Gamma$, and if $\bm{F}$ is a continuously differentiable vevctor field defined on a neighbourhood of $\Omega$ then we have:
+  
+  \[ \int_{\Omega} (\nabla \cdot \bm{F}) \ d\Omega = \oiint \limits_{\Gamma} (\bm{F} \cdot \bm{n}) \ d\Gamma \]
+  
+  where $\bm{n}$ is the outward pointing unit
+  normal field of the boundary $\Gamma$.  
+  \end{thm}
+  
+  \begin{cor}
+  	Replacing $\bm{F}$ with $\bm{F}g$ in the theorem, where $g$ is a scalar function, we get:
+  	
+  	\[ \int_{\Omega} \bm{F} \cdot (\nabla g) \ d\Omega + \int_{\Omega} g(\nabla \cdot \bm{F}) \ d\Omega = \oiint \limits_{\Gamma} g\bm{F} \cdot \bm{n} \ d\Gamma \]
+  \end{cor}
+  
+  We can apply this corollary to the LHS (i.e. to the terms involving $u$) to rewrite it as the sum of a different volume integral and a surface integral, which can often be made to vanish by applying boundary conditions.
+  
+  \subsubsection{Example: Linear Poisson Equation}
+  
+  Let us take an initial easy example of the basic linear Poisson problem:
+  
+  \begin{align*}
+  	(-\Delta u) &= f , \text{ on } \Omega \\
+  	u &= 0 , \text{ on } \partial\Omega = \Gamma
+  \end{align*}
+  
+  We multiply both sides by the test function $v$ and integrate to obtain:
+  
+  \[ \int_{\Omega} (-\Delta u)v \ d\Omega = \int_{\Omega} fv \ d\Omega \]
+  
+  Now we apply the Corollary to the LHS (replacing $\bm{F}$ with $\nabla u$ and $g$ with $v$) to get: 
+  
+  \[ \int_{\Omega} \nabla u \cdot \nabla v \ d\Omega + \oiint \limits_{\Gamma} v \nabla u \cdot \bm{n} \ d\Omega = \int_{\Omega} (-\Delta u)v \ d\Omega = \int_{\Omega} fv \ d\Omega  \]
+  
+  The second term in the new LHS is a \emph{closed} line integral of a grad function and thus equal to the difference of its endpoints, which are the same, hence the term is zero, leaving us with the desired variational form $a(u,v) = L(v)$:
+  
+  \[ \int_{\Omega} \nabla u \cdot \nabla v \ d\Omega = \int_{\Omega} fv \ d\Omega \]
+  
+  
+  \subsubsection{Example: Nonlinear Poisson Equation}
+  
+  Let's now look at the following nonlinear Poisson problem: 
+  
+  \begin{align*}
+  	- \nabla \cdot \big( (1 + u) \nabla u \big) &= f , \text{ in } \Omega \\
+  	u &= 0 , \text{ on } \partial\Omega = \Gamma
+  \end{align*}
+  
+  We multiply by the test function $v$ and integrate both sides:
+  
+  \[ \int_{\Omega} \Big( - \nabla \cdot \big( (1 + u) \nabla u \big) \Big) v \ d\Omega = \int_{\Omega} fv \ d\Omega \]
+  
+  Again we apply the Corollary to the LHS (replacing $\bm{F}$ with $\big( (1 + u) \nabla u \big)$ and $g$ with $v$) to get:
+  
+  \[ \int_{\Omega} \big( (1 + u) \nabla u \big) \cdot \nabla v \ d\Omega + \oiint \limits_{\Gamma} v \Big( \big( (1 + u) \nabla u \big) \Big) \cdot \bm{n} \ d\Gamma  = \int_{\Omega} \Big( - \nabla \cdot \big( (1 + u) \nabla u \big) \Big) v \ d\Omega = \int_{\Omega} fv \ d\Omega\]
+  
+  Looking again at the surface integral term on the new LHS, we recall the initial condition $u = 0$ on $\Gamma$ and thus this term simplifies to:
+  
+  \[ \oiint \limits_{\Gamma} v \big( \nabla u \cdot \bm{n} \big) \ d\Gamma  = 0 \qquad \text{(closed line integral of a grad function)}\]
+  
+  Leaving us with the desired variational form $F(u;v) = 0$:
+  
+  \[ \int_{\Omega} \big( (1 + u) \nabla u \big) \cdot \nabla v \ d\Omega = \int_{\Omega} fv \ d\Omega \]
+	
+\newpage
+\section{Solving Navier Stokes in Firedrake}
+
+This section is based on material from the Navier Stokes tutorials from \cite{fenics_tutorial}.\\
+\\
+
+The following is the time-dependent Navier Stokes equation:
+
+\begin{align}
+	\rho \Big( \frac{\partial u}{\partial t} + u \cdot \nabla u \Big) &= \nabla \cdot \sigma(u, p) + f \\ \label{eqn:tdns}
+	\nabla \cdot u &= 0
+\end{align}
+
+where
+$$\sigma(u,p) = 2\mu\epsilon(u) - pI, $$
+$$\epsilon(u) = \frac{\nabla u + (\nabla u)^T}{2}, $$
+$$f \text{ is a given force per unit volume.} $$
+\\
+We could choose to discretize this in time by replacing the time derivative with a difference quotient. There are complications to such a method though, since it has a "saddle-point" structure, and requires particular pre-conditioners and iterative methods to solve properly. Instead, we shall use one example of what is known as a \textit{splitting method}, which essentially `splits' the above nonlinear problem into numerous easier problems to be solved in sequence.
+
+\subsection{Time-Dependent Navier Stokes via "Chorin's Method (IPCS)"}
+
+We shall use a variant of what is known as \textit{Chorin's Method}. This variant, called IPCS, solves three linear problems per timestep:
+
+\begin{enumerate}
+	\item[P1:] We compute a `tentative velocity' $u^*$ by advancing the momentum equation by a midpoint finite difference scheme in time, but using the previous pressure $p^n$ and linearising the nonlinear convective term using $u^n$.
+	\item[P2:] We use the tentative velocity $u^*$ to compute the new pressure $p^{n+1}$.
+	\item[P3:] We use the new pressure $p^{n+1}$ to compute the new velocity $u^{n+1}$.
+\end{enumerate}
+
+Each of these steps has some individual complexity, so we will discuss them in detail:
+
+\subsubsection{P1 - Computing the Tentative Velocity}
+
+We can express this as a linear variational problem, using the following variational form:
+
+\begin{equation}\label{eqn:p1}
+	\underbrace{\Big\langle \frac{\rho (u^* - u^n)}{\delta t} , v \Big\rangle + \Big\langle \rho u^n \cdot \nabla u^n , v \Big\rangle}_{\text{1 \& 2}} + \underbrace{\Big\langle \sigma (u^{n + \frac{1}{2}}, p^n) , \epsilon(v) \Big\rangle + \Big\langle p^n n, v\Big\rangle_{\partial\Omega} - \Big\langle \mu \nabla u^{n + \frac{1}{2}} \cdot n, v \Big\rangle_{\partial\Omega}}_{\text{3, 4 \& 5}} = \Big\langle f^{n+1}, v \Big\rangle
+\end{equation}
+\\
+where
+
+$$ u^{n+\frac{1}{2}} = \frac{u^n + u^{n+1}}{2} \text{ (arithmetic mean)}$$
+
+Let's break down this variational form a little to see where each term comes from:\\
+\\
+
+\underline{Terms 1 \& 2} come from the LHS of the first equation in the initial problem. We write $\frac{u^* - u^n}{\delta t}$ for $\frac{\partial u}{\partial t}$ and then just integrate after multiplying by a test function $v$:
+
+\begin{align*}
+	\rho \Big( \frac{\partial u}{\partial t} + u \cdot \nabla u \Big) &\leadsto \int_\Omega \frac{\rho(u^* - u^n)}{\delta t} v \ dx + \int_{\Omega} \rho(u \cdot \nabla u)v \ dx \\[0.5cm]
+	&= \underbrace{\Langle \frac{\rho (u^* - u^n)}{\delta t} , v \Big\rangle}_1 + \underbrace{\Big\langle \rho u^n \cdot \nabla u^n , v \Rangle}_2
+\end{align*}
+
+
+\underline{Terms 3, 4 \& 5} come from the term $\nabla \cdot \sigma(v,p)$ from the RHS of the initial expression. We multiply by $v$ and integrate by parts to obtain:
+
+\[ - \int_\Omega (\nabla \cdot \sigma)v \ dx = \int_\Omega \sigma \cdot \nabla v \ dx - \int_{\partial\Omega} v(\sigma \cdot n) \ ds \]
+\\
+
+Now expressing in $\langle$ , $\rangle$ notation we get:
+
+\begin{align*}
+	- \Langle \nabla \cdot \sigma, v \Rangle &= \overbrace{\Langle \sigma, \nabla v \Rangle}^{\substack{= \langle \sigma , \epsilon(v) \rangle \ \because \ \sigma \text{ is sym \& } \\ \epsilon(v) \text{ is sym part of } \nabla v}} - \qquad \Langle \sigma \cdot n, v \Rangle_{\partial \Omega}  \\[0.5cm]
+	\big(\text{expanding } \sigma \big) &= \Langle \sigma, \epsilon(v) \Rangle + \Langle pn - \mu \nabla u \cdot n - \underbrace{\mu (\nabla u)^T \cdot n}_{\textcolor{red}{\star}}, v \Rangle_{\partial\Omega} \\[0.5cm]
+	\Bigg(\substack{\text{assuming $\star$ = 0 (see below),} \\ \text{and using } \nabla u = \big( \frac{\partial u_j}{\partial x_i} \big)_{ij} \text{ convention}} \Bigg) &= \underbrace{\Langle \sigma , \epsilon(v) \Rangle}_3 + \underbrace{\Langle pn, v \Rangle_{\partial\Omega}}_4 - \underbrace{\Langle \mu \nabla u \cdot n, v \Rangle_{\partial\Omega}}_5
+\end{align*}
+\\
+
+We should avoid passing over $\star$ without remarking on what assumption we are making in allowing it to be zero. If we had been solving a problem with a free boundary we could simply set $\sigma \cdot n = 0$ on the boundary. However we are computing flow through a channel and hence our flow continues at the end into some `imaginary' further channel or region, so we need to be a little more careful. We therefore make the assertion that "the derivative of the velocity in the direction of the channel is zero at the outflow"\footnote{\url{https://fenicsproject.org/pub/tutorial/html/._ftut1009.html}\cite{fenics_tutorial}}, which is what (assuming the $\nabla u = \big( \frac{\partial u_j}{\partial x_i} \big)_{ij}$ convention) yields $\star = 0$.
+\\
+
+
+\subsubsection{P2 - Computing $p^{n+1}$ with the tentative velocity $u^*$}
+
+To compute the new pressure $p^{n+1}$, we solve the following linear variational problem, wherein $q$ is a scalar-valued test function from the pressure function space:
+
+\begin{equation}\label{eqn:p2}
+	\Langle \nabla p^{n+1}, \nabla q \Rangle = \Langle \nabla p^n , \nabla q \Rangle - \Delta t^{-1} \Langle \nabla \cdot u^* , q \Rangle
+\end{equation}
+
+Again let's provide some intuition for where this comes from. Let us take the Navier Stokes momentum equation in terms of $u^*$ and $p^{n+1}$ and subtract it from the same equation expressed in terms of $u^{n+1}$ and $p^{n+1}$:
+
+\[ \rho \Big( \frac{u^{n+1}-u^*}{\Delta t} + u^n \cdot \nabla u^n \Big) - \rho \Big( \frac{u^* - u^n}{\Delta t} + u^n \cdot \nabla u^n \Big) = \nabla \cdot \sigma(u^n, p^{n+1}) - \nabla \cdot \sigma(u^n, p^n) \]
+\\
+
+which simplifies to:
+
+\begin{align*}
+	\rho \ \frac{u^{n+1} - u^*}{\Delta t} &= \nabla \cdot \sigma(u^n, p^{n+1}) - \nabla \cdot \sigma(u^n, p^n) \\[0.5cm]
+	(\text{by defn of } \sigma) &= \big( \nabla \cdot p^n I \big) - \big( \nabla \cdot p^{n+1} I \big) \\[0.5cm]
+	&= \nabla p^n - \nabla p^{n+1}
+\end{align*}
+\\
+
+and hence yields:
+
+\begin{equation}\label{eqn:p2.5}
+	\frac{u^{n+1} - u^*}{\Delta t} + \nabla p^{n+1} - \nabla p^n = 0 
+\end{equation}
+\\
+
+(the $\rho$ vanishes inexplicably because hey, physics!)\\
+\\
+
+If we then take the divergence and require the $\nabla \cdot u^{n+1} = 0$ condition from the second Navier Stokes equation \ref{eqn:tdns}, we get:
+
+\[ \frac{-\nabla \cdot u^*}{\Delta t} + \nabla^2p^{n+1} - \nabla^2p^n = 0 \]
+\\
+
+which is a Poisson problem for $p^{n+1}$, yielding the variational problem \ref{eqn:p2} we were hoping to arrive at!
+\\
+
+
+\subsubsection{P3 - Computing the new velocity $u^{n+1}$ with the new pressure $p^{n+1}$}
+
+Once again we seek a linear variational problem, this time to solve for $u^{n+1}$ using the updated pressure $p^{n+1}$ that we just solved in P2. If we look back at equation \ref{eqn:p2.5} we see that this provides exactly what we need! Multiplying by a test function $v$ and integrating yields precisely:
+
+\begin{equation}\label{eqn:p3}
+	\Langle u^{n+1}, v \Rangle = \Langle u^*, v \Rangle - \Delta t \Langle \nabla(p^{n+1} - p^n) , v \Rangle
+\end{equation}
+	
+\newpage	
+\section{References}
+\textcolor{red}{MIGRATE TO BIBLIO}
+	\begin{itemize}
+		\item \url{https://en.wikipedia.org/wiki/Divergence_theorem}
+		\item \url{https://en.wikipedia.org/wiki/Surface_integral}
+		\item \url{http://mathinsight.org/gradient_theorem_line_integrals}
+	\end{itemize}
+	
+	
+	
+	
+%MAKE BIBLIOGRAPHY
+\nocite{*}
+\pagebreak
+
+\bibliography{biblio} 
+\bibliographystyle{abbrv}
+  
+\end{document}

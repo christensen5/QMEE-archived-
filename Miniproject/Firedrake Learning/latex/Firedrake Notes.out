@@ -1,0 +1,10 @@
+\BOOKMARK [1][-]{section*.2}{Key Notes to NEVER FORGET}{}% 1
+\BOOKMARK [2][-]{section*.3}{"Integration by Parts"}{section*.2}% 2
+\BOOKMARK [3][-]{section*.4}{Example: Linear Poisson Equation}{section*.3}% 3
+\BOOKMARK [3][-]{section*.5}{Example: Nonlinear Poisson Equation}{section*.3}% 4
+\BOOKMARK [1][-]{section*.6}{Solving Navier Stokes in Firedrake}{}% 5
+\BOOKMARK [2][-]{section*.7}{Time-Dependent Navier Stokes via "Chorin's Method \(IPCS\)"}{section*.6}% 6
+\BOOKMARK [3][-]{section*.8}{P1 - Computing the Tentative Velocity}{section*.7}% 7
+\BOOKMARK [3][-]{section*.9}{P2 - Computing pn+1 with the tentative velocity u*}{section*.7}% 8
+\BOOKMARK [3][-]{section*.10}{P3 - Computing the new velocity un+1 with the new pressure pn+1}{section*.7}% 9
+\BOOKMARK [1][-]{section*.11}{References}{}% 10

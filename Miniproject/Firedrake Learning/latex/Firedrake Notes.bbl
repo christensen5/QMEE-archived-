@@ -1,0 +1,8 @@
+\begin{thebibliography}{1}
+
+\bibitem{fenics_tutorial}
+H.~P. Langtangen.
+\newblock {\em Solving PDEs in Python: the FEniCS tutorial I}.
+\newblock SpringerOpen, 2016.
+
+\end{thebibliography}
