@@ -11,16 +11,16 @@ N = 16
 T = 10.0  # final time
 num_steps = 500  # time steps
 dt = T/num_steps
-mu_val = 0.001
+mu_val = 1 #0.001
 rho_val = 1
-outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_channel_u.pvd")
-outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_channel_p.pvd")
+outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_channel/firedrake/u.pvd")
+outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_channel/firedrake/p.pvd")
 
 # Create mesh and function spaces for Step1
 mesh = UnitSquareMesh(16,16)
 #mesh = RectangleMesh(2*N, N, 2, 1)
-V = VectorFunctionSpace(mesh, "CG", 2)
-Q = FunctionSpace(mesh, "CG", 1)
+V = VectorFunctionSpace(mesh, "P", 2)
+Q = FunctionSpace(mesh, "P", 1)
 Z = V * Q
 
 # Define test and trial functions
@@ -34,14 +34,18 @@ up_now = Function(Z, name="up_now")
 up_next = Function(Z, name="up_next")
 up_star = Function(Z, name="up_star")
 up_temp = Function(Z, name="up_temp")  # to hold solutions at each intermediate step
-u_now = Function(V, name="u_now")
-u_next = Function(V, name="u_next")
+u_now = Function(V, name="u_now")#.interpolate(as_vector([y * (1 - y), 0]))
+u_next = Function(V, name="u_next")#.interpolate(as_vector([y * (1 - y), 0]))
 u_star = Function(V, name="u_star")
 u_temp = Function(V, name="u_temp")  # to hold solutions at each intermediate step
 p_now = Function(Q, name="p_now")
+p_init = Function(Q).assign(p_now)#.interpolate(32 * y * (1 - y))  # save initial pressure
 p_next = Function(Q, name="p_next")
 p_temp = Function(Q, name="p_temp")  # to hold solutions at each intermediate step
 
+# Save initial velocity and pressure states
+outfile_u.write(u_next)
+outfile_p.write(p_next)
 
 # Define expressions used in the variational forms
 n = FacetNormal(mesh)
@@ -56,7 +60,7 @@ def sigma(u, p):
 
 
 # Define boundary conditions
-bcu = DirichletBC(Z.sub(0), as_vector([0.0, 0.0]), (3, 4))  # no slip on walls
+bcu = DirichletBC(Z.sub(0), Constant(as_vector([0.0, 0.0])), (3, 4))  # no slip on walls
 bcp = [DirichletBC(Z.sub(1), Constant(8.0), 1),  # inflow pressure of 8
        DirichletBC(Z.sub(1), Constant(0.0), 2)]  # outflow pressure of 0
 
@@ -81,16 +85,16 @@ L3 = inner(u_star, v) * dx \
 
 # Define linear problems
 prob1 = LinearVariationalProblem(a1, L1, up_temp, bcs=bcu)  # solve for u, will store as up_star
-solve1 = LinearVariationalSolver(prob1, solver_params={'ksp_type': 'bicgstab', 'pc_type': 'lu', 'pc_factor_mat_solver_type': 'umfpack',
-                                                       'ksp_converged_reason': True,
-                                                       'ksp_monitor_true_residual': True,
-                                                       'ksp_view': True})
+solve1 = LinearVariationalSolver(prob1)#, solver_params={'ksp_type': 'bicgstab', 'pc_type': 'lu', 'pc_factor_mat_solver_type': 'umfpack',
+                                                      # 'ksp_converged_reason': True,
+                                                      # 'ksp_monitor_true_residual': True,
+                                                      # 'ksp_view': True})
 
 prob2 = LinearVariationalProblem(a2, L2, up_temp, bcs=bcp)  # solve for p, will store as up_next
-solve2 = LinearVariationalSolver(prob2, solver_params={'ksp_type': 'bicgstab', 'pc_type': 'hypre_amg'})
+solve2 = LinearVariationalSolver(prob2)#, solver_params={'ksp_type': 'bicgstab', 'pc_type': 'hypre_amg'})
 
 prob3 = LinearVariationalProblem(a3, L3, up_temp)  # solve for u, will store as up_next
-solve3 = LinearVariationalSolver(prob3, solver_params={'ksp_type': 'cg', 'pc_type': 'sor'})
+solve3 = LinearVariationalSolver(prob3)#, solver_params={'ksp_type': 'cg', 'pc_type': 'sor'})
 
 
 # Time loop
@@ -115,13 +119,15 @@ while t < T:
     t += dt
     steps += 1
 
+    # write timestep and save solution every 50 steps
+    if steps%1 == 0:
+        outfile_u.write(u_next)
+        outfile_p.write(p_next)
+        print("t=", t)
+
     # update solutions
     u_now.assign(u_next)
     p_now.assign(p_next)
 
 
-    # write timestep and save solution every 50 steps
-    if steps%50 == 0:
-        outfile_u.write(u_next)
-        outfile_p.write(p_next)
-        print("t=", t)
+
