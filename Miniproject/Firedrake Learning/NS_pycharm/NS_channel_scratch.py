@@ -1,11 +1,20 @@
 from firedrake import *
 
+# Hard constants
+mu_val = 1
+rho_val = 1
+T = 10.0           # final time
+num_steps = 500    # number of time steps
+dt = T / num_steps # time step size
+
 # Mesh, functionspaces and functions
 mesh = UnitSquareMesh(16,16)
 V = VectorFunctionSpace(mesh, "P", 2)
 Q = FunctionSpace(mesh, "P", 1)
 u = TrialFunction(V)
 v = TestFunction(V)
+p = TrialFunction(V)
+q = TestFunction(Q)
 u_now = Function(V)
 u_next = Function(V)
 u_star = Function(V)
@@ -13,12 +22,11 @@ p_now = Function(Q)
 p_next = Function(Q)
 
 # Expressions for the variational forms
-dt = 10.0/500
 n = FacetNormal(mesh)
 f = Constant((0.0, 0.0))
 k = Constant(dt)
-mu = Constant(1.0)
-rho = Constant(1.0)
+mu = Constant(mu_val)
+rho = Constant(mu_val)
 u_mid = 0.5*(u_now + u_next)
 def sigma(u, p):
     return 2*mu*sym(nabla_grad(u)) - p*Identity(len(u))
