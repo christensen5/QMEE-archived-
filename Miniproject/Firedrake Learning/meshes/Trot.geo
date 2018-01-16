@@ -20,3 +20,4 @@ Plane Surface(19) = {19};
 Physical Line(20) = {11, 12, 13, 14, 15, 17};
 Physical Line(21) = {10};
 Physical Line(22) = {16};
+Physical Surface(26) = {19};

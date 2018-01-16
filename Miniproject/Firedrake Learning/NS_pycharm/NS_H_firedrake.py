@@ -1,16 +1,16 @@
 from firedrake import *
 import matplotlib.pyplot as plt
-from tqdm import tqdm
+from tqdm import tqdm  # progress bar
 
 # Hard constants
-mu_val = 1
-rho_val = 1
-T = 10.0           # final time
-num_steps = 500    # number of time steps
-dt = T / num_steps # time step size
+mu_val = 1#0.001      # viscosity
+rho_val = 1         # density
+T = 0.5#5            # final time
+num_steps = 500#5000    # number of time steps
+dt = T / num_steps  # time step size
 
-# Mesh, functionspaces and functions
-mesh = UnitSquareMesh(16,16)
+# Mesh, function spaces and functions
+mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/Trot.msh")
 V = VectorFunctionSpace(mesh, "P", 2)
 Q = FunctionSpace(mesh, "P", 1)
 u = TrialFunction(V)
@@ -33,10 +33,11 @@ u_mid = 0.5*(u_now + u)
 def sigma(u, p):
     return 2*mu*sym(nabla_grad(u)) - p*Identity(len(u))
 
+
 # Define boundary conditions
-bcu = DirichletBC(V, Constant((0.0, 0.0)), (3, 4))  # no slip on walls
-bcp = [DirichletBC(Q, Constant(8.0), 1),  # inflow pressure of 8
-       DirichletBC(Q, Constant(0.0), 2)]  # outflow pressure of 0
+bcu = DirichletBC(V, Constant((0.0, 0.0)), 20)  # no slip on walls
+bcp = [DirichletBC(Q, Constant(8.0), 21),  # inflow pressure of 8
+       DirichletBC(Q, Constant(0.0), 22)]  # outflow pressure of 0
 
 # Define variational forms
 F1 = inner(rho*(u - u_now)/k, v) * dx \
@@ -46,7 +47,6 @@ F1 = inner(rho*(u - u_now)/k, v) * dx \
     - inner(mu * dot(nabla_grad(u_mid), n), v) * ds \
     - inner(f, v) * dx
 a1, L1 = system(F1)
-
 a2 = inner(nabla_grad(p), nabla_grad(q)) * dx
 L2 = inner(nabla_grad(p_now), nabla_grad(q)) * dx \
     - (1/k) * inner(div(u_star), q) * dx
@@ -63,21 +63,21 @@ prob3 = LinearVariationalProblem(a3, L3, u_next, bcs=bcu)
 # Prep for saving solutions
 u_save = Function(V).assign(u_now)
 p_save = Function(Q).assign(p_now)
-outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_channel/firedrake/u.pvd")
-outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_channel/firedrake/p.pvd")
+outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/u.pvd")
+outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/p.pvd")
 outfile_u.write(u_save)
 outfile_p.write(p_save)
 
 # Time loop
 t = 0.0
 for steps in tqdm(range(num_steps)):
-    solve1 = LinearVariationalSolver(prob1)#, solver_parameters={'ksp_type': 'preonly', 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
+    solve1 = LinearVariationalSolver(prob1, solver_parameters={'ksp_type': 'bicg'})
     solve1.solve()
 
-    solve2 = LinearVariationalSolver(prob2)#, solver_parameters={'ksp_type': 'preonly', 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
+    solve2 = LinearVariationalSolver(prob2, solver_parameters={'ksp_type': 'cg'})#, 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
     solve2.solve()
 
-    solve3 = LinearVariationalSolver(prob3)#, solver_parameters={'ksp_type': 'preonly', 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
+    solve3 = LinearVariationalSolver(prob3, solver_parameters={'ksp_type': 'cg'})#, 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
     solve3.solve()
 
     t += dt
