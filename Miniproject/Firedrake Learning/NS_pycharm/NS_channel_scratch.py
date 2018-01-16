@@ -1,4 +1,5 @@
 from firedrake import *
+import matplotlib.pyplot as plt
 
 # Hard constants
 mu_val = 1
@@ -13,7 +14,7 @@ V = VectorFunctionSpace(mesh, "P", 2)
 Q = FunctionSpace(mesh, "P", 1)
 u = TrialFunction(V)
 v = TestFunction(V)
-p = TrialFunction(V)
+p = TrialFunction(Q)
 q = TestFunction(Q)
 u_now = Function(V)
 u_next = Function(V)
@@ -27,12 +28,12 @@ f = Constant((0.0, 0.0))
 k = Constant(dt)
 mu = Constant(mu_val)
 rho = Constant(mu_val)
-u_mid = 0.5*(u_now + u_next)
+u_mid = 0.5*(u_now + u)
 def sigma(u, p):
     return 2*mu*sym(nabla_grad(u)) - p*Identity(len(u))
 
 # Define boundary conditions
-bcu = DirichletBC(V, Constant([0.0, 0.0]), (3, 4))  # no slip on walls
+bcu = DirichletBC(V, Constant((0.0, 0.0)), (3, 4))  # no slip on walls
 bcp = [DirichletBC(Q, Constant(8.0), 1),  # inflow pressure of 8
        DirichletBC(Q, Constant(0.0), 2)]  # outflow pressure of 0
 
@@ -53,27 +54,40 @@ a3 = inner(u, v) * dx
 L3 = inner(u_star, v) * dx \
      - k * inner(nabla_grad(p_next - p_now), v) * dx
 
-
 # Define linear problems
-prob1 = LinearVariationalProblem(a1, L1, u_star, bcs=bcu)
+prob1 = LinearVariationalProblem(a1, L1, u_star, bcs=bcu)#,bcu_in])
 prob2 = LinearVariationalProblem(a2, L2, p_next, bcs=bcp)
-prob3 = LinearVariationalProblem(a3, L3, u_next)
+prob3 = LinearVariationalProblem(a3, L3, u_next, bcs=bcu)#,bcu_in])
+
+# Prep for saving solutions
+u_save = Function(V).assign(u_now)
+p_save = Function(Q).assign(p_now)
+outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_channel/firedrake/u.pvd")
+outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_channel/firedrake/p.pvd")
+outfile_u.write(u_save)
+outfile_p.write(p_save)
 
 # Time loop
 t = 0.0
 steps = 0
 while t < 10.0:
-    solve1 = LinearVariationalSolver(prob1)
+    solve1 = LinearVariationalSolver(prob1)#, solver_parameters={'ksp_type': 'preonly', 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
     solve1.solve()
 
-    solve2 = LinearVariationalSolver(prob2)
+    solve2 = LinearVariationalSolver(prob2)#, solver_parameters={'ksp_type': 'preonly', 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
     solve2.solve()
 
-    solve3 = LinearVariationalSolver(prob3)
+    solve3 = LinearVariationalSolver(prob3)#, solver_parameters={'ksp_type': 'preonly', 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
     solve3.solve()
 
     t += dt
     steps += 1
+
+    u_save.assign(u_next)
+    p_save.assign(p_next)
+    outfile_u.write(u_save)
+    outfile_p.write(p_save)
+
 
     # update solutions
     u_now.assign(u_next)
