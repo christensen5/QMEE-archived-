@@ -11,21 +11,21 @@ from __future__ import print_function
 from fenics import *
 import numpy as np
 
-T = 10.0           # final time
-num_steps = 500    # number of time steps
+T = 5.0           # final time
+num_steps = 5000    # number of time steps
 dt = T / num_steps # time step size
-mu = 1             # kinematic viscosity
+mu = 0.001            # kinematic viscosity
 rho = 1            # density
 
 # Create mesh and define function spaces
-mesh = UnitSquareMesh(16, 16)
+mesh = Mesh("Trot.xml")
 V = VectorFunctionSpace(mesh, 'P', 2)
 Q = FunctionSpace(mesh, 'P', 1)
 
 # Define boundaries
-inflow  = 'near(x[0], 0)'
-outflow = 'near(x[0], 1)'
-walls   = 'near(x[1], 0) || near(x[1], 1)'
+inflow  = 'near(x[1], 0)'
+outflow = 'near(x[1], 5)'
+walls   = 'near(x[0], 0) || (near(x[0], 1)&&x[1]<=2) || (near(x[0], 1)&&x[1]>=3) || near(x[0], 2) || (near(x[1], 2)&&x[0]>=1) || (near(x[1], 3)&&x[0]>=1)'
 
 # Define boundary conditions
 bcu_noslip  = DirichletBC(V, Constant((0, 0)), walls)
@@ -93,6 +93,12 @@ outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/
 outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_channel/fenics/p.pvd")
 outfile_u << u_
 outfile_p << p_
+
+# Progress bar
+progress = Progress('Time-stepping')
+set_log_level(PROGRESS)
+
+
 # Time-stepping
 t = 0
 for n in range(num_steps):
@@ -103,31 +109,29 @@ for n in range(num_steps):
     # Step 1: Tentative velocity step
     b1 = assemble(L1)
     [bc.apply(b1) for bc in bcu]
-    solve(A1, u_.vector(), b1)
+    solve(A1, u_.vector(), b1, 'bicgstab', 'hypre_amg')
 
     # Step 2: Pressure correction step
     b2 = assemble(L2)
     [bc.apply(b2) for bc in bcp]
-    solve(A2, p_.vector(), b2)
+    solve(A2, p_.vector(), b2, 'bicgstab', 'hypre_amg')
 
     # Step 3: Velocity correction step
     b3 = assemble(L3)
-    solve(A3, u_.vector(), b3)
+    solve(A3, u_.vector(), b3, 'cg', 'sor')
 
     # Plot solution
-    plot(u_)
+    plot(u_, title='Velocity')
+    plot(p_, title='Pressure')
     outfile_u << u_
     outfile_p << p_
-    # # Compute error
-    # u_e = Expression(('4*x[1]*(1.0 - x[1])', '0'), degree=2)
-    # u_e = interpolate(u_e, V)
-    # error = np.abs(u_e.vector().array() - u_.vector().array()).max()
-    # print('t = %.2f: error = %.3g' % (t, error))
-    # print('max u:', u_.vector().array().max())
 
     # Update previous solution
     u_n.assign(u_)
     p_n.assign(p_)
+
+    # Update progress bar
+    progress.update(t/T)
 
 # Hold plot
 #interactive()
