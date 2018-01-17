@@ -4,16 +4,15 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm  # progress bar
 
 
-def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init=False, p_init=False, bootstrap=False, solver_params1={}, solver_params2={}, solver_params3={}):
+def NS_H_firedrake(viscosity=1, T=5, num_steps=5000, save_interval=500, solver_params1={}, solver_params2={}, solver_params3={}):
 
     # Hard constants
     density = 1
     dt = T / num_steps  # time step size
     if save_interval == "firstlast":
-        save_interval = num_steps-2
+        save_interval = num_steps-1
 
     # Mesh, function spaces and functions
-    #mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/Trot.msh")
     mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/H.msh")
     V = VectorFunctionSpace(mesh, "P", 2)
     Q = FunctionSpace(mesh, "P", 1)
@@ -21,22 +20,10 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
     v = TestFunction(V)
     p = TrialFunction(Q)
     q = TestFunction(Q)
-    if u_init:
-        u_now = Function(V)
-        chk_in = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/dump.h5", file_mode='r')
-        chk_in.read(u_now, "/velocity")
-        chk_in.close()
-    else:
-        u_now = Function(V)
+    u_now = Function(V)
     u_next = Function(V)
     u_star = Function(V)
-    if p_init:
-        p_now = Function(Q)
-        chk_in = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/dump.h5", file_mode='r')
-        chk_in.read(p_now, "/pressure")
-        chk_in.close()
-    else:
-        p_now = Function(Q)
+    p_now = Function(Q)
     p_next = Function(Q)
 
 
@@ -111,26 +98,50 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
         u_now.assign(u_next)
         p_now.assign(p_next)
 
-    # If running in bootstrap mode, return the final solutions for u and p to be used as initial conditions for the next
-    # run.
-    if bootstrap:
-        chk_out = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/dump.h5", file_mode='w')
-        chk_out.write(u_now, "/velocity")
-        chk_out.write(p_now, "/pressure")
-        chk_out.close()
+# ======================================================================================================================
+# =========================== UGLY MANUAL BOOTSTRAPPING STEP ===========================================================
+# ======================================================================================================================
+    viscosity=(0.1, 0.01, 0.001)
+    T_iter=(5, 5, 10)
+    num_steps_iter=(5000, 7000, 10000)
+    save_interval_iter=(500, 500, 100)
+    for i in range(3):
+        tqdm.write("\nBootstrapping phase " + str(i+1) + " completed.")
+        mu = Constant(viscosity[i])
+        T = T_iter[i]
+        num_steps= num_steps_iter[i]
+        save_interval= save_interval_iter[i]
+        dt = T / num_steps  # time step size
+        k = Constant(dt)
 
-def bootstrapper():
-    NS_H_firedrake(1, 5, 5000, "firstlast", False, False, True, {'ksp_type': 'bicg'}, {'ksp_type': 'bicg'}, {'ksp_type': 'cg'})
-    tqdm.write("mu=1 bootstrapping complete!")
-    NS_H_firedrake(0.1, 5, 5000, "firstlast", True, True, True, {'ksp_type': 'bicg'}, {'ksp_type': 'bicg'}, {'ksp_type': 'cg'})
-    tqdm.write("mu=0.1 bootstrapping complete!")
-    # start from here
-    NS_H_firedrake(0.01, 5, 10000, 500, True, True, True, {'ksp_type': 'bicg'}, {'ksp_type': 'bicg'}, {'ksp_type': 'cg'})
-    tqdm.write("mu=0.01 bootstrapping complete!")
-    NS_H_firedrake(0.001, 5, 10000, 100, True, True, False, {'ksp_type': 'bicg'}, {'ksp_type': 'bicg'}, {'ksp_type': 'cg'})
+        F1 = inner(rho * (u - u_now) / k, v) * dx \
+             + inner(dot(rho * u_now, nabla_grad(u_now)), v) * dx \
+             + inner(sigma(u_mid, p_now), sym(nabla_grad(v))) * dx \
+             + inner(p_now * n, v) * ds \
+             - inner(mu * dot(nabla_grad(u_mid), n), v) * ds \
+             - inner(f, v) * dx
+        a1, L1 = system(F1)
+        prob1 = LinearVariationalProblem(a1, L1, u_star, bcs=bcu)
+        prob2 = LinearVariationalProblem(a2, L2, p_next, bcs=bcp)
+        prob3 = LinearVariationalProblem(a3, L3, u_next, bcs=bcu)
+        t = 0.0
+        for steps in tqdm(range(num_steps)):
+            solve1 = LinearVariationalSolver(prob1, solver_parameters={'ksp_type': 'bicg'})
+            solve1.solve()
+            solve2 = LinearVariationalSolver(prob2, solver_parameters={'ksp_type': 'cg'})#, 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
+            solve2.solve()
+            solve3 = LinearVariationalSolver(prob3, solver_parameters={'ksp_type': 'cg'})#, 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
+            solve3.solve()
+            t += dt
+            if steps%save_interval==1 or steps==num_steps:
+                u_save.assign(u_next)
+                p_save.assign(p_next)
+                outfile_u.write(u_save)
+                outfile_p.write(p_save)
+            # update solutions
+            u_now.assign(u_next)
+            p_now.assign(p_next)
 
 
 if __name__ == "__main__":
-    #NS_H_firedrake()
-    bootstrapper()
-    input("Press Enter to end.")
+    NS_H_firedrake()
