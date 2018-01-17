@@ -28,7 +28,7 @@ n = FacetNormal(mesh)
 f = Constant((0.0, 0.0))
 k = Constant(dt)
 mu = Constant(mu_val)
-rho = Constant(mu_val)
+rho = Constant(rho_val)
 u_mid = 0.5*(u_now + u)
 def sigma(u, p):
     return 2*mu*sym(nabla_grad(u)) - p*Identity(len(u))
