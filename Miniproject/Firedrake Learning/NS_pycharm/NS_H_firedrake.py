@@ -16,6 +16,7 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
     #mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/Trot.msh")
     mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/H.msh")
     V = VectorFunctionSpace(mesh, "P", 2)
+    V_diff = VectorFunctionSpace(mesh, 'DG', 1)
     Q = FunctionSpace(mesh, "P", 1)
     u = TrialFunction(V)
     v = TestFunction(V)
@@ -51,12 +52,17 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
         return 2*mu*sym(nabla_grad(u)) - p*Identity(len(u))
 
     # Define boundary conditions
+    ######################## Trot BCs ##################################
     # bcu = DirichletBC(V, Constant((0.0, 0.0)), 20)  # no slip on walls
     # bcp = [DirichletBC(Q, Constant(8.0), 21),  # inflow pressure of 8
     #        DirichletBC(Q, Constant(0.0), 22)]  # outflow pressure of 0
-    bcu = DirichletBC(V, Constant((0.0, 0.0)), 15)
-    bcp = [DirichletBC(Q, Constant(8.0), 16),  # inflow pressure of 8
-           DirichletBC(Q, Constant(0.0), 17)]  # outflow pressure of 0
+    ########################   H BCs  ##################################
+
+    u_diff = Function(V_diff).interpolate(Dx(u_star, 1))
+    bcu = [DirichletBC(V, Constant((0.0, 0.0)), 15),  # no slip on walls
+           DirichletBC(V, Constant((0.0, 1.0)), 16)]  # inflow velocity of (0,1)
+    bcp = DirichletBC(Q, u_diff[1], 17)  # outflow pressure of du_2/dx_2 (but index like a programmer not a mathmo)
+                                                # (and use u_star since this is applied in the second linear problem, which computes p using u_star)
 
     # Define variational forms
     F1 = inner(rho*(u - u_now)/k, v) * dx \
@@ -133,6 +139,9 @@ def bootstrapper():
 
 
 if __name__ == "__main__":
-    #NS_H_firedrake()
-    bootstrapper()
+    solver_params1 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}
+    solver_params2 = {'ksp_type': 'bicg', 'pc_type': 'hypre'}
+    solver_params3 = {'ksp_type': 'cg', 'pc_type': 'sor'}
+    NS_H_firedrake(1, 5, 5000, 100, False, False, True, solver_params1, solver_params2, solver_params3)
+    #bootstrapper()
     input("Press Enter to end.")
