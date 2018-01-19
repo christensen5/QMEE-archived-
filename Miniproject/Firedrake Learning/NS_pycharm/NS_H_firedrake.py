@@ -90,13 +90,13 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
     # Time loop
     t = 0.0
     for steps in tqdm(range(num_steps)):
-        solve1 = LinearVariationalSolver(prob1, solver_parameters={'ksp_type': 'bicg'})
+        solve1 = LinearVariationalSolver(prob1, solver_parameters=solver_params1)
         solve1.solve()
 
-        solve2 = LinearVariationalSolver(prob2, solver_parameters={'ksp_type': 'cg'})#, 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
+        solve2 = LinearVariationalSolver(prob2, solver_parameters=solver_params2)
         solve2.solve()
 
-        solve3 = LinearVariationalSolver(prob3, solver_parameters={'ksp_type': 'cg'})#, 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
+        solve3 = LinearVariationalSolver(prob3, solver_parameters=solver_params3)#, 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
         solve3.solve()
 
         t += dt
@@ -120,14 +120,16 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
         chk_out.close()
 
 def bootstrapper():
-    NS_H_firedrake(1, 5, 5000, "firstlast", False, False, True, {'ksp_type': 'bicg'}, {'ksp_type': 'bicg'}, {'ksp_type': 'cg'})
+    solver_params1 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}
+    solver_params2 = {'ksp_type': 'bicg', 'pc_type': 'hypre'}
+    solver_params3 = {'ksp_type': 'cg', 'pc_type': 'sor'}
+    NS_H_firedrake(1, 5, 5000, "firstlast", False, False, True, solver_params1, solver_params2, solver_params3)
     tqdm.write("mu=1 bootstrapping complete!")
-    NS_H_firedrake(0.1, 5, 5000, "firstlast", True, True, True, {'ksp_type': 'bicg'}, {'ksp_type': 'bicg'}, {'ksp_type': 'cg'})
+    NS_H_firedrake(0.1, 20, 20000, "firstlast", True, True, True, solver_params1, solver_params2, solver_params3)
     tqdm.write("mu=0.1 bootstrapping complete!")
-    # start from here
-    NS_H_firedrake(0.01, 5, 10000, 500, True, True, True, {'ksp_type': 'bicg'}, {'ksp_type': 'bicg'}, {'ksp_type': 'cg'})
+    NS_H_firedrake(0.01, 5, 10000, 500, True, True, True, solver_params1, solver_params2, solver_params3)
     tqdm.write("mu=0.01 bootstrapping complete!")
-    NS_H_firedrake(0.001, 5, 10000, 100, True, True, False, {'ksp_type': 'bicg'}, {'ksp_type': 'bicg'}, {'ksp_type': 'cg'})
+    NS_H_firedrake(0.001, 5, 10000, 100, True, True, False, solver_params1, solver_params2, solver_params3)
 
 
 if __name__ == "__main__":
