@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm  # progress bar
 
 
-def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init=False, p_init=False, bootstrap=False, solver_params1={}, solver_params2={}, solver_params3={}):
+def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init=False, p_init=False, bootstrap=False, solver_params1={'ksp_type': 'bcgs', 'pc_type': 'hypre'}, solver_params2={'ksp_type': 'bcgs', 'pc_type': 'hypre'}, solver_params3={'ksp_type': 'cg', 'pc_type': 'sor'}):
 
     # Hard constants
     density = 1
@@ -14,7 +14,7 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
 
     # Mesh, function spaces and functions
     #mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/Trot.msh")
-    mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/H.msh")
+    mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/rectcylinder.msh")
     V = VectorFunctionSpace(mesh, "P", 2)
     Q = FunctionSpace(mesh, "P", 1)
     u = TrialFunction(V)
@@ -51,12 +51,9 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
         return 2*mu*sym(nabla_grad(u)) - p*Identity(len(u))
 
     # Define boundary conditions
-    # bcu = DirichletBC(V, Constant((0.0, 0.0)), 20)  # no slip on walls
-    # bcp = [DirichletBC(Q, Constant(8.0), 21),  # inflow pressure of 8
-    #        DirichletBC(Q, Constant(0.0), 22)]  # outflow pressure of 0
-    bcu = DirichletBC(V, Constant((0.0, 0.0)), 15)
-    bcp = [DirichletBC(Q, Constant(8.0), 16),  # inflow pressure of 8
-           DirichletBC(Q, Constant(0.0), 17)]  # outflow pressure of 0
+    bcu = DirichletBC(V, Constant((0.0, 0.0)), (1, 4))
+    bcp = [DirichletBC(Q, Constant(8.0), 2),  # inflow pressure of 8
+           DirichletBC(Q, Constant(0.0), 3)]  # outflow pressure of 0
 
     # Define variational forms
     F1 = inner(rho*(u - u_now)/k, v) * dx \
@@ -80,12 +77,8 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
     prob3 = LinearVariationalProblem(a3, L3, u_next, bcs=bcu)
 
     # Prep for saving solutions
-    u_save = Function(V).assign(u_now)
-    p_save = Function(Q).assign(p_now)
-    outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/u.pvd")
-    outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/p.pvd")
-    outfile_u.write(u_save)
-    outfile_p.write(p_save)
+    chk_out = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/velocity_fields.h5", file_mode='w')
+    chk_out.write(u_now, "/velocity", 0.0)  # save initial state
 
     # Time loop
     t = 0.0
@@ -102,37 +95,16 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
         t += dt
 
         if steps%save_interval==1 or steps==num_steps:
-            u_save.assign(u_next)
-            p_save.assign(p_next)
-            outfile_u.write(u_save)
-            outfile_p.write(p_save)
+            chk_out.write(u_next, "/velocity", t)
 
         # update solutions
         u_now.assign(u_next)
         p_now.assign(p_next)
 
-    # If running in bootstrap mode, return the final solutions for u and p to be used as initial conditions for the next
-    # run.
-    if bootstrap:
-        chk_out = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/dump.h5", file_mode='w')
-        chk_out.write(u_now, "/velocity")
-        chk_out.write(p_now, "/pressure")
-        chk_out.close()
 
-def bootstrapper():
-    solver_params1 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}
-    solver_params2 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}
-    solver_params3 = {'ksp_type': 'cg', 'pc_type': 'sor'}
-    NS_H_firedrake(1, 5, 5000, "firstlast", False, False, True, solver_params1, solver_params2, solver_params3)
-    tqdm.write("mu=1 bootstrapping complete!")
-    NS_H_firedrake(0.1, 20, 20000, "firstlast", True, True, True, solver_params1, solver_params2, solver_params3)
-    tqdm.write("mu=0.1 bootstrapping complete!")
-    NS_H_firedrake(0.01, 5, 10000, 500, True, True, True, solver_params1, solver_params2, solver_params3)
-    tqdm.write("mu=0.01 bootstrapping complete!")
-    NS_H_firedrake(0.001, 5, 10000, 100, True, True, False, solver_params1, solver_params2, solver_params3)
-
+    # Close file!
+    chk_out.close()
 
 if __name__ == "__main__":
-    #NS_H_firedrake()
-    bootstrapper()
+    NS_cylinder_firedrake()
     input("Press Enter to end.")

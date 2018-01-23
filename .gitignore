@@ -2,3 +2,5 @@
 *.tmp
 Miniproject/Firedrake\ Learning/Ch1_tutorial_saves
 Miniproject/Firedrake\ Learning/NS_tutorial_saves
+Miniproject/Firedrake\ Learning/NS_pycharm/__pycache__
+Miniproject/Parcels\ Learning/*.nc
