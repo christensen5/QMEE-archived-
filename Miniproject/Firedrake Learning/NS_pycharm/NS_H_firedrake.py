@@ -16,7 +16,8 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
     #mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/Trot.msh")
     mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/H.msh")
     V = VectorFunctionSpace(mesh, "P", 2)
-    V_diff = VectorFunctionSpace(mesh, 'DG', 1)
+    V_diff = VectorFunctionSpace(mesh, 'P', 2)  # NEEDS TO BE 'P' TO WORK AS BC FOR Q, BUT IS ACTUALLY 'DG'...
+    V_diff_y = FunctionSpace(mesh, 'P', 1)  # NEEDS TO BE 'P' TO WORK AS BC FOR Q, BUT IS ACTUALLY 'DG'...
     Q = FunctionSpace(mesh, "P", 1)
     u = TrialFunction(V)
     v = TestFunction(V)
@@ -59,9 +60,10 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
     ########################   H BCs  ##################################
 
     u_diff = Function(V_diff).interpolate(Dx(u_star, 1))
+    u_diff_y = Function(V_diff_y).interpolate(dot(as_vector([0, 1]), u_diff))
     bcu = [DirichletBC(V, Constant((0.0, 0.0)), 15),  # no slip on walls
            DirichletBC(V, Constant((0.0, 1.0)), 16)]  # inflow velocity of (0,1)
-    bcp = DirichletBC(Q, u_diff[1], 17)  # outflow pressure of du_2/dx_2 (but index like a programmer not a mathmo)
+    bcp = DirichletBC(Q, u_diff_y, 17)  # outflow pressure of du_2/dx_2 (but index like a programmer not a mathmo)
                                                 # (and use u_star since this is applied in the second linear problem, which computes p using u_star)
 
     # Define variational forms
