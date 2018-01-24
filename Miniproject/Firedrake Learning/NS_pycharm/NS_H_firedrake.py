@@ -133,6 +133,8 @@ def bootstrapper():
 
 
 if __name__ == "__main__":
-    #NS_H_firedrake()
-    bootstrapper()
+    solver_params1 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}
+    solver_params2 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}
+    solver_params3 = {'ksp_type': 'cg', 'pc_type': 'sor'}
+    NS_H_firedrake(0.01, 5, 4000, 500, False, False, True, solver_params1, solver_params2, solver_params3)
     input("Press Enter to end.")

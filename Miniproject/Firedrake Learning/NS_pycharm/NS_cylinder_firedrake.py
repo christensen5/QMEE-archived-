@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm  # progress bar
 
 
-def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init=False, p_init=False, bootstrap=False, solver_params1={'ksp_type': 'bcgs', 'pc_type': 'hypre'}, solver_params2={'ksp_type': 'bcgs', 'pc_type': 'hypre'}, solver_params3={'ksp_type': 'cg', 'pc_type': 'sor'}):
+def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init=False, p_init=False, solver_params1={'ksp_type': 'bcgs', 'pc_type': 'hypre'}, solver_params2={'ksp_type': 'bcgs', 'pc_type': 'hypre'}, solver_params3={'ksp_type': 'cg', 'pc_type': 'sor'}):
 
     # Hard constants
     density = 1
@@ -23,7 +23,7 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
     q = TestFunction(Q)
     if u_init:
         u_now = Function(V)
-        chk_in = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/dump.h5", file_mode='r')
+        chk_in = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/init.h5", file_mode='r')
         chk_in.read(u_now, "/velocity")
         chk_in.close()
     else:
@@ -32,7 +32,7 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
     u_star = Function(V)
     if p_init:
         p_now = Function(Q)
-        chk_in = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/dump.h5", file_mode='r')
+        chk_in = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/init.h5", file_mode='r')
         chk_in.read(p_now, "/pressure")
         chk_in.close()
     else:
@@ -78,10 +78,11 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
 
     # Prep for saving solutions
     chk_out = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/velocity_fields.h5", file_mode='w')
-    chk_out.write(u_now, "/velocity", 0.0)  # save initial state
+    chk_out.write(u_now, "/velocity", 0)  # save initial state
 
     # Time loop
     t = 0.0
+
     for steps in tqdm(range(num_steps)):
         solve1 = LinearVariationalSolver(prob1, solver_parameters=solver_params1)
         solve1.solve()
@@ -89,13 +90,13 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
         solve2 = LinearVariationalSolver(prob2, solver_parameters=solver_params2)
         solve2.solve()
 
-        solve3 = LinearVariationalSolver(prob3, solver_parameters=solver_params3)#, 'pc_type': 'lu', 'pc_factor_mat_solver_package': 'mumps'})
+        solve3 = LinearVariationalSolver(prob3, solver_parameters=solver_params3)
         solve3.solve()
 
         t += dt
 
         if steps%save_interval==1 or steps==num_steps:
-            chk_out.write(u_next, "/velocity", t)
+            chk_out.write(u_next, "/velocity", steps)
 
         # update solutions
         u_now.assign(u_next)
@@ -106,5 +107,5 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
     chk_out.close()
 
 if __name__ == "__main__":
-    NS_cylinder_firedrake()
-    input("Press Enter to end.")
+    NS_cylinder(0.01, 1, 1000, 100)
+    #input("Press Enter to end.")

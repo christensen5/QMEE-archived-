@@ -92,3 +92,6 @@ for steps in tqdm(range(num_steps)):
     u_now.assign(u_next)
     p_now.assign(p_next)
 
+
+print("yay")
+
