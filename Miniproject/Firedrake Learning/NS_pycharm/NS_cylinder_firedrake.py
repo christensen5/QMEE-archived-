@@ -16,6 +16,7 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
     #mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/Trot.msh")
     mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/rectcylinder.msh")
     V = VectorFunctionSpace(mesh, "P", 2)
+    V_xy = FunctionSpace(mesh, "P", 2)
     Q = FunctionSpace(mesh, "P", 1)
     u = TrialFunction(V)
     v = TestFunction(V)
@@ -77,8 +78,12 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
     prob3 = LinearVariationalProblem(a3, L3, u_next, bcs=bcu)
 
     # Prep for saving solutions
-    chk_out = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/velocity_fields.h5", file_mode='w')
-    chk_out.write(u_now, "/velocity", 0)  # save initial state
+    u_save = Function(V).assign(u_now)
+    p_save = Function(Q).assign(p_now)
+    outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/u.pvd")
+    outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/p.pvd")
+    outfile_u.write(u_save)
+    outfile_p.write(p_save)
 
     # Time loop
     t = 0.0
@@ -95,17 +100,19 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
 
         t += dt
 
+        # Save solutions and numpy velocity field arrays at appropriate timesteps
         if steps%save_interval==1 or steps==num_steps:
-            chk_out.write(u_next, "/velocity", steps)
+            u_save.assign(u_next)
+            p_save.assign(p_next)
+            outfile_u.write(u_save)
+            outfile_p.write(p_save)
+
 
         # update solutions
         u_now.assign(u_next)
         p_now.assign(p_next)
 
 
-    # Close file!
-    chk_out.close()
-
 if __name__ == "__main__":
-    NS_cylinder(0.01, 1, 1000, 100)
+    NS_cylinder(0.01, 60, 60000, 1000)
     #input("Press Enter to end.")
