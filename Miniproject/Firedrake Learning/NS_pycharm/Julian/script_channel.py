@@ -1,5 +1,5 @@
-from Julian import *
-from Julian.inc_navier_stokes import IncNavierStokes
+from incflow import *
+from incflow.inc_navier_stokes import IncNavierStokes
 from firedrake import *
 from tqdm import tqdm
 

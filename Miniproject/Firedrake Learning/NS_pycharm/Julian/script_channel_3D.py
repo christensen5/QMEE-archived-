@@ -1,5 +1,5 @@
-from Julian import *
-from Julian.inc_navier_stokes_3D import IncNavierStokes3D
+from incflow import *
+from incflow.inc_navier_stokes_3D import IncNavierStokes3D
 from firedrake import *
 from tqdm import tqdm
 
@@ -34,7 +34,5 @@ for steps in tqdm(range(num_steps)):
         outfile_u.write(u_sol)
         outfile_p.write(p_sol)
 
-    if steps==500:
-        input("Press enter to continue.")
 
 
