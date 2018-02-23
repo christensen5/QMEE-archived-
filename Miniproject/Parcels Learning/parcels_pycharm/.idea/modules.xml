@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/parcels_pycharm.iml" filepath="$PROJECT_DIR$/.idea/parcels_pycharm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../ParcelsDrake/parcelsdrake_pycharm/.idea/parcelsdrake_pycharm.iml" filepath="$PROJECT_DIR$/../../ParcelsDrake/parcelsdrake_pycharm/.idea/parcelsdrake_pycharm.iml" />
+    </modules>
+  </component>
+</project>
