@@ -23,7 +23,7 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
     q = TestFunction(Q)
     if u_init:
         u_now = Function(V)
-        chk_in = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/dump.h5", file_mode='r')
+        chk_in = checkpointing.HDF5File("/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outputs/NS_H/firedrake/dump.h5", file_mode='r')
         chk_in.read(u_now, "/velocity")
         chk_in.close()
     else:
@@ -32,7 +32,7 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
     u_star = Function(V)
     if p_init:
         p_now = Function(Q)
-        chk_in = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/dump.h5", file_mode='r')
+        chk_in = checkpointing.HDF5File("/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outputs/NS_H/firedrake/dump.h5", file_mode='r')
         chk_in.read(p_now, "/pressure")
         chk_in.close()
     else:
@@ -82,8 +82,8 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
     # Prep for saving solutions
     u_save = Function(V).assign(u_now)
     p_save = Function(Q).assign(p_now)
-    outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/u.pvd")
-    outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/p.pvd")
+    outfile_u = File("/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outputs/NS_H/firedrake/u.pvd")
+    outfile_p = File("/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outputs/NS_H/firedrake/p.pvd")
     outfile_u.write(u_save)
     outfile_p.write(p_save)
 
@@ -114,7 +114,7 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
     # If running in bootstrap mode, return the final solutions for u and p to be used as initial conditions for the next
     # run.
     if bootstrap:
-        chk_out = checkpointing.HDF5File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/firedrake/dump.h5", file_mode='w')
+        chk_out = checkpointing.HDF5File("/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outputs/NS_H/firedrake/dump.h5", file_mode='w')
         chk_out.write(u_now, "/velocity")
         chk_out.write(p_now, "/pressure")
         chk_out.close()

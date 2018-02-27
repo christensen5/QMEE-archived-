@@ -1,6 +1,7 @@
 import sys
 from firedrake import *
 import matplotlib.pyplot as plt
+import time
 from tqdm import tqdm  # progress bar
 
 
@@ -114,5 +115,8 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
 
 
 if __name__ == "__main__":
-    NS_cylinder(0.01, 60, 60000, 1000)
+    solver_params1 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}  # bgcs, hypre
+    solver_params2 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}
+    solver_params3 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}  # cg, sor
+    NS_cylinder(0.01, 60, 60000, 60000, False, False, False, solver_params1, solver_params2, solver_params3)
     #input("Press Enter to end.")

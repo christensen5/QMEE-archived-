@@ -11,9 +11,14 @@ dt = 0.01
 
 INS = IncNavierStokes(mesh, nu, rho, dt)
 W = INS.get_mixed_fs()
-u_bcs = [DirichletBC(W.sub(0), Constant((0.0, 0.0)), 15)]
-p_bcs = [DirichletBC(W.sub(1), Constant(8.0), 16),  # inflow pressure of 8
-           DirichletBC(W.sub(1), Constant(0.0), 17)]  # outflow pressure of 0
+#u_bcs = [DirichletBC(W.sub(0), Constant((0.0, 0.0)), 15)]
+#p_bcs = [DirichletBC(W.sub(1), Constant(8.0), 16),  # inflow pressure of 8
+#           DirichletBC(W.sub(1), Constant(0.0), 17)]  # outflow pressure of 0
+u_bcs = [DirichletBC(W.sub(0), Constant((0.0, 0.0)), 15),
+         DirichletBC(W.sub(0), Constant((0.0, 1.0)), 16),  # inflow velocity of (0,1)
+         DirichletBC(W.sub(0), Constant((0.0, 1.0)), 17)]  # outflow velocity of (0,1)
+p_bcs = [DirichletBC(W.sub(1), Constant(0.0), 17)]  # outflow pressure of 0
+
 INS.set_bcs(u_bcs, p_bcs)
 INS.setup_solver()
 
@@ -23,7 +28,7 @@ t_end = 30
 num_steps = int((t_end - t)/INS.dt)
 
 simstr = str(t_end) + "T_" + str(dt) + "dt_" + str(rho*nu) + "mu"
-folderstr = "/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_H/Julian/" + simstr
+folderstr = "/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outputs/NS_H/Julian/" + simstr + "_velBC"
 # if os.path.isdir(folderstr):  # Empty directory if already existing.
 #     shutil.rmtree(folderstr)
 #     os.mkdir(folderstr)
