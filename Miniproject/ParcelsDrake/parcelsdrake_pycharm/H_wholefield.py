@@ -38,7 +38,8 @@ def extract_field(u):
 
 
 # Lagrangian parcels setup
-num_particles = 10000
+num_particles = 10
+init_particles = 5
 lon = np.arange(0, 13.6-13.6/100, 13.6/100)
 lat = np.arange(0, 13.6-13.6/100, 13.6/100)
 u, p = INS.up.split()
@@ -76,7 +77,7 @@ replacefield = Field(name="replacefield_bar_entry", data=np.hstack((np.zeros((99
 pset = ParticleSet.from_field(fieldset=fieldset,
                               pclass=JITParticle,
                               start_field=pfield,
-                              size=500)
+                              size=init_particles)
 
 
 def DeleteParticle(particle, fieldset, time, dt):
@@ -85,8 +86,9 @@ def DeleteParticle(particle, fieldset, time, dt):
 
 # Time loop setup
 step = 0
-t = 0.0
-t_end = 720  # 120s vortex form + 600s particles
+t = 0
+t_add_particles = 60
+t_end = 120  # 120s vortex form + 600s particles
 parcels_interval = 1
 num_steps = int((t_end - t)/INS.dt)
 
@@ -101,26 +103,27 @@ for steps in tqdm(range(num_steps)):
 
     u_sol, p_sol = INS.step()
 
-    if (t >= 120.0) and (steps%parcels_interval == 0):
+    if (t >= t_add_particles) and (steps%parcels_interval == 0):
         if pset.size < num_particles:
             pset_replace = ParticleSet.from_field(fieldset=fieldset,
                                                   pclass=JITParticle,
                                                   start_field=replacefield,
-                                                  size=min(num_particles-pset.size, 500))
+                                                  size=min(num_particles-pset.size, 1))
             pset.add(pset_replace)
 
-        pset.show(savefile='/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H/animations/vortex_entry/img_barEntry_10000ps/particles'+str(steps).zfill(4), field=fieldset.U, vmin=-1.1, vmax=1.1, domain=[8.8, 10.8, 2.8, 10.8])
+        #pset.show(savefile='/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H/wholefield/animations/vortex_entry/img_barEntry_10000ps/particles'+str(steps).zfill(4), field=fieldset.U, vmin=-1.1, vmax=1.1)
+        pset.show(savefile='/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H/comparison/whole/whole' + str(steps).zfill(4), field=fieldset.U, vmin=-1.1, vmax=1.1)
 
         field_data = extract_field(u_sol)
         fieldset.advancetime(FieldSet.from_data(data={'U': field_data[:, :, 0], 'V': field_data[:, :, 1]}, dimensions={'lon': lon, 'lat': lat, 'time': np.array([t], float)},
                            transpose=False, mesh='flat'))
         pset.execute(AdvectionRK4,  # the kernel (which defines how particles move)
-                     runtime=timedelta(seconds=dt_NS*parcels_interval),  # the total length of the run
-                     dt=timedelta(seconds=dt_NS*parcels_interval),  # the timestep of the kernel
+                     runtime=timedelta(seconds=dt_NS * parcels_interval),  # the total length of the run
+                     dt=timedelta(seconds=dt_NS),  # the timestep of the kernel
                      recovery={ErrorCode.ErrorOutOfBounds: DeleteParticle})
-                     #moviedt=timedelta(seconds=dt_NS*parcels_interval),
-                     #movie_background_field=fieldset.V)
-                     #output_file=outfile_parcels)
+#                     moviedt=timedelta(seconds=dt_NS*parcels_interval),
+#                     movie_background_field=fieldset.V)
+#                     output_file=outfile_parcels)
 
 
 # #    if steps % 10 == 0:
