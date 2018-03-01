@@ -38,8 +38,9 @@ def extract_field(u):
 
 
 # Lagrangian parcels setup
-num_particles = 10
-init_particles = 5
+num_particles = 100
+init_particles = 500
+max_replace = 100
 lon = np.arange(0, 13.6-13.6/100, 13.6/100)
 lat = np.arange(0, 13.6-13.6/100, 13.6/100)
 u, p = INS.up.split()
@@ -56,9 +57,9 @@ fieldset = FieldSet.from_data(data={'U': field_data[:, :, 0], 'V': field_data[:,
 #pfield = Field(name="particlefield", data=np.vstack((np.concatenate(
 #    (np.zeros(2), np.repeat(1.0 / 40, 19), np.zeros(57), np.repeat(1.0 / 40, 19), np.zeros(2))), np.zeros((98, 99)))),
 #                     lon=lon, lat=lat)  # Uniform dist along bottom boundary
-#replacefield = Field(name="replacefield", data=np.vstack((np.concatenate(
-#    (np.zeros(20), np.repeat(0.1, 3), np.zeros(54), np.repeat(0.1, 2), np.zeros(20))), np.zeros((98, 99)))),
-#                     lon=lon, lat=lat)
+replacefield = Field(name="replacefield", data=np.vstack((np.concatenate(
+    (np.zeros(20), np.repeat(0.1, 3), np.zeros(54), np.repeat(0.1, 2), np.zeros(20))), np.zeros((98, 99)))),
+                     lon=lon, lat=lat)
 pfield = Field(name="particlefield", data=np.hstack((np.zeros((99, 22)),
                                                      np.vstack((np.zeros((36, 1)), np.repeat(1/34, 27).reshape(27, 1), np.zeros((36, 1)))),
                                                      np.zeros((99, 53)),
@@ -66,16 +67,16 @@ pfield = Field(name="particlefield", data=np.hstack((np.zeros((99, 22)),
                                                      np.zeros((99, 22)))),
                lon=lon,
                lat=lat)
-replacefield = Field(name="replacefield_bar_entry", data=np.hstack((np.zeros((99, 22)),
-                                                     np.vstack((np.zeros((36, 1)), np.repeat(1/34, 27).reshape(27, 1), np.zeros((36, 1)))),
-                                                     np.zeros((99, 53)),
-                                                     np.vstack((np.zeros((36, 1)), np.repeat(1/34, 27).reshape(27, 1), np.zeros((36, 1)))),
-                                                     np.zeros((99, 22)))),
-                     lon=lon,
-                     lat=lat)
+# replacefield = Field(name="replacefield_bar_entry", data=np.hstack((np.zeros((99, 22)),
+#                                                      np.vstack((np.zeros((36, 1)), np.repeat(1/34, 27).reshape(27, 1), np.zeros((36, 1)))),
+#                                                      np.zeros((99, 53)),
+#                                                      np.vstack((np.zeros((36, 1)), np.repeat(1/34, 27).reshape(27, 1), np.zeros((36, 1)))),
+#                                                      np.zeros((99, 22)))),
+#                      lon=lon,
+#                      lat=lat)
 
 pset = ParticleSet.from_field(fieldset=fieldset,
-                              pclass=JITParticle,
+                              pclass=ScipyParticle,
                               start_field=pfield,
                               size=init_particles)
 
@@ -85,7 +86,6 @@ def DeleteParticle(particle, fieldset, time, dt):
 
 
 # Time loop setup
-step = 0
 t = 0
 t_add_particles = 60
 t_end = 120  # 120s vortex form + 600s particles
@@ -106,13 +106,13 @@ for steps in tqdm(range(num_steps)):
     if (t >= t_add_particles) and (steps%parcels_interval == 0):
         if pset.size < num_particles:
             pset_replace = ParticleSet.from_field(fieldset=fieldset,
-                                                  pclass=JITParticle,
+                                                  pclass=ScipyParticle,
                                                   start_field=replacefield,
-                                                  size=min(num_particles-pset.size, 1))
+                                                  size=min(num_particles-pset.size, max_replace))
             pset.add(pset_replace)
 
         #pset.show(savefile='/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H/wholefield/animations/vortex_entry/img_barEntry_10000ps/particles'+str(steps).zfill(4), field=fieldset.U, vmin=-1.1, vmax=1.1)
-        pset.show(savefile='/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H/comparison/whole/whole' + str(steps).zfill(4), field=fieldset.U, vmin=-1.1, vmax=1.1)
+        #pset.show(savefile='/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H/comparison/whole/whole' + str(steps).zfill(4), field=fieldset.U, vmin=-1.1, vmax=1.1)
 
         field_data = extract_field(u_sol)
         fieldset.advancetime(FieldSet.from_data(data={'U': field_data[:, :, 0], 'V': field_data[:, :, 1]}, dimensions={'lon': lon, 'lat': lat, 'time': np.array([t], float)},

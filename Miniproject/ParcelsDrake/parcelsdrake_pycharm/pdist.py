@@ -12,12 +12,14 @@ def uniform_H_Dist(grid):
     if not grid.xdim==grid.ydim:
         raise ValueError('Grid is not square. Non-square grids not yet supported!')
 
-    grid_res = grid.xdim
+    grid_dim = grid.xdim
 
-    dist_array = np.ones((grid_res, grid_res))
-    for row in range(grid_res):
-        for col in range(grid_res):
-            if (row <= (2.8/13.6)*grid_res or row >= (8.8/13.6)*grid_res) and ((4.8/13.6)*grid_res <= col <= (10.8/13.6)*grid_res):
-                dist_array[row, col] = 0
+    dist_array = np.zeros((grid_dim, grid_dim))
+    for row in range(grid_dim):
+        for col in range(grid_dim):
+            if col < (2.8/13.6)*grid_dim or col > (10.8/13.6)*grid_dim:
+                dist_array[row, col] = 1
+            elif ((4.8/13.6)*grid_dim < row < (8.8/13.6)*grid_dim):
+                dist_array[row, col] = 1
 
     return dist_array
