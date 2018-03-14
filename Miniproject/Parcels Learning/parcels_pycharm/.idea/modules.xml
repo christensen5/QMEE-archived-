@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/parcels_pycharm.iml" filepath="$PROJECT_DIR$/.idea/parcels_pycharm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../ParcelsDrake/parcelsdrake_pycharm/.idea/parcelsdrake_pycharm.iml" filepath="$PROJECT_DIR$/../../ParcelsDrake/parcelsdrake_pycharm/.idea/parcelsdrake_pycharm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../ParcelsDrake/parcelsdrake_experiment/.idea/parcelsdrake_experiments.iml" filepath="$PROJECT_DIR$/../../ParcelsDrake/parcelsdrake_experiment/.idea/parcelsdrake_experiments.iml" />
     </modules>
   </component>
 </project>

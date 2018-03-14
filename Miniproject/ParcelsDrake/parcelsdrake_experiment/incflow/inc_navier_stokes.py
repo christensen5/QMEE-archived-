@@ -4,7 +4,7 @@ from six.moves import map, range
 from firedrake import (Constant, Function, FunctionSpace, interpolate,
                        NonlinearVariationalProblem, NonlinearVariationalSolver, TestFunctions,
                        VectorFunctionSpace, div, nabla_grad, dot, dx, grad, inner, VectorSpaceBasis,
-                       CellVolume, split, MixedVectorSpaceBasis, as_vector, sqrt)
+                       CellVolume, split, MixedVectorSpaceBasis, as_vector, sqrt, checkpointing)
 from .util import *
 
 
@@ -40,13 +40,21 @@ class IncNavierStokes(object):
             self.solver_parameters["snes_monitor"] = True
             self.solver_parameters["ksp_converged_reason"] = True
 
-    def setup_solver(self):
+    def setup_solver(self, up_init=None):
         """ Setup the solvers
         """
         self.up0 = Function(self.W)
+        if up_init is not None:
+            chk_in = checkpointing.HDF5File(up_init, file_mode='r')
+            chk_in.read(self.up0, "/up")
+            chk_in.close()
         self.u0, self.p0 = split(self.up0)
 
         self.up = Function(self.W)
+        if up_init is not None:
+            chk_in = checkpointing.HDF5File(up_init, file_mode='r')
+            chk_in.read(self.up, "/up")
+            chk_in.close()
         self.u1, self.p1 = split(self.up)
 
         self.up.sub(0).rename("velocity")

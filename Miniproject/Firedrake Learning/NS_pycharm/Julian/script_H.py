@@ -6,8 +6,8 @@ from tqdm import tqdm
 
 mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/H.msh")
 rho = 1
-nu = 0.01
-dt = 0.01
+nu = 0.001
+dt = 0.1
 
 INS = IncNavierStokes(mesh, nu, rho, dt)
 W = INS.get_mixed_fs()
@@ -24,10 +24,10 @@ INS.setup_solver()
 
 step = 0
 t = 0.0
-t_end = 30
+t_end = 60
 num_steps = int((t_end - t)/INS.dt)
 
-simstr = str(t_end) + "T_" + str(dt) + "dt_" + str(rho*nu) + "mu"
+simstr = str(t) + "Ti_" + str(t_end) + "Tf_" + str(dt) + "dt_" + str(rho*nu) + "mu"
 folderstr = "/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outputs/NS_H/Julian/" + simstr + "_velBC"
 # if os.path.isdir(folderstr):  # Empty directory if already existing.
 #     shutil.rmtree(folderstr)
@@ -46,8 +46,10 @@ for steps in tqdm(range(num_steps)):
 
 
 # Checkpoint final state.
-chk_out = checkpointing.HDF5File(folderstr + "/final.h5", file_mode='w')
+chk_out = checkpointing.HDF5File(folderstr + "/60s_0.001mu_H.h5", file_mode='w')
 chk_out.write(u_sol, "/velocity")
 chk_out.write(p_sol, "/pressure")
+chk_out.write(INS.up, "/up")
+chk_out.write(t, "/t")
 chk_out.close()
 

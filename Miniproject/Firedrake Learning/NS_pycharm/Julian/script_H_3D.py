@@ -22,10 +22,10 @@ up_init_path = "/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outp
 INS.setup_solver(up_init=up_init_path)
 
 step = 0
-t = 0
+t = 30
 t_end = 60
 num_steps = int((t_end - t)/INS.dt)
-folderstr = str(t) + "Ti_" + str(t_end) + "Tf_" + str(dt) + "dt_" + str(rho*nu) + "mu" + "_velBCs5"
+folderstr = str(t) + "Ti_" + str(t_end) + "Tf_" + str(dt) + "dt_" + str(rho*nu) + "mu" + "_velBCs"
 outfile_u = File("/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outputs/NS_H_3D/Julian/" + folderstr + "/u.pvd")
 #outfile_p = File("/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outputs/NS_H_3D/Julian/" + folderstr + "/p.pvd")
 
