@@ -62,7 +62,7 @@ fieldset = FieldSet(U=Ufield_init, V=Vfield_init)
 class FiredrakeParticle(JITParticle):
     u = Variable('u', dtype=np.float32, initial=0.)
     v = Variable('v', dtype=np.float32, initial=0.)
-    
+
 
 pfield_init = Field(name='pfield_init', data=uniform_H_Dist(grid), grid=grid)
 pfield_replace = Field(name='pfield_replace', data=uniform_H_Dist(grid), grid=grid)
