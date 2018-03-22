@@ -31,21 +31,19 @@ nu = 0.01
 dt_NS = 0.1
 INS = IncNavierStokes3D(mesh_NS, nu, rho, dt_NS)
 W = INS.get_mixed_fs()
-u_bcs = [DirichletBC(W.sub(0), Constant((0.0, 0.0, 0.0)), 70),
-         DirichletBC(W.sub(0), Constant((0.0, 1.0, 0.0)), 68),  # inflow velocity of (0, 1, 0)
-         DirichletBC(W.sub(0), Constant((0.0, 1.0, 0.0)), 69)]  # outflow velocity of (0, 1, 0)
-p_bcs = [DirichletBC(W.sub(1), Constant(0.0), 69)]  # outflow pressure of 0
-INS.set_bcs(u_bcs, p_bcs)
-#up_init_path = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/inputs/0Ti_30Tf_0.1dt_0.01mu_velBCs.h5"
-INS.setup_solver()#up_init=up_init_path)
-u_sol, p_sol = INS.up.split()
+up_sol = Function(W)
+path_to_fields = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/inputs/Hmixed/data1/0Ti_0.5dt_0.01mu/"
+chk_in = checkpointing.HDF5File(path_to_fields + "init.h5", file_mode='r')
+chk_in.read(up_sol, "/up")
+chk_in.close()
+u_sol, p_sol = up_sol.split()
 
 
 # Lagrangian parcels setup
 B_val = float(0)
 Swim_val = 1  # REMOVE ONCE RANDOMISED WITHIN FIREDRAKEPARTICLE CLASS
 num_particles = 500
-init_particles = 50000
+init_particles = 5000
 max_replace = 50
 repeat_particles = 100
 grid_res = 100
@@ -116,18 +114,17 @@ def Gyrotaxis(particle, fieldset, time, dt):  # Gyrotactically-determined alignm
 # Time loop setup
 t = 0
 t_add_particles = 0
-t_end = 1
+t_end = 600
 parcels_interval = 1
-num_steps = int((t_end - t)/INS.dt)
+num_steps = int((t_end - t)/dt_NS)
 folderstr = str(t) + "Ti_" + str(t_end) + "Tf_" + str(dt_NS) + "dt_" + str(rho*nu) + "mu"
-outfile_u = File("/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/particlespot/" + folderstr + "/u.pvd")
-outfile_particles = pset.ParticleFile(name="/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/particlespot/" + folderstr + "/turbulence_test", outputdt=timedelta(seconds=dt_NS))#, type='indexed')
+outfile_u = File("/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/particlespot/offline/" + folderstr + "/u.pvd")
+outfile_particles = pset.ParticleFile(name="/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/particlespot/offline/" + folderstr + "/turbulence_test", outputdt=timedelta(seconds=dt_NS))#, type='indexed')
 for steps in tqdm(range(num_steps)):
     t += dt_NS
 
-    # Update firedrake solution
-    u_sol, p_sol = INS.step()
-    u_vort = curl(u_sol)
+    # Load next firedrake field
+    chk_in = "filepath here"
 
     # Checkpoint final pre-particle state
     # if t - t_add_particles < 1e-8:
@@ -162,7 +159,7 @@ for steps in tqdm(range(num_steps)):
                 continue
 
         # Update particle positions
-        pset.execute(Gyrotaxis,  # the kernel (which defines how particles move)
+        pset.execute(AdvectionEE_firedrake_3D,  # the kernel (which defines how particles move)
                      runtime=timedelta(seconds=dt_NS * parcels_interval),  # the total length of the run
                      dt=timedelta(seconds=dt_NS),  # the timestep of the kernel
                      recovery={ErrorCode.ErrorOutOfBounds: DeleteParticle},
