@@ -7,7 +7,7 @@ from parcels import *
 from tqdm import tqdm
 
 from incflow.inc_navier_stokes_3D import IncNavierStokes3D
-from pdist import uniform_H_Dist
+from pdist import uniform_H_Dist, uniform_H_bar_entry_dist
 
 def extract_field_3D(u, grid_start, grid_end, grid_incr, depth):
     lon = np.arange(grid_start, grid_end, grid_incr)
@@ -32,7 +32,7 @@ dt_NS = 0.1
 INS = IncNavierStokes3D(mesh_NS, nu, rho, dt_NS)
 W = INS.get_mixed_fs()
 up_sol = Function(W)
-path_to_fields = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/inputs/Hmixed/data1/0Ti_0.5dt_0.01mu/"
+path_to_fields = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/inputs/Hmixed/data1/0Ti_0.5dt_0.01mu/0-414s/"
 chk_in = checkpointing.HDF5File(path_to_fields + "init.h5", file_mode='r')
 chk_in.read(up_sol, "/up")
 chk_in.close()
@@ -43,7 +43,7 @@ u_sol, p_sol = up_sol.split()
 B_val = float(0)
 Swim_val = 1  # REMOVE ONCE RANDOMISED WITHIN FIREDRAKEPARTICLE CLASS
 num_particles = 500
-init_particles = 5000
+init_particles = 1000
 max_replace = 50
 repeat_particles = 100
 grid_res = 100
@@ -79,12 +79,18 @@ class MotileParticle3D(JITParticle):
     v_swim = Variable('v_swim', dtype=np.float32, initial=Swim_val)  # RANDOMISE INITIAL VALUE
 
 repeatdt = 0.5
+# pset = ParticleSet(fieldset=fieldset, pclass=FiredrakeParticle3D, lon=np.repeat(2.8, repeat_particles), lat=np.linspace(4.8, 8.8, repeat_particles), depth=np.repeat(1.4, repeat_particles))#, repeatdt=repeatdt)
 pfield_uniform = Field(name='pfield_uniform', data=uniform_H_Dist(grid), transpose=False, grid=grid)
-#pset = ParticleSet(fieldset=fieldset, pclass=FiredrakeParticle3D, lon=np.repeat(2.8, repeat_particles), lat=np.linspace(4.8, 8.8, repeat_particles), depth=np.repeat(1.4, repeat_particles))#, repeatdt=repeatdt)
+# pset = ParticleSet.from_field(fieldset=fieldset,
+#                               pclass=FiredrakeParticle3D,
+#                               start_field=pfield_uniform,
+#                               depth=np.random.rand(init_particles) * depth,
+#                               size=init_particles)
+pfield_Hbar_entry = Field(name='pfield_Hbar_entry', data=uniform_H_bar_entry_dist(grid), transpose=False, grid=grid)
 pset = ParticleSet.from_field(fieldset=fieldset,
                               pclass=FiredrakeParticle3D,
-                              start_field=pfield_uniform,
-                              depth=np.random.rand(init_particles) * depth,
+                              start_field=pfield_Hbar_entry,
+                              depth=np.linspace(0, depth, init_particles),
                               size=init_particles)
 
 
