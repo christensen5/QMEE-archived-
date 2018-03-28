@@ -9,6 +9,7 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
 
     # Hard constants
     density = 1
+    nu = 0.001
     dt = T / num_steps  # time step size
     if save_interval == "firstlast":
         save_interval = num_steps-2
@@ -16,9 +17,8 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
     # Mesh, function spaces and functions
     #mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/Trot.msh")
     mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/rectcylinder.msh")
-    V = VectorFunctionSpace(mesh, "P", 2)
-    V_xy = FunctionSpace(mesh, "P", 2)
-    Q = FunctionSpace(mesh, "P", 1)
+    V = VectorFunctionSpace(mesh, "DG", 2)
+    Q = FunctionSpace(mesh, "DG", 1)
     u = TrialFunction(V)
     v = TestFunction(V)
     p = TrialFunction(Q)
@@ -45,11 +45,14 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
     # Expressions for the variational forms
     n = FacetNormal(mesh)
     f = Constant((0.0, 0.0))
-    k = Constant(dt)
+    dt = Constant(dt)
     mu = Constant(viscosity)
+    nu = Constant(nu)
     rho = Constant(density)
     u_mid = 0.5*(u_now + u)
-    def sigma(u, p):
+    def epsilon(u):  # strain-rate tensor
+        return sym(nabla_grad(u))
+    def sigma(u, p):  # stress tensor
         return 2*mu*sym(nabla_grad(u)) - p*Identity(len(u))
 
     # Define boundary conditions
@@ -57,21 +60,45 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
     bcp = [DirichletBC(Q, Constant(8.0), 2),  # inflow pressure of 8
            DirichletBC(Q, Constant(0.0), 3)]  # outflow pressure of 0
 
+    # Define SU/PG weighting function
+    def my_norm(u):
+        return sqrt(dot(u, u))
+    h = CellVolume(mesh)
+    c = inner(rho * dot(u, nabla_grad(u)), v) * dx
+    c_tilde = inner(dot(u, nabla_grad(v)), rho * (u - u_now) / dt) * dx
+    k_tilde = inner(dot(u, nabla_grad(v)), rho * dot(u, nabla_grad(u))) * dx
+    Re = dot(u, u) * norm(c) / (nu * norm(k_tilde))
+    r = 2
+    tau = ((norm(k_tilde)/norm(c))**r \
+           + ((2 * norm(c_tilde))/(dt * norm(c)))**r \
+           + (norm(k_tilde)/(norm(c)))**r) \
+          **(-1/r)
+#    v_upwind = (h / (2 * my_norm(u))) * max(1, my_norm(u) * h / (2 * 3 * nu)) * dot(u, nabla_grad(v))
+    v_upwind = tau * dot(u, nabla_grad(v))
+
     # Define variational forms
-    F1 = inner(rho*(u - u_now)/k, v) * dx \
+    F1 = inner(rho*(u - u_now)/dt, v) * dx \
         + inner(dot(rho*u_now, nabla_grad(u_now)), v) * dx \
-        + inner(sigma(u_mid, p_now), sym(nabla_grad(v))) * dx \
+        + inner(sigma(u_mid, p_now), epsilon(v)) * dx \
         + inner(p_now * n, v) * ds \
         - inner(mu * dot(nabla_grad(u_mid), n), v) * ds \
         - inner(f, v) * dx
+
+    # SU/PG terms
+    F1 += inner(rho*(u - u_now)/dt, v_upwind) * dx \
+        + inner(dot(rho*u_now, nabla_grad(u_now)), v_upwind) * dx \
+        + inner(sigma(u_mid, p_now), epsilon(v_upwind)) * dx \
+        - inner(p_now * n, v_upwind) * ds \
+        - inner(mu * dot(nabla_grad(u_mid), n), v_upwind) * ds
+
     a1, L1 = system(F1)
     a2 = inner(nabla_grad(p), nabla_grad(q)) * dx
     L2 = inner(nabla_grad(p_now), nabla_grad(q)) * dx \
-        - (1/k) * inner(div(u_star), q) * dx
+        - (1/dt) * inner(div(u_star), q) * dx
 
     a3 = inner(u, v) * dx
     L3 = inner(u_star, v) * dx \
-         - k * inner(nabla_grad(p_next - p_now), v) * dx
+         - dt * inner(nabla_grad(p_next - p_now), v) * dx
 
     # Define linear problems
     prob1 = LinearVariationalProblem(a1, L1, u_star, bcs=bcu)
@@ -81,8 +108,8 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
     # Prep for saving solutions
     u_save = Function(V).assign(u_now)
     p_save = Function(Q).assign(p_now)
-    outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/u.pvd")
-    outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/p.pvd")
+    outfile_u = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/SUPG/u.pvd")
+    outfile_p = File("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/NS_tutorial_saves/NS_cylinder/firedrake/SUPG/p.pvd")
     outfile_u.write(u_save)
     outfile_p.write(p_save)
 
@@ -118,5 +145,5 @@ if __name__ == "__main__":
     solver_params1 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}  # bgcs, hypre
     solver_params2 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}
     solver_params3 = {'ksp_type': 'bcgs', 'pc_type': 'hypre'}  # cg, sor
-    NS_cylinder(0.01, 60, 60000, 60000, False, False, False, solver_params1, solver_params2, solver_params3)
+    NS_cylinder(0.001, 60, 120, 1, False, False, solver_params1, solver_params2, solver_params3)
     #input("Press Enter to end.")

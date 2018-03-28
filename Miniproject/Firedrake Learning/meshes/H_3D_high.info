@@ -1,0 +1,16 @@
+H_3D_high statistics:
+
+  Input points: 7625
+  Input facets: 15246
+  Input segments: 22869
+  Input holes: 0
+  Input regions: 0
+
+  Mesh points: 7625
+  Mesh tetrahedra: 23499
+  Mesh faces: 54621
+  Mesh edges: 38746
+  Mesh faces on facets: 15246
+  Mesh edges on segments: 22869
+
+

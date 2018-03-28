@@ -13,7 +13,6 @@ def NS_H_firedrake(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_i
         save_interval = num_steps-2
 
     # Mesh, function spaces and functions
-    #mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/Trot.msh")
     mesh = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/H.msh")
     V = VectorFunctionSpace(mesh, "P", 2)
     Q = FunctionSpace(mesh, "P", 1)
