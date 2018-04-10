@@ -18,7 +18,7 @@ u_bcs = [DirichletBC(W.sub(0), Constant((0.0, 0.0, 0.0)), 70),
          DirichletBC(W.sub(0), Constant((0.0, 1.0, 0.0)), 69)]  # outflow velocity of (0, 1, 0)
 p_bcs = [DirichletBC(W.sub(1), Constant(0.0), 69)]  # outflow pressure of 0
 INS.set_bcs(u_bcs, p_bcs)
-#up_init_path = "/media/alexander/DATA/Ubuntu/Miniproject/Firedrake Learning/outputs/NS_H_3D/Julian/0Ti_30Tf_0.1dt_0.01mu_velBCs/final.h5"
+#up_init_path = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/inputs/Hmixed/data1/0.5dt_0.01mu/h5/u_func_01437.h5"
 INS.setup_solver()#up_init=up_init_path)
 
 step = 0
@@ -37,6 +37,7 @@ for steps in tqdm(range(num_steps)):
     if steps % 10 == 0:
         outfile_u.write(u_sol)
         #outfile_p.write(p_sol)
+
 
 
 # Checkpoint final state.

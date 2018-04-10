@@ -61,20 +61,9 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
            DirichletBC(Q, Constant(0.0), 3)]  # outflow pressure of 0
 
     # Define SU/PG weighting function
-    def my_norm(u):
-        return sqrt(dot(u, u))
+    u_norm = sqrt(dot(u, u))
     h = CellVolume(mesh)
-    c = inner(rho * dot(u, nabla_grad(u)), v) * dx
-    c_tilde = inner(dot(u, nabla_grad(v)), rho * (u - u_now) / dt) * dx
-    k_tilde = inner(dot(u, nabla_grad(v)), rho * dot(u, nabla_grad(u))) * dx
-    Re = dot(u, u) * norm(c) / (nu * norm(k_tilde))
-    r = 2
-    tau = ((norm(k_tilde)/norm(c))**r \
-           + ((2 * norm(c_tilde))/(dt * norm(c)))**r \
-           + (norm(k_tilde)/(norm(c)))**r) \
-          **(-1/r)
-#    v_upwind = (h / (2 * my_norm(u))) * max(1, my_norm(u) * h / (2 * 3 * nu)) * dot(u, nabla_grad(v))
-    v_upwind = tau * dot(u, nabla_grad(v))
+    tau = (h / (2 * u_norm)) * (u_norm * h / (2 * nu))
 
     # Define variational forms
     F1 = inner(rho*(u - u_now)/dt, v) * dx \
@@ -85,13 +74,14 @@ def NS_cylinder(viscosity=0.001, T=0.5, num_steps=5000, save_interval=50, u_init
         - inner(f, v) * dx
 
     # SU/PG terms
-    F1 += inner(rho*(u - u_now)/dt, v_upwind) * dx \
-        + inner(dot(rho*u_now, nabla_grad(u_now)), v_upwind) * dx \
-        + inner(sigma(u_mid, p_now), epsilon(v_upwind)) * dx \
-        - inner(p_now * n, v_upwind) * ds \
-        - inner(mu * dot(nabla_grad(u_mid), n), v_upwind) * ds
+    F1 += tau * (inner(rho*(u - u_now)/dt, dot(u, nabla_grad(v))) * dx \
+        + inner(dot(rho*u_now, nabla_grad(u_now)), dot(u, nabla_grad(v))) * dx \
+        + inner(sigma(u_mid, p_now), epsilon(dot(u, nabla_grad(v)))) * dx \
+        - inner(p_now * n, dot(u, nabla_grad(v))) * ds \
+        - inner(mu * dot(nabla_grad(u_mid), n), dot(u, nabla_grad(v))) * ds)
 
     a1, L1 = system(F1)
+
     a2 = inner(nabla_grad(p), nabla_grad(q)) * dx
     L2 = inner(nabla_grad(p_now), nabla_grad(q)) * dx \
         - (1/dt) * inner(div(u_star), q) * dx
