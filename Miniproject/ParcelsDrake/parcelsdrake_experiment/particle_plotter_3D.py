@@ -44,15 +44,14 @@ art3d.pathpatch_2d_to_3d(p3_z, z=2.8, zdir="y")
 art3d.pathpatch_2d_to_3d(p_top, z=4.8, zdir="z")
 art3d.pathpatch_2d_to_3d(p_bottom, z=8.8, zdir="z")
 
-random_particles = [1, 2]  # np.random.random_integers(0, 1000, 100)
+random_particles = np.random.random_integers(0, 1000, 1000)
 
 for particle in random_particles:
-    #if not np.ma.is_masked(nc.variables["lon"][particle]):
-    x = nc.variables["lon"][particle]
-    y = nc.variables["z"][particle]
-    z = nc.variables["lat"][particle]
+    if not np.ma.is_masked(nc.variables["lon"][particle]):
+        x = nc.variables["lon"][particle]
+        y = nc.variables["z"][particle]
+        z = nc.variables["lat"][particle]
 
-        #plot = ax.scatter(x, y, z, c=z, s=20, marker="o")
-    plot = ax.plot(x, y, z, 'o-', linewidth=0.5, markersize=1.0)
+        plot = ax.plot(x, y, z, 'o-', linewidth=0.5, markersize=1.0)
 
 plt.show()
