@@ -7,7 +7,7 @@ from firedrake import *
 from parcels import *
 
 from incflow.inc_navier_stokes_3D import IncNavierStokes3D
-from pdist import uniform_H_Dist, uniform_H_bar_entry_dist
+from pdist import uniform_H_dist, uniform_H_bar_entry_dist
 
 def extract_field_3D(u, grid_start, grid_end, grid_incr, depth):
     lon = np.arange(grid_start, grid_end, grid_incr)
@@ -40,7 +40,7 @@ u_sol, p_sol = up_sol.split()
 
 
 # Lagrangian parcels setup
-init_particles = 70000
+init_particles = 1000
 grid_res = 100
 grid_start = 0
 grid_end = 13.6
@@ -60,7 +60,7 @@ class FiredrakeParticle3D(JITParticle):
     w = Variable('w', dtype=np.float32, initial=0.)
 
 
-# pfield_uniform = Field(name='pfield_uniform', data=uniform_H_Dist(grid), transpose=False, grid=grid)
+# pfield_uniform = Field(name='pfield_uniform', data=uniform_H_dist(grid), transpose=False, grid=grid)
 # pset = ParticleSet.from_field(fieldset=fieldset,
 #                               pclass=FiredrakeParticle3D,
 #                               start_field=pfield_uniform,
@@ -81,7 +81,7 @@ def DeleteParticle(particle, fieldset, time, dt):  # delete particles who run ou
 # Time loop setup
 t = 0
 t_add_particles = 60
-t_end = 62
+t_end = 65
 parcels_interval = 1
 num_steps = int((t_end - t)/dt_NS)
 

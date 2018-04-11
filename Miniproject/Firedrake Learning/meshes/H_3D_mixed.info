@@ -1,0 +1,14 @@
+Statistics:
+
+  Input points: 4830
+  Input facets: 9656
+  Input segments: 14484
+  Input holes: 0
+  Input regions: 0
+
+  Mesh points: 4830
+  Mesh tetrahedra: 14694
+  Mesh faces: 34216
+  Mesh edges: 24351
+  Mesh faces on facets: 9656
+  Mesh edges on segments: 14484

@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def uniform_H_Dist(grid):
+def uniform_H_dist(grid):
     """Produce a uniform distribution over the entire H (zero values on rest of grid).
 
     :param grid: Grid on which to define distribution.
@@ -20,6 +20,28 @@ def uniform_H_Dist(grid):
             if col < (2.8/13.6)*grid_dim or col > (10.8/13.6)*grid_dim:
                 dist_array[row, col] = 1
             elif ((4.8/13.6)*grid_dim < row < (8.8/13.6)*grid_dim):
+                dist_array[row, col] = 1
+
+    return dist_array
+
+
+def uniform_H_bar_dist(grid):
+    """Produce a uniform distribution over the H bar (zero values on rest of grid).
+
+    :param grid: Grid on which to define distribution.
+
+    :returns dist_array: numpy array containing the distribution
+    """
+
+    if not grid.xdim==grid.ydim:
+        raise ValueError('Grid is not square. Non-square grids not yet supported!')
+
+    grid_dim = grid.xdim
+
+    dist_array = np.zeros((grid_dim, grid_dim))
+    for row in range(grid_dim):
+        for col in range(grid_dim):
+            if (2.8/13.6)*grid_dim < col < (10.8/13.6)*grid_dim and ((4.8/13.6)*grid_dim < row < (8.8/13.6)*grid_dim):
                 dist_array[row, col] = 1
 
     return dist_array

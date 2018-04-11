@@ -8,9 +8,10 @@ from parcels import *
 from tqdm import tqdm
 
 from incflow.inc_navier_stokes_3D import IncNavierStokes3D
-from pdist import uniform_H_Dist, uniform_H_bar_entry_dist
+from pdist import uniform_H_dist, uniform_H_bar_dist, uniform_H_bar_entry_dist
 
 def extract_field_3D(u, grid_start, grid_end, grid_incr, depth):
+    """ Produce a discrete velocity field (discretised according to the provided grid) from firedrake field u """
     lon = np.arange(grid_start, grid_end, grid_incr)
     lat = np.arange(grid_start, grid_end, grid_incr)
     dep = np.arange(0, depth, grid_incr)
@@ -25,8 +26,10 @@ def extract_field_3D(u, grid_start, grid_end, grid_incr, depth):
     return u_field
 
 
+
 # Navier-Stokes firedrake setup
 mesh_NS = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/H_3D_mixed.msh")
+#mesh_NS = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/H_3D_high.msh")
 rho = 1
 nu = 0.01
 dt_NS = 0.5
@@ -34,6 +37,7 @@ INS = IncNavierStokes3D(mesh_NS, nu, rho, dt_NS)
 W = INS.get_mixed_fs()
 up_sol = Function(W)
 path_to_fields = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/inputs/Hmixed/data1/0.5dt_0.01mu/h5/"
+#path_to_fields = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/inputs/Hhigh/data1h/0.5dt_0.01mu/h5/"
 chk_in = checkpointing.HDF5File(path_to_fields + "u_func_00001.h5", file_mode='r')
 chk_in.read(up_sol, "/up")
 chk_in.close()
@@ -44,7 +48,7 @@ u_sol, p_sol = up_sol.split()
 B_val = float(2.0)
 Swim_val = 1  # REMOVE ONCE RANDOMISED WITHIN FIREDRAKEPARTICLE CLASS
 num_particles = 500
-init_particles = 70000
+init_particles = 2000
 max_replace = 50
 repeat_particles = 100
 grid_res = 100
@@ -80,18 +84,25 @@ class MotileParticle3D(JITParticle):
     v_swim = Variable('v_swim', dtype=np.float32, initial=Swim_val)  # RANDOMISE INITIAL VALUE
 
 
-#pfield_uniform = Field(name='pfield_uniform', data=uniform_H_Dist(grid), transpose=False, grid=grid)
+# pfield_uniform = Field(name='pfield_uniform', data=uniform_H_dist(grid), transpose=False, grid=grid)
 # pset = ParticleSet.from_field(fieldset=fieldset,
 #                               pclass=FiredrakeParticle3D,
 #                               start_field=pfield_uniform,
 #                               depth=np.random.rand(init_particles) * depth,
 #                               size=init_particles)
-pfield_Hbar_entry = Field(name='pfield_Hbar_entry', data=uniform_H_bar_entry_dist(grid), transpose=False, grid=grid)
+pfield_Hbar_uniform = Field(name='pfield_Hbar_uniform', data=uniform_H_bar_dist(grid), transpose=False, grid=grid)
 pset = ParticleSet.from_field(fieldset=fieldset,
                               pclass=FiredrakeParticle3D,
-                              start_field=pfield_Hbar_entry,
-                              depth=np.linspace(0, depth, init_particles),
+                              start_field=pfield_Hbar_uniform,
+                              depth=np.random.rand(init_particles) * depth,
                               size=init_particles)
+# pfield_Hbar_entry = Field(name='pfield_Hbar_entry', data=uniform_H_bar_entry_dist(grid), transpose=False, grid=grid)
+# pset = ParticleSet.from_field(fieldset=fieldset,
+#                               pclass=FiredrakeParticle3D,
+#                               start_field=pfield_Hbar_entry,
+#                               depth=np.linspace(0, depth, init_particles),
+#                               size=init_particles)
+
 
 # Custom Parcels kernels
 def DeleteParticle(particle, fieldset, time, dt):  # delete particles who run out of bounds.
@@ -117,13 +128,15 @@ def Gyrotaxis(particle, fieldset, time, dt):  # Gyrotactically-determined alignm
 
 # Time loop setup
 removals = 0
+removals_low = 0
 removed = set()
 t = 0
-t_add_particles = 60
-t_end = 62
+t_add_particles = 300
+t_end = 420
 parcels_interval = 1
 num_steps = int((t_end - t)/dt_NS)
-outpath = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/particlespot/offline/"
+outpath = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/Hmixed/particlespot/offline/"
+#outpath = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/Hhigh/particlespot/offline/"
 folderstr = str(t) + "Ti_" + str(t_end) + "Tf_" + str(dt_NS) + "dt_" + str(rho*nu) + "mu_" + str(init_particles) + "particles" + "/durham_sim"
 if not os.path.isdir(outpath+folderstr):
     os.makedirs(outpath+folderstr)
@@ -132,7 +145,7 @@ for steps in tqdm(range(num_steps)):
     t += dt_NS
 
     # Load next firedrake field
-    chk_in = checkpointing.HDF5File(path_to_fields + "u_func_" + "%05.0f" % (steps+1) + ".h5", file_mode='r')
+    chk_in = checkpointing.HDF5File(path_to_fields + "u_func_" + "%05.0f" % (steps + 1) + ".h5", file_mode='r')
     chk_in.read(up_sol, "/up")
     chk_in.close()
 
@@ -144,11 +157,23 @@ for steps in tqdm(range(num_steps)):
                 particle.u, particle.v, particle.w = u_sol.at([particle.lon, particle.lat, particle.depth])
                 #particle.vort_i, particle.vort_j, particle.vort_k = u_vort.at([particle.lon, particle.lat, particle.depth])
             except PointNotInDomainError:
-                tqdm.write("\nRemoved out-of-domain particle %d at point (%f, %f, %f) during velocity extraction." % (
-                particle.id, particle.lon, particle.lat, particle.depth))
-                particle.delete()
-                removals += 1
-                removed.add(particle.id)
+                if particle.depth < 0:
+                    particle.depth = 0.001
+                if particle.depth > depth:
+                    particle.depth = depth - 0.001
+                if 2.8 < particle.lon < 10.8 and particle.lat > 8.8:
+                    particle.lat = 8.8 - 0.001
+                    particle.u, particle.v, particle.w = u_sol.at([particle.lon, particle.lat, particle.depth])
+                    # particle.vort_i, particle.vort_j, particle.vort_k = u_vort.at([particle.lon, particle.lat, particle.depth])
+
+                else:
+                    tqdm.write("\nRemoved out-of-domain particle %d at point (%f, %f, %f) during velocity extraction." % (
+                    particle.id, particle.lon, particle.lat, particle.depth))
+                    particle.delete()
+
+
+
+
 
         # Update particle positions
         pset.execute(AdvectionEE_firedrake_3D,  # the kernel (which defines how particles move)

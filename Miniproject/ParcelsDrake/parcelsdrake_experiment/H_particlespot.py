@@ -7,7 +7,7 @@ from parcels import *
 from tqdm import tqdm
 
 from incflow.inc_navier_stokes import IncNavierStokes
-from pdist import uniform_H_Dist
+from pdist import uniform_H_dist
 
 def extract_field(u, grid_incr):
     u_field_1 = np.array(
@@ -64,8 +64,8 @@ class FiredrakeParticle(JITParticle):
     v = Variable('v', dtype=np.float32, initial=0.)
 
 
-pfield_init = Field(name='pfield_init', data=uniform_H_Dist(grid), grid=grid)
-pfield_replace = Field(name='pfield_replace', data=uniform_H_Dist(grid), grid=grid)
+pfield_init = Field(name='pfield_init', data=uniform_H_dist(grid), grid=grid)
+pfield_replace = Field(name='pfield_replace', data=uniform_H_dist(grid), grid=grid)
 # pfield_replace = Field(name="replacefield", data=np.vstack((np.concatenate((np.zeros(20), np.repeat(0.1, 3), np.zeros(54), np.repeat(0.1, 2), np.zeros(21))),
 #                                                             np.zeros((99, 100)))),
 #                      grid=grid)
