@@ -26,6 +26,42 @@ def extract_field_3D(u, grid_start, grid_end, grid_incr, depth):
     return u_field
 
 
+def rand_unit_vect_3D():
+    """ Generate a unit 3-vector with random direction."""
+    xyz = np.random.normal(size=3)
+    mag = sum(i**2 for i in xyz) ** .5
+    return xyz / mag
+
+
+def swim_speed_dist(num_particles):
+    import numpy as np
+    import scipy.interpolate
+    import csv
+    import matplotlib.pyplot as plt
+
+    # Import histogram
+    with open('/home/alexander/Documents/QMEE/Miniproject/ParcelsDrake/inputs/swim_speed_distribution.csv', newline='') as csvfile:
+        reader = csv.reader(csvfile, delimiter=",", quoting=csv.QUOTE_NONNUMERIC)
+        bins = []
+        counts = []
+        for row in reader:
+            bins.append(row[0])
+            counts.append(row[1])
+
+    # Generate PDF
+    cum_counts = np.cumsum(counts)
+    bin_width = 3
+    x = cum_counts * bin_width
+    y = bins
+    pdf = scipy.interpolate.interp1d(x, bins)
+    b = np.zeros(num_particles)
+    for i in range(len(b)):
+        u = np.random.uniform(x[0], x[-1])
+        b[i] = pdf(u)
+
+    return b
+
+
 
 # Navier-Stokes firedrake setup
 mesh_NS = Mesh("/home/alexander/Documents/QMEE/Miniproject/Firedrake Learning/meshes/H_3D_mixed.msh")
@@ -45,12 +81,8 @@ u_sol, p_sol = up_sol.split()
 
 
 # Lagrangian parcels setup
+num_particles = 70000
 B_val = float(2.0)
-Swim_val = 1  # REMOVE ONCE RANDOMISED WITHIN FIREDRAKEPARTICLE CLASS
-num_particles = 500
-init_particles = 2000
-max_replace = 50
-repeat_particles = 100
 grid_res = 100
 grid_start = 0
 grid_end = 13.6
@@ -77,11 +109,11 @@ class MotileParticle3D(JITParticle):
     vort_i = Variable('vort_i', dtype=np.float32, initial=0.)
     vort_j = Variable('vort_j', dtype=np.float32, initial=0.)
     vort_k = Variable('vort_k', dtype=np.float32, initial=0.)
-    dir_x = Variable('dir_x', dtype=np.float32, initial=0.)  # RANDOMISE INITIAL VALUE
-    dir_y = Variable('dir_y', dtype=np.float32, initial=0.)  # RANDOMISE INITIAL VALUE
-    dir_z = Variable('dir_z', dtype=np.float32, initial=0.)  # RANDOMISE INITIAL VALUE
+    dir_x = Variable('dir_x', dtype=np.float32, initial=0.)
+    dir_y = Variable('dir_y', dtype=np.float32, initial=0.)
+    dir_z = Variable('dir_z', dtype=np.float32, initial=0.)
     B = Variable('B', dtype=np.float32, initial=B_val)
-    v_swim = Variable('v_swim', dtype=np.float32, initial=Swim_val)  # RANDOMISE INITIAL VALUE
+    v_swim = Variable('v_swim', dtype=np.float32, initial=0.)  # RANDOMISE INITIAL VALUE
 
 
 # pfield_uniform = Field(name='pfield_uniform', data=uniform_H_dist(grid), transpose=False, grid=grid)
@@ -94,14 +126,24 @@ pfield_Hbar_uniform = Field(name='pfield_Hbar_uniform', data=uniform_H_bar_dist(
 pset = ParticleSet.from_field(fieldset=fieldset,
                               pclass=FiredrakeParticle3D,
                               start_field=pfield_Hbar_uniform,
-                              depth=np.random.rand(init_particles) * depth,
-                              size=init_particles)
+                              depth=np.random.rand(num_particles) * depth,
+                              size=num_particles)
 # pfield_Hbar_entry = Field(name='pfield_Hbar_entry', data=uniform_H_bar_entry_dist(grid), transpose=False, grid=grid)
 # pset = ParticleSet.from_field(fieldset=fieldset,
 #                               pclass=FiredrakeParticle3D,
 #                               start_field=pfield_Hbar_entry,
 #                               depth=np.linspace(0, depth, init_particles),
 #                               size=init_particles)
+
+# Randomise particle swim speeds and initial directions
+# swim_init = swim_speed_dist(num_particles)
+# for particle in pset:
+#     dir = rand_unit_vect_3D()
+#     particle.dir_x = dir[0]
+#     particle.dir_y = dir[1]
+#     particle.dir_z = dir[2]
+#     particle.v_swim = swim_init[particle.id] # CHANGE UNIT FROM WHATEVER THE FUCK IT WAS IN THE DATASET TO MM/S OR WHATEVER YOU NEED
+
 
 
 # Custom Parcels kernels
@@ -127,20 +169,18 @@ def Gyrotaxis(particle, fieldset, time, dt):  # Gyrotactically-determined alignm
 
 
 # Time loop setup
-removals = 0
-removals_low = 0
-removed = set()
 t = 0
-t_add_particles = 300
-t_end = 420
+t_add_particles = 120
+t_end = 1000
 parcels_interval = 1
 num_steps = int((t_end - t)/dt_NS)
-outpath = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/Hmixed/particlespot/offline/"
-#outpath = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/Hhigh/particlespot/offline/"
-folderstr = str(t) + "Ti_" + str(t_end) + "Tf_" + str(dt_NS) + "dt_" + str(rho*nu) + "mu_" + str(init_particles) + "particles" + "/durham_sim"
+outpath = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/Hmixed/motility/offline/"
+#outpath = "/media/alexander/DATA/Ubuntu/Miniproject/ParcelsDrake/outputs/H_3D/Hhigh/motility/offline/"
+folderstr = str(t) + "Ti_" + str(t_end) + "Tf_" + str(dt_NS) + "dt_" + str(rho*nu) + "mu_" + str(num_particles) + "particles" + "/durham_sim"
 if not os.path.isdir(outpath+folderstr):
     os.makedirs(outpath+folderstr)
 outfile_particles = pset.ParticleFile(name=outpath + folderstr + "/particles", outputdt=timedelta(seconds=dt_NS))#, type='indexed')
+
 for steps in tqdm(range(num_steps)):
     t += dt_NS
 
@@ -148,7 +188,6 @@ for steps in tqdm(range(num_steps)):
     chk_in = checkpointing.HDF5File(path_to_fields + "u_func_" + "%05.0f" % (steps + 1) + ".h5", file_mode='r')
     chk_in.read(up_sol, "/up")
     chk_in.close()
-
 
     if (t >= t_add_particles):  # and (steps%parcels_interval==0):
         # Extract velocity field at particle positions
